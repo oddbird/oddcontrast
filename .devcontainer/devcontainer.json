@@ -1,95 +1,95 @@
 // See https://aka.ms/vscode-remote/devcontainer.json for format details.
 {
-	"name": "OddContrast",
-	"dockerComposeFile": ["../docker-compose.yml", "./docker-compose.dev.yml"],
-	"service": "web",
-	"workspaceFolder": "/app",
-	"shutdownAction": "stopCompose",
-	"extensions": [
-		"csstools.postcss",
-		"dbaeumer.vscode-eslint",
-		"esbenp.prettier-vscode",
-		"formulahendry.auto-rename-tag",
-		"ms-azuretools.vscode-docker",
-		"ms-vscode.sublime-keybindings",
-		"naumovs.color-highlight",
-		"stkb.rewrap",
-		"stylelint.vscode-stylelint",
-		"svelte.svelte-vscode",
-		"syler.sass-indented",
-		"tyriar.sort-lines",
-		"wholroyd.jinja",
-		"xabikos.javascriptsnippets"
-	],
-	"settings": {
-		"terminal.integrated.profiles.linux": {
-			"bash": {
-				"path": "/bin/bash"
-			}
-		},
-		"terminal.integrated.defaultProfile.linux": "bash",
-		"editor.bracketPairColorization.enabled": true,
-		"editor.codeActionsOnSave": {
-			"source.fixAll.eslint": true
-		},
-		"editor.defaultFormatter": "esbenp.prettier-vscode",
-		"editor.formatOnSave": true,
-		"editor.tabSize": 2,
-		"eslint.validate": ["javascript", "typescript"],
-		"files.insertFinalNewline": true,
-		"files.trimFinalNewlines": true,
-		"files.trimTrailingWhitespace": true,
-		"javascript.suggestionActions.enabled": false,
-		"typescript.preferences.quoteStyle": "single",
-		"svelte.enable-ts-plugin": true,
-		"remote.extensionKind": {
-			"ms-azuretools.vscode-docker": "workspace"
-		},
-		"typescript.tsdk": "node_modules/typescript/lib",
-		"[javascript]": {
-			"editor.rulers": [80]
-		},
-		"[restructuredtext]": {
-			"editor.rulers": [80]
-		},
-		"[markdown]": {
-			"editor.rulers": [80]
-		},
-		"[svelte]": {
-			"editor.defaultFormatter": "svelte.svelte-vscode"
-		},
-		"[typescript]": {
-			"editor.rulers": [80]
-		},
-		"[html]": {
-			"editor.formatOnSave": false
-		},
-		"[scss]": {
-			"editor.rulers": [80],
-			"editor.codeActionsOnSave": {
-				"source.fixAll.stylelint": true
-			}
-		},
-		"files.exclude": {
-			"**/.git": true,
-			"**/.DS_Store": true,
-			".coverage": true,
-			"coverage": true,
-			"htmlcov": true,
-			".tags": true,
-			".cache": true,
-			".vscode": true,
-			"collected-assets": true,
-			"staticfiles": true,
-			"**/*.egg-info": true
-		},
-		"search.exclude": {
-			"**/node_modules": true,
-			"**/*.css.map": true,
-			"**/*.js.map": true,
-			"yarn.lock": true,
-			"yarn-debug.log": true,
-			"yarn-error.log": true
-		}
-	}
+  "name": "OddContrast",
+  "dockerComposeFile": ["../docker-compose.yml", "./docker-compose.dev.yml"],
+  "service": "web",
+  "workspaceFolder": "/app",
+  "shutdownAction": "stopCompose",
+  "extensions": [
+    "csstools.postcss",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "formulahendry.auto-rename-tag",
+    "ms-azuretools.vscode-docker",
+    "ms-vscode.sublime-keybindings",
+    "naumovs.color-highlight",
+    "stkb.rewrap",
+    "stylelint.vscode-stylelint",
+    "svelte.svelte-vscode",
+    "syler.sass-indented",
+    "tyriar.sort-lines",
+    "wholroyd.jinja",
+    "xabikos.javascriptsnippets"
+  ],
+  "settings": {
+    "terminal.integrated.profiles.linux": {
+      "bash": {
+        "path": "/bin/bash"
+      }
+    },
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "eslint.validate": ["javascript", "typescript"],
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "javascript.suggestionActions.enabled": false,
+    "typescript.preferences.quoteStyle": "single",
+    "svelte.enable-ts-plugin": true,
+    "remote.extensionKind": {
+      "ms-azuretools.vscode-docker": "workspace"
+    },
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "[javascript]": {
+      "editor.rulers": [80]
+    },
+    "[restructuredtext]": {
+      "editor.rulers": [80]
+    },
+    "[markdown]": {
+      "editor.rulers": [80]
+    },
+    "[svelte]": {
+      "editor.defaultFormatter": "svelte.svelte-vscode"
+    },
+    "[typescript]": {
+      "editor.rulers": [80]
+    },
+    "[html]": {
+      "editor.formatOnSave": false
+    },
+    "[scss]": {
+      "editor.rulers": [80],
+      "editor.codeActionsOnSave": {
+        "source.fixAll.stylelint": true
+      }
+    },
+    "files.exclude": {
+      "**/.git": true,
+      "**/.DS_Store": true,
+      ".coverage": true,
+      "coverage": true,
+      "htmlcov": true,
+      ".tags": true,
+      ".cache": true,
+      ".vscode": true,
+      "collected-assets": true,
+      "staticfiles": true,
+      "**/*.egg-info": true
+    },
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/*.css.map": true,
+      "**/*.js.map": true,
+      "yarn.lock": true,
+      "yarn-debug.log": true,
+      "yarn-error.log": true
+    }
+  }
 }
