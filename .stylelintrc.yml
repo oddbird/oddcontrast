@@ -1,0 +1,30 @@
+# See https://stylelint.io/user-guide/rules/list
+# Also https://github.com/kristerkari/stylelint-scss#list-of-rules
+
+extends:
+  - stylelint-config-standard-scss
+  - stylelint-prettier/recommended
+plugins:
+  - stylelint-prettier
+
+ignoreFiles:
+  - '**/*.js'
+  - '**/*.ts'
+  - '**/*.svelte'
+
+rules:
+  prettier/prettier: true
+
+  # possible errors (these are all on by default)
+  no-descending-specificity: null
+
+  # limit language features
+  color-named: always-where-possible
+  custom-property-pattern: null
+  declaration-no-important: true
+  function-url-no-scheme-relative: true
+  selector-class-pattern: null
+
+  # Sass
+  # https://github.com/stylelint-scss/stylelint-scss/issues/486
+  scss/no-global-function-names: null
