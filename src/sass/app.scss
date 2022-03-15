@@ -1,0 +1,10 @@
+@use 'accoutrement/sass/tokens';
+
+$colors: (
+  'brand': rgb(13, 127, 165),
+  'accent': '#brand',
+);
+
+html {
+  color: tokens.get($colors, 'accent');
+}
