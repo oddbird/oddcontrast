@@ -1,10 +1,7 @@
-@use 'accoutrement/sass/tokens';
+// App
+// ===
 
-$colors: (
-  'brand': rgb(13, 127, 165),
-  'accent': '#brand',
-);
-
-html {
-  color: tokens.get($colors, 'accent');
-}
+//@use '~cssremedy/css/remedy';
+@use 'config';
+@use 'initial';
+@use 'patterns';
