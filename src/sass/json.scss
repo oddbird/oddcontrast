@@ -1,6 +1,6 @@
 @use 'config';
 @use 'config/color/docs';
 @use 'config/scale/docs';
-@use '~sassdoc-theme-herman/scss/utilities' as herman;
+@use 'sassdoc-theme-herman/scss/utilities' as herman;
 
 @include herman.export(herman.$herman);

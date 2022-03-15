@@ -1,6 +1,5 @@
 @use 'tools';
-@use '~sassdoc-theme-herman/scss/utilities' as herman;
-@use 'sass:meta';
+@use 'sassdoc-theme-herman/scss/utilities' as herman;
 
 /// # Fonts Config
 /// Accoutrement maps for storing global font tokens.

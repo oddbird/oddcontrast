@@ -13,4 +13,4 @@ $shim: math.div($gutter, 2);
 $shim-plus: $gutter * 0.75;
 $half-shim: math.div($gutter, 4);
 $quarter-shim: math.div($gutter, 8);
-$spacer: $double-gutter + 3vw;
+$spacer: calc($double-gutter + 3vw);

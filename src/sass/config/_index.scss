@@ -12,19 +12,18 @@
   *in initial/_root.scss call the config.colors--() mixin to create custom properties;
 **/
 @use 'tools';
-@use '~sassdoc-theme-herman/scss/utilities' as herman;
 @use 'sass:meta';
 @use 'color/brand';
-@use 'color/ui';
+@use 'color/ui' as color-ui;
 @use 'scale/ratio';
 @use 'scale/layout';
 @use 'scale/spacing';
 @use 'scale/text';
-@use 'scale/ui';
-@include tools.add-color(meta.module-variables('brand'));
-@include tools.add-color(meta.module-variables('ui'));
+@use 'scale/ui' as scale-ui;
+@include tools.add-colors(meta.module-variables('brand'));
+@include tools.add-colors(meta.module-variables('color-ui'));
 @include tools.add-sizes(meta.module-variables('ratio'));
 @include tools.add-sizes(meta.module-variables('layout'));
 @include tools.add-sizes(meta.module-variables('spacing'));
 @include tools.add-sizes(meta.module-variables('text'));
-@include tools.add-sizes(meta.module-variables('ui'));
+@include tools.add-sizes(meta.module-variables('scale-ui'));

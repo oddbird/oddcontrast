@@ -28,6 +28,8 @@
     "prettier": "^2.5.1",
     "prettier-plugin-svelte": "^2.5.0",
     "sass": "^1.49.9",
+    "sassdoc": "^2.7.3",
+    "sassdoc-theme-herman": "^4.0.2",
     "svelte": "^3.44.0",
     "svelte-check": "^2.2.6",
     "svelte-preprocess": "^4.10.1",
