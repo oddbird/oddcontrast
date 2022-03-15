@@ -1,0 +1,11 @@
+/// # Brand Colors
+/// The brand is defined by our primary brand blue,
+/// along with secondary pink and orange base colors.
+/// These colors are rarely used directly,
+/// but form the basis of our CSS color variables.
+/// @colors brand-colors
+/// @group color
+
+$brand-blue: hsl(195deg, 52%, 31%);
+$brand-orange: hsl(24deg, 100%, 62%);
+$brand-pink: sl(330deg, 100%, 45%);

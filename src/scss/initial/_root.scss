@@ -1,0 +1,20 @@
+@use '../config';
+@use '~sassdoc-theme-herman/scss/utilities' as herman;
+
+@include config.import-webfonts;
+
+html {
+  @include config.font-family('body');
+  @include config.colors--;
+  @include config.ratios--;
+  @include config.sizes--;
+
+  font-size: config.size('rem');
+  line-height: config.ratio('line-height');
+}
+
+html,
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}

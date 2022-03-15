@@ -1,0 +1,15 @@
+@use 'sass:math';
+@use 'spacing';
+
+@function rem2em($value) {
+  @return math.div($value, 1rem) * 1em;
+}
+
+/// ## Layout Sizes
+/// ---------------
+/// @group scale
+/// @sizes layout {ruler-large}
+
+$page: 30rem;
+$page-break: rem2em($page);
+$page-margin: calc(spacing.$quarter-shim + 4vw);

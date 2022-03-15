@@ -1,0 +1,29 @@
+@use 'tools';
+@use 'sass:map';
+@use 'sass:meta';
+
+// Utilities Config
+// ================
+
+// @@@ this is a temporary fix for a bug in herman utils
+@function temp-compile($map, $function, $args...) {
+  $output: ();
+
+  @each $key, $value in $map {
+    $output: map.merge(
+      $output,
+      (
+        $key: meta.call($function, $key, $args...),
+      )
+    );
+  }
+
+  @return $output;
+}
+
+/// ## Z-index
+/// ----------
+/// Named z-index stack (allows nested stacks as needed)
+/// @type list
+/// @group utilities
+tools.$z-index: ('bump');

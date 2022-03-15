@@ -1,0 +1,16 @@
+@use 'sass:math';
+
+/// ## Spacing Sizes
+/// ----------------
+/// @group scale
+/// @sizes spacing {ruler-large}
+
+$gutter: 0.75rem;
+$gutter-plus: $gutter * 1.5;
+$double-gutter: $gutter * 2;
+$triple-gutter: $gutter * 3;
+$shim: math.div($gutter, 2);
+$shim-plus: $gutter * 0.75;
+$half-shim: math.div($gutter, 4);
+$quarter-shim: math.div($gutter, 8);
+$spacer: $double-gutter + 3vw;

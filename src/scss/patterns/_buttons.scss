@@ -1,0 +1,20 @@
+/// # Button Pattern
+/// @group buttons
+
+// Basic Buttons
+// -------------
+/// @group buttons
+[data-btn] {
+  align-items: center;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: inherit;
+
+  // &:hover,
+  // &:focus {
+  // }
+
+  // &:active,
+  // &[aria-pressed='true'] {
+  // }
+}

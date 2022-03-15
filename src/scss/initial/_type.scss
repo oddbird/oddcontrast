@@ -1,0 +1,56 @@
+@use '../config';
+
+// Horizontal Rules
+// ----------------
+/// Horizontal rules also provide spacing between sections.
+/// @group type
+hr {
+  margin: var(--spacer) 0;
+}
+
+// Selection
+// ---------
+/// Selected text is inverted,
+/// with a hint of the accent hue.
+/// @group type
+::selection {
+  background-color: var(--text);
+  color: var(--bg);
+}
+
+// Font Loading
+// ------------
+/// Hide the page visually while fonts are loading,
+/// to avoid a flash of unstyled text.
+/// @group type
+.wf-loading {
+  @include config.is-hidden;
+}
+
+/// # Heading Defaults
+/// Initial global defaults for heading elements…
+/// @group headings
+
+h1 {
+  font-size: var(--h1);
+}
+
+h2 {
+  font-size: var(--h2);
+}
+
+h3 {
+  font-size: var(--h3);
+}
+
+h4 {
+  font-size: var(--h4);
+}
+
+h5 {
+  font-size: var(--h5);
+}
+
+h6 {
+  font-size: var(--h6);
+}
