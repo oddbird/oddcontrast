@@ -8,8 +8,8 @@
   },
   "type": "module",
   "scripts": {
-    "dev": "svelte-kit dev --host 0.0.0.0",
-    "build": "svelte-kit build",
+    "dev": "yarn docs && svelte-kit dev --host 0.0.0.0",
+    "build": "yarn docs && svelte-kit build",
     "package": "svelte-kit package",
     "preview": "svelte-kit preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
@@ -22,7 +22,7 @@
     "lint:sass": "stylelint '**/*.scss' --fix",
     "lint:ci": "run-p prettier:ci lint:js:ci lint:sass:ci",
     "lint:sass:ci": "stylelint '**/*.scss'",
-    "docs:json": "sass --load-path=node_modules src/sass/json.scss docs/json.css",
+    "docs:json": "sass --load-path=node_modules src/sass/json.scss public/docs/json.css",
     "docs:compile": "sassdoc 'src/sass/**/*.scss'",
     "docs": "run-s docs:json docs:compile",
     "test": "echo 'TODO: write tests'"
