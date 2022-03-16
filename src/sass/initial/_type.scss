@@ -10,9 +10,10 @@ hr {
 
 // Selection
 // ---------
-/// Selected text is inverted,
-/// with a hint of the accent hue.
+/// Selected text is inverted.
 /// @group type
+/// @example html
+///   <p>Select this text to preview</p>
 ::selection {
   background-color: var(--text);
   color: var(--bg);
@@ -30,7 +31,13 @@ hr {
 /// # Heading Defaults
 /// Initial global defaults for heading elements…
 /// @group type
-
+/// @example html
+///   <h1>h1 is my heading size</h1>
+///   <h2>h2 is my heading size</h2>
+///   <h3>h3 is my heading size</h3>
+///   <h4>h4 is my heading size</h4>
+///   <h5>h5 is my heading size</h5>
+///   <h6>h6 is my heading size</h6>
 h1 {
   font-size: var(--h1);
 }

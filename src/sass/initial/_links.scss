@@ -20,6 +20,8 @@
 /// but the target depends on the presence or absence of icons,
 /// in order to avoid awkward-looking icon underlines.
 /// @group links
+/// @example html
+///   <p>This text <a href="https://oddbird.net">contains a link</a></p>
 a {
   &:link,
   &:visited {

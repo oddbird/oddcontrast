@@ -4,17 +4,25 @@
 // Basic Buttons
 // -------------
 /// @group buttons
+/// @example html
+///   <button data-btn>Delete Example</button>
 [data-btn] {
   align-items: center;
+  background-color: var(--btn-bg-color-active, var(--btn-bg-color, tomato));
+  color: var(--btn-text-color-active, var(--btn-text-color, white));
   cursor: pointer;
   display: inline-flex;
   font-size: inherit;
 
-  // &:hover,
-  // &:focus {
-  // }
+  &:hover,
+  &:focus {
+    --btn-bg-color-active: white;
+    --btn-text-color: tomato;
+  }
 
-  // &:active,
-  // &[aria-pressed='true'] {
-  // }
+  &:active,
+  &[aria-pressed='true'] {
+    --btn-bg-color-active: white;
+    --btn-text-color: tomato;
+  }
 }
