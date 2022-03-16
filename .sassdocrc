@@ -1,5 +1,5 @@
 src: './src/sass/**/*.scss'
-dest: 'public/docs'
+dest: './static/docs'
 theme: 'herman'
 shortcutIcon: './static/favicon.ico'
 verbose: true
@@ -12,8 +12,9 @@ herman:
   displayColors:
     - 'hex'
     - 'hsl'
+  customCSS: './static/built/app.css'
   sass:
-    jsonFile: 'public/docs/json.css'
+    jsonFile: './static/built/json.css'
     includePaths:
       - 'src/sass'
     use:

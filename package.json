@@ -24,9 +24,10 @@
     "lint:sass": "stylelint '**/*.scss' --fix",
     "lint:ci": "run-p prettier:ci lint:js:ci lint:sass:ci",
     "lint:sass:ci": "stylelint '**/*.scss'",
-    "docs:json": "sass --load-path=node_modules src/sass/json.scss public/docs/json.css",
+    "docs:json": "sass --load-path=node_modules src/sass/json.scss static/built/json.css",
+    "docs:sass": "sass --load-path=node_modules src/sass/app.scss static/built/app.css",
     "docs:compile": "sassdoc 'src/sass/**/*.scss'",
-    "docs": "run-s docs:json docs:compile",
+    "docs": "run-s docs:sass docs:json docs:compile",
     "watch:docs": "chokidar \"src/sass/**/*.scss\" \"./.sassdocrc\" -c \"yarn docs\"",
     "test": "echo 'TODO: write tests'"
   },
