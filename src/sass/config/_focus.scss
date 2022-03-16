@@ -1,5 +1,5 @@
 /// # Focus Styling
-/// @group config-focus
+/// @group focus
 
 /// Consistent focus ring
 /// is applied by default on element-focus,
@@ -11,7 +11,7 @@
 ///       focus-ring example
 ///     </button>
 ///   </div>
-/// @group config-focus
+/// @group focus
 @mixin focus-ring() {
   outline: var(--border-width-lg) dotted currentcolor;
   outline-color: var(--focus-ring, var(--text, currentColor));
