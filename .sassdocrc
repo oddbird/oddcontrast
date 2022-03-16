@@ -1,0 +1,23 @@
+src: './src/sass/**/*.scss'
+dest: 'public/docs'
+theme: 'herman'
+shortcutIcon: './static/favicon.ico'
+verbose: true
+herman:
+  extraLinks:
+    - name: 'Accoutrement'
+      url: 'https://oddbird.net/accoutrement/'
+    - name: 'Herman'
+      url: 'https://oddbird.net/herman/'
+  displayColors:
+    - 'hex'
+    - 'hsl'
+  sass:
+    jsonFile: 'public/docs/json.css'
+    includePaths:
+      - 'src/sass'
+    use:
+      - 'config'
+display:
+  access:
+    - 'public'
