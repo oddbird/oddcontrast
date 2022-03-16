@@ -1,5 +1,6 @@
 {
   "name": "oddcontrast",
+  "title": "OddContrast",
   "version": "0.0.1",
   "license": "BSD-3-Clause",
   "engines": {
@@ -21,6 +22,9 @@
     "lint:sass": "stylelint '**/*.scss' --fix",
     "lint:ci": "run-p prettier:ci lint:js:ci lint:sass:ci",
     "lint:sass:ci": "stylelint '**/*.scss'",
+    "docs:json": "sass --load-path=node_modules src/sass/json.scss docs/json.css",
+    "docs:compile": "sassdoc 'src/sass/**/*.scss'",
+    "docs": "run-s docs:json docs:compile",
     "test": "echo 'TODO: write tests'"
   },
   "dependencies": {
