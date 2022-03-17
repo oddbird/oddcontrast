@@ -15,5 +15,4 @@
 @mixin focus-ring() {
   outline: var(--border-width-lg) dotted currentcolor;
   outline-color: var(--focus-ring, var(--text, currentColor));
-  outline-offset: var(--quarter-shim);
 }

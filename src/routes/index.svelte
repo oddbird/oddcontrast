@@ -1,7 +1,17 @@
-<h1>Welcome to SvelteKit</h1>
-<p>
-  Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation
-</p>
+<script>
+  import Banner from './banner.svelte';
+  import Header from './header.svelte';
+  import Footer from './footer.svelte';
+</script>
+
+<Banner />
+
+<main data-layout="main">
+  <Header />
+  Color Forms go here
+</main>
+
+<Footer />
 
 <style lang="scss" global>
   @use '../sass/app.scss';
