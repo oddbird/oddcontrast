@@ -9,8 +9,10 @@
   "type": "module",
   "scripts": {
     "svelte:dev": "svelte-kit dev --host 0.0.0.0",
+    "svelte:dev:open": "yarn svelte:dev --open",
     "svelte:build": "svelte-kit build",
     "dev": "npm-run-all docs -p svelte:dev watch:docs",
+    "dev:open": "npm-run-all docs -p svelte:dev:open watch:docs",
     "build": "run-s docs svelte:build",
     "package": "svelte-kit package",
     "preview": "svelte-kit preview",
