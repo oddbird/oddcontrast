@@ -81,7 +81,7 @@
         class="swatch"
         style="--bgcolor: hsl({color1a}deg {color1b}% {color1c}%); --fgcolor: hsl({color2a}deg {color2b}% {color2c}%);"
       />
-      List with other color formats
+      <p>List with other color formats</p>
     </div>
 
     <div data-content="formats">
@@ -91,7 +91,7 @@
         class="swatch"
         style="--bgcolor: hsl({color2a}deg {color2b}% {color2c}%);"
       />
-      List with other color formats
+      <p>List with other color formats</p>
     </div>
   </div>
 </div>
