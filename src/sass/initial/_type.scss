@@ -68,10 +68,15 @@ h3,
 h4,
 h5,
 h6 {
+  font-weight: 300;
   margin: 0;
 }
 
 p {
-  @include config.font-family('body');
+  @include config.font-family('serif');
   margin-top: 0;
+}
+
+strong {
+  font-weight: 700;
 }

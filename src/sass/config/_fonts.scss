@@ -7,16 +7,16 @@
 ///   Accoutrement Type
 /// @group fonts
 
-// Body Font
+// serif Font
 // ---------
 /// Freight Text Pro is the primary font of the OddBird brand.
 /// @group fonts
-/// @font body (normal, italic, bold, bold italic)
+/// @font serif (normal, italic, bold, bold italic)
 ///   <script src="https://use.typekit.net/slx1xnq.js"></script>
 ///   <script>try{Typekit.load({ async: true });}catch(e){}</script>
 /// @link https://www.oddbird.net/accoutrement/docs/type.html
 ///   Accoutrement Type
-$body-font: (
+$serif-font: (
   'name': 'freight-text-pro',
   'stack': (
     'Baskerville',
@@ -28,20 +28,20 @@ $body-font: (
   'source': 'https://fonts.adobe.com/fonts/freight-text',
 );
 
-@include tools.add-font('body', $body-font);
-@include herman.add('font', 'body', $body-font);
+@include tools.add-font('serif', $serif-font);
+@include herman.add('font', 'serif', $serif-font);
 
 // Alt Font
 // --------
 /// Freight Sans Pro provides a sans-serif alternative,
 /// still in the same family as our primary font.
 /// @group fonts
-/// @font alt (normal, italic, bold, bold italic)
+/// @font sansserif (normal, italic, bold, bold italic)
 ///   <script src="https://use.typekit.net/slx1xnq.js"></script>
 ///   <script>try{Typekit.load({ async: true });}catch(e){}</script>
 /// @link https://www.oddbird.net/accoutrement/docs/type.html
 ///   Accoutrement Type
-$alt-font: (
+$sansserif-font: (
   'name': 'freight-sans-pro',
   'stack': (
     'Helvetica Neue',
@@ -52,8 +52,8 @@ $alt-font: (
   'source': 'https://fonts.adobe.com/fonts/freight-sans',
 );
 
-@include tools.add-font('alt', $alt-font);
-@include herman.add('font', 'alt', $alt-font);
+@include tools.add-font('sansserif', $sansserif-font);
+@include herman.add('font', 'sansserif', $sansserif-font);
 
 // Code Font
 // ---------
