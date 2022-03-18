@@ -1,0 +1,64 @@
+@use '../config';
+
+html,
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+[data-layout~='main'] {
+  display: grid;
+  gap: var(--gutter);
+  grid-template:
+    'banner' auto
+    'header' auto
+    'forms' 1fr / 100%;
+
+  @include config.above('lg-page-break') {
+    grid-template:
+      'banner header' auto
+      'forms  header' 1fr / 1fr minmax(300px, 30%);
+  }
+}
+
+[data-layout~='banner'] {
+  display: grid;
+  grid-area: banner;
+  grid-template-columns: 1fr auto;
+  padding: var(--shim) var(--gutter);
+}
+
+[data-layout~='header'] {
+  grid-area: header;
+  padding: var(--shim) var(--gutter);
+}
+
+[data-layout~='color-tools'] {
+  grid-area: forms;
+  padding: var(--shim) var(--gutter);
+}
+
+[data-layout~='footer'] {
+  grid-area: footer;
+  padding: var(--shim) var(--gutter);
+}
+
+[data-layout~='split'] {
+  display: grid;
+  grid-gap: var(--split-gap, var(--gutter));
+
+  @include config.above('sm-page-break') {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+[data-group~='bg'] {
+  grid-column: 1;
+}
+
+[data-group~='fg'] {
+  @include config.above('sm-page-break') {
+    grid-column: 2;
+  }
+}

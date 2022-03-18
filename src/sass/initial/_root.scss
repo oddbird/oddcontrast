@@ -11,39 +11,3 @@ html {
   font-size: config.size('rem');
   line-height: config.ratio('line-height');
 }
-
-html,
-body {
-  margin: 0;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
-[data-layout] {
-  outline: var(--border-width-lg) solid var(--temp-layout, transparent);
-  outline-offset: -3px;
-}
-
-[data-layout='header'] {
-  --temp-layout: var(--brand-blue);
-}
-
-[data-layout='banner'] {
-  --temp-layout: var(--brand-orange);
-}
-
-[data-layout='main'] {
-  --temp-layout: var(--brand-pink);
-
-  > [data-layout] {
-    outline-offset: -6px;
-  }
-}
-
-[data-layout='results'] {
-  --temp-layout: transparent;
-}
-
-[data-layout='footer'] {
-  --temp-layout: olive;
-}
