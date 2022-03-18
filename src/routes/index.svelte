@@ -1,14 +1,14 @@
 <script>
   import Banner from '$lib/banner.svelte';
   import Header from '$lib/header.svelte';
+  import Input from '$lib/input.svelte';
   import Footer from '$lib/footer.svelte';
 </script>
 
-<Banner />
-
 <main data-layout="main">
+  <Banner />
   <Header />
-  Color Forms go here
+  <Input />
 </main>
 
 <Footer />
