@@ -1,0 +1,12 @@
+@use '../config';
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+[data-list='inline'] {
+  display: flex;
+  gap: var(--gutter);
+}
