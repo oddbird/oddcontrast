@@ -12,7 +12,3 @@
 </main>
 
 <Footer />
-
-<style lang="scss" global>
-  @use '../sass/app.scss';
-</style>
