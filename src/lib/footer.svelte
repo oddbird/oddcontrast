@@ -1,6 +1,5 @@
 <footer data-layout="footer">
   <p>
-    &copy; Is there one? Or brought to you by Oddbird. Learn more about
-    OddContrast
+    &copy; Oddbird. <a href="https://oddbird.net">Learn about OddContrast</a>.
   </p>
 </footer>
