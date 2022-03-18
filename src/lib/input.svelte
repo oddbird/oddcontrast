@@ -1,10 +1,10 @@
 <script>
-  export let color1a = 195;
-  export let color1b = 52;
-  export let color1c = 31;
-  export let color2a = 195;
-  export let color2b = 0;
-  export let color2c = 100;
+  let color1a = 195;
+  let color1b = 52;
+  let color1c = 31;
+  let color2a = 195;
+  let color2b = 0;
+  let color2c = 100;
 </script>
 
 <div data-layout="color-tools">
@@ -15,6 +15,7 @@
         name="background-color"
         type="text"
         value="hsl({color1a} {color1b} {color1c})"
+        readonly
       />
     </div>
     <!-- Form Field Errors -->
@@ -46,6 +47,7 @@
         name="foreground-color"
         type="text"
         value="hsl({color2a} {color2b} {color2c})"
+        readonly
       />
       <!-- Form Field Errors here -->
     </div>
