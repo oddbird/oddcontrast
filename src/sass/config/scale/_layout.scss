@@ -10,6 +10,8 @@
 /// @group scale
 /// @sizes layout-sizes {ruler-large}
 
-$page: 30rem;
+$page: 60rem;
 $page-break: rem2em($page);
+$sm-page-break: 40em;
+$lg-page-break: 80em;
 $page-margin: calc(spacing.$quarter-shim + 4vw);
