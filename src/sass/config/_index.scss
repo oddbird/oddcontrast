@@ -6,11 +6,11 @@
 @forward 'utilities';
 
 /**
-   To turn Sass tokens into CSS custom properties:
-  *load each color module with @use
-  *use the tools.add-colors mixin with the sass:meta module to create a map of the variables in the imported module.
-  *in initial/_root.scss call the config.colors--() mixin to create custom properties;
-**/
+ * To turn Sass tokens into CSS custom properties:
+ *   - load each color module with `@use`
+ *   - use the `tools.add-colors` mixin with the `sass:meta` module to create a map of the variables in the imported module
+ *   - in `initial/_root.scss` call the `config.colors--()` mixin to create custom properties
+ */
 @use 'tools';
 @use 'sass:meta';
 @use 'color/brand';
