@@ -3,7 +3,7 @@
 @include config.import-webfonts;
 
 html {
-  @include config.font-family('sansserif');
+  @include config.font-family('primary');
   @include config.colors--;
   @include config.ratios--;
   @include config.sizes--;

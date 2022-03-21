@@ -7,16 +7,41 @@
 ///   Accoutrement Type
 /// @group fonts
 
-// serif Font
-// ---------
-/// Freight Text Pro is the primary font of the OddBird brand.
+// Primary Font
+// ------------
+/// Freight Sans Pro provides a sans-serif option
+/// in the same family as our serif typeface.
 /// @group fonts
-/// @font serif (normal, italic, bold, bold italic)
-///   <script src="https://use.typekit.net/slx1xnq.js"></script>
+/// @font primary (normal, 500, bold)
+///   <script src="https://use.typekit.net/ygm5jqy.js"></script>
 ///   <script>try{Typekit.load({ async: true });}catch(e){}</script>
 /// @link https://www.oddbird.net/accoutrement/docs/type.html
 ///   Accoutrement Type
-$serif-font: (
+$primary-font: (
+  'name': 'freight-sans-pro',
+  'stack': (
+    'Helvetica Neue',
+    'Helvetica',
+    'Arial',
+    'sans-serif',
+  ),
+  'source': 'https://fonts.adobe.com/fonts/freight-sans',
+);
+
+@include tools.add-font('primary', $primary-font);
+@include herman.add('font', 'primary', $primary-font);
+
+// Secondary Font
+// --------------
+/// Freight Text Pro is the primary serif typeface of the OddBird brand.
+/// It is used less frequently in this app than our sans-serif option.
+/// @group fonts
+/// @font secondary (normal)
+///   <script src="https://use.typekit.net/ygm5jqy.js"></script>
+///   <script>try{Typekit.load({ async: true });}catch(e){}</script>
+/// @link https://www.oddbird.net/accoutrement/docs/type.html
+///   Accoutrement Type
+$secondary-font: (
   'name': 'freight-text-pro',
   'stack': (
     'Baskerville',
@@ -28,40 +53,16 @@ $serif-font: (
   'source': 'https://fonts.adobe.com/fonts/freight-text',
 );
 
-@include tools.add-font('serif', $serif-font);
-@include herman.add('font', 'serif', $serif-font);
-
-// Alt Font
-// --------
-/// Freight Sans Pro provides a sans-serif alternative,
-/// still in the same family as our primary font.
-/// @group fonts
-/// @font sansserif (normal, italic, bold, bold italic)
-///   <script src="https://use.typekit.net/slx1xnq.js"></script>
-///   <script>try{Typekit.load({ async: true });}catch(e){}</script>
-/// @link https://www.oddbird.net/accoutrement/docs/type.html
-///   Accoutrement Type
-$sansserif-font: (
-  'name': 'freight-sans-pro',
-  'stack': (
-    'Helvetica Neue',
-    'Helvetica',
-    'Arial',
-    'sans-serif',
-  ),
-  'source': 'https://fonts.adobe.com/fonts/freight-sans',
-);
-
-@include tools.add-font('sansserif', $sansserif-font);
-@include herman.add('font', 'sansserif', $sansserif-font);
+@include tools.add-font('secondary', $secondary-font);
+@include herman.add('font', 'secondary', $secondary-font);
 
 // Code Font
 // ---------
 /// Source Code Pro provides a nice-looking monospace option
-/// for code samples across the site.
+/// for code.
 /// @group fonts
-/// @font code (normal, italic, bold, bold italic)
-///   <script src="https://use.typekit.net/slx1xnq.js"></script>
+/// @font code (300, normal)
+///   <script src="https://use.typekit.net/ygm5jqy.js"></script>
 ///   <script>try{Typekit.load({ async: true });}catch(e){}</script>
 /// @link https://www.oddbird.net/accoutrement/docs/type.html
 ///   Accoutrement Type

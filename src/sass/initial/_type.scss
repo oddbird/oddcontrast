@@ -68,16 +68,20 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 300;
+  font-weight: normal;
   margin: 0;
 }
 
 p {
-  @include config.font-family('serif');
+  @include config.font-family('secondary');
 
   margin-top: 0;
 }
 
 strong {
   font-weight: 700;
+}
+
+.small {
+  font-size: var(--small);
 }
