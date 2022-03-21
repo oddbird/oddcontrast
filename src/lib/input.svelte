@@ -77,7 +77,7 @@
   <div data-layout="split">
     <div data-content="formats">
       <!-- h3 and swatch will be hidden on wide screens -->
-      <h3>Background Color</h3>
+      <h3 class="small">Background Color in Additional Formats</h3>
       <!-- @todo This style should also be applied to data-layout=header -->
       <div
         class="swatch"
@@ -88,7 +88,7 @@
 
     <div data-content="formats">
       <!-- h3 and swatch will be hidden on wide screens -->
-      <h3>Foreground Color</h3>
+      <h3 class="small">Foreground Color in Additional Formats</h3>
       <div
         class="swatch"
         style="--bgcolor: hsl({color2a}deg {color2b}% {color2c}%);"
