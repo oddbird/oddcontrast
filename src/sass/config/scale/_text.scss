@@ -3,13 +3,11 @@
 /// @group scale
 /// @sizes text-sizes {text}
 
-$small: 0.8rem;
-$xsmall: 0.7rem;
-$xxsmall: 0.6rem;
-$rem: calc(1.25em + 0.5vw);
-$medium: 1.75rem;
-$large: calc(2rem + 0.5vw);
-$xlarge: calc(2.5rem + 1vw);
+$rem: calc(1em + 0.25vw);
+$small: 0.9rem;
+$medium: calc(1.75rem + 0.15vw);
+$large: calc(2rem + 0.25vw);
+$xlarge: calc(2.5rem + 0.5vw);
 $h1: $xlarge;
 $h2: $large;
 $h3: $medium;
