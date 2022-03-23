@@ -9,3 +9,8 @@
   overflow: visible;
   width: var(--icon-width, var(--icon-size, 1em));
 }
+
+[data-icon~='logo'] {
+  --icon-height: auto;
+  --icon-width: var(--logo);
+}
