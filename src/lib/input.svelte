@@ -81,7 +81,7 @@
       <!-- @todo This style should also be applied to data-layout=header -->
       <div
         class="swatch"
-        style="--bgcolor: hsl({color1a}deg {color1b}% {color1c}%); --fgcolor: hsl({color2a}deg {color2b}% {color2c}%);"
+        style="--swatch-color: hsl({color1a}deg {color1b}% {color1c}%);"
       />
       <p>List with other color formats</p>
     </div>
@@ -91,7 +91,7 @@
       <h3 class="small">Foreground Color in Additional Formats</h3>
       <div
         class="swatch"
-        style="--bgcolor: hsl({color2a}deg {color2b}% {color2c}%);"
+        style="--swatch-color: hsl({color2a}deg {color2b}% {color2c}%);"
       />
       <p>List with other color formats</p>
     </div>
@@ -100,11 +100,15 @@
 
 <style lang="scss" scoped>
   .swatch {
-    background-color: var(--bgcolor);
+    background-color: var(--swatch-color);
     border: var(--border-width) solid var(--text);
-    color: var(--fgcolor);
     height: 50px;
     width: 50px;
+  }
+
+  [data-layout='header'] {
+    background-color: var(--bgcolor);
+    color: var(--fgcolor);
   }
 
   [data-form~='contrast-checker'] {

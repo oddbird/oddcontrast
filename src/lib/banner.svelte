@@ -1,5 +1,11 @@
+<script>
+  import Logo from '../components/logo.svelte';
+</script>
+
 <div data-layout="banner">
-  <div>I am a logo</div>
+  <div>
+    <Logo />
+  </div>
   <ul data-nav="social" data-list="inline">
     <li>
       <a href="https://github.com">Icon <span class="sr-only">GitHub</span></a>
@@ -14,3 +20,13 @@
     </li>
   </ul>
 </div>
+
+<!-- <style lang="scss" scoped>
+  .bgcolor {
+    fill: var(--bgcolor);
+  }
+
+  .fgcolor {
+    fill: var(--fgcolor);
+  }
+</style> -->
