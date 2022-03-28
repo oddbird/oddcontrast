@@ -1,3 +1,7 @@
+<script>
+  import { bg, fg } from '../stores';
+</script>
+
 <svg
   data-icon="logo"
   xmlns="http://www.w3.org/2000/svg"
@@ -33,16 +37,16 @@
       class="text-color"
       d="M231.9,12.55c-4.91,0-9.28,2.73-12.4,6.63v-6.24l-14.9,1.72V50.22h14.9V27c1.34-1.35,3.15-2.14,5.05-2.2,2.28,0,4,1.09,4,4.52v20.91h14.89V25.11c0-7.72-4.29-12.56-11.54-12.56Z"
     />
-    <!-- @TODO add style="--fgcolor: hsl({color2a}deg {color2b}% {color2c}%);" -->
     <path
       id="logo-o-right"
       class="fgcolor"
+      style="--fgcolor: {$fg};"
       d="M180.79,12.55c-.09,0-.18,0-.27,.01v10.84c3.79,.03,5.72,3.06,5.72,8.5s-1.87,8.58-5.69,8.58h-.03v10.91c11.18-.12,20.48-7.19,20.48-19.57s-8.9-19.27-20.21-19.27Z"
     />
-    <!-- @TODO add style="--bgcolor: hsl({color1a}deg {color1b}% {color1c}%);" -->
     <path
       id="logo-o-left"
       class="bgcolor"
+      style="--bgcolor: {$bg};"
       d="M174.78,32.06c0-5.46,1.95-8.66,5.69-8.66,.02,0,.03,0,.05,0V12.56c-11.19,.11-20.48,6.95-20.48,19.57s8.89,19.27,20.2,19.27c.09,0,.19-.01,.28-.01v-10.91c-3.8-.02-5.74-2.97-5.74-8.42Z"
     />
     <path
@@ -67,3 +71,13 @@
     />
   </g>
 </svg>
+
+<style lang="scss" scoped>
+  .bgcolor {
+    fill: var(--bgcolor);
+  }
+
+  .fgcolor {
+    fill: var(--fgcolor);
+  }
+</style>

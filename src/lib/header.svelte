@@ -1,4 +1,8 @@
-<header data-layout="header">
+<script>
+  import { bg, fg } from '../stores';
+</script>
+
+<header data-layout="header" style="--fgcolor: {$fg}; --bgcolor: {$bg};">
   <h1 class="sr-only">Something worthy of an h1</h1>
   <h2><strong>Preview</strong> Text</h2>
 
@@ -18,3 +22,10 @@
     Result boxes here
   </aside>
 </header>
+
+<style lang="scss" scoped>
+  [data-layout='header'] {
+    background-color: var(--bgcolor);
+    color: var(--fgcolor);
+  }
+</style>

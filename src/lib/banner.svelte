@@ -1,5 +1,5 @@
 <script>
-  import Logo from '../components/logo.svelte';
+  import Logo from '$lib/logo.svelte';
 </script>
 
 <div data-layout="banner">
@@ -20,13 +20,3 @@
     </li>
   </ul>
 </div>
-
-<!-- <style lang="scss" scoped>
-  .bgcolor {
-    fill: var(--bgcolor);
-  }
-
-  .fgcolor {
-    fill: var(--fgcolor);
-  }
-</style> -->
