@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   let start = 2022;
   let year = new Date().getFullYear();
 </script>
