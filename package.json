@@ -28,7 +28,7 @@
     "docs:sass": "sass --load-path=node_modules src/sass/app.scss static/built/app.css",
     "docs:compile": "sassdoc 'src/sass/**/*.scss'",
     "docs": "run-s docs:sass docs:json docs:compile",
-    "watch:docs": "chokidar \"src/sass/**/*.scss\" \"./.sassdocrc\" -c \"yarn docs\"",
+    "watch:docs": "chokidar \"src/sass/**/*.scss\" \"./.sassdocrc\" \"./README.md\" -c \"yarn docs\"",
     "test": "echo 'TODO: write tests'"
   },
   "dependencies": {
