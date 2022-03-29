@@ -16,8 +16,8 @@
   </form>
 
   <div data-layout="split">
-    <Formats type="bg" value={$bg} />
-    <Formats type="fg" value={$fg} />
+    <Formats type="bg" />
+    <Formats type="fg" />
   </div>
 </div>
 

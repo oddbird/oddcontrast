@@ -1,8 +1,4 @@
-<script lang="ts">
-  import { bg, fg } from '../stores';
-</script>
-
-<header data-layout="header" style="--fgcolor: {$fg}; --bgcolor: {$bg};">
+<header data-layout="header">
   <h1 class="sr-only">Something worthy of an h1</h1>
   <h2><strong>Preview</strong> Text</h2>
 
