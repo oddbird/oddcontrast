@@ -2,7 +2,7 @@
   import Formats from '$lib/components/form/formats.svelte';
   import Input from '$lib/components/form/input.svelte';
   import Sliders from '$lib/components/form/sliders.svelte';
-  import { bg, fg, bg_h, bg_s, bg_l, fg_h, fg_s, fg_l } from '$lib/stores';
+  import { bg, bg_h, bg_l, bg_s, fg, fg_h, fg_l, fg_s } from '$lib/stores';
 </script>
 
 <div data-layout="color-tools">

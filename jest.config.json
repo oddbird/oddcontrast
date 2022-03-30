@@ -1,0 +1,39 @@
+{
+  "clearMocks": true,
+  "collectCoverage": true,
+  "collectCoverageFrom": ["src/**/*.{js,ts,svelte}"],
+  "coverageDirectory": "coverage",
+  "coveragePathIgnorePatterns": [
+    "src/app.d.ts",
+    "src/routes/__layout.svelte",
+    "src/routes/docs.ts",
+    "/node_modules/"
+  ],
+  "coverageReporters": ["json", "text-summary", "lcovonly", "html"],
+  "extensionsToTreatAsEsm": [".svelte", ".ts"],
+  "globals": {
+    "ts-jest": {
+      "tsconfig": "test/js/tsconfig.json",
+      "useESM": true
+    }
+  },
+  "moduleFileExtensions": ["js", "svelte", "ts"],
+  "moduleNameMapper": {
+    "^\\$lib/(.*)$": "<rootDir>/src/lib/$1",
+    "^\\$src/(.*)$": "<rootDir>/src/$1",
+    "^\\$app/(.*)$": [
+      "<rootDir>/.svelte-kit/dev/runtime/app/$1",
+      "<rootDir>/.svelte-kit/build/runtime/app/$1"
+    ]
+  },
+  "setupFilesAfterEnv": ["@testing-library/jest-dom/extend-expect"],
+  "testEnvironment": "jsdom",
+  "transform": {
+    "^.+\\.js$": "babel-jest",
+    "^.+\\.svelte$": [
+      "svelte-jester/dist/transformer.mjs",
+      { "preprocess": true }
+    ],
+    "^.+\\.ts$": "ts-jest"
+  }
+}
