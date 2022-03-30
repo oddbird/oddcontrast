@@ -29,11 +29,10 @@ jobs:
           yarn install
           yarn build
       - name: Upload built files
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: built
-          path: |
-            .svelte-kit
+          path: .svelte-kit
 
   test:
     name: Test
@@ -46,9 +45,10 @@ jobs:
           node-version: '${{ needs.prepare.outputs.node }}'
           cache: yarn
       - name: Download built files
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: built
+          path: .svelte-kit
       - name: Test
         run: |
           yarn install
