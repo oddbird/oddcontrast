@@ -13,7 +13,7 @@
   "extensionsToTreatAsEsm": [".svelte", ".ts"],
   "globals": {
     "ts-jest": {
-      "tsconfig": "test/js/tsconfig.json",
+      "tsconfig": "test/tsconfig.json",
       "useESM": true
     }
   },
@@ -26,6 +26,7 @@
       "<rootDir>/.svelte-kit/build/runtime/app/$1"
     ]
   },
+  "rootDir": "../..",
   "setupFilesAfterEnv": ["@testing-library/jest-dom/extend-expect"],
   "testEnvironment": "jsdom",
   "transform": {
