@@ -1,19 +1,19 @@
 {
   "clearMocks": true,
   "collectCoverage": true,
-  "collectCoverageFrom": ["src/**/*.{js,ts,svelte}"],
-  "coverageDirectory": "coverage",
+  "collectCoverageFrom": ["<rootDir>/src/**/*.{js,ts,svelte}"],
+  "coverageDirectory": "<rootDir>/coverage",
   "coveragePathIgnorePatterns": [
-    "src/app.d.ts",
-    "src/routes/__layout.svelte",
-    "src/routes/docs.ts",
-    "/node_modules/"
+    "<rootDir>/src/app.d.ts",
+    "<rootDir>/src/routes/__layout.svelte",
+    "<rootDir>/src/routes/docs.ts",
+    "<rootDir>/node_modules/"
   ],
   "coverageReporters": ["json", "text-summary", "lcovonly", "html"],
   "extensionsToTreatAsEsm": [".svelte", ".ts"],
   "globals": {
     "ts-jest": {
-      "tsconfig": "test/tsconfig.json",
+      "tsconfig": "<rootDir>/test/tsconfig.json",
       "useESM": true
     }
   },
