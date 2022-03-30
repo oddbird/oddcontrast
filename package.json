@@ -22,7 +22,7 @@
     "prettier": "prettier --write .",
     "prettier:ci": "prettier --check .",
     "lint:sass": "yarn lint:sass:ci --fix",
-    "lint:ci": "run-p prettier:ci lint:js:ci lint:sass:ci",
+    "lint:ci": "run-p prettier:ci lint:js:ci lint:sass:ci check",
     "lint:sass:ci": "stylelint '**/*.scss'",
     "docs:json": "sass --load-path=node_modules src/sass/json.scss static/built/json.css",
     "docs:sass": "sass --load-path=node_modules src/sass/app.scss static/built/app.css",
