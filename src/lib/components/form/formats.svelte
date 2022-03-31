@@ -12,10 +12,11 @@
 </div>
 
 <style lang="scss" scoped>
+  @use '../../../sass/config';
+
   .swatch {
+    @include config.square('swatch');
     border: var(--border-width) solid var(--text);
-    height: 50px;
-    width: 50px;
 
     &.bg {
       background-color: var(--bgcolor);
