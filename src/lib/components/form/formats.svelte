@@ -11,7 +11,7 @@
   <p>List with other color formats</p>
 </div>
 
-<style lang="scss" scoped>
+<style lang="scss">
   @use '../../../sass/config';
 
   .swatch {

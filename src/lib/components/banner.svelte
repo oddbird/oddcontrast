@@ -23,7 +23,7 @@
   </ul>
 </div>
 
-<style lang="scss" scoped>
+<style lang="scss">
   .app-logo {
     display: flex;
   }

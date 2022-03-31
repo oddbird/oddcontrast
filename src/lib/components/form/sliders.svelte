@@ -22,7 +22,7 @@
   </div>
 </div>
 
-<style lang="scss" scoped>
+<style lang="scss">
   input[type='range'] {
     margin: 0;
   }

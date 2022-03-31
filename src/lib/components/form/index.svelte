@@ -18,7 +18,7 @@
   <Formats type="fg" />
 </div>
 
-<style lang="scss" scoped>
+<style lang="scss">
   [data-form~='contrast-checker'] {
     grid-auto-flow: dense;
   }

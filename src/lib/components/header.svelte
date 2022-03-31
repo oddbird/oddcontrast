@@ -21,7 +21,7 @@
   </aside>
 </header>
 
-<style lang="scss" scoped>
+<style lang="scss">
   @use '../../sass/config';
 
   [data-layout='header'] {

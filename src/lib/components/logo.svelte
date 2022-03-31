@@ -66,7 +66,7 @@
   </g>
 </svg>
 
-<style lang="scss" scoped>
+<style lang="scss">
   .bgcolor {
     fill: var(--bgcolor);
   }
