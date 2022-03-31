@@ -9,15 +9,15 @@
 
 <div data-actions="edit-color" data-group="sliders {type}">
   <div data-field="color-slider">
-    <label for="{type}_h" data-label>Hue (or Lightness, R, etc)</label>
+    <label for="{type}_h" data-label>Hue</label>
     <input name="{type}_h" type="range" bind:value={$h} min="0" max="360" />
   </div>
   <div data-field="color-slider">
-    <label for="{type}_s" data-label>Saturation (or A, G, etc)</label>
+    <label for="{type}_s" data-label>Saturation</label>
     <input name="{type}_s" type="range" bind:value={$s} />
   </div>
   <div data-field="color-slider">
-    <label for="{type}_l" data-label>Lightness (or L, B, etc)</label>
+    <label for="{type}_l" data-label>Lightness</label>
     <input name="{type}_l" type="range" bind:value={$l} />
   </div>
 </div>
