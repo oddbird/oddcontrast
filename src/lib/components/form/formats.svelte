@@ -12,7 +12,7 @@
 </div>
 
 <style lang="scss">
-  @use '../../../sass/config';
+  @use 'config';
 
   .swatch {
     @include config.square('swatch');

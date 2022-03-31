@@ -5,5 +5,5 @@
 <slot />
 
 <style lang="scss" global>
-  @use '../sass/app.scss';
+  @use 'app';
 </style>

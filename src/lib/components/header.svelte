@@ -22,7 +22,7 @@
 </header>
 
 <style lang="scss">
-  @use '../../sass/config';
+  @use 'config';
 
   [data-layout='header'] {
     background-color: var(--bgcolor);
