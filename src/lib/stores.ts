@@ -4,8 +4,8 @@ export const bg_h = writable(195);
 export const bg_s = writable(52);
 export const bg_l = writable(31);
 export const fg_h = writable(195);
-export const fg_s = writable(0);
-export const fg_l = writable(100);
+export const fg_s = writable(42);
+export const fg_l = writable(93);
 
 export const bg = derived(
   [bg_h, bg_s, bg_l],
