@@ -27,8 +27,4 @@
   .app-logo {
     display: flex;
   }
-
-  [data-nav='social'] {
-    align-items: center;
-  }
 </style>
