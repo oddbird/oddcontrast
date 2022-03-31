@@ -24,6 +24,6 @@
   }
 
   [data-layout~='split'] {
-    --layout-gap-inline: var(--double-gutter);
+    gap: var(--gutter) var(--double-gutter);
   }
 </style>

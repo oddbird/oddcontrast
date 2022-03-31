@@ -13,10 +13,6 @@ body {
   box-sizing: border-box;
 }
 
-[data-layout] {
-  gap: var(--layout-gap-block, 0) var(--layout-gap-inline, 0);
-}
-
 [data-layout~='app'] {
   display: grid;
   grid-template:
