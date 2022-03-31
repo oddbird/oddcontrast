@@ -5,8 +5,8 @@ const INITIAL_VALUES = {
   bg_s: 52,
   bg_l: 31,
   fg_h: 195,
-  fg_s: 0,
-  fg_l: 100,
+  fg_s: 42,
+  fg_l: 93,
 };
 
 export const bg_h = writable(INITIAL_VALUES.bg_h);

@@ -7,18 +7,32 @@ body {
   overflow-x: hidden;
 }
 
-[data-layout~='main'] {
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+[data-layout~='app'] {
   display: grid;
-  gap: var(--gutter);
   grid-template:
     'banner' auto
     'header' auto
-    'forms' 1fr / 100%;
+    'main' 1fr
+    'footer' auto / 100%;
+  min-height: 100vh;
 
   @include config.above('lg-page-break') {
     grid-template:
       'banner header' auto
-      'forms  header' 1fr / 1fr minmax(300px, 30%);
+      'main  header' 1fr
+      'footer header' auto / 1fr minmax(300px, 30%);
+  }
+
+  // padding only for the direct children of app
+  > [data-layout] {
+    padding: var(--layout-pad-block, var(--gutter-plus))
+      var(--layout-pad-inline, var(--double-gutter));
   }
 }
 
@@ -26,27 +40,22 @@ body {
   display: grid;
   grid-area: banner;
   grid-template-columns: 1fr auto;
-  padding: var(--shim) var(--gutter);
 }
 
 [data-layout~='header'] {
   grid-area: header;
-  padding: var(--shim) var(--gutter);
 }
 
-[data-layout~='color-tools'] {
-  grid-area: forms;
-  padding: var(--shim) var(--gutter);
+[data-layout~='main'] {
+  grid-area: main;
 }
 
 [data-layout~='footer'] {
   grid-area: footer;
-  padding: var(--shim) var(--gutter);
 }
 
 [data-layout~='split'] {
   display: grid;
-  grid-gap: var(--split-gap, var(--gutter));
 
   @include config.above('sm-page-break') {
     grid-template-columns: 1fr 1fr;

@@ -9,7 +9,7 @@
 
 <div data-actions="edit-color" data-group="sliders {type}">
   <div data-field="color-slider">
-    <label for="{type}_h" data-label>Hue (or Lightness, R, etc)</label>
+    <label for="{type}_h" data-label>Hue</label>
     <input
       id="{type}_h"
       name="{type}_h"
@@ -20,11 +20,17 @@
     />
   </div>
   <div data-field="color-slider">
-    <label for="{type}_s" data-label>Saturation (or A, G, etc)</label>
+    <label for="{type}_s" data-label>Saturation</label>
     <input id="{type}_s" name="{type}_s" type="range" bind:value={$s} />
   </div>
   <div data-field="color-slider">
-    <label for="{type}_l" data-label>Lightness (or L, B, etc)</label>
+    <label for="{type}_l" data-label>Lightness</label>
     <input id="{type}_l" name="{type}_l" type="range" bind:value={$l} />
   </div>
 </div>
+
+<style lang="scss">
+  input[type='range'] {
+    margin: 0;
+  }
+</style>

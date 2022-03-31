@@ -6,10 +6,11 @@
   import { bg, fg } from '$lib/stores';
 </script>
 
-<main data-layout="main" style="--fgcolor: {$fg}; --bgcolor: {$bg};">
+<div data-layout="app" style="--fgcolor: {$fg}; --bgcolor: {$bg};">
   <Banner />
   <Header />
-  <Form />
-</main>
-
-<Footer />
+  <main data-layout="main">
+    <Form />
+  </main>
+  <Footer />
+</div>

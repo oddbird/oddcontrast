@@ -15,9 +15,9 @@ describe('Sliders', () => {
       l,
     });
     const sliders = {
-      h: getByLabelText('Hue (or Lightness, R, etc)'),
-      s: getByLabelText('Saturation (or A, G, etc)'),
-      l: getByLabelText('Lightness (or L, B, etc)'),
+      h: getByLabelText('Hue'),
+      s: getByLabelText('Saturation'),
+      l: getByLabelText('Lightness'),
     };
     await fireEvent.change(sliders.h, { target: { value: '1' } });
     await fireEvent.change(sliders.s, { target: { value: '2' } });
