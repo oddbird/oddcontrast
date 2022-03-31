@@ -7,18 +7,27 @@ body {
   overflow-x: hidden;
 }
 
-[data-layout~='main'] {
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+[data-layout~='app'] {
   display: grid;
+  min-height: 100vh;
   gap: var(--gutter);
   grid-template:
     'banner' auto
     'header' auto
-    'forms' 1fr / 100%;
+    'main' 1fr
+    'footer' auto / 100%;
 
   @include config.above('lg-page-break') {
     grid-template:
       'banner header' auto
-      'forms  header' 1fr / 1fr minmax(300px, 30%);
+      'main  header' 1fr
+      'footer header' auto / 1fr minmax(300px, 30%);
   }
 }
 
@@ -34,8 +43,8 @@ body {
   padding: var(--shim) var(--gutter);
 }
 
-[data-layout~='color-tools'] {
-  grid-area: forms;
+[data-layout~='main'] {
+  grid-area: main;
   padding: var(--shim) var(--gutter);
 }
 

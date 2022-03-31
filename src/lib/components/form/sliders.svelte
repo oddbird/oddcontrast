@@ -21,3 +21,9 @@
     <input name="{type}_l" type="range" bind:value={$l} />
   </div>
 </div>
+
+<style lang="scss" scoped>
+  input[type='range'] {
+    margin: 0;
+  }
+</style>
