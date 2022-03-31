@@ -5,7 +5,6 @@
 [data-icon] {
   display: inline-block;
   height: var(--icon-height, var(--icon-size, 1em));
-  transform: translateY(-0.1em);
   overflow: visible;
   width: var(--icon-width, var(--icon-size, 1em));
 }
