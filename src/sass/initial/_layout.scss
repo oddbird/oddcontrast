@@ -21,7 +21,6 @@ body {
     'main' 1fr
     'footer' auto / 100%;
   min-height: 100vh;
-  padding: 0;
 
   @include config.above('lg-page-break') {
     grid-template:
