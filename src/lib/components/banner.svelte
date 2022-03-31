@@ -3,7 +3,7 @@
 </script>
 
 <div data-layout="banner">
-  <div>
+  <div class="app-logo">
     <Logo />
   </div>
   <ul data-nav="social" data-list="inline">
@@ -22,3 +22,13 @@
     </li>
   </ul>
 </div>
+
+<style lang="scss" scoped>
+  .app-logo {
+    display: flex;
+  }
+
+  [data-nav='social'] {
+    align-items: center;
+  }
+</style>

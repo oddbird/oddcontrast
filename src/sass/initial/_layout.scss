@@ -13,15 +13,19 @@ body {
   box-sizing: border-box;
 }
 
+[data-layout] {
+  gap: var(--layout-gap-block, 0) var(--layout-gap-inline, 0);
+}
+
 [data-layout~='app'] {
   display: grid;
-  min-height: 100vh;
-  gap: var(--gutter);
   grid-template:
     'banner' auto
     'header' auto
     'main' 1fr
     'footer' auto / 100%;
+  min-height: 100vh;
+  padding: 0;
 
   @include config.above('lg-page-break') {
     grid-template:
@@ -29,33 +33,34 @@ body {
       'main  header' 1fr
       'footer header' auto / 1fr minmax(300px, 30%);
   }
+
+  // padding only for the direct children of app
+  > [data-layout] {
+    padding: var(--layout-pad-block, var(--gutter-plus))
+      var(--layout-pad-inline, var(--double-gutter));
+  }
 }
 
 [data-layout~='banner'] {
   display: grid;
   grid-area: banner;
   grid-template-columns: 1fr auto;
-  padding: var(--shim) var(--gutter);
 }
 
 [data-layout~='header'] {
   grid-area: header;
-  padding: var(--shim) var(--gutter);
 }
 
 [data-layout~='main'] {
   grid-area: main;
-  padding: var(--shim) var(--gutter);
 }
 
 [data-layout~='footer'] {
   grid-area: footer;
-  padding: var(--shim) var(--gutter);
 }
 
 [data-layout~='split'] {
   display: grid;
-  grid-gap: var(--split-gap, var(--gutter));
 
   @include config.above('sm-page-break') {
     grid-template-columns: 1fr 1fr;

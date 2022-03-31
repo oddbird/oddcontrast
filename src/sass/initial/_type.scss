@@ -75,7 +75,7 @@ h6 {
 p {
   @include config.font-family('secondary');
 
-  margin-top: 0;
+  margin: 0;
 }
 
 strong {
