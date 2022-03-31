@@ -1,13 +1,5 @@
 @use '../config';
 
-// Horizontal Rules
-// ----------------
-/// Horizontal rules also provide spacing between sections.
-/// @group type
-hr {
-  margin: var(--spacer) 0;
-}
-
 // Selection
 // ---------
 /// Selected text is inverted.
