@@ -1,4 +1,3 @@
-@use '../tools';
 @use 'sass:math';
 @use 'spacing';
 
@@ -8,7 +7,6 @@
 /// @sizes layout-sizes {ruler-large}
 
 $page: 60rem;
-$page-break: tools.convert-units($page, 'em');
 $sm-page-break: 40em;
 $lg-page-break: 80em;
 $page-margin: calc(spacing.$quarter-shim + 4vw);
