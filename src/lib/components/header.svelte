@@ -1,37 +1,31 @@
-<header data-layout="header">
-  <div class="contrast-info">
-    <h1 class="sr-only">OddContrast</h1>
-    <h2><strong>Preview</strong> Text</h2>
+<script lang="ts">
+  import Logo from '$lib/components/logo.svelte';
+</script>
 
-    <p>
-      WCAG 2.0 level AA requires a contrast ratio of at least 4.5:1 for normal
-      text and 3:1 for large text. WCAG level AAA requires a contrast ratio of
-      at least 7:1 for normal text and 4.5:1 for large text. Large text is
-      defined as 14 point (typically 18.66px) or larger for bold weight, or 18
-      pt/24 px or larger for regular weight. The sliders can be used to adjust
-      the selected color.
-    </p>
-  </div>
-
-  <aside class="results">
-    <h3 class="result-ratio">
-      <span class="sr-only">The contrast ratio is</span> 12.72:1
-    </h3>
-    Result boxes here
-  </aside>
-</header>
+<div data-layout="header">
+  <h1 class="app-logo">
+    <Logo />
+    <span class="sr-only">OddContrast</span>
+  </h1>
+  <ul data-nav="social" data-list="inline">
+    <li>
+      <a href="https://github.com/oddbird"
+        >Icon<span class="sr-only">GitHub</span></a
+      >
+    </li>
+    <li>
+      <a href="https://twitter.com/oddbird"
+        >Icon<span class="sr-only">Twitter</span></a
+      >
+    </li>
+    <li>
+      <a href="https://oddbird.net">Icon<span class="sr-only">OddBird</span></a>
+    </li>
+  </ul>
+</div>
 
 <style lang="scss">
-  @use 'config';
-
-  [data-layout='header'] {
-    background-color: var(--bgcolor);
-    color: var(--fgcolor);
-
-    @include config.between('sm-page-break', 'lg-page-break') {
-      display: grid;
-      gap: var(--double-gutter);
-      grid-template-columns: 1fr auto;
-    }
+  .app-logo {
+    display: flex;
   }
 </style>

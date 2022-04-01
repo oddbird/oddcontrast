@@ -16,17 +16,17 @@ body {
 [data-layout~='app'] {
   display: grid;
   grid-template:
-    'banner' auto
     'header' auto
+    'results' auto
     'main' 1fr
     'footer' auto / 100%;
   min-height: 100vh;
 
   @include config.above('lg-page-break') {
     grid-template:
-      'banner header' auto
-      'main  header' 1fr
-      'footer header' auto / 1fr minmax(300px, 30%);
+      'header results' auto
+      'main  results' 1fr
+      'footer results' auto / 1fr minmax(300px, 30%);
   }
 
   // padding only for the direct children of app
@@ -36,14 +36,14 @@ body {
   }
 }
 
-[data-layout~='banner'] {
+[data-layout~='header'] {
   display: grid;
-  grid-area: banner;
+  grid-area: header;
   grid-template-columns: 1fr auto;
 }
 
-[data-layout~='header'] {
-  grid-area: header;
+[data-layout~='results'] {
+  grid-area: results;
 }
 
 [data-layout~='main'] {
