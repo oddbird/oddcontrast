@@ -31,31 +31,6 @@ $primary-font: (
 @include tools.add-font('primary', $primary-font);
 @include herman.add('font', 'primary', $primary-font);
 
-// Secondary Font
-// --------------
-/// Freight Text Pro is the primary serif typeface of the OddBird brand.
-/// It is used less frequently in this app than our sans-serif option.
-/// @group fonts
-/// @font secondary (normal)
-///   <script src="https://use.typekit.net/ygm5jqy.js"></script>
-///   <script>try{Typekit.load({ async: true });}catch(e){}</script>
-/// @link https://www.oddbird.net/accoutrement/docs/type.html
-///   Accoutrement Type
-$secondary-font: (
-  'name': 'freight-text-pro',
-  'stack': (
-    'Baskerville',
-    'Palatino',
-    'Cambria',
-    'Georgia',
-    'serif',
-  ),
-  'source': 'https://fonts.adobe.com/fonts/freight-text',
-);
-
-@include tools.add-font('secondary', $secondary-font);
-@include herman.add('font', 'secondary', $secondary-font);
-
 // Code Font
 // ---------
 /// Source Code Pro provides a nice-looking monospace option

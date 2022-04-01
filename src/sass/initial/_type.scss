@@ -65,8 +65,6 @@ h6 {
 }
 
 p {
-  @include config.font-family('secondary');
-
   margin: 0;
 }
 
