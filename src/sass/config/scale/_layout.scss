@@ -1,9 +1,6 @@
+@use '../tools';
 @use 'sass:math';
 @use 'spacing';
-
-@function rem2em($value) {
-  @return math.div($value, 1rem) * 1em;
-}
 
 /// ## Layout Sizes
 /// ---------------
@@ -11,7 +8,7 @@
 /// @sizes layout-sizes {ruler-large}
 
 $page: 60rem;
-$page-break: rem2em($page);
+$page-break: tools.convert-units($page, 'em');
 $sm-page-break: 40em;
 $lg-page-break: 80em;
 $page-margin: calc(spacing.$quarter-shim + 4vw);

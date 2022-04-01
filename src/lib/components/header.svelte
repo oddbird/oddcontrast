@@ -2,7 +2,7 @@
   import Logo from '$lib/components/logo.svelte';
 </script>
 
-<div data-layout="header">
+<header data-layout="header">
   <h1 class="app-logo">
     <Logo />
     <span class="sr-only">OddContrast</span>
@@ -22,7 +22,7 @@
       <a href="https://oddbird.net">Icon<span class="sr-only">OddBird</span></a>
     </li>
   </ul>
-</div>
+</header>
 
 <style lang="scss">
   .app-logo {
