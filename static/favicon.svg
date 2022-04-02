@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.26 51.26">
+  <style type="text/css">
+    .logo-o-left {fill:#ffffff;}
+    .logo-o-right {fill:#ababab}
+    .icon-container {fill:#231f20;}
+    @media (prefers-color-scheme: dark) {
+      .logo-o-left {fill:#231f20;}
+      .logo-o-right {fill:#ababab;}
+      .icon-container {fill:#ffffff;stroke:#231f20;stroke-miterlimit:10;stroke-width:2px;}
+    }
+  </style>
+    <g id="favicon">
+      <rect id="icon-container" class="icon-container" width="49.26" height="49.26" rx="4.44" ry="4.44" x="1" y="1"/>
+      <path id="logo-o-right" class="logo-o-right" d="M25.9,6.21c-.09,0-.18,0-.27,.01v10.84c3.79,.03,5.72,3.06,5.72,8.5s-1.87,8.58-5.69,8.58h-.03v10.91c11.18-.12,20.48-7.19,20.48-19.57S37.21,6.21,25.9,6.21Z"/>
+      <path id="logo-o-left" class="logo-o-left" d="M19.89,25.71c0-5.46,1.95-8.66,5.69-8.66,.02,0,.03,0,.05,0V6.22c-11.19,.11-20.48,6.95-20.48,19.57s8.89,19.27,20.2,19.27c.09,0,.19-.01,.28-.01v-10.91c-3.8-.02-5.74-2.97-5.74-8.42Z"/>
+    </g>
+</svg>

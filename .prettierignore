@@ -1,0 +1,11 @@
+!.*
+.git/
+.svelte-kit/
+.vscode/
+.yarn/
+.yarnrc
+coverage.xml
+coverage/
+node_modules/
+static/built/
+static/docs/

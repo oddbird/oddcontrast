@@ -1,0 +1,35 @@
+@use '../config';
+
+/// # Link Defaults
+/// Initial global defaults for links…
+/// @group links
+
+// Focus
+// -----
+/// By default, all elements get a dotted outline on focus.
+/// In practice, we can override this when other focus styles exist.
+/// @group links
+:focus {
+  @include config.focus-ring;
+}
+
+// Links
+// -----
+/// Basic link (and link-states) apply action and interaction text colors.
+/// Text underlines are also applied,
+/// but the target depends on the presence or absence of icons,
+/// in order to avoid awkward-looking icon underlines.
+/// @group links
+/// @example html
+///   <p>This text <a href="https://oddbird.net">contains a link</a></p>
+a {
+  &:link,
+  &:visited {
+    color: var(--link, var(--action));
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--link-focus, var(--active));
+  }
+}

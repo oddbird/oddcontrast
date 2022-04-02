@@ -1,0 +1,18 @@
+/// # Focus Styling
+/// @group focus
+
+/// Consistent focus ring
+/// is applied by default on element-focus,
+/// but some patterns (like radio-buttons) also require
+/// focus-ring applied to a sibling or parent element.
+/// @example html
+///   <div>
+///     <button data-btn data-styleguide="focus">
+///       focus-ring example
+///     </button>
+///   </div>
+/// @group focus
+@mixin focus-ring() {
+  outline: var(--border-width-lg) dotted currentcolor;
+  outline-color: var(--focus-ring, var(--text, currentColor));
+}

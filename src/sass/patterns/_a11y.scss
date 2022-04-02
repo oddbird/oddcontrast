@@ -1,0 +1,27 @@
+@use '../config';
+
+/// # Accessibility
+/// Helpers and utilities formaking the site more accessible.
+/// @group a11y
+
+// Hidden Everywhere
+// -----------------
+/// The `hidden` html attribute
+/// hides content from both display and screen readers.
+/// @group a11y
+[hidden] {
+  display: none !important; /* stylelint-disable-line declaration-no-important */
+}
+
+// Screen Reader Only
+// ------------------
+/// A class to hide content visually,
+/// while remaining visible to screen readers.
+/// Interactive elements will also become visble
+/// when focussed or active.
+/// @group a11y
+.sr-only {
+  &:not(:focus):not(:active) {
+    @include config.is-hidden;
+  }
+}

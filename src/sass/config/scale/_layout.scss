@@ -1,0 +1,12 @@
+@use 'sass:math';
+@use 'spacing';
+
+/// ## Layout Sizes
+/// ---------------
+/// @group scale
+/// @sizes layout-sizes {ruler-large}
+
+$page: 60rem;
+$sm-page-break: 40em;
+$lg-page-break: 80em;
+$page-margin: calc(spacing.$quarter-shim + 4vw);

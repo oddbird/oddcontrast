@@ -1,0 +1,13 @@
+@use 'sassdoc-theme-herman/scss/utilities' as herman;
+@use 'sass:meta';
+@use 'ratio';
+@use 'layout';
+@use 'spacing';
+@use 'text';
+@use 'ui';
+
+@include herman.add('sizes', 'ratio-sizes', meta.module-variables('ratio'));
+@include herman.add('sizes', 'layout-sizes', meta.module-variables('layout'));
+@include herman.add('sizes', 'spacing-sizes', meta.module-variables('spacing'));
+@include herman.add('sizes', 'text-sizes', meta.module-variables('text'));
+@include herman.add('sizes', 'ui-sizes', meta.module-variables('ui'));

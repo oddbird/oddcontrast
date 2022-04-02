@@ -1,0 +1,10 @@
+// Sass Tests
+// ==========
+
+@use 'true' as *;
+
+@include describe('fake test') {
+  @include it('passes') {
+    @include assert-equal('true', 'true');
+  }
+}

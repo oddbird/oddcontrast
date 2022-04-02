@@ -1,0 +1,36 @@
+# http://eslint.org/docs/rules/
+
+root: true
+parser: '@typescript-eslint/parser'
+parserOptions:
+  sourceType: module
+  ecmaVersion: 2020
+env:
+  browser: true
+  es2017: true
+  node: true
+plugins:
+  - simple-import-sort
+  - import
+  - svelte3
+  - '@typescript-eslint'
+extends:
+  - eslint:recommended
+  - plugin:@typescript-eslint/recommended
+  - plugin:import/recommended
+  - plugin:import/typescript
+  - prettier
+overrides:
+  - files:
+      - '*.svelte'
+    processor: svelte3/svelte3
+settings:
+  svelte3/typescript: true
+  import/resolver:
+    typescript:
+      project: 'tsconfig.json'
+rules:
+  # Import
+  import/order: 0
+  simple-import-sort/imports: 1
+  sort-imports: 0

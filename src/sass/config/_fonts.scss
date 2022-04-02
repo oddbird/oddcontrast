@@ -1,0 +1,57 @@
+@use 'tools';
+@use 'sassdoc-theme-herman/scss/utilities' as herman;
+
+/// # Fonts Config
+/// Accoutrement maps for storing global font tokens.
+/// @link https://www.oddbird.net/accoutrement/docs/type.html
+///   Accoutrement Type
+/// @group fonts
+
+// Primary Font
+// ------------
+/// Freight Sans Pro provides a sans-serif option
+/// in the same family as our serif typeface.
+/// @group fonts
+/// @font primary (normal, 500, bold)
+///   <script src="https://use.typekit.net/ygm5jqy.js"></script>
+///   <script>try{Typekit.load({ async: true });}catch(e){}</script>
+/// @link https://www.oddbird.net/accoutrement/docs/type.html
+///   Accoutrement Type
+$primary-font: (
+  'name': 'freight-sans-pro',
+  'stack': (
+    'Helvetica Neue',
+    'Helvetica',
+    'Arial',
+    'sans-serif',
+  ),
+  'source': 'https://fonts.adobe.com/fonts/freight-sans',
+);
+
+@include tools.add-font('primary', $primary-font);
+@include herman.add('font', 'primary', $primary-font);
+
+// Code Font
+// ---------
+/// Source Code Pro provides a nice-looking monospace option
+/// for code.
+/// @group fonts
+/// @font code (300, normal)
+///   <script src="https://use.typekit.net/ygm5jqy.js"></script>
+///   <script>try{Typekit.load({ async: true });}catch(e){}</script>
+/// @link https://www.oddbird.net/accoutrement/docs/type.html
+///   Accoutrement Type
+$code-font: (
+  'name': 'source-code-pro',
+  'stack': (
+    'Consolas',
+    'Menlo',
+    'Monaco',
+    'Courier New',
+    'monospace',
+  ),
+  'source': 'https://fonts.adobe.com/fonts/source-code-pro',
+);
+
+@include tools.add-font('code', $code-font);
+@include herman.add('font', 'code', $code-font);

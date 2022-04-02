@@ -1,0 +1,73 @@
+@use '../config';
+
+html,
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+[data-layout~='app'] {
+  display: grid;
+  grid-template:
+    'header' auto
+    'results' auto
+    'main' 1fr
+    'footer' auto / 100%;
+  min-height: 100vh;
+
+  @include config.above('lg-page-break') {
+    grid-template:
+      'header results' auto
+      'main  results' 1fr
+      'footer results' auto / 1fr minmax(300px, 30%);
+  }
+
+  // padding only for the direct children of app
+  > [data-layout] {
+    padding: var(--layout-pad-block, var(--gutter-plus))
+      var(--layout-pad-inline, var(--double-gutter));
+  }
+}
+
+[data-layout~='header'] {
+  display: grid;
+  grid-area: header;
+  grid-template-columns: 1fr auto;
+}
+
+[data-layout~='results'] {
+  grid-area: results;
+}
+
+[data-layout~='main'] {
+  grid-area: main;
+}
+
+[data-layout~='footer'] {
+  grid-area: footer;
+}
+
+[data-layout~='split'] {
+  display: grid;
+
+  @include config.above('sm-page-break') {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+[data-group~='bg'] {
+  grid-column: 1;
+}
+
+[data-group~='fg'] {
+  @include config.above('sm-page-break') {
+    grid-column: 2;
+  }
+}

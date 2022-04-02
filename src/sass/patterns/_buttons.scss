@@ -1,0 +1,33 @@
+/// # Button Pattern
+/// @group buttons
+
+// Basic Buttons
+// -------------
+/// @group buttons
+/// @example html
+///   <button data-btn>Base Button</button>
+[data-btn] {
+  align-items: center;
+  background-color: var(
+    --btn-bg-color-active,
+    var(--btn-bg-color, transparent)
+  );
+  border-color: var(--btn-border-width, var(--border-width, 0)) solid
+    var(--btn-border-color-active, var(--btn-border-color, transparent));
+  color: var(--btn-text-color-active, var(--btn-text-color, var(--text)));
+  cursor: pointer;
+  display: inline-flex;
+  font-size: inherit;
+
+  &:hover,
+  &:focus {
+    --btn-bg-color-active: white;
+    --btn-text-color: tomato;
+  }
+
+  &:active,
+  &[aria-pressed='true'] {
+    --btn-bg-color-active: white;
+    --btn-text-color: tomato;
+  }
+}

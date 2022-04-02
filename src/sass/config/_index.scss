@@ -1,0 +1,29 @@
+@forward 'tools';
+@forward 'color';
+@forward 'focus';
+@forward 'fonts';
+@forward 'scale';
+@forward 'utilities';
+
+/**
+ * To turn Sass tokens into CSS custom properties:
+ *   - load each color module with `@use`
+ *   - use the `tools.add-colors` mixin with the `sass:meta` module to create a map of the variables in the imported module
+ *   - in `initial/_root.scss` call the `config.colors--()` mixin to create custom properties
+ */
+@use 'tools';
+@use 'sass:meta';
+@use 'color/brand';
+@use 'color/ui' as color-ui;
+@use 'scale/ratio';
+@use 'scale/layout';
+@use 'scale/spacing';
+@use 'scale/text';
+@use 'scale/ui' as scale-ui;
+@include tools.add-colors(meta.module-variables('brand'));
+@include tools.add-colors(meta.module-variables('color-ui'));
+@include tools.add-sizes(meta.module-variables('ratio'));
+@include tools.add-sizes(meta.module-variables('layout'));
+@include tools.add-sizes(meta.module-variables('spacing'));
+@include tools.add-sizes(meta.module-variables('text'));
+@include tools.add-sizes(meta.module-variables('scale-ui'));

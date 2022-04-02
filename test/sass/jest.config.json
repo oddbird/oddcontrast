@@ -1,0 +1,16 @@
+{
+  "extensionsToTreatAsEsm": [".ts"],
+  "globals": {
+    "ts-jest": {
+      "tsconfig": "<rootDir>/test/tsconfig.json",
+      "useESM": true
+    }
+  },
+  "moduleNameMapper": {
+    "^\\$src/(.*)$": "<rootDir>/src/$1"
+  },
+  "rootDir": "../..",
+  "transform": {
+    "^.+\\.ts$": "ts-jest"
+  }
+}

@@ -18,7 +18,6 @@
     "svelte.svelte-vscode",
     "syler.sass-indented",
     "tyriar.sort-lines",
-    "wholroyd.jinja",
     "xabikos.javascriptsnippets"
   ],
   "settings": {
@@ -35,16 +34,16 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
     "editor.tabSize": 2,
-    "eslint.validate": ["javascript", "typescript"],
+    "eslint.validate": ["javascript", "typescript", "svelte"],
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
     "javascript.suggestionActions.enabled": false,
-    "typescript.preferences.quoteStyle": "single",
-    "svelte.enable-ts-plugin": true,
     "remote.extensionKind": {
       "ms-azuretools.vscode-docker": "workspace"
     },
+    "svelte.enable-ts-plugin": true,
+    "typescript.preferences.quoteStyle": "single",
     "typescript.tsdk": "node_modules/typescript/lib",
     "[javascript]": {
       "editor.rulers": [80]
@@ -56,7 +55,8 @@
       "editor.rulers": [80]
     },
     "[svelte]": {
-      "editor.defaultFormatter": "svelte.svelte-vscode"
+      "editor.defaultFormatter": "svelte.svelte-vscode",
+      "editor.rulers": [80]
     },
     "[typescript]": {
       "editor.rulers": [80]
@@ -78,7 +78,6 @@
       "htmlcov": true,
       ".tags": true,
       ".cache": true,
-      ".vscode": true,
       "collected-assets": true,
       "staticfiles": true,
       "**/*.egg-info": true
@@ -89,7 +88,11 @@
       "**/*.js.map": true,
       "yarn.lock": true,
       "yarn-debug.log": true,
-      "yarn-error.log": true
+      "yarn-error.log": true,
+      ".svelte-kit": true,
+      "static/built": true,
+      "static/docs": true,
+      ".yarn": true
     }
   }
 }

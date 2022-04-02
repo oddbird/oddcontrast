@@ -3,6 +3,10 @@
 OddBird's Color Contrast Checker, powered by
 [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
+[![Build Status](https://github.com/oddbird/oddcontrast/actions/workflows/test.yml/badge.svg)](https://github.com/oddbird/oddcontrast/actions/workflows/test.yml)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b5488a16-3ab0-4f72-b8cb-251d528babb8/deploy-status)](https://app.netlify.com/sites/oddcontrast/deploys)
+
 ## Developing
 
 If you are using VS Code devcontainers open the project folder and run "Re-open
@@ -13,7 +17,7 @@ first install the frontend dependencies with `yarn install`, then:
 yarn dev
 
 # or start the server and open the app in a new browser tab
-yarn dev -- --open
+yarn dev --open
 ```
 
 ## Building
@@ -26,5 +30,6 @@ yarn build
 
 You can preview the production build with `yarn preview`.
 
-> To deploy your app, you may need to install an
-> [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## Deploying
+
+The staging site is automatically deployed via Netlify to <https://oddcontrast.netlify.app/> every time a commit is made on the `main` branch.
