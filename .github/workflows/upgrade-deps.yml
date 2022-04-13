@@ -36,7 +36,6 @@ jobs:
       - name: Upgrade dependencies
         run: |
           rm -f yarn.lock
-          chown -R $(whoami):$(whoami) .
           npx --yes yarn-upgrade-all
       - name: Build
         run: yarn build
@@ -48,7 +47,6 @@ jobs:
       - name: Commit & push changes
         if: steps.changes.outputs.count > 0
         run: |
-          sudo chown -R $(whoami):$(whoami) .git
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
