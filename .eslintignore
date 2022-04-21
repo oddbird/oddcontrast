@@ -7,5 +7,6 @@
 coverage.xml
 coverage/
 node_modules/
+src/vendor
 static/built/
 static/docs/

@@ -1,35 +1,35 @@
-import { derived, writable } from 'svelte/store';
+import { type Readable, derived, writable } from 'svelte/store';
+
+import { browser } from '$app/env';
+import Color from '$src/vendor/color.esm';
 
 const INITIAL_VALUES = {
-  bg_h: 195,
-  bg_s: 52,
-  bg_l: 31,
-  fg_h: 195,
-  fg_s: 42,
-  fg_l: 93,
+  bg_space: 'hsl',
+  bg_coord: [195, 52, 31] as [number, number, number],
+  fg_space: 'hsl',
+  fg_coord: [195, 42, 93] as [number, number, number],
 };
 
-export const bg_h = writable(INITIAL_VALUES.bg_h);
-export const bg_s = writable(INITIAL_VALUES.bg_s);
-export const bg_l = writable(INITIAL_VALUES.bg_l);
-export const fg_h = writable(INITIAL_VALUES.fg_h);
-export const fg_s = writable(INITIAL_VALUES.fg_s);
-export const fg_l = writable(INITIAL_VALUES.fg_l);
-
-export const bg = derived(
-  [bg_h, bg_s, bg_l],
-  ([$bg_h, $bg_s, $bg_l]) => `hsl(${$bg_h}deg ${$bg_s}% ${$bg_l}%)`,
+export const bg = writable(
+  new Color(INITIAL_VALUES.bg_space, INITIAL_VALUES.bg_coord),
 );
-export const fg = derived(
-  [fg_h, fg_s, fg_l],
-  ([$fg_h, $fg_s, $fg_l]) => `hsl(${$fg_h}deg ${$fg_s}% ${$fg_l}%)`,
+export const fg = writable(
+  new Color(INITIAL_VALUES.fg_space, INITIAL_VALUES.fg_coord),
+);
+
+export const bg_display: Readable<string> = derived([bg], ([$bg]) =>
+  $bg.toString(),
+);
+export const fg_display: Readable<string> = derived([fg], ([$fg]) =>
+  $fg.toString(),
 );
 
 export const reset = () => {
-  bg_h.set(INITIAL_VALUES.bg_h);
-  bg_s.set(INITIAL_VALUES.bg_s);
-  bg_l.set(INITIAL_VALUES.bg_l);
-  fg_h.set(INITIAL_VALUES.fg_h);
-  fg_s.set(INITIAL_VALUES.fg_s);
-  fg_l.set(INITIAL_VALUES.fg_l);
+  bg.set(new Color(INITIAL_VALUES.bg_space, INITIAL_VALUES.bg_coord));
+  fg.set(new Color(INITIAL_VALUES.fg_space, INITIAL_VALUES.fg_coord));
 };
+
+/* c8 ignore next 3 */
+if (browser) {
+  window.Color = Color;
+}

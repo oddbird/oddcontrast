@@ -3,6 +3,5 @@
   "compilerOptions": {
     "isolatedModules": false
   },
-  "include": ["./**/*.spec.ts"],
-  "exclude": ["../src/**"]
+  "include": ["./**/*.spec.ts", "../src/@types/*.d.ts"]
 }
