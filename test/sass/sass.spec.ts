@@ -1,5 +1,3 @@
-/* eslint-env jest */
-
 import path from 'path';
 import { runSass } from 'sass-true';
 import { fileURLToPath } from 'url';

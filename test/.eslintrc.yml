@@ -1,0 +1,4 @@
+# http://eslint.org/docs/rules/
+
+env:
+  jest: true

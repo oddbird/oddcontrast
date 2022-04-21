@@ -1,6 +1,6 @@
 import { get } from 'svelte/store';
 
-import { bg, bg_h, bg_l, bg_s, fg, fg_h, fg_l, fg_s, reset } from '$lib/stores';
+import { bg, bg_display, fg, fg_display, reset } from '$lib/stores';
 
 describe('bg', () => {
   afterEach(() => {
@@ -8,12 +8,10 @@ describe('bg', () => {
   });
 
   it('should combine hsl values', () => {
-    bg_h.set(1);
-    bg_s.set(2);
-    bg_l.set(3);
-    const expected = 'hsl(1deg 2% 3%)';
+    get(bg).hsl = [1, 2, 3];
+    const expected = 'hsl(1 2% 3%)';
 
-    expect(get(bg)).toEqual(expected);
+    expect(get(bg_display)).toEqual(expected);
   });
 });
 
@@ -23,11 +21,9 @@ describe('fg', () => {
   });
 
   it('should combine hsl values', () => {
-    fg_h.set(1);
-    fg_s.set(2);
-    fg_l.set(3);
-    const expected = 'hsl(1deg 2% 3%)';
+    get(fg).hsl = [1, 2, 3];
+    const expected = 'hsl(1 2% 3%)';
 
-    expect(get(fg)).toEqual(expected);
+    expect(get(fg_display)).toEqual(expected);
   });
 });
