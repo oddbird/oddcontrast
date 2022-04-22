@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { without } from 'lodash-es';
+  import _ from 'lodash';
 
   import Output from '$lib/components/colors/Output.svelte';
   import { SPACES } from '$lib/constants';
@@ -13,7 +13,7 @@
 
 <div data-content="formats">
   <h3 class="small">Other {displayType} Color Formats</h3>
-  {#each without(SPACES, $space) as space (space)}
+  {#each _.without(SPACES, $space) as space (space)}
     <Output {type} {color} {space} />
   {/each}
 </div>

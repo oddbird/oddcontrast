@@ -1,5 +1,3 @@
-import { Dictionary } from 'lodash-es';
-
 declare module '$src/vendor/color.esm' {
   export type ColorSpace = 'hsl' | 'oklch';
 
@@ -13,7 +11,7 @@ declare module '$src/vendor/color.esm' {
       [key in ColorSpace]: {
         id: ColorSpace;
         name: string;
-        coords: Dictionary<[number, number]>;
+        coords: { [key: string]: [number, number] };
       };
     };
   }
