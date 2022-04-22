@@ -1,4 +1,4 @@
-import { Dictionary } from 'lodash';
+import { Dictionary } from 'lodash-es';
 
 declare module '$src/vendor/color.esm' {
   export type ColorSpace = 'hsl' | 'oklch';

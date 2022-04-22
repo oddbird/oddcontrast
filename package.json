@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "accoutrement": "^4.0.1",
-    "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21",
     "svelte": "^3.47.0"
   },
   "devDependencies": {
@@ -42,7 +42,7 @@
     "@sveltejs/kit": "^1.0.0-next.314",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/svelte": "^3.1.1",
-    "@types/lodash": "^4.14.182",
+    "@types/lodash-es": "^4.17.6",
     "@types/node": "^16",
     "@typescript-eslint/eslint-plugin": "^5.19.0",
     "@typescript-eslint/parser": "^5.19.0",

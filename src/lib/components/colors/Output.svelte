@@ -7,7 +7,7 @@
   export let space: ColorSpace;
 
   $: isPrimary = color.spaceId === space;
-  $: targetColor = isPrimary ? color : color.to(space);
+  $: targetColor = isPrimary ? color : color.to(space, { inGamut: false });
   $: inGamut = targetColor.inGamut();
   $: fallbackColor = targetColor.toString({ fallback: true }).color as Color;
   $: isSupported = fallbackColor.spaceId === space;
@@ -15,7 +15,7 @@
 
 <div data-group="output {type}" data-is-primary={isPrimary}>
   <div>{Color.spaces[space].name}</div>
-  <div>{targetColor.toString()}</div>
+  <div>{targetColor.toString({ inGamut: false })}</div>
   {#if !inGamut}
     <div class="warning">color out of gamut</div>
   {/if}

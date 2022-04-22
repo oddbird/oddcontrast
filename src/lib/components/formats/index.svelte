@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { without } from 'lodash';
+  import { without } from 'lodash-es';
 
   import Output from '$lib/components/colors/Output.svelte';
   import { SPACES } from '$lib/constants';

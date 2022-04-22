@@ -7,7 +7,7 @@
   export let type: 'bg' | 'fg';
   export let color: Writable<Color>;
 
-  $: display = $color.toString();
+  $: display = $color.toString({ inGamut: false });
   $: displayType = type === 'bg' ? 'Background' : 'Foreground';
   $: editing = type !== 'bg';
   $: newValue = display;
