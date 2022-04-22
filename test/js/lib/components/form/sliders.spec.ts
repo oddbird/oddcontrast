@@ -20,6 +20,6 @@ describe('Sliders', () => {
     await fireEvent.input(sliders.s, { target: { value: '2' } });
     await fireEvent.input(sliders.l, { target: { value: '3' } });
 
-    expect(get(color).hsl).toEqual([1, 2, 3]);
+    expect(get(color).coords).toEqual([1, 2, 3]);
   });
 });

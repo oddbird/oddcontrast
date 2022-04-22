@@ -1,13 +1,24 @@
+import { Dictionary } from 'lodash';
+
 declare module '$src/vendor/color.esm' {
+  export type ColorSpace = 'hsl' | 'oklch';
+
   export default class Color {
-    constructor(spaceId: string, coords: [number, number, number]) {
-      this.spaceId = spaceId;
-      this.coords = coords;
-      this.hsl = coords;
+    constructor(
+      public spaceId: ColorSpace,
+      public coords: [number, number, number],
+    ) {
+      this[spaceId] = coords;
     }
 
-    spaceId: string;
-    coords: [number, number, number];
-    hsl: [number, number, number];
+    [key: ColorSpace]: [number, number, number];
+
+    static spaces: {
+      [key in ColorSpace]: {
+        id: ColorSpace;
+        name: string;
+        coords: Dictionary<[number, number]>;
+      };
+    };
   }
 }

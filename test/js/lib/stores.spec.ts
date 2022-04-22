@@ -7,8 +7,10 @@ describe('bg', () => {
     reset();
   });
 
-  it('should combine hsl values', () => {
-    get(bg).hsl = [1, 2, 3];
+  it('should combine coordinates', () => {
+    const color = get(bg);
+    color.spaceId = 'hsl';
+    color.coords = [1, 2, 3];
     const expected = 'hsl(1 2% 3%)';
 
     expect(get(bg_display)).toEqual(expected);
@@ -20,8 +22,10 @@ describe('fg', () => {
     reset();
   });
 
-  it('should combine hsl values', () => {
-    get(fg).hsl = [1, 2, 3];
+  it('should combine coordinates', () => {
+    const color = get(fg);
+    color.spaceId = 'hsl';
+    color.coords = [1, 2, 3];
     const expected = 'hsl(1 2% 3%)';
 
     expect(get(fg_display)).toEqual(expected);

@@ -3,12 +3,12 @@
   import Form from '$lib/components/form/index.svelte';
   import Header from '$lib/components/header.svelte';
   import Results from '$lib/components/results.svelte';
-  import { bg_display, fg_display } from '$lib/stores';
+  import { bg, fg } from '$lib/stores';
 </script>
 
 <div
   data-layout="app"
-  style="--fgcolor: {$fg_display}; --bgcolor: {$bg_display};"
+  style="--fgcolor: {$fg.to('hsl')}; --bgcolor: {$bg.to('hsl')};"
 >
   <Header />
   <Results />

@@ -1,49 +1,31 @@
 <script lang="ts">
   import type { Writable } from 'svelte/store';
 
+  import { SLIDERS } from '$lib/constants';
   import type Color from '$src/vendor/color.esm';
+  import type { ColorSpace } from '$src/vendor/color.esm';
 
   export let type: 'bg' | 'fg';
   export let color: Writable<Color>;
 
-  const handleSlider = (idx: number) => (e: Event) => {
-    $color.hsl[idx] = Number((e.target as HTMLInputElement).value);
-  };
+  $: space = $color.spaceId as ColorSpace;
 </script>
 
 <div data-actions="edit-color" data-group="sliders {type}">
-  <div data-field="color-slider">
-    <label for="{type}_h" data-label>Hue</label>
-    <input
-      id="{type}_h"
-      name="{type}_h"
-      type="range"
-      min="0"
-      max="360"
-      value={$color.hsl[0]}
-      on:input={handleSlider(0)}
-    />
-  </div>
-  <div data-field="color-slider">
-    <label for="{type}_s" data-label>Saturation</label>
-    <input
-      id="{type}_s"
-      name="{type}_s"
-      type="range"
-      value={$color.hsl[1]}
-      on:input={handleSlider(1)}
-    />
-  </div>
-  <div data-field="color-slider">
-    <label for="{type}_l" data-label>Lightness</label>
-    <input
-      id="{type}_l"
-      name="{type}_l"
-      type="range"
-      value={$color.hsl[2]}
-      on:input={handleSlider(2)}
-    />
-  </div>
+  {#each SLIDERS[space] as slider}
+    <div data-field="color-slider">
+      <label for="{type}_{slider.id}" data-label>{slider.label}</label>
+      <input
+        id="{type}_{slider.id}"
+        name="{type}_{slider.id}"
+        type="range"
+        min={slider.range[0]}
+        max={slider.range[1]}
+        step={(slider.range[1] - slider.range[0]) / 100}
+        bind:value={$color[space][slider.id]}
+      />
+    </div>
+  {/each}
 </div>
 
 <style lang="scss">
