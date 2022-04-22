@@ -7,7 +7,7 @@
   export let space: ColorSpace;
 
   $: isPrimary = color.spaceId === space;
-  $: targetColor = isPrimary ? color : color.to(space, { inGamut: false });
+  $: targetColor = isPrimary ? color : color.to(space);
   $: inGamut = targetColor.inGamut();
   $: fallbackColor = targetColor.toString({ fallback: true }).color as Color;
   $: isSupported = fallbackColor.spaceId === space;
