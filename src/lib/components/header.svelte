@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Logo from '$lib/components/logo.svelte';
-  import Space from '$lib/components/space.svelte';
+  import Logo from '$lib/components/Logo.svelte';
+  import SpaceSelect from '$lib/components/SpaceSelect.svelte';
 </script>
 
 <header data-layout="header">
@@ -8,7 +8,7 @@
     <Logo />
     <span class="sr-only">OddContrast</span>
   </h1>
-  <Space />
+  <SpaceSelect />
   <ul data-nav="social" data-list="inline">
     <li>
       <a href="https://github.com/oddbird"

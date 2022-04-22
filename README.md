@@ -1,6 +1,6 @@
 # OddContrast
 
-_OddBird's color contrast checker_
+_OddBird's color contrast checker for modern CSS color formats_
 
 [![Build Status](https://github.com/oddbird/oddcontrast/actions/workflows/test.yml/badge.svg)](https://github.com/oddbird/oddcontrast/actions/workflows/test.yml)
 

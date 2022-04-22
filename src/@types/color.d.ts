@@ -7,11 +7,7 @@ declare module '$src/vendor/color.esm' {
     constructor(
       public spaceId: ColorSpace,
       public coords: [number, number, number],
-    ) {
-      this[spaceId] = coords;
-    }
-
-    [key: ColorSpace]: [number, number, number];
+    ) {}
 
     static spaces: {
       [key in ColorSpace]: {
