@@ -13,12 +13,12 @@
     "sourceMap": true,
     "strict": true,
     "target": "es2020",
+    "noEmit": true,
     "paths": {
       "$lib": ["src/lib"],
       "$lib/*": ["src/lib/*"],
       "$src/*": ["src/*"],
       "$app/*": ["./.svelte-kit/runtime/app/*"]
     }
-  },
-  "exclude": ["./node_modules/**", "./.svelte-kit/**"]
+  }
 }

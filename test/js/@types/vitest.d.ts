@@ -3,7 +3,7 @@ import { RenderResult } from '@testing-library/svelte';
 
 declare module 'vitest' {
   export interface TestContext {
-    result?: RenderResult;
+    result: RenderResult;
   }
 }
 

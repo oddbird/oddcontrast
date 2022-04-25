@@ -4,6 +4,5 @@
     "isolatedModules": false,
     "types": ["vitest/globals"]
   },
-  "include": ["./**/*.spec.ts", "../src/@types/", "./**/@types/"],
-  "exclude": ["../node_modules/**", "../.svelte-kit/**"]
+  "include": ["./**/*.spec.ts", "../src/@types/", "./**/@types/"]
 }
