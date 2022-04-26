@@ -25,20 +25,19 @@
   };
   $: newValue, inputChanged();
 
-  // Update color (and possibly space) on form submit
+  // Update color (but not color space) on form submit
   const handleSubmit = (e: Event) => {
     e.preventDefault();
     if (display !== newValue) {
       let newColor: Color;
       try {
-        newColor = new Color(newValue);
+        newColor = new Color(newValue).to($space);
       } catch (error) {
         hasError = true;
         console.error(error);
       }
       if (newColor) {
         color.set(newColor);
-        space.set(newColor.spaceId);
         editing = false;
       }
     } else {
