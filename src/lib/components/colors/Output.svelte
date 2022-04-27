@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { ColorSpace } from '$src/vendor/color.esm';
+  import type { ColorSpace, ColorString } from '$src/vendor/color.esm';
   import Color from '$src/vendor/color.esm';
 
   export let type: 'bg' | 'fg';
@@ -9,7 +9,8 @@
   $: isPrimary = color.spaceId === space;
   $: targetColor = isPrimary ? color : color.to(space);
   $: inGamut = targetColor.inGamut();
-  $: fallbackColor = targetColor.toString({ fallback: true }).color as Color;
+  $: fallbackColor = (targetColor.toString({ fallback: true }) as ColorString)
+    .color;
   $: isSupported = fallbackColor.spaceId === space;
 </script>
 

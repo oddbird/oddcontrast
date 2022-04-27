@@ -29,7 +29,7 @@
   const handleSubmit = (e: Event) => {
     e.preventDefault();
     if (display !== newValue) {
-      let newColor: Color;
+      let newColor;
       try {
         newColor = new Color(newValue).to($space);
       } catch (error) {

@@ -65,6 +65,7 @@
     ".svelte-kit": true,
     "static/built": true,
     "static/docs": true,
-    ".yarn": true
+    ".yarn": true,
+    "src/vendor": true
   }
 }

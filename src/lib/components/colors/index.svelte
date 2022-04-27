@@ -1,8 +1,8 @@
 <script lang="ts">
+  import Formats from '$lib/components/colors/Formats.svelte';
   import Header from '$lib/components/colors/Header.svelte';
   import Output from '$lib/components/colors/Output.svelte';
   import Sliders from '$lib/components/colors/Sliders.svelte';
-  import Formats from '$lib/components/formats/index.svelte';
   import { bg, fg } from '$lib/stores';
 </script>
 
