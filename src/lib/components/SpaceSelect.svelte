@@ -5,7 +5,12 @@
 
   // Update color formats when space selection changes
   $: {
-    $bg.spaceId = $fg.spaceId = $space;
+    if ($bg.spaceId !== $space) {
+      $bg.spaceId = $space;
+    }
+    if ($fg.spaceId !== $space) {
+      $fg.spaceId = $space;
+    }
   }
 </script>
 

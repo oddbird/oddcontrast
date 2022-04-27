@@ -1,11 +1,12 @@
 <script lang="ts">
   import type { Writable } from 'svelte/store';
 
-  import { space } from '$lib/stores';
+  import type { ColorSpace } from '$src/vendor/color.esm';
   import Color from '$src/vendor/color.esm';
 
   export let type: 'bg' | 'fg';
   export let color: Writable<Color>;
+  export let space: Writable<ColorSpace>;
 
   $: display = $color.toString({ inGamut: false });
   $: displayType = type === 'bg' ? 'Background' : 'Foreground';
