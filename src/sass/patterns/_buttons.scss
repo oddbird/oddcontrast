@@ -14,17 +14,15 @@ button {
 [data-btn] {
   appearance: none;
   align-items: center;
-  background-color: var(
-    --btn-bg-color-active,
-    var(--btn-bg-color, var(--bg))
-  );
+  background-color: var(--btn-bg-color-active, var(--btn-bg-color, var(--bg)));
   border: var(--btn-border-width, var(--border-width, 0)) solid
     var(--btn-border-color-active, var(--btn-border-color, var(--text)));
   border-radius: var(--border-radius);
   color: var(--btn-text-color-active, var(--btn-text-color, var(--text)));
   cursor: pointer;
   display: inline-flex;
-  padding: var(--btn-padding-block, var(--half-shim)) var(--btn-padding-inline, var(--gutter));
+  padding: var(--btn-padding-block, var(--half-shim))
+    var(--btn-padding-inline, var(--gutter));
   transition: color var(--fast), background-color var(--fast);
 
   &:hover,

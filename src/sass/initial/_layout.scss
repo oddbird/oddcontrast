@@ -40,8 +40,9 @@ body {
   display: grid;
   gap: var(--shim) var(--double-gutter);
   grid-area: header;
-  grid-template: 'logo colorspace' auto
-  'social social' auto / auto 1fr;
+  grid-template:
+    'logo colorspace' auto
+    'social social' auto / auto 1fr;
 
   @include config.above('sm-page-break') {
     gap: var(--double-gutter);

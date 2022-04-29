@@ -1,10 +1,9 @@
 <script lang="ts">
   import type { Writable } from 'svelte/store';
 
+  import Close from '$lib/components/Close.svelte';
   import type { ColorSpace } from '$src/vendor/color.esm';
   import Color from '$src/vendor/color.esm';
-
-  import Close from '$lib/components/Close.svelte';
 
   export let type: 'bg' | 'fg';
   export let color: Writable<Color>;
@@ -52,22 +51,45 @@
 {#if editing}
   <form>
     <div data-field="color" data-group="header {type}" data-colors="form">
-      <label for="{type}-color" data-label data-heading="small">{displayType} Color</label>
-      <input name="{type}-color" type="text" data-input="color" bind:value={newValue} />
+      <label for="{type}-color" data-label data-heading="small"
+        >{displayType} Color</label
+      >
+      <input
+        name="{type}-color"
+        type="text"
+        data-input="color"
+        bind:value={newValue}
+      />
       {#if hasError}
         <div class="error">Could not parse input as a valid color.</div>
       {/if}
-      <button type="submit" on:click={handleSubmit} data-btn class="color-action">Submit</button>
-      <button type="button" on:click={() => (editing = false)} data-btn="icon" class="color-cancel">
+      <button
+        type="submit"
+        on:click={handleSubmit}
+        data-btn
+        class="color-action">Submit</button
+      >
+      <button
+        type="button"
+        on:click={() => (editing = false)}
+        data-btn="icon"
+        class="color-cancel"
+      >
         <Close />
-        <span class="sr-only">Cancel</span></button>
+        <span class="sr-only">Cancel</span></button
+      >
     </div>
   </form>
 {:else}
   <div data-group="header {type}" data-colors="preview">
     <h2 data-heading="small">{displayType} Color</h2>
     <div class="swatch {type}" />
-    <button type="button" on:click={() => (editing = true)} data-btn class="color-action">Edit</button>
+    <button
+      type="button"
+      on:click={() => (editing = true)}
+      data-btn
+      class="color-action">Edit</button
+    >
   </div>
 {/if}
 
@@ -77,9 +99,18 @@
   [data-colors] {
     align-items: center;
     display: grid;
-    grid-gap: var(--gutter);
-    grid-template: 'label cancel' auto
-                   'color action' var(--swatch) / 1fr auto;
+    gap: var(--half-shim) var(--gutter);
+    grid-template:
+      'label label' auto
+      'color color' var(--swatch)
+      'action cancel' auto / auto 1fr;
+
+    @include config.above('sm-page-break') {
+      gap: var(--gutter);
+      grid-template:
+        'label cancel' auto
+        'color action' var(--swatch) / 1fr 5rem;
+    }
   }
 
   .color-cancel {
@@ -88,9 +119,13 @@
   }
 
   .color-action {
+    justify-content: center;
     grid-area: action;
-  }
 
+    @include config.below('sm-page-break') {
+      margin-top: var(--gutter);
+    }
+  }
 
   [data-colors~='preview'] {
     --form-columns: 1fr auto;
@@ -112,7 +147,10 @@
   }
 
   [data-input='color'] {
+    border-width: 0 0 var(--border-width) 0;
+    grid-area: color;
     font-size: var(--medium);
     height: var(--swatch);
+    padding-inline: 0;
   }
 </style>
