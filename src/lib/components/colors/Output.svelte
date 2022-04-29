@@ -27,17 +27,19 @@
 
 <style lang="scss">
   [data-is-primary='true'] {
-    --type-size: var(--medium-label);
-    --value-size: var(--large-label);
+    --color-type-size: var(--medium);
+    --color-value-size: var(--large);
+    --color-type-weight: bold;
   }
 
   [data-color-info~='type'] {
-    font-size: var(--type-size, var(--small-label));
-    font-weight: bold;
+    font-size: var(--color-type-size, var(--xsmall));
+    font-weight: var(--color-type-weight, normal);
   }
 
   [data-color-info~='value'] {
-    font-size: var(--value-size, var(--medium-label));
+    font-size: var(--color-value-size, var(--medium));
+    font-weight: var(--color-value-weight, normal);
     margin-bottom: var(--shim);
   }
 

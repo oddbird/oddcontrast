@@ -1,0 +1,11 @@
+@use 'tools';
+@use 'sassdoc-theme-herman/scss/utilities' as herman;
+
+/// # Animation Configuration
+/// @group animation
+/// @link https://www.oddbird.net/accoutrement/docs/animate
+///   Accoutrement Scale
+
+tools.$times: (
+  'fast': 300ms,
+);

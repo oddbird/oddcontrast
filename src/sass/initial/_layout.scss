@@ -38,8 +38,15 @@ body {
 
 [data-layout~='header'] {
   display: grid;
+  gap: var(--shim) var(--double-gutter);
   grid-area: header;
-  grid-template-columns: 1fr auto;
+  grid-template: 'logo colorspace' auto
+  'social social' auto / auto 1fr;
+
+  @include config.above('sm-page-break') {
+    gap: var(--double-gutter);
+    grid-template: 'logo colorspace social' auto / auto 1fr auto;
+  }
 }
 
 [data-layout~='results'] {

@@ -1,33 +1,46 @@
 /// # Button Pattern
 /// @group buttons
 
+button {
+  font-size: inherit;
+  font-family: inherit;
+}
+
 // Basic Buttons
 // -------------
 /// @group buttons
 /// @example html
 ///   <button data-btn>Base Button</button>
 [data-btn] {
+  appearance: none;
   align-items: center;
   background-color: var(
     --btn-bg-color-active,
-    var(--btn-bg-color, transparent)
+    var(--btn-bg-color, var(--bg))
   );
-  border-color: var(--btn-border-width, var(--border-width, 0)) solid
-    var(--btn-border-color-active, var(--btn-border-color, transparent));
+  border: var(--btn-border-width, var(--border-width, 0)) solid
+    var(--btn-border-color-active, var(--btn-border-color, var(--text)));
+  border-radius: var(--border-radius);
   color: var(--btn-text-color-active, var(--btn-text-color, var(--text)));
   cursor: pointer;
   display: inline-flex;
-  font-size: inherit;
+  padding: var(--btn-padding-block, var(--half-shim)) var(--btn-padding-inline, var(--gutter));
+  transition: color var(--fast), background-color var(--fast);
 
   &:hover,
   &:focus {
-    --btn-bg-color-active: white;
-    --btn-text-color: tomato;
+    --btn-bg-color-active: var(--text);
+    --btn-text-color: var(--bg);
   }
 
   &:active,
   &[aria-pressed='true'] {
-    --btn-bg-color-active: white;
-    --btn-text-color: tomato;
+    --btn-bg-color-active: var(--text);
+    --btn-text-color: var(--bg);
   }
+}
+
+[data-btn~='icon'] {
+  --btn-border-width: 0;
+  --btn-padding-inline: var(--half-shim);
 }

@@ -24,3 +24,33 @@
     {/each}
   </select>
 </div>
+
+<style lang="scss">
+@use 'config';
+
+[data-field='color-space'] {
+  align-items: center;
+  display: grid;
+  column-gap: var(--gutter);
+  grid-template: 'format-label' auto
+    'format-input' auto / 1fr;
+  justify-content: end;
+
+  @include config.above('sm-page-break') {
+    grid-template: 'format-label format-input' auto / 1fr minmax(10rem, auto);
+  }
+}
+
+label {
+  grid-area: format-label;
+
+  @include config.above('sm-page-break') {
+    text-align: right;
+  }
+}
+
+select {
+  grid-area: format-input;
+}
+
+</style>

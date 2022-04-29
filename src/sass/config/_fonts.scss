@@ -7,17 +7,17 @@
 ///   Accoutrement Type
 /// @group fonts
 
-// Primary Font
+// Body Font
 // ------------
 /// Freight Sans Pro provides a sans-serif option
 /// in the same family as our serif typeface.
 /// @group fonts
-/// @font primary (normal, 500, bold)
+/// @font body (normal, 500, bold)
 ///   <script src="https://use.typekit.net/ygm5jqy.js"></script>
 ///   <script>try{Typekit.load({ async: true });}catch(e){}</script>
 /// @link https://www.oddbird.net/accoutrement/docs/type.html
 ///   Accoutrement Type
-$primary-font: (
+$body-font: (
   'name': 'freight-sans-pro',
   'stack': (
     'Helvetica Neue',
@@ -28,8 +28,8 @@ $primary-font: (
   'source': 'https://fonts.adobe.com/fonts/freight-sans',
 );
 
-@include tools.add-font('primary', $primary-font);
-@include herman.add('font', 'primary', $primary-font);
+@include tools.add-font('body', $body-font);
+@include herman.add('font', 'body', $body-font);
 
 // Code Font
 // ---------

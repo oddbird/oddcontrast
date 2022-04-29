@@ -4,6 +4,8 @@
   import type { ColorSpace } from '$src/vendor/color.esm';
   import Color from '$src/vendor/color.esm';
 
+  import Close from '$lib/components/Close.svelte';
+
   export let type: 'bg' | 'fg';
   export let color: Writable<Color>;
   export let space: Writable<ColorSpace>;
@@ -49,36 +51,54 @@
 
 {#if editing}
   <form>
-    <div data-field="color" data-group="header {type}">
+    <div data-field="color" data-group="header {type}" data-colors="form">
       <label for="{type}-color" data-label data-heading="small">{displayType} Color</label>
-      <input name="{type}-color" type="text" bind:value={newValue} />
+      <input name="{type}-color" type="text" data-input="color" bind:value={newValue} />
       {#if hasError}
         <div class="error">Could not parse input as a valid color.</div>
       {/if}
-      <button type="submit" on:click={handleSubmit}>Submit</button>
-      <button type="button" on:click={() => (editing = false)}>Cancel</button>
+      <button type="submit" on:click={handleSubmit} data-btn class="color-action">Submit</button>
+      <button type="button" on:click={() => (editing = false)} data-btn="icon" class="color-cancel">
+        <Close />
+        <span class="sr-only">Cancel</span></button>
     </div>
   </form>
 {:else}
-  <div data-group="header {type}">
+  <div data-group="header {type}" data-colors="preview">
     <h2 data-heading="small">{displayType} Color</h2>
-    <div class="color-preview">
-      <div class="swatch {type}" />
-      <button type="button" on:click={() => (editing = true)}>Edit</button>
-    </div>
+    <div class="swatch {type}" />
+    <button type="button" on:click={() => (editing = true)} data-btn class="color-action">Edit</button>
   </div>
 {/if}
 
 <style lang="scss">
   @use 'config';
-  .color-preview {
+
+  [data-colors] {
+    align-items: center;
     display: grid;
-    grid-template-columns: 1fr auto;
-    grid-column-gap: var(--shim);
+    grid-gap: var(--gutter);
+    grid-template: 'label cancel' auto
+                   'color action' var(--swatch) / 1fr auto;
+  }
+
+  .color-cancel {
+    grid-area: cancel;
+    justify-self: end;
+  }
+
+  .color-action {
+    grid-area: action;
+  }
+
+
+  [data-colors~='preview'] {
+    --form-columns: 1fr auto;
   }
 
   .swatch {
     border: var(--border-width) solid var(--text);
+    grid-area: color;
     height: var(--swatch);
     width: 100%;
 
@@ -89,5 +109,10 @@
     &.fg {
       background-color: var(--fgcolor);
     }
+  }
+
+  [data-input='color'] {
+    font-size: var(--medium);
+    height: var(--swatch);
   }
 </style>

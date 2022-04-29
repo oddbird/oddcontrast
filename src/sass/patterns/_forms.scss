@@ -3,9 +3,18 @@
 
 label {
   display: block;
-  font-size: var(--xsmall);
+  font-size: var(--small);
 }
 
-input {
+input,
+select {
+  font-family: inherit;
+  font-size: inherit;
   width: 100%;
+}
+
+select {
+  border: 0;
+  box-shadow: 1px 1px var(--shim) hsla(0deg 0% 50% / 0.4);
+  padding: var(--half-shim) var(--shim);
 }
