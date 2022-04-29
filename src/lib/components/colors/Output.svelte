@@ -14,19 +14,35 @@
   $: isSupported = fallbackColor.spaceId === space;
 </script>
 
-<div data-group="output {type}" data-is-primary={isPrimary}>
-  <div>{Color.spaces[space].name}</div>
-  <div>{targetColor.toString({ inGamut: false })}</div>
+<dl data-group="output {type}" data-is-primary={isPrimary}>
+  <dt data-color-info="type">{Color.spaces[space].name}</dt>
+  <dd data-color-info="value">{targetColor.toString({ inGamut: false })}</dd>
   {#if !inGamut}
-    <div class="warning">color out of gamut</div>
+    <dd data-color-info="warning">color out of gamut</dd>
   {/if}
   {#if !isSupported}
-    <div class="warning">color format is not supported by current browser</div>
+    <dd data-color-info="warning">color format is not supported by current browser</dd>
   {/if}
-</div>
+</dl>
 
 <style lang="scss">
   [data-is-primary='true'] {
+    --type-size: var(--medium-label);
+    --value-size: var(--large-label);
+  }
+
+  [data-color-info~='type'] {
+    font-size: var(--type-size, var(--small-label));
     font-weight: bold;
+  }
+
+  [data-color-info~='value'] {
+    font-size: var(--value-size, var(--medium-label));
+    margin-bottom: var(--shim);
+  }
+
+  [data-color-info~='warning'] {
+    color: var(--warning);
+    font-size: var(--xsmall);
   }
 </style>
