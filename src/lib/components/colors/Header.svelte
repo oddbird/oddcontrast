@@ -50,7 +50,9 @@
 {#if editing}
   <form>
     <div data-field="color" data-group="header {type}">
-      <label for="{type}-color" data-label data-heading="small">{displayType} Color</label>
+      <label for="{type}-color" data-label data-heading="small"
+        >{displayType} Color</label
+      >
       <input name="{type}-color" type="text" bind:value={newValue} />
       {#if hasError}
         <div class="error">Could not parse input as a valid color.</div>
@@ -71,6 +73,7 @@
 
 <style lang="scss">
   @use 'config';
+
   .color-preview {
     display: grid;
     grid-template-columns: 1fr auto;

@@ -21,7 +21,9 @@
     <dd data-color-info="warning">color out of gamut</dd>
   {/if}
   {#if !isSupported}
-    <dd data-color-info="warning">color format is not supported by current browser</dd>
+    <dd data-color-info="warning">
+      color format is not supported by current browser
+    </dd>
   {/if}
 </dl>
 
