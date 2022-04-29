@@ -50,7 +50,7 @@
 {#if editing}
   <form>
     <div data-field="color" data-group="header {type}">
-      <label for="{type}-color" data-label>{displayType} Color</label>
+      <label for="{type}-color" data-label data-heading="small">{displayType} Color</label>
       <input name="{type}-color" type="text" bind:value={newValue} />
       {#if hasError}
         <div class="error">Could not parse input as a valid color.</div>
@@ -61,18 +61,26 @@
   </form>
 {:else}
   <div data-group="header {type}">
-    <h2>{displayType} Color</h2>
-    <div class="swatch {type}" />
-    <button type="button" on:click={() => (editing = true)}>Edit</button>
+    <h2 data-heading="small">{displayType} Color</h2>
+    <div class="color-preview">
+      <div class="swatch {type}" />
+      <button type="button" on:click={() => (editing = true)}>Edit</button>
+    </div>
   </div>
 {/if}
 
 <style lang="scss">
   @use 'config';
+  .color-preview {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-column-gap: var(--shim);
+  }
 
   .swatch {
-    @include config.square('swatch');
     border: var(--border-width) solid var(--text);
+    height: var(--swatch);
+    width: 100%;
 
     &.bg {
       background-color: var(--bgcolor);

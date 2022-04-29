@@ -13,7 +13,7 @@
 </script>
 
 <div data-content="formats">
-  <h3 class="small">Other {displayType} Color Formats</h3>
+  <h3 data-heading="small">Other {displayType} Color Formats</h3>
   {#each otherSpaces as s (s)}
     <Output {type} {color} space={s} />
   {/each}
