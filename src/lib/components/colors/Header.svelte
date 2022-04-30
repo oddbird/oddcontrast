@@ -99,23 +99,30 @@
   [data-colors] {
     align-items: center;
     display: grid;
-    gap: var(--half-shim) var(--gutter);
+    gap: var(--half-shim) var(--double-gutter);
     grid-template:
-      'label label' auto
-      'color color' var(--swatch)
-      'action cancel' auto / auto 1fr;
+      'label  label' auto
+      'color  color' var(--swatch)
+      'action cancel' auto
+      'error  error' auto / auto 1fr;
 
     @include config.above('sm-page-break') {
-      gap: var(--gutter);
+      gap: var(--half-shim) var(--gutter);
       grid-template:
         'label cancel' auto
-        'color action' var(--swatch) / 1fr 5rem;
+        'color action' var(--swatch)
+        'error error' 1em / 1fr 5rem;
     }
   }
 
   .color-cancel {
+    display: flex;
     grid-area: cancel;
     justify-self: end;
+
+    &:hover {
+      box-shadow: 0 0 0 1px var(--text);
+    }
   }
 
   .color-action {
@@ -152,5 +159,11 @@
     font-size: var(--medium);
     height: var(--swatch);
     padding-inline: 0;
+  }
+
+  .error {
+    align-self: start;
+    color: var(--warning);
+    grid-area: error;
   }
 </style>
