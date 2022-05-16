@@ -32,7 +32,12 @@ const config = {
           enabled: true,
           reporter: ['text-summary', 'html'],
           include: ['src/**/*.{js,ts,svelte}'],
-          exclude: ['src/**/*.d.ts', 'src/vendor', 'src/routes/docs.ts'],
+          exclude: [
+            'src/**/*.d.ts',
+            'src/vendor',
+            'src/routes/docs.ts',
+            'src/routes/__layout.svelte',
+          ],
           all: true,
           skipFull: true,
           lines: 100,
