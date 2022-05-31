@@ -4,29 +4,18 @@ on:
   push:
 
 jobs:
-  prepare:
-    name: Prepare
-    runs-on: ubuntu-latest
-    outputs:
-      node: ${{ steps.get-version.outputs.version }}
-    steps:
-      - uses: actions/checkout@v3
-      - id: get-version
-        run: echo "::set-output name=version::$(grep -oP 'FROM node:\K\d+' Dockerfile)"
-
   build:
     name: Build
     runs-on: ubuntu-latest
-    needs: [prepare]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: '${{ needs.prepare.outputs.node }}'
+          node-version-file: .nvmrc
           cache: yarn
       - name: Build
         run: |
-          yarn install
+          yarn install --frozen-lockfile
           yarn build
       - name: Upload built files
         uses: actions/upload-artifact@v3
@@ -37,12 +26,12 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
-    needs: [prepare, build]
+    needs: build
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: '${{ needs.prepare.outputs.node }}'
+          node-version-file: .nvmrc
           cache: yarn
       - name: Download built files
         uses: actions/download-artifact@v3
@@ -51,18 +40,18 @@ jobs:
           path: .svelte-kit
       - name: Test
         run: |
-          yarn install
+          yarn install --frozen-lockfile
           yarn test
 
   lint:
     name: Lint
     runs-on: ubuntu-latest
-    needs: [prepare, build]
+    needs: build
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: '${{ needs.prepare.outputs.node }}'
+          node-version-file: .nvmrc
           cache: yarn
       - name: Download built files
         uses: actions/download-artifact@v3
@@ -71,5 +60,5 @@ jobs:
           path: .svelte-kit
       - name: Lint
         run: |
-          yarn install
+          yarn install --frozen-lockfile
           yarn lint:ci
