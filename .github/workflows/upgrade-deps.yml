@@ -7,16 +7,6 @@ on:
     - cron: '0 8 * * 1'
 
 jobs:
-  prepare:
-    name: Prepare
-    runs-on: ubuntu-latest
-    outputs:
-      node: ${{ steps.get-version.outputs.version }}
-    steps:
-      - uses: actions/checkout@v3
-      - id: get-version
-        run: echo "::set-output name=version::$(grep -oP 'FROM node:\K\d+' Dockerfile)"
-
   upgrade:
     name: Upgrade & Open Pull Request
     runs-on: ubuntu-latest
@@ -31,16 +21,12 @@ jobs:
           ssh-key: ${{ secrets.DEPLOY_KEY }}
       - uses: actions/setup-node@v3
         with:
-          node-version: '${{ needs.prepare.outputs.node }}'
+          node-version-file: .nvmrc
           cache: yarn
       - name: Upgrade dependencies
         run: |
           rm -f yarn.lock
           npx --yes yarn-upgrade-all
-      - name: Build
-        run: yarn build
-      - name: Lint
-        run: yarn lint
       - name: Detect changes
         id: changes
         run: echo "::set-output name=count::$(git status --porcelain=v1 2>/dev/null | wc -l)"
