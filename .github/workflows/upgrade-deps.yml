@@ -10,7 +10,6 @@ jobs:
   upgrade:
     name: Upgrade & Open Pull Request
     runs-on: ubuntu-latest
-    needs: [prepare]
     env:
       BRANCH_NAME: auto-dependency-upgrades
     steps:
