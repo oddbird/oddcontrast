@@ -1,6 +1,6 @@
 import { get } from 'svelte/store';
 
-import { bg, bg_display, fg, fg_display, reset } from '$lib/stores';
+import { bg, fg, reset } from '$lib/stores';
 
 describe('bg', () => {
   afterEach(() => {
@@ -13,7 +13,7 @@ describe('bg', () => {
     color.coords = [1, 2, 3];
     const expected = 'hsl(1 2% 3%)';
 
-    expect(get(bg_display)).toEqual(expected);
+    expect(get(bg).toString()).toEqual(expected);
   });
 });
 
@@ -28,6 +28,6 @@ describe('fg', () => {
     color.coords = [1, 2, 3];
     const expected = 'hsl(1 2% 3%)';
 
-    expect(get(fg_display)).toEqual(expected);
+    expect(get(fg).toString()).toEqual(expected);
   });
 });

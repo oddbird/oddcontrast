@@ -18,7 +18,7 @@
   }
 
   // Update color (but not color space) when input changes
-  const handleInput = async function (this: HTMLInputElement) {
+  const handleInput = function (this: HTMLInputElement) {
     const { value } = this;
     inputValue = value;
     editing = true;

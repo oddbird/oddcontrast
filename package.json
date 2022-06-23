@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "license": "BSD-3-Clause",
   "engines": {
-    "node": "16"
+    "node": "^16",
+    "yarn": "^1.22"
   },
   "type": "module",
   "scripts": {
@@ -30,6 +31,7 @@
     "watch:docs": "chokidar \"src/sass/**/*.scss\" \"./.sassdocrc\" \"./README.md\" -c \"yarn docs\"",
     "test": "run-s test:js test:sass",
     "test:js": "vitest",
+    "test:js:watch": "yarn test:js --watch",
     "test:sass": "mocha --loader=ts-node/esm --extension ts test/sass"
   },
   "dependencies": {

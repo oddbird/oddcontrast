@@ -1,7 +1,7 @@
 import { render } from '@testing-library/svelte';
 import MockDate from 'mockdate';
 
-import Footer from '$lib/components/footer.svelte';
+import Footer from '$lib/components/Footer.svelte';
 
 describe('Footer', () => {
   afterEach(() => {

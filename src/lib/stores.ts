@@ -1,7 +1,7 @@
 import Color, { type ColorSpace } from 'colorjs.io';
 import { get, writable } from 'svelte/store';
 
-import { browser } from '$app/env';
+import { browser, dev } from '$app/env';
 
 export const INITIAL_VALUES = {
   space: 'oklch' as ColorSpace,
@@ -23,7 +23,7 @@ export const reset = () => {
 };
 
 /* c8 ignore next 5 */
-if (browser) {
+if (browser && dev) {
   window.Color = Color;
   window.bg = get(bg);
   window.fg = get(fg);

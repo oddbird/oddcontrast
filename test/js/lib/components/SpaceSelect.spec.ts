@@ -1,7 +1,7 @@
 import { fireEvent, render } from '@testing-library/svelte';
 import { get } from 'svelte/store';
 
-import Space from '$lib/components/space.svelte';
+import Space from '$lib/components/SpaceSelect.svelte';
 import { bg, fg, reset } from '$lib/stores';
 
 describe('Space', () => {

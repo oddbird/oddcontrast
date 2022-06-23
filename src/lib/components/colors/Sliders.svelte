@@ -12,9 +12,7 @@
 
   const getStep = (range: [number, number]) => {
     const diff = range[1] - range[0];
-    if (diff <= 1) {
-      return 0.001;
-    } else if (diff < 10) {
+    if (diff <= 10) {
       return 0.01;
     } else if (diff < 100) {
       return 0.1;

@@ -1,6 +1,6 @@
 <script lang="ts">
   import Color from 'colorjs.io';
-  
+
   import { SPACES } from '$lib/constants';
   import { bg, fg, space } from '$lib/stores';
 
