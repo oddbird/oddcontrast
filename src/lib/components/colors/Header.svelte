@@ -1,9 +1,7 @@
 <script lang="ts">
-  import type { ColorSpace } from 'colorjs.io';
+  import type { ColorSpace, ColorString } from 'colorjs.io';
   import Color from 'colorjs.io';
   import type { Writable } from 'svelte/store';
-  
-  import Close from '$lib/components/Close.svelte';
 
   export let type: 'bg' | 'fg';
   export let color: Writable<Color>;
@@ -11,87 +9,63 @@
 
   $: display = $color.toString({ inGamut: false });
   $: displayType = type === 'bg' ? 'Background' : 'Foreground';
-  $: editing = type !== 'bg';
-  $: newValue = display;
+  $: editing = false;
+  $: inputValue = '' as string | ColorString;
   let hasError = false;
 
-  // Reset when form closes
   $: if (!editing) {
-    hasError = false;
-    newValue = display;
+    inputValue = display;
   }
 
-  // Remove errors when input changes
-  const inputChanged = () => {
+  // Update color (but not color space) when input changes
+  const handleInput = async function (this: HTMLInputElement) {
+    const { value } = this;
+    inputValue = value;
+    editing = true;
     hasError = false;
-  };
-  $: newValue, inputChanged();
-
-  // Update color (but not color space) on form submit
-  const handleSubmit = (e: Event) => {
-    e.preventDefault();
-    if (display !== newValue) {
+    if (display !== value) {
       let newColor;
       try {
-        newColor = new Color(newValue).to($space);
+        newColor = new Color(value).to($space);
       } catch (error) {
         hasError = true;
         console.error(error);
       }
       if (newColor) {
         color.set(newColor);
-        editing = false;
       }
-    } else {
-      editing = false;
     }
+  };
+
+  const handleFocus = () => {
+    editing = true;
+  };
+
+  const handleBlur = () => {
+    editing = false;
+    hasError = false;
   };
 </script>
 
-{#if editing}
-  <form>
-    <div data-field="color" data-group="header {type}" data-colors="form">
-      <label for="{type}-color" data-label data-heading="small"
-        >{displayType} Color</label
-      >
-      <input
-        name="{type}-color"
-        type="text"
-        data-input="color"
-        bind:value={newValue}
-      />
-      {#if hasError}
-        <div class="error">Could not parse input as a valid color.</div>
-      {/if}
-      <button
-        type="submit"
-        on:click={handleSubmit}
-        data-btn
-        class="color-action">Submit</button
-      >
-      <button
-        type="button"
-        on:click={() => (editing = false)}
-        data-btn="icon"
-        class="color-cancel"
-      >
-        <Close />
-        <span class="sr-only">Cancel</span></button
-      >
-    </div>
-  </form>
-{:else}
-  <div data-group="header {type}" data-colors="preview">
-    <h2 data-heading="small">{displayType} Color</h2>
-    <div class="swatch {type}" />
-    <button
-      type="button"
-      on:click={() => (editing = true)}
-      data-btn
-      class="color-action">Edit</button
-    >
-  </div>
-{/if}
+<div data-group="header {type}" data-colors="preview">
+  <label for="{type}-color" data-label data-heading="small">
+    {displayType} Color
+  </label>
+  <div class="swatch {type}" />
+  <input
+    id="{type}-color"
+    name="{type}-color"
+    type="text"
+    data-input="color"
+    value={inputValue}
+    on:input={handleInput}
+    on:focus={handleFocus}
+    on:blur={handleBlur}
+  />
+  {#if hasError}
+    <div class="error">Could not parse input as a valid color.</div>
+  {/if}
+</div>
 
 <style lang="scss">
   @use 'config';
