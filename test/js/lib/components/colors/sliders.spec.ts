@@ -2,7 +2,7 @@ import { fireEvent, render } from '@testing-library/svelte';
 import Color from 'colorjs.io';
 import { get, writable } from 'svelte/store';
 
-import Sliders from '$lib/components/form/sliders.svelte';
+import Sliders from '$lib/components/colors/Sliders.svelte';
 
 describe('Sliders', () => {
   it('renders editable sliders', async () => {
