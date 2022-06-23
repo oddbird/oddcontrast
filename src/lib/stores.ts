@@ -1,7 +1,7 @@
+import Color, { type ColorSpace } from 'colorjs.io';
 import { get, writable } from 'svelte/store';
 
 import { browser } from '$app/env';
-import Color, { type ColorSpace } from '$src/vendor/color.esm';
 
 export const INITIAL_VALUES = {
   space: 'oklch' as ColorSpace,

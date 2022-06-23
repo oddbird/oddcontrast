@@ -1,7 +1,8 @@
 <script lang="ts">
+  import Color from 'colorjs.io';
+  
   import { SPACES } from '$lib/constants';
   import { bg, fg, space } from '$lib/stores';
-  import Color from '$src/vendor/color.esm';
 
   // Update color formats when space selection changes
   $: {

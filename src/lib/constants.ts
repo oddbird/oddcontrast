@@ -1,4 +1,4 @@
-import Color, { type ColorSpace } from '$src/vendor/color.esm';
+import Color, { type ColorSpace } from 'colorjs.io';
 
 interface Slider {
   id: string;

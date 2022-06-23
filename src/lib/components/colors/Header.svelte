@@ -1,9 +1,9 @@
 <script lang="ts">
+  import type { ColorSpace } from 'colorjs.io';
+  import Color from 'colorjs.io';
   import type { Writable } from 'svelte/store';
-
+  
   import Close from '$lib/components/Close.svelte';
-  import type { ColorSpace } from '$src/vendor/color.esm';
-  import Color from '$src/vendor/color.esm';
 
   export let type: 'bg' | 'fg';
   export let color: Writable<Color>;

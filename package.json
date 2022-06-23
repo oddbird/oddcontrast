@@ -14,7 +14,7 @@
     "build": "run-s docs svelte:build",
     "package": "svelte-kit package",
     "preview": "svelte-kit preview",
-    "check": "svelte-check --ignore src/vendor",
+    "check": "svelte-check",
     "lint": "run-s prettier lint:js lint:sass check",
     "lint:js": "yarn lint:js:ci --fix",
     "lint:js:ci": "eslint .",
@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "accoutrement": "^4.0.1",
+    "colorjs.io": "^0.0.7",
     "svelte": "^3.48.0"
   },
   "devDependencies": {

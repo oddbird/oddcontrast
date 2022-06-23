@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { ColorSpace, ColorString } from '$src/vendor/color.esm';
-  import Color from '$src/vendor/color.esm';
+  import type { ColorSpace, ColorString } from 'colorjs.io';
+  import Color from 'colorjs.io';
 
   export let type: 'bg' | 'fg';
   export let color: Color;

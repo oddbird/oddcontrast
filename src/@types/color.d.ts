@@ -1,4 +1,4 @@
-declare module '$src/vendor/color.esm' {
+declare module 'colorjs.io' {
   type ColorSpace = 'hsl' | 'oklch';
 
   interface ToStringOpts {

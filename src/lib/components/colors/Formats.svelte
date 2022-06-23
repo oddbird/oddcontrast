@@ -1,8 +1,9 @@
 <script lang="ts">
+  import type Color from 'colorjs.io';
+  import type { ColorSpace } from 'colorjs.io';
+
   import Output from '$lib/components/colors/Output.svelte';
   import { SPACES } from '$lib/constants';
-  import type Color from '$src/vendor/color.esm';
-  import type { ColorSpace } from '$src/vendor/color.esm';
 
   export let type: 'bg' | 'fg';
   export let color: Color;

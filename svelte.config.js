@@ -34,7 +34,6 @@ const config = {
           include: ['src/**/*.{js,ts,svelte}'],
           exclude: [
             'src/**/*.d.ts',
-            'src/vendor',
             'src/routes/docs.ts',
             'src/routes/__layout.svelte',
           ],
