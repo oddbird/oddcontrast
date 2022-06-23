@@ -3,7 +3,7 @@
 /// By default, icons take on the size of surrounding text.
 /// @group icons
 [data-icon] {
-  fill: currentColor;
+  fill: currentcolor;
   display: inline-block;
   height: var(--icon-height, var(--icon-size, 1em));
   overflow: visible;
