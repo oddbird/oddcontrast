@@ -114,7 +114,7 @@
 
   .swatch {
     border: var(--border-width) solid var(--text);
-    grid-area: color;
+    // grid-area: color;
     height: var(--swatch);
     width: 100%;
 
