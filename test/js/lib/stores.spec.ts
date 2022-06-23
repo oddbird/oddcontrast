@@ -1,6 +1,6 @@
 import { get } from 'svelte/store';
 
-import { bg, fg, reset } from '$lib/stores';
+import { bg, fg, INITIAL_VALUES, reset } from '$lib/stores';
 
 describe('bg', () => {
   afterEach(() => {
@@ -29,5 +29,20 @@ describe('fg', () => {
     const expected = 'hsl(1 2% 3%)';
 
     expect(get(fg).toString()).toEqual(expected);
+  });
+});
+
+describe('reset', () => {
+  it('resets to initial values', () => {
+    const $fg = get(fg);
+    const $bg = get(bg);
+    $fg.spaceId = 'hsl';
+    $fg.coords = [1, 2, 3];
+    $bg.spaceId = 'hsl';
+    $bg.coords = [4, 5, 6];
+    reset();
+
+    expect(get(fg).spaceId).toEqual(INITIAL_VALUES.space);
+    expect(get(bg).spaceId).toEqual(INITIAL_VALUES.space);
   });
 });
