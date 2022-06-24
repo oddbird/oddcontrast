@@ -20,10 +20,6 @@ const config = {
           $src: path.resolve('./src'),
         },
       },
-      // https://github.com/LeaVerou/color.js/issues/155
-      ssr: {
-        noExternal: ['colorjs.io'],
-      },
       test: {
         include: ['./test/js/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
         globals: true,

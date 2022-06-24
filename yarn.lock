@@ -1223,10 +1223,9 @@ colord@^2.9.2:
   resolved "https://registry.yarnpkg.com/colord/-/colord-2.9.2.tgz#25e2bacbbaa65991422c07ea209e2089428effb1"
   integrity sha512-Uqbg+J445nc1TKn4FoDPS6ZZqAvEDnwrH42yo8B40JSOgSLxMZ/gt3h4nmCtPLQeXhjJJkqBx7SCY35WnIixaQ==
 
-colorjs.io@^0.0.7:
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/colorjs.io/-/colorjs.io-0.0.7.tgz#0e3ddec424af060c4625667e817693fc7212fc09"
-  integrity sha512-kfs7FiP8DbPQPYgCfDeID3PKMxa3ZN0IjJlR9ejVAea7ySfnTG8FTzPmanTjYqGSnUx2EjeTxXuXLY3HKVTgLA==
+colorjs.io@./colorjs.io-0.1.0-alpha.tgz:
+  version "0.1.0-alpha"
+  resolved "./colorjs.io-0.1.0-alpha.tgz#2037c002fe8abd585058c12b65a998992d2a6527"
 
 combined-stream@^1.0.8:
   version "1.0.8"

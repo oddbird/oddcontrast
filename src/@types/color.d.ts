@@ -27,7 +27,13 @@ declare module 'colorjs.io' {
       [key in ColorSpace]: {
         id: ColorSpace;
         name: string;
-        coords: { [key: string]: [number, number] };
+        coords: {
+          [key: string]: {
+            name: string;
+            range?: [number, number];
+            refRange?: [number, number];
+          };
+        };
       };
     };
 

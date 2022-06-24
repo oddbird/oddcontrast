@@ -1,18 +1,27 @@
 <script lang="ts">
-  import type Color from 'colorjs.io';
+  import type ColorType from 'colorjs.io';
   import type { ColorSpace } from 'colorjs.io';
+  import Color from 'colorjs.io';
   import type { Writable } from 'svelte/store';
 
   import { SLIDERS } from '$lib/constants';
 
   export let type: 'bg' | 'fg';
-  export let color: Writable<Color>;
+  export let color: Writable<ColorType>;
 
   $: space = $color.spaceId as ColorSpace;
+  $: coords = Color.spaces[space]?.coords;
+  $: sliders = SLIDERS[space].map((id) => ({
+    id,
+    name: coords[id].name,
+    range: coords[id].range || coords[id].refRange || [0, 1],
+  }));
 
   const getStep = (range: [number, number]) => {
     const diff = range[1] - range[0];
-    if (diff <= 10) {
+    if (diff <= 1) {
+      return 0.001;
+    } else if (diff < 10) {
       return 0.01;
     } else if (diff < 100) {
       return 0.1;
@@ -24,9 +33,9 @@
 
 <div data-actions="edit-color" data-group="sliders {type}">
   <form>
-    {#each SLIDERS[space] as slider}
+    {#each sliders as slider (slider.id)}
       <div data-field="color-slider">
-        <label for="{type}_{slider.id}" data-label>{slider.label}</label>
+        <label for="{type}_{slider.id}" data-label>{slider.name}</label>
         <input
           id="{type}_{slider.id}"
           name="{type}_{slider.id}"

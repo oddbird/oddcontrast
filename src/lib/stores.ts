@@ -1,5 +1,5 @@
 import Color, { type ColorSpace } from 'colorjs.io';
-import { get, writable } from 'svelte/store';
+import { writable } from 'svelte/store';
 
 import { browser, dev } from '$app/env';
 
@@ -25,6 +25,6 @@ export const reset = () => {
 /* c8 ignore next 5 */
 if (browser && dev) {
   window.Color = Color;
-  window.bg = get(bg);
-  window.fg = get(fg);
+  bg.subscribe(($bg) => (window.bg = $bg));
+  fg.subscribe(($fg) => (window.fg = $fg));
 }

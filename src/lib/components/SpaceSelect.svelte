@@ -7,10 +7,10 @@
   // Update color formats when space selection changes
   $: {
     if ($bg.spaceId !== $space) {
-      $bg.spaceId = $space;
+      $bg = $bg.to($space);
     }
     if ($fg.spaceId !== $space) {
-      $fg.spaceId = $space;
+      $fg = $fg.to($space);
     }
   }
 </script>
