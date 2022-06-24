@@ -2,5 +2,6 @@
    NODE_VERSION = "16"
    YARN_VERSION = "1.22.19"
 
+# https://github.com/sveltejs/kit/issues/5177
 [functions]
-  node_bundler = "esbuild"
+   node_bundler = "esbuild"
