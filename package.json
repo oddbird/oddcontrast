@@ -13,7 +13,6 @@
     "svelte:build": "svelte-kit build",
     "dev": "npm-run-all docs -p \"svelte:dev {@}\" watch:docs --",
     "build": "run-s docs svelte:build",
-    "package": "svelte-kit package",
     "preview": "svelte-kit preview",
     "check": "svelte-check",
     "lint": "run-s prettier lint:js lint:sass check",

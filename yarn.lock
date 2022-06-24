@@ -1225,7 +1225,7 @@ colord@^2.9.2:
 
 colorjs.io@./colorjs.io-0.1.0-alpha.tgz:
   version "0.1.0-alpha"
-  resolved "./colorjs.io-0.1.0-alpha.tgz#2037c002fe8abd585058c12b65a998992d2a6527"
+  resolved "./colorjs.io-0.1.0-alpha.tgz#8d88bc9142a04121901a42f150fb0a2e8c45ade2"
 
 combined-stream@^1.0.8:
   version "1.0.8"
