@@ -11,11 +11,23 @@
   $: displayType = type === 'bg' ? 'Background' : 'Foreground';
   $: editing = false;
   $: inputValue = '' as string | ColorString;
+  let priorValue = '' as string | ColorString;
   let hasError = false;
 
+  // When not editing, sync input value with color (e.g. when sliders change)
   $: if (!editing) {
-    inputValue = display;
+    inputValue = priorValue = display;
   }
+
+  const handleFocus = () => {
+    editing = true;
+    priorValue = display;
+  };
+
+  const handleBlur = () => {
+    editing = false;
+    hasError = false;
+  };
 
   // Update color (but not color space) when input changes
   const handleInput = function (this: HTMLInputElement) {
@@ -37,13 +49,21 @@
     }
   };
 
-  const handleFocus = () => {
-    editing = true;
-  };
-
-  const handleBlur = () => {
-    editing = false;
-    hasError = false;
+  const handleKeydown = function (
+    this: HTMLInputElement,
+    event: KeyboardEvent,
+  ) {
+    switch (event.key) {
+      case 'Enter':
+        this.blur();
+        break;
+      case 'Esc':
+      case 'Escape':
+        // Reset to value when input received focus
+        color.set(new Color(priorValue));
+        this.blur();
+        break;
+    }
   };
 </script>
 
@@ -58,9 +78,10 @@
     type="text"
     data-input="color"
     value={inputValue}
-    on:input={handleInput}
     on:focus={handleFocus}
     on:blur={handleBlur}
+    on:input={handleInput}
+    on:keydown={handleKeydown}
   />
   {#if hasError}
     <div class="error">Could not parse input as a valid color.</div>
