@@ -88,7 +88,7 @@ describe('Header', () => {
       await fireEvent.input(input, { target: { value: '#fff' } });
 
       vi.spyOn(input, 'blur');
-      await fireEvent.keyDown(input, { key: 'Escape' });
+      await fireEvent.keyDown(input, { key: 'Esc' });
 
       expect(input.blur).toHaveBeenCalledTimes(1);
       expect(get(color).toString()).toEqual('hsl(1 2% 3%)');
