@@ -1,6 +1,5 @@
 import { fireEvent, render } from '@testing-library/svelte';
 import Color from 'colorjs.io';
-import { tick } from 'svelte';
 import { get, writable } from 'svelte/store';
 
 import Header from '$lib/components/colors/Header.svelte';
