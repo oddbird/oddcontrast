@@ -39,10 +39,10 @@ const config = {
           ],
           all: true,
           skipFull: true,
-          lines: 100,
-          functions: 100,
+          lines: 90,
+          functions: 90,
           branches: 50, // Seems to be a bug in Svelte component branch coverage
-          statements: 100,
+          statements: 90,
         },
       },
     },

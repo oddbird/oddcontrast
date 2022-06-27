@@ -42,6 +42,7 @@ declare module 'colorjs.io' {
     to: (s: ColorSpace, { inGamut }: { inGamut?: boolean } = {}) => Color;
     inGamut: (s: ColorSpace = this.spaceId) => boolean;
     toString: (opts: ToStringOpts = {}) => ColorString | string;
+    setAll: (s: ColorSpace, coords: [number, number, number]) => Color;
 
     [key: string]: {
       [key: string]: number;
