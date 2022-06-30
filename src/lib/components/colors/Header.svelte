@@ -11,17 +11,15 @@
   $: displayType = type === 'bg' ? 'Background' : 'Foreground';
   $: editing = false;
   $: inputValue = '' as string | ColorString;
-  let priorValue = '' as string | ColorString;
   let hasError = false;
 
   // When not editing, sync input value with color (e.g. when sliders change)
   $: if (!editing) {
-    inputValue = priorValue = display;
+    inputValue = display;
   }
 
   const handleFocus = () => {
     editing = true;
-    priorValue = display;
   };
 
   const handleBlur = () => {
@@ -55,12 +53,8 @@
   ) {
     switch (event.key) {
       case 'Enter':
-        this.blur();
-        break;
       case 'Esc':
       case 'Escape':
-        // Reset to value when input received focus
-        color.set(new Color(priorValue));
         this.blur();
         break;
     }

@@ -74,7 +74,7 @@ describe('Header', () => {
   });
 
   describe('on escape', () => {
-    it('resets and blurs input', async () => {
+    it('blurs input', async () => {
       const color = writable(new Color('hsl(1 2% 3%)'));
       const space = writable('hsl');
       const { getByLabelText } = render(Header, {
@@ -90,7 +90,7 @@ describe('Header', () => {
       await fireEvent.keyDown(input, { key: 'Esc' });
 
       expect(input.blur).toHaveBeenCalledTimes(1);
-      expect(get(color).toString()).toEqual('hsl(1 2% 3%)');
+      expect(get(color).toString()).toEqual('hsl(0 0% 100%)');
       expect(get(space)).toEqual('hsl');
     });
   });
