@@ -13,6 +13,8 @@
 ///   </div>
 /// @group focus
 @mixin focus-ring() {
-  outline: var(--border-width-lg) dotted currentcolor;
   outline-color: var(--focus-ring, var(--text, currentColor));
+  outline-style: var(--outline-style, dotted);
+  outline-width: var(--outline-width, var(--border-width-sm));
+  outline-offset: var(--outline-offset, 0);
 }

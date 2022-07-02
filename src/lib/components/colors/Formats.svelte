@@ -14,7 +14,7 @@
 </script>
 
 <div data-content="formats">
-  <h3 data-heading="small">Other {displayType} Color Formats</h3>
+  <h4 data-heading class="small-only">{displayType} Color</h4>
   {#each otherSpaces as s (s)}
     <Output {type} {color} space={s} />
   {/each}

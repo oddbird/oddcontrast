@@ -6,16 +6,19 @@
   import { bg, fg, space } from '$lib/stores';
 </script>
 
+<h2 class="sr-only">Check the contrast ratio between two colors</h2>
+
 <form data-form="contrast-checker" data-layout="split">
   <Header type="bg" color={bg} {space} />
-  <Sliders type="bg" color={bg} />
   <Output type="bg" color={$bg} space={$bg.spaceId} />
+  <Sliders type="bg" color={bg} />
 
   <Header type="fg" color={fg} {space} />
-  <Sliders type="fg" color={fg} />
   <Output type="fg" color={$fg} space={$fg.spaceId} />
+  <Sliders type="fg" color={fg} />
 </form>
 
+<h3 data-heading="small shared">Additional Formats</h3>
 <div data-layout="split">
   <Formats type="bg" color={$bg} space={$space} />
   <Formats type="fg" color={$fg} space={$space} />
@@ -24,9 +27,10 @@
 <style lang="scss">
   [data-form~='contrast-checker'] {
     grid-auto-flow: dense;
+    margin-block-end: var(--triple-gutter);
   }
 
   [data-layout~='split'] {
-    gap: var(--gutter) var(--double-gutter);
+    column-gap: var(--triple-gutter);
   }
 </style>

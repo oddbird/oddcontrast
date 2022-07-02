@@ -61,11 +61,15 @@
   };
 </script>
 
-<div data-group="header {type}" data-colors="preview">
-  <label for="{type}-color" data-label data-heading="small">
+<div
+  data-group="header {type}"
+  data-colors="preview"
+  data-needs-changes={hasError}
+>
+  <div class="swatch {type}" />
+  <label for="{type}-color" data-label v="small">
     {displayType} Color
   </label>
-  <div class="swatch {type}" />
   <input
     id="{type}-color"
     name="{type}-color"
@@ -78,7 +82,7 @@
     on:keydown={handleKeydown}
   />
   {#if hasError}
-    <div class="error">Could not parse input as a valid color.</div>
+    <div data-color-info="warning">Could not parse input as a valid color.</div>
   {/if}
 </div>
 
@@ -88,38 +92,16 @@
   [data-colors] {
     align-items: center;
     display: grid;
-    gap: var(--half-shim) var(--double-gutter);
     grid-template:
-      'label  label' auto
-      'color  color' var(--swatch)
-      'action cancel' auto
-      'error  error' auto / auto 1fr;
+      'label label' auto
+      'input color' var(--swatch)
+      'error error' 1rem / 1fr var(--swatch);
 
     @include config.above('sm-page-break') {
-      gap: var(--half-shim) var(--gutter);
       grid-template:
-        'label cancel' auto
-        'color action' var(--swatch)
-        'error error' 1em / 1fr 5rem;
-    }
-  }
-
-  .color-cancel {
-    display: flex;
-    grid-area: cancel;
-    justify-self: end;
-
-    &:hover {
-      box-shadow: 0 0 0 1px var(--text);
-    }
-  }
-
-  .color-action {
-    justify-content: center;
-    grid-area: action;
-
-    @include config.below('sm-page-break') {
-      margin-top: var(--gutter);
+        'label' auto
+        'input' auto
+        'error' 1rem / 1fr;
     }
   }
 
@@ -128,10 +110,13 @@
   }
 
   .swatch {
-    border: var(--border-width) solid var(--text);
-    // grid-area: color;
-    height: var(--swatch);
-    width: 100%;
+    border: var(--border-width) solid var(--swatch-border-color, transparent);
+    grid-area: color;
+
+    @include config.below('sm-page-break') {
+      --swatch-border-color: var(--text);
+      height: var(--swatch);
+    }
 
     &.bg {
       background-color: var(--bgcolor);
@@ -144,15 +129,21 @@
 
   [data-input='color'] {
     border-width: 0 0 var(--border-width) 0;
-    grid-area: color;
+    grid-area: input;
     font-size: var(--medium);
-    height: var(--swatch);
     padding-inline: 0;
   }
 
-  .error {
+  [data-color-info='warning'] {
     align-self: start;
-    color: var(--warning);
     grid-area: error;
+  }
+
+  [data-label] {
+    margin-bottom: var(--gutter);
+  }
+
+  [data-group] {
+    margin-bottom: var(--gutter);
   }
 </style>

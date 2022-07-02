@@ -1,6 +1,6 @@
 <aside data-layout="results">
   <div class="contrast-info">
-    <h2 data-heading="large"><strong>Preview</strong> Text</h2>
+    <h2 data-heading="xlarge"><strong>Preview</strong> Text</h2>
 
     <p>
       WCAG 2.0 level AA requires a contrast ratio of at least 4.5:1 for normal

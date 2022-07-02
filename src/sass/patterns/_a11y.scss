@@ -25,3 +25,9 @@
     @include config.is-hidden;
   }
 }
+
+.small-only {
+  @include config.above('sm-page-break') {
+    @include config.is-hidden;
+  }
+}

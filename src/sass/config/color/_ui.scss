@@ -1,3 +1,7 @@
+@use '../tools';
+@use 'brand';
+@use 'sass:color';
+
 /// ## UI Colors
 /// ------------
 /// @group color
@@ -5,4 +9,6 @@
 
 $text: hsl(230deg 25% 20%);
 $bg: white;
-$warning: hsl(340deg 90% 35%);
+$border-light: tools.tint(brand.$brand-blue, 65%);
+$warning: tools.shade(brand.$brand-pink, 3%);
+$warning-highlight: tools.tint(brand.$brand-pink, 15%);
