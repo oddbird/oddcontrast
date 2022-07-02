@@ -18,3 +18,11 @@ select {
   box-shadow: 1px 1px var(--shim) hsla(0deg 0% 50% / 40%);
   padding: var(--half-shim) var(--shim);
 }
+
+input {
+  transition: outline-color var(--fast), outline-style var(--fast);
+
+  [data-needs-changes] & {
+    --focus-ring: var(--warning-color);
+  }
+}
