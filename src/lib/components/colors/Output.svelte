@@ -1,35 +1,21 @@
 <script lang="ts">
-  import type { ColorSpace, ColorString } from 'colorjs.io';
-  import Color from 'colorjs.io';
+  import type { ColorSpace } from 'colorjs.io';
+  import type Color from 'colorjs.io';
+
+  import SupportWarning from '$lib/components/colors/SupportWarning.svelte';
 
   export let type: 'bg' | 'fg';
   export let color: Color;
   export let space: ColorSpace;
 
-  $: isPrimary = color.spaceId === space;
-  $: targetColor = isPrimary ? color : color.to(space);
+  $: targetColor = color.to(space);
   $: inGamut = targetColor.inGamut();
-  $: fallbackColor = (targetColor.toString({ fallback: true }) as ColorString)
-    .color;
-  $: isSupported = fallbackColor.spaceId === space;
 </script>
 
-<div data-group="output {type}" data-is-primary={isPrimary}>
-  {#if !isPrimary}
-    <span data-color-info="value"
-      >{targetColor.toString({ inGamut: false })}</span
-    >
-    {#if !isSupported}
-      <span data-color-info="warning">
-        This color format is
-        <a
-          href="https://caniuse.com/mdn-css_types_color_oklab,mdn-css_types_color_oklch,mdn-css_types_color_hsla,mdn-css_types_color_hsl"
-        >
-          not supported by your current browser</a
-        >.
-      </span>
-    {/if}
-  {/if}
+<div data-group="output {type}">
+  <span data-color-info="value">{targetColor.toString({ inGamut: false })}</span
+  >
+  <SupportWarning {space} />
   {#if !inGamut}
     <span data-color-info="warning">This color is out of gamut.</span>
   {/if}

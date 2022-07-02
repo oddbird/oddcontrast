@@ -1,20 +1,20 @@
 <script lang="ts">
   import Formats from '$lib/components/colors/Formats.svelte';
   import Header from '$lib/components/colors/Header.svelte';
-  import Output from '$lib/components/colors/Output.svelte';
   import Sliders from '$lib/components/colors/Sliders.svelte';
+  import SupportWarning from '$lib/components/colors/SupportWarning.svelte';
   import { bg, fg, space } from '$lib/stores';
 </script>
 
 <h2 class="sr-only">Check the contrast ratio between two colors</h2>
 
+<SupportWarning space={$space} />
+
 <form data-form="contrast-checker" data-layout="split">
   <Header type="bg" color={bg} {space} />
-  <Output type="bg" color={$bg} space={$bg.spaceId} />
   <Sliders type="bg" color={bg} />
 
   <Header type="fg" color={fg} {space} />
-  <Output type="fg" color={$fg} space={$fg.spaceId} />
   <Sliders type="fg" color={fg} />
 </form>
 

@@ -67,7 +67,7 @@
   data-needs-changes={hasError}
 >
   <div class="swatch {type}" />
-  <label for="{type}-color" data-label v="small">
+  <label for="{type}-color" data-label>
     {displayType} Color
   </label>
   <input

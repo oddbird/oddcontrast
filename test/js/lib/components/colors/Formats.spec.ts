@@ -11,7 +11,7 @@ describe('Formats', () => {
       space: 'hsl',
     });
 
-    expect(getByText('Other Background Color Formats')).toBeVisible();
+    expect(getByText('Background Color')).toBeVisible();
   });
 
   it('shows the foreground header', () => {
@@ -21,6 +21,6 @@ describe('Formats', () => {
       space: 'hsl',
     });
 
-    expect(getByText('Other Foreground Color Formats')).toBeVisible();
+    expect(getByText('Foreground Color')).toBeVisible();
   });
 });

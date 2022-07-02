@@ -66,6 +66,7 @@ strong {
 
 [data-color-info~='value'] {
   --color-info-size: var(--color-value-size, var(--medium));
+
   font-weight: var(--color-value-weight, normal);
 }
 

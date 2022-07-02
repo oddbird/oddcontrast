@@ -34,6 +34,6 @@ describe('Output', () => {
       space: 'hsl',
     });
 
-    expect(getByText('color out of gamut')).toBeVisible();
+    expect(getByText('out of gamut', { exact: false })).toBeVisible();
   });
 });
