@@ -18,7 +18,7 @@ select {
 
 select {
   border: 0;
-  box-shadow: 1px 1px var(--shim) hsla(0deg 0% 50% / 40%);
+  box-shadow: 1px 1px var(--half-shim) var(--border-light);
   padding: var(--half-shim) var(--shim);
 }
 

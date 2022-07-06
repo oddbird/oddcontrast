@@ -57,6 +57,7 @@ body {
 [data-layout~='main'] {
   --layout-pad-block: 0;
   --layout-pad-inline: 0; // allows warning to stretch to the edge
+
   grid-area: main;
 
   > * {

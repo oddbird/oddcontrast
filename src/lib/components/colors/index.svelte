@@ -29,7 +29,7 @@
 
   [data-form~='contrast-checker'] {
     grid-auto-flow: dense;
-    margin-block-end: var(--gutter);
+    margin-block: var(--double-gutter) var(--gutter);
   }
 
   [data-layout~='split'] {

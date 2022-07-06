@@ -58,4 +58,8 @@
   [data-group~='sliders'] {
     margin-bottom: var(--triple-gutter);
   }
+
+  [data-field~='color-slider'] {
+    margin-bottom: var(--shim);
+  }
 </style>

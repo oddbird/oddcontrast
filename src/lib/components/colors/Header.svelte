@@ -66,7 +66,7 @@
   data-colors="preview"
   data-needs-changes={hasError}
 >
-  <div class="swatch small-only {type}" />
+  <div class="swatch {type}" />
   <label for="{type}-color" data-label>
     {displayType} Color
   </label>
@@ -93,13 +93,15 @@
     align-items: center;
     display: grid;
     grid-template:
-      'label label' auto
-      'input swatch' var(--swatch)
-      'error error' 1rem / 1fr var(--swatch);
+      'label' auto
+      'swatch' var(--swatch)
+      'input' auto
+      'error ' 1rem / 1fr;
 
     @include config.above('sm-page-break') {
       grid-template:
         'label' auto
+        'swatch' calc(2 * var(--swatch))
         'input' auto
         'error' 1rem / 1fr;
     }
@@ -110,13 +112,10 @@
   }
 
   .swatch {
+    --swatch-border-color: var(--text);
     border: var(--border-width) solid var(--swatch-border-color, transparent);
-
-    @include config.below('sm-page-break') {
-      --swatch-border-color: var(--text);
-      grid-area: swatch;
-      height: var(--swatch);
-    }
+    grid-area: swatch;
+    height: 100%;
 
     &.bg {
       background-color: var(--bgcolor);
@@ -133,7 +132,7 @@
     grid-area: input;
     height: 100%;
     font-size: calc(1.75rem + 0.25vw);
-    padding-inline: 0.5ch;
+    padding: var(--shim) 0.5ch;
   }
 
   [data-color-info='warning'] {
@@ -146,6 +145,6 @@
   }
 
   [data-group] {
-    margin-bottom: var(--gutter);
+    margin-bottom: var(--gutter-plus);
   }
 </style>
