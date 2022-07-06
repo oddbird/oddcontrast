@@ -66,7 +66,7 @@
   data-colors="preview"
   data-needs-changes={hasError}
 >
-  <div class="swatch {type}" />
+  <div class="swatch small-only {type}" />
   <label for="{type}-color" data-label>
     {displayType} Color
   </label>
@@ -111,10 +111,10 @@
 
   .swatch {
     border: var(--border-width) solid var(--swatch-border-color, transparent);
-    grid-area: color;
 
     @include config.below('sm-page-break') {
       --swatch-border-color: var(--text);
+      grid-area: color;
       height: var(--swatch);
     }
 
@@ -140,6 +140,7 @@
   }
 
   [data-label] {
+    grid-area: label;
     margin-bottom: var(--gutter);
   }
 
