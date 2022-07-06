@@ -4,6 +4,10 @@ ul {
   padding-left: 0;
 }
 
+li {
+  padding-bottom: var(--gutter);
+}
+
 [data-list='inline'] {
   align-items: center;
   display: flex;

@@ -94,7 +94,7 @@
     display: grid;
     grid-template:
       'label label' auto
-      'input color' var(--swatch)
+      'input swatch' var(--swatch)
       'error error' 1rem / 1fr var(--swatch);
 
     @include config.above('sm-page-break') {
@@ -114,7 +114,7 @@
 
     @include config.below('sm-page-break') {
       --swatch-border-color: var(--text);
-      grid-area: color;
+      grid-area: swatch;
       height: var(--swatch);
     }
 
@@ -128,10 +128,12 @@
   }
 
   [data-input='color'] {
+    align-self: end;
     border-width: 0 0 var(--border-width) 0;
     grid-area: input;
+    height: 100%;
     font-size: calc(1.75rem + 0.25vw);
-    padding-inline: 0;
+    padding-inline: 0.5ch;
   }
 
   [data-color-info='warning'] {

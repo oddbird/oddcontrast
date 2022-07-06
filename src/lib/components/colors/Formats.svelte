@@ -14,8 +14,14 @@
 </script>
 
 <div data-content="formats">
-  <h4 data-heading class="small-only">{displayType} Color</h4>
+  <h4 class="small-only label">{displayType} Color</h4>
   {#each otherSpaces as s (s)}
     <Output {type} {color} space={s} />
   {/each}
 </div>
+
+<style lang="scss">
+  [data-content~='formats'] {
+    margin-bottom: var(--double-gutter);
+  }
+</style>

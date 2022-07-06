@@ -54,4 +54,8 @@
   input[type='range'] {
     margin: 0;
   }
+
+  [data-group~='sliders'] {
+    margin-bottom: var(--triple-gutter);
+  }
 </style>

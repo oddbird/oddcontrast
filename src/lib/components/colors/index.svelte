@@ -10,7 +10,7 @@
 
 <SupportWarning space={$space} />
 
-<form data-form="contrast-checker" data-layout="split" class="space-inline">
+<form data-form="contrast-checker" data-layout="split">
   <Header type="bg" color={bg} {space} />
   <Sliders type="bg" color={bg} />
 
@@ -18,16 +18,18 @@
   <Sliders type="fg" color={fg} />
 </form>
 
-<h3 data-heading="small" class="label space-inline">Additional Formats</h3>
-<div data-layout="split" class="space-inline">
+<h3 class="label section-heading">Additional Formats</h3>
+<div data-layout="split">
   <Formats type="bg" color={$bg} space={$space} />
   <Formats type="fg" color={$fg} space={$space} />
 </div>
 
 <style lang="scss">
+  @use 'config';
+
   [data-form~='contrast-checker'] {
     grid-auto-flow: dense;
-    margin-block-end: var(--triple-gutter);
+    margin-block-end: var(--gutter);
   }
 
   [data-layout~='split'] {

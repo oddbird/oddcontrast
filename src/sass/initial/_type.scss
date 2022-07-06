@@ -32,22 +32,24 @@ h4 {
   font-size: var(--heading-size, var(--medium));
 }
 
-[data-heading~='shared'] {
-  border-bottom: 1px solid var(--border-light);
-  margin-bottom: var(--gutter);
-  padding-bottom: var(--half-gutter);
-}
-
-[data-heading~='xlarge'] {
-  --heading-size: var(--xlarge);
-}
-
 [data-heading~='large'] {
   --heading-size: var(--large);
 }
 
-[data-heading~='small'] {
-  --heading-size: var(--small);
+@mixin heading() {
+  display: block;
+  font-size: var(--heading-size, var(--label-size));
+  letter-spacing: var(--heading-letterspacing, 0.05rem);
+  margin-bottom: var(--label-margin-bottom, var(--gutter));
+  text-transform: var(--heading-transform, uppercase);
+}
+
+.section-heading {
+  @include heading;
+
+  @include config.below('sm-page-break') {
+    --heading-size: var(--medium);
+  }
 }
 
 p {
