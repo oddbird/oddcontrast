@@ -130,7 +130,7 @@
   [data-input='color'] {
     border-width: 0 0 var(--border-width) 0;
     grid-area: input;
-    font-size: var(--medium);
+    font-size: calc(1.75rem + 0.25vw);
     padding-inline: 0;
   }
 
@@ -141,7 +141,6 @@
 
   [data-label] {
     grid-area: label;
-    margin-bottom: var(--gutter);
   }
 
   [data-group] {

@@ -10,7 +10,7 @@
 
 <SupportWarning space={$space} />
 
-<form data-form="contrast-checker" data-layout="split">
+<form data-form="contrast-checker" data-layout="split" class="space-inline">
   <Header type="bg" color={bg} {space} />
   <Sliders type="bg" color={bg} />
 
@@ -18,8 +18,8 @@
   <Sliders type="fg" color={fg} />
 </form>
 
-<h3 data-heading="small shared">Additional Formats</h3>
-<div data-layout="split">
+<h3 data-heading="small" class="label space-inline">Additional Formats</h3>
+<div data-layout="split" class="space-inline">
   <Formats type="bg" color={$bg} space={$space} />
   <Formats type="fg" color={$fg} space={$space} />
 </div>

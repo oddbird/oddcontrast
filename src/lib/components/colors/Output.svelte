@@ -20,19 +20,3 @@
     <span data-color-info="warning">This color is out of gamut.</span>
   {/if}
 </div>
-
-<style lang="scss">
-  [data-color-info] {
-    display: block;
-  }
-
-  [data-color-info~='value'] {
-    font-size: var(--color-value-size, var(--medium));
-    font-weight: var(--color-value-weight, normal);
-  }
-
-  [data-color-info~='warning'] {
-    color: var(--warning);
-    font-size: var(--xsmall);
-  }
-</style>

@@ -1,13 +1,19 @@
 /// # Form Patterns
 /// @group forms
 
+.label,
 label {
   display: block;
-  font-size: var(--small);
+  font-family: 'FreightSans Pro Book';
+  font-size: var(--label-size);
+  letter-spacing: 0.05rem;
+  margin-bottom: var(--label-margin-bottom, var(--gutter));
+  text-transform: uppercase;
 }
 
 input,
 select {
+  border-color: var(--border-light);
   font-family: inherit;
   font-size: inherit;
   width: 100%;

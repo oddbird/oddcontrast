@@ -22,14 +22,3 @@
     >.
   </span>
 {/if}
-
-<style lang="scss">
-  [data-color-info] {
-    display: block;
-  }
-
-  [data-color-info~='warning'] {
-    color: var(--warning);
-    font-size: var(--xsmall);
-  }
-</style>

@@ -55,7 +55,12 @@ body {
 }
 
 [data-layout~='main'] {
+  --layout-pad-inline: 0; // allows warning to stretch to the edge
   grid-area: main;
+
+  > * {
+    padding-inline: var(--double-gutter);
+  }
 }
 
 [data-layout~='footer'] {

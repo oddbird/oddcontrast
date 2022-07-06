@@ -1,5 +1,3 @@
-@use '../config';
-
 ul {
   list-style: none;
   margin: 0;
@@ -10,8 +8,4 @@ ul {
   align-items: center;
   display: flex;
   gap: var(--gutter);
-}
-
-dd {
-  margin-inline-start: 0;
 }

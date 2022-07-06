@@ -44,6 +44,7 @@
   }
 
   label {
+    --label-margin-bottom: 0;
     grid-area: format-label;
 
     @include config.above('sm-page-break') {

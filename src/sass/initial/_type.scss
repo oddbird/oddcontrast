@@ -66,11 +66,21 @@ strong {
 
 [data-color-info~='value'] {
   --color-info-size: var(--color-value-size, var(--medium));
-
-  font-weight: var(--color-value-weight, normal);
 }
 
 [data-color-info~='warning'] {
   --color-info-color: var(--warning);
-  --color-info-size: var(--xsmall);
+  --color-info-size: var(--warning-size);
+
+  background: var(--warning-bg, transparent);
+  margin-bottom: var(--warning-margin-bottom);
+  padding-block: var(--warning-padding-block);
+  text-align: var(--warning-align, left);
+
+  main > & {
+    --warning-bg: ghostwhite;
+    --warning-margin-bottom: var(--double-gutter);
+    --warning-padding-block: var(--gutter);
+    --warning-align: center;
+  }
 }
