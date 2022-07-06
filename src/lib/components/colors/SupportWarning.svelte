@@ -14,7 +14,7 @@
 
 {#if !isSupported}
   <span data-color-info="warning">
-    This color format is
+    The {space} color format is
     <a
       href="https://caniuse.com/mdn-css_types_color_oklab,mdn-css_types_color_oklch,mdn-css_types_color_hsla,mdn-css_types_color_hsl"
     >
