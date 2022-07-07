@@ -94,21 +94,13 @@
     display: grid;
     grid-template:
       'label' auto
-      'swatch' var(--swatch)
+      'swatch' var(--swatch-height, var(--swatch))
       'input' auto
-      'error ' 1rem / 1fr;
+      'error ' var(--double-gutter) / 1fr;
 
     @include config.above('sm-page-break') {
-      grid-template:
-        'label' auto
-        'swatch' calc(2 * var(--swatch))
-        'input' auto
-        'error' 1rem / 1fr;
+      --swatch-height: calc(2 * var(--swatch));
     }
-  }
-
-  [data-colors~='preview'] {
-    --form-columns: 1fr auto;
   }
 
   .swatch {
@@ -140,7 +132,6 @@
   }
 
   [data-color-info='warning'] {
-    align-self: start;
     grid-area: error;
   }
 
