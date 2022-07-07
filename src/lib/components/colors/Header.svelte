@@ -132,7 +132,11 @@
     grid-area: input;
     height: 100%;
     font-size: calc(1.75rem + 0.25vw);
-    padding: var(--shim) 0.5ch;
+    padding: var(--shim) 0.25ch;
+
+    @include config.between('sm-page-break', 'lg-page-break') {
+      font-size: calc(1.5rem + 0.125vw);
+    }
   }
 
   [data-color-info='warning'] {
