@@ -10,7 +10,7 @@
 
 <SupportWarning space={$space} />
 
-<form data-form="contrast-checker" data-layout="split">
+<form data-form="contrast-checker" data-layout="color-form">
   <Header type="bg" color={bg} {space} />
   <Sliders type="bg" color={bg} />
 
@@ -28,11 +28,10 @@
   @use 'config';
 
   [data-form~='contrast-checker'] {
-    grid-auto-flow: dense;
     margin-block: var(--double-gutter) var(--gutter);
   }
 
-  [data-layout~='split'] {
+  [data-layout] {
     column-gap: var(--triple-gutter);
   }
 </style>

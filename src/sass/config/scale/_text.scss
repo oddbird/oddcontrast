@@ -3,9 +3,11 @@
 /// @group scale
 /// @sizes text-sizes {text}
 $rem: calc(1rem + 0.125vw);
-$xsmall: calc(0.875rem + 0.125vw);
-$small: $rem;
+$small: calc(0.875rem + 0.125vw);
 $medium: calc(1.25rem + 0.125vw);
 $large: calc(2.25rem + 0.75vw);
+
 $label-size: calc(0.815rem + 0.125vw);
-$warning-size: $xsmall;
+$warning-size: $small;
+$input-small: calc(1.3rem + 0.25vw);
+$input-large: calc(1.75rem + 0.25vw);

@@ -77,12 +77,28 @@ body {
   }
 }
 
-[data-group~='bg'] {
-  grid-column: 1;
+[data-layout='color-form'] {
+  display: grid;
+
+  @include config.above('sm-page-break') {
+    grid-template:
+      'bginput fginput' auto
+      'bgslide fgslide' auto / 1fr 1fr;
+  }
 }
 
-[data-group~='fg'] {
-  @include config.above('sm-page-break') {
-    grid-column: 2;
-  }
+[data-group='header bg'] {
+  grid-area: bginput;
+}
+
+[data-group='sliders bg'] {
+  grid-area: bgslide;
+}
+
+[data-group='header fg'] {
+  grid-area: fginput;
+}
+
+[data-group='sliders fg'] {
+  grid-area: fgslide;
 }

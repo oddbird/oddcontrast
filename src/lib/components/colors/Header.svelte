@@ -123,11 +123,11 @@
     border-width: 0 0 var(--border-width) 0;
     grid-area: input;
     height: 100%;
-    font-size: calc(1.75rem + 0.25vw);
+    font-size: var(--input-large);
     padding: var(--shim) 0.25ch;
 
     @include config.between('sm-page-break', 'lg-page-break') {
-      font-size: calc(1.5rem + 0.125vw);
+      font-size: var(--input-small);
     }
   }
 
