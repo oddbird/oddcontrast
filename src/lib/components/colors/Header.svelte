@@ -119,10 +119,8 @@
   }
 
   [data-input='color'] {
-    align-self: end;
     border-width: 0 0 var(--border-width) 0;
     grid-area: input;
-    height: 100%;
     font-size: var(--input-large);
     padding: var(--shim) 0.25ch;
 
