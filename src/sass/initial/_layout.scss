@@ -78,9 +78,8 @@ body {
 }
 
 [data-layout='color-form'] {
-  display: grid;
-
   @include config.above('sm-page-break') {
+    display: grid;
     grid-template:
       'bginput fginput' auto
       'bgslide fgslide' auto / 1fr 1fr;
