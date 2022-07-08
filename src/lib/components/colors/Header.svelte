@@ -134,6 +134,7 @@
   }
 
   [data-label] {
+    --label-margin-bottom: var(--half-shim);
     grid-area: label;
   }
 
