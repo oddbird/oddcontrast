@@ -31,8 +31,8 @@
 
   [data-field='color-space'] {
     align-items: center;
-    display: grid;
     column-gap: var(--gutter);
+    display: grid;
     grid-template:
       'format-label' auto
       'format-input' auto / 1fr;
