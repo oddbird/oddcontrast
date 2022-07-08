@@ -90,7 +90,6 @@
   @use 'config';
 
   [data-colors] {
-    align-items: center;
     display: grid;
     grid-template:
       'label' auto
@@ -104,8 +103,7 @@
   }
 
   .swatch {
-    --swatch-border-color: var(--text);
-    border: var(--border-width) solid var(--swatch-border-color, transparent);
+    border: var(--border-width) solid var(--border);
     grid-area: swatch;
     height: 100%;
 
@@ -120,12 +118,12 @@
 
   [data-input='color'] {
     border-width: 0 0 var(--border-width) 0;
+    font-size: var(--input-size, var(--input-large));
     grid-area: input;
-    font-size: var(--input-large);
     padding: var(--shim) 0.25ch;
 
     @include config.between('sm-page-break', 'lg-page-break') {
-      font-size: var(--input-small);
+      --input-size: var(--input-small);
     }
   }
 

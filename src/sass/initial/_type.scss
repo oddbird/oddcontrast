@@ -82,7 +82,7 @@ strong {
   text-align: var(--warning-align, left);
 
   main > & {
-    --warning-bg: ghostwhite;
+    --warning-bg: var(--bg-messages);
     --warning-margin-bottom: var(--double-gutter);
     --warning-padding-block: var(--gutter);
     --warning-align: center;
