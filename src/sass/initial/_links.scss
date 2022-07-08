@@ -13,11 +13,6 @@
   @include config.focus-ring;
 
   --outline-offset: -1px;
-
-  [data-needs-changes='true'] & {
-    --outline-style: solid;
-    --focus-ring: var(--warning-highlight);
-  }
 }
 
 // Links

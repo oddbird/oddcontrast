@@ -9,8 +9,9 @@
 
 $text: hsl(230deg 25% 20%);
 $bg: white;
-$bg-messages: tools.tint(brand.$brand-blue, 93%);
+$bg-messages: tools.tint(brand.$brand-blue, 94%);
 $border: tools.tint($text, 50%);
 $border-light: tools.tint(brand.$brand-blue, 65%);
-$warning: tools.shade(brand.$brand-pink, 3%);
-$warning-highlight: tools.tint(brand.$brand-pink, 15%);
+$warning: tools.shade(brand.$brand-pink, 5%);
+$action: tools.shade(brand.$brand-pink, 15%);
+$active: brand.$brand-blue;
