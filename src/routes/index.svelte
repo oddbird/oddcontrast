@@ -5,8 +5,8 @@
   import Results from '$lib/components/Results.svelte';
   import { bg, fg } from '$lib/stores';
 
-  $: bg_fallback = $bg.toString({ fallback: true });
-  $: fg_fallback = $fg.toString({ fallback: true });
+  $: bg_fallback = $bg.display();
+  $: fg_fallback = $fg.display();
 </script>
 
 <div

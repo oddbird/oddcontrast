@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { ColorSpace, ColorString } from 'colorjs.io';
+  import type { ColorSpace } from 'colorjs.io';
   import Color from 'colorjs.io';
 
   export let space: ColorSpace;
@@ -7,8 +7,7 @@
   const color = new Color('white');
 
   $: targetColor = color.to(space);
-  $: fallbackColor = (targetColor.toString({ fallback: true }) as ColorString)
-    .color;
+  $: fallbackColor = targetColor.display().color;
   $: isSupported = fallbackColor.spaceId === space;
 </script>
 

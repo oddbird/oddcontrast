@@ -220,10 +220,10 @@
     "@vercel/nft" "^0.20.0"
     esbuild "^0.14.42"
 
-"@sveltejs/kit@^1.0.0-next.368":
-  version "1.0.0-next.368"
-  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.0.0-next.368.tgz#c90110d84fc6fdcd25a9ff0789407af7c455cd34"
-  integrity sha512-0+JrQebSLbDrc7qPa4HsdG1v1+95ftHJhZtJD/VRifVoyUjURnWL4TrNcfnqNsgtacFWw+rO6obBr1PWc6Mlig==
+"@sveltejs/kit@^1.0.0-next.369":
+  version "1.0.0-next.369"
+  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.0.0-next.369.tgz#025475120e6720e4d0f9d0f60a36e39bf69da27b"
+  integrity sha512-7kSOz6RIehSgV+HgrkV7m9tFkA5Dey/j0sw7vXtSdgcKUCbEwG84Mbk0vH9C2FTLL/9mlEGvxS5AqQ6m/VSv8Q==
   dependencies:
     "@sveltejs/vite-plugin-svelte" "^1.0.0-next.48"
     chokidar "^3.5.3"
@@ -1204,10 +1204,10 @@ colord@^2.9.2:
   resolved "https://registry.yarnpkg.com/colord/-/colord-2.9.2.tgz#25e2bacbbaa65991422c07ea209e2089428effb1"
   integrity sha512-Uqbg+J445nc1TKn4FoDPS6ZZqAvEDnwrH42yo8B40JSOgSLxMZ/gt3h4nmCtPLQeXhjJJkqBx7SCY35WnIixaQ==
 
-colorjs.io@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/colorjs.io/-/colorjs.io-0.1.0.tgz#f0614b4640338c28d9c6644aab065d490cd67f80"
-  integrity sha512-ovibEzacvAjbdn3T4GJXRtwB1MqBKIQlhucqve7WrKeMDyIeNf/z2kStZZm50sSI/bntsGbH9s7mXeCyhybCWw==
+colorjs.io@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/colorjs.io/-/colorjs.io-0.3.0.tgz#58c7dcd47b898fac9a0dd7b01ba23c021427ec7a"
+  integrity sha512-F1FD3/LWZDjd66KUAVErCLDrij/ukHntf5bWtfhrnSV2IT5ZUivuv7KKW3QbZLbjKPTsVPjmxeugQgnNYWMdrA==
 
 combined-stream@^1.0.8:
   version "1.0.8"
