@@ -10,13 +10,12 @@
 
   $: targetColor = color.to(space);
   $: inGamut = targetColor.inGamut();
+  $: targetColorValue = targetColor.toString({ inGamut: false });
 </script>
 
 <ul data-group="output {type}">
   <li>
-    <span data-color-info="value"
-      >{targetColor.toString({ inGamut: false })}</span
-    >
+    <span data-color-info="value">{targetColorValue}</span>
     <SupportWarning {space} />
     {#if !inGamut}
       <span data-color-info="warning">This color is out of gamut.</span>
