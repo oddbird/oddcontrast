@@ -1,19 +1,22 @@
 <script lang="ts">
-  import Footer from '$lib/components/footer.svelte';
-  import Form from '$lib/components/form/index.svelte';
-  import Header from '$lib/components/header.svelte';
-  import Results from '$lib/components/results.svelte';
-  import { bg_display, fg_display } from '$lib/stores';
+  import Colors from '$lib/components/colors/index.svelte';
+  import Footer from '$lib/components/Footer.svelte';
+  import Header from '$lib/components/Header.svelte';
+  import Results from '$lib/components/Results.svelte';
+  import { bg, fg } from '$lib/stores';
+
+  $: bg_fallback = $bg.display();
+  $: fg_fallback = $fg.display();
 </script>
 
 <div
   data-layout="app"
-  style="--fgcolor: {$fg_display}; --bgcolor: {$bg_display};"
+  style="--fgcolor: {fg_fallback}; --bgcolor: {bg_fallback};"
 >
   <Header />
   <Results />
   <main data-layout="main">
-    <Form />
+    <Colors />
   </main>
   <Footer />
 </div>

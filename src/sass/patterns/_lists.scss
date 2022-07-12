@@ -1,9 +1,11 @@
-@use '../config';
-
 ul {
   list-style: none;
   margin: 0;
   padding-left: 0;
+}
+
+li {
+  padding-bottom: var(--gutter);
 }
 
 [data-list='inline'] {

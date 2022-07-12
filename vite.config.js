@@ -23,16 +23,15 @@ const config = {
       include: ['src/**/*.{js,ts,svelte}'],
       exclude: [
         'src/**/*.d.ts',
-        'src/vendor',
         'src/routes/docs.ts',
         'src/routes/__layout.svelte',
       ],
       all: true,
       skipFull: true,
-      lines: 100,
-      functions: 100,
+      lines: 90,
+      functions: 90,
       branches: 50, // Seems to be a bug in Svelte component branch coverage
-      statements: 100,
+      statements: 90,
     },
   },
 };

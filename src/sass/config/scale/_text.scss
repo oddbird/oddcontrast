@@ -2,15 +2,11 @@
 /// -------------
 /// @group scale
 /// @sizes text-sizes {text}
-
-$rem: calc(1em + 0.25vw);
-$small: 0.9rem;
-$medium: calc(1.75rem + 0.15vw);
-$large: calc(2rem + 0.25vw);
-$xlarge: calc(2.5rem + 0.5vw);
-$h1: $xlarge;
-$h2: $large;
-$h3: $medium;
-$h4: 1.5rem;
-$h5: 1.25rem;
-$h6: 1rem;
+$rem: calc(1rem + 0.125vw);
+$small: calc(0.875rem + 0.125vw);
+$medium: calc(1.25rem + 0.125vw);
+$large: calc(2.25rem + 0.75vw);
+$label-size: calc(0.815rem + 0.125vw);
+$warning-size: $small;
+$input-small: calc(1.3rem + 0.25vw);
+$input-large: calc(1.75rem + 0.25vw);

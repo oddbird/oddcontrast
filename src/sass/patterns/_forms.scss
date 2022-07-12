@@ -1,11 +1,31 @@
+@use '../initial/type';
+
 /// # Form Patterns
 /// @group forms
 
+.label,
 label {
-  display: block;
-  font-size: var(--small);
+  @include type.heading;
+}
+
+input,
+select {
+  border-color: var(--border);
+  font-family: inherit;
+  font-size: inherit;
+  width: 100%;
+}
+
+select {
+  border: 0;
+  box-shadow: 1px 1px var(--half-shim) var(--border-light);
+  padding: var(--half-shim) var(--shim);
 }
 
 input {
-  width: 100%;
+  transition: outline-color var(--fast), outline-style var(--fast);
+
+  [data-needs-changes] & {
+    --focus-ring: var(--warning);
+  }
 }

@@ -1,7 +1,9 @@
-import Color from '$src/vendor/color.esm';
+import Color from 'colorjs.io';
 
 declare global {
   interface Window {
-    Color: typeof Color;
+    Color?: typeof Color;
+    bg?: Color;
+    fg?: Color;
   }
 }

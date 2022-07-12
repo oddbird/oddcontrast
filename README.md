@@ -1,7 +1,6 @@
 # OddContrast
 
-OddBird's Color Contrast Checker, powered by
-[`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+_OddBird's color contrast checker for modern CSS color formats_
 
 [![Build Status](https://github.com/oddbird/oddcontrast/actions/workflows/test.yml/badge.svg)](https://github.com/oddbird/oddcontrast/actions/workflows/test.yml)
 

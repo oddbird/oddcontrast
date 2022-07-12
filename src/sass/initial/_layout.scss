@@ -38,8 +38,16 @@ body {
 
 [data-layout~='header'] {
   display: grid;
+  gap: var(--shim) var(--double-gutter);
   grid-area: header;
-  grid-template-columns: 1fr auto;
+  grid-template:
+    'logo colorspace' auto
+    'social social' auto / auto 1fr;
+
+  @include config.above('sm-page-break') {
+    gap: var(--double-gutter);
+    grid-template: 'logo colorspace social' auto / auto 1fr auto;
+  }
 }
 
 [data-layout~='results'] {
@@ -47,7 +55,14 @@ body {
 }
 
 [data-layout~='main'] {
+  --layout-pad-block: 0;
+  --layout-pad-inline: 0; // allows warning to stretch to the edge
+
   grid-area: main;
+
+  > * {
+    padding-inline: var(--double-gutter);
+  }
 }
 
 [data-layout~='footer'] {
@@ -62,12 +77,27 @@ body {
   }
 }
 
-[data-group~='bg'] {
-  grid-column: 1;
+[data-layout='color-form'] {
+  @include config.above('sm-page-break') {
+    display: grid;
+    grid-template:
+      'bginput fginput' auto
+      'bgslide fgslide' auto / 1fr 1fr;
+  }
 }
 
-[data-group~='fg'] {
-  @include config.above('sm-page-break') {
-    grid-column: 2;
-  }
+[data-group='header bg'] {
+  grid-area: bginput;
+}
+
+[data-group='sliders bg'] {
+  grid-area: bgslide;
+}
+
+[data-group='header fg'] {
+  grid-area: fginput;
+}
+
+[data-group='sliders fg'] {
+  grid-area: fgslide;
 }

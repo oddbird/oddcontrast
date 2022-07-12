@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "license": "BSD-3-Clause",
   "engines": {
-    "node": "^16.9"
+    "node": "^16.9",
+    "yarn": "^1.22"
   },
   "type": "module",
   "scripts": {
@@ -12,9 +13,8 @@
     "svelte:build": "vite build",
     "dev": "npm-run-all docs -p \"svelte:dev {@}\" watch:docs --",
     "build": "run-s docs svelte:build",
-    "package": "svelte-kit package",
     "preview": "vite preview",
-    "check": "svelte-check --ignore src/vendor",
+    "check": "svelte-check",
     "lint": "run-s prettier lint:js lint:sass check",
     "lint:js": "yarn lint:js:ci --fix",
     "lint:js:ci": "eslint .",
@@ -30,15 +30,16 @@
     "watch:docs": "chokidar \"src/sass/**/*.scss\" \"./.sassdocrc\" \"./README.md\" -c \"yarn docs\"",
     "test": "run-s test:js test:sass",
     "test:js": "vitest",
-    "test:sass": "mocha --loader=ts-node/esm --extension ts test/sass",
-    "test:watch": "yarn test:js --watch"
+    "test:js:watch": "yarn test:js --watch",
+    "test:sass": "mocha --loader=ts-node/esm --extension ts test/sass"
   },
   "dependencies": {
-    "accoutrement": "^4.0.1"
+    "accoutrement": "^4.0.1",
+    "colorjs.io": "^0.3.0"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^1.0.0-next.55",
-    "@sveltejs/kit": "^1.0.0-next.368",
+    "@sveltejs/kit": "^1.0.0-next.369",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/svelte": "^3.1.3",
     "@types/node": "*",

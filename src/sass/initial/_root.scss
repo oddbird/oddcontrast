@@ -3,10 +3,11 @@
 @include config.import-webfonts;
 
 html {
-  @include config.font-family('primary');
+  @include config.font-family('body');
   @include config.colors--;
   @include config.ratios--;
   @include config.sizes--;
+  @include config.times--;
 
   font-size: config.size('rem');
   line-height: config.ratio('line-height');

@@ -20,48 +20,38 @@
   @include config.is-hidden;
 }
 
-/// # Heading Defaults
-/// Initial global defaults for heading elements…
-/// @group type
-/// @example html
-///   <h1>h1 is my heading size</h1>
-///   <h2>h2 is my heading size</h2>
-///   <h3>h3 is my heading size</h3>
-///   <h4>h4 is my heading size</h4>
-///   <h5>h5 is my heading size</h5>
-///   <h6>h6 is my heading size</h6>
-h1 {
-  font-size: var(--h1);
-}
-
-h2 {
-  font-size: var(--h2);
-}
-
-h3 {
-  font-size: var(--h3);
-}
-
-h4 {
-  font-size: var(--h4);
-}
-
-h5 {
-  font-size: var(--h5);
-}
-
-h6 {
-  font-size: var(--h6);
-}
-
 h1,
 h2,
 h3,
-h4,
-h5,
-h6 {
+h4 {
   font-weight: normal;
   margin: 0;
+}
+
+[data-heading] {
+  font-size: var(--heading-size, var(--medium));
+}
+
+[data-heading~='large'] {
+  --heading-size: var(--large);
+}
+
+@mixin heading() {
+  display: block;
+  font-size: var(--heading-size, var(--label-size));
+  letter-spacing: var(--heading-letterspacing, 0.05rem);
+  margin-bottom: var(--label-margin-bottom, 0);
+  text-transform: var(--heading-transform, uppercase);
+}
+
+.section-heading {
+  @include heading;
+
+  --label-margin-bottom: var(--gutter);
+
+  @include config.below('sm-page-break') {
+    --heading-size: var(--medium);
+  }
 }
 
 p {
@@ -72,6 +62,29 @@ strong {
   font-weight: 700;
 }
 
-.small {
-  font-size: var(--small);
+[data-color-info] {
+  display: block;
+  color: var(--color-info-color);
+  font-size: var(--color-info-size);
+}
+
+[data-color-info~='value'] {
+  --color-info-size: var(--color-value-size, var(--medium));
+}
+
+[data-color-info~='warning'] {
+  --color-info-color: var(--warning);
+  --color-info-size: var(--warning-size);
+
+  background: var(--warning-bg, transparent);
+  margin-bottom: var(--warning-margin-bottom);
+  padding-block: var(--warning-padding-block);
+  text-align: var(--warning-align, left);
+
+  main > & {
+    --warning-bg: var(--bg-messages);
+    --warning-margin-bottom: var(--double-gutter);
+    --warning-padding-block: var(--gutter);
+    --warning-align: center;
+  }
 }
