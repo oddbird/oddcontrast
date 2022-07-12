@@ -26,6 +26,6 @@ input {
   transition: outline-color var(--fast), outline-style var(--fast);
 
   [data-needs-changes] & {
-    --focus-ring: var(--warning-color);
+    --focus-ring: var(--warning);
   }
 }
