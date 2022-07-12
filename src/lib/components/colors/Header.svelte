@@ -95,7 +95,7 @@
       'label' auto
       'swatch' var(--swatch-height, var(--swatch))
       'input' auto
-      'error ' var(--double-gutter) / 1fr;
+      'error' minmax(var(--double-gutter), auto) / 1fr;
 
     @include config.above('sm-page-break') {
       --swatch-height: calc(2 * var(--swatch));
