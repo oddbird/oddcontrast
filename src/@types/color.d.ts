@@ -5,7 +5,6 @@ declare module 'colorjs.io' {
     precision?: number;
     commas?: boolean;
     inGamut?: boolean;
-    fallback?: boolean;
   }
 
   interface ColorString extends String {
@@ -41,8 +40,9 @@ declare module 'colorjs.io' {
     coords: [number, number, number];
     to: (s: ColorSpace, { inGamut }: { inGamut?: boolean } = {}) => Color;
     inGamut: (s: ColorSpace = this.spaceId) => boolean;
-    toString: (opts: ToStringOpts = {}) => ColorString | string;
+    toString: (opts: ToStringOpts = {}) => string;
     setAll: (s: ColorSpace, coords: [number, number, number]) => Color;
+    display: (s?: ColorSpace) => ColorString;
 
     [key: string]: {
       [key: string]: number;
