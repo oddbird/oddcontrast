@@ -1,14 +1,13 @@
 <script lang="ts">
   import type { ColorSpaceObject } from 'colorjs.io/fn';
   import { ColorSpace, to } from 'colorjs.io/fn';
-  import { compact, map } from 'lodash-es';
 
   import { SPACES } from '$lib/constants';
   import { bg, fg, space } from '$lib/stores';
 
   let spaces: ColorSpaceObject[] = [];
 
-  $: spaces = compact(map(SPACES, ColorSpace.get));
+  $: spaces = SPACES.map((s) => ColorSpace.get(s));
 
   // Update color formats when space selection changes
   $: {
@@ -25,7 +24,9 @@
   <label for="color-space" data-label>Color Format</label>
   <select name="color-space" id="color-space" bind:value={$space}>
     {#each spaces as s}
-      <option value={s.id}>{s.name}</option>
+      {#if s}
+        <option value={s.id}>{s.name}</option>
+      {/if}
     {/each}
   </select>
 </div>
