@@ -1,9 +1,8 @@
-import Color from 'colorjs.io';
+import { ColorObject } from 'colorjs.io/fn';
 
 declare global {
   interface Window {
-    Color?: typeof Color;
-    bg?: Color;
-    fg?: Color;
+    bg?: ColorObject;
+    fg?: ColorObject;
   }
 }

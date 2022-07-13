@@ -7,6 +7,7 @@ const config = {
   resolve: {
     alias: {
       $src: path.resolve('./src'),
+      $test: path.resolve('./test/js'),
     },
   },
   test: {

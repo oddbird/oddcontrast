@@ -1,37 +1,37 @@
 import { fireEvent, render } from '@testing-library/svelte';
-import Color from 'colorjs.io';
+import { HSL } from 'colorjs.io/fn';
 import { get, writable } from 'svelte/store';
 
 import Header from '$lib/components/colors/Header.svelte';
+import { HSL_WHITE, HSL_WHITE_SERIALIZED } from '$test/fixtures';
 
 describe('Header', () => {
   it('updates color (but not space) on input', async () => {
-    const color = writable(new Color('hsl(1 2% 3%)'));
-    const space = writable('hsl');
+    const color = writable(HSL_WHITE);
     const { getByLabelText } = render(Header, {
       type: 'bg',
       color,
-      space,
+      space: 'hsl',
     });
     const input = getByLabelText('Background Color');
     await fireEvent.focus(input);
-    await fireEvent.input(input, { target: { value: '#fff' } });
+    await fireEvent.input(input, { target: { value: 'red' } });
     await fireEvent.blur(input);
+    const actual = get(color);
 
-    expect(get(color).toString()).toEqual('hsl(0 0% 100%)');
-    expect(get(space)).toEqual('hsl');
+    expect(actual.space).toEqual(HSL);
+    expect(actual.coords).toEqual([0, 100, 50]);
   });
 
   it('shows error on invalid color', async () => {
     vi.spyOn(console, 'error').mockImplementation(() => {
       /* do nothing */
     });
-    const color = writable(new Color('hsl(1 2% 3%)'));
-    const space = writable('hsl');
+    const color = writable(HSL_WHITE);
     const { getByText, getByLabelText } = render(Header, {
       type: 'fg',
       color,
-      space,
+      space: 'hsl',
     });
     const input = getByLabelText('Foreground Color');
     await fireEvent.focus(input);
@@ -40,10 +40,10 @@ describe('Header', () => {
     expect(getByText('Could not parse input as a valid color.')).toBeVisible();
 
     await fireEvent.blur(input);
+    const actual = get(color);
 
-    expect(input).toHaveValue('hsl(1 2% 3%)');
-    expect(get(color).toString()).toEqual('hsl(1 2% 3%)');
-    expect(get(space)).toEqual('hsl');
+    expect(input).toHaveValue(HSL_WHITE_SERIALIZED);
+    expect(actual).toEqual(HSL_WHITE);
   });
 
   describe('on enter', () => {
@@ -51,12 +51,11 @@ describe('Header', () => {
       vi.spyOn(console, 'error').mockImplementation(() => {
         /* do nothing */
       });
-      const color = writable(new Color('hsl(1 2% 3%)'));
-      const space = writable('hsl');
+      const color = writable(HSL_WHITE);
       const { getByText, getByLabelText } = render(Header, {
         type: 'fg',
         color,
-        space,
+        space: 'hsl',
       });
       const input = getByLabelText('Foreground Color');
       await fireEvent.focus(input);
@@ -75,23 +74,23 @@ describe('Header', () => {
 
   describe('on escape', () => {
     it('blurs input', async () => {
-      const color = writable(new Color('hsl(1 2% 3%)'));
-      const space = writable('hsl');
+      const color = writable(HSL_WHITE);
       const { getByLabelText } = render(Header, {
         type: 'fg',
         color,
-        space,
+        space: 'hsl',
       });
       const input = getByLabelText('Foreground Color');
       await fireEvent.focus(input);
-      await fireEvent.input(input, { target: { value: '#fff' } });
+      await fireEvent.input(input, { target: { value: 'red' } });
 
       vi.spyOn(input, 'blur');
       await fireEvent.keyDown(input, { key: 'Esc' });
+      const actual = get(color);
 
       expect(input.blur).toHaveBeenCalledTimes(1);
-      expect(get(color).toString()).toEqual('hsl(0 0% 100%)');
-      expect(get(space)).toEqual('hsl');
+      expect(actual.space).toEqual(HSL);
+      expect(actual.coords).toEqual([0, 100, 50]);
     });
   });
 });

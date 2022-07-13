@@ -1,14 +1,18 @@
 <script lang="ts">
-  import type { ColorSpace } from 'colorjs.io';
-  import Color from 'colorjs.io';
+  import type { ColorSpaceId } from 'colorjs.io/fn';
+  import { ColorSpace, display } from 'colorjs.io/fn';
 
-  export let space: ColorSpace;
+  export let space: ColorSpaceId;
 
-  const color = new Color('white');
-
-  $: targetColor = color.to(space);
-  $: fallbackColor = targetColor.display().color;
-  $: isSupported = fallbackColor.spaceId === space;
+  $: spaceObject = ColorSpace.get(space);
+  $: fallbackColor = display(
+    {
+      space: spaceObject,
+      coords: spaceObject.white,
+    },
+    { inGamut: false },
+  ).color;
+  $: isSupported = fallbackColor.space.id === space;
 </script>
 
 {#if !isSupported}

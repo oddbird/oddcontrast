@@ -1,20 +1,21 @@
 <script lang="ts">
-  import type ColorType from 'colorjs.io';
-  import type { ColorSpace } from 'colorjs.io';
-  import Color from 'colorjs.io';
+  import type { ColorObject, ColorSpaceId } from 'colorjs.io/fn';
+  import { ColorSpace } from 'colorjs.io/fn';
   import type { Writable } from 'svelte/store';
 
   import { SLIDERS } from '$lib/constants';
 
   export let type: 'bg' | 'fg';
-  export let color: Writable<ColorType>;
+  export let color: Writable<ColorObject>;
+  export let space: ColorSpaceId;
 
-  $: space = $color.spaceId as ColorSpace;
-  $: coords = Color.spaces[space]?.coords;
+  $: spaceObject = ColorSpace.get(space);
   $: sliders = SLIDERS[space].map((id) => ({
     id,
-    name: coords[id].name,
-    range: coords[id].range || coords[id].refRange || [0, 1],
+    name: spaceObject.coords[id].name,
+    range: spaceObject.coords[id].range ||
+      spaceObject.coords[id].refRange || [0, 1],
+    index: ColorSpace.resolveCoord({ space: spaceObject, coordId: id }).index,
   }));
 
   const getStep = (range: [number, number]) => {
@@ -43,7 +44,7 @@
           min={slider.range[0]}
           max={slider.range[1]}
           step={getStep(slider.range)}
-          bind:value={$color[space][slider.id]}
+          bind:value={$color.coords[slider.index]}
         />
       </div>
     {/each}

@@ -18,6 +18,7 @@
       "$lib": ["src/lib"],
       "$lib/*": ["src/lib/*"],
       "$src/*": ["src/*"],
+      "$test/*": ["test/js/*"],
       "$app/*": ["./.svelte-kit/runtime/app/*"]
     }
   }

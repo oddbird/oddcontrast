@@ -11,11 +11,11 @@
 <SupportWarning space={$space} />
 
 <form data-form="contrast-checker" data-layout="color-form">
-  <Header type="bg" color={bg} {space} />
-  <Sliders type="bg" color={bg} />
+  <Header type="bg" color={bg} space={$space} />
+  <Sliders type="bg" color={bg} space={$space} />
 
-  <Header type="fg" color={fg} {space} />
-  <Sliders type="fg" color={fg} />
+  <Header type="fg" color={fg} space={$space} />
+  <Sliders type="fg" color={fg} space={$space} />
 </form>
 
 <h3 class="label section-heading">Additional Formats</h3>
