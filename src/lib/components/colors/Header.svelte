@@ -1,16 +1,16 @@
 <script lang="ts">
-  import type { ColorSpace, ColorString } from 'colorjs.io';
-  import Color from 'colorjs.io';
+  import type { ColorObject, ColorSpaceId } from 'colorjs.io/fn';
+  import { serialize, to } from 'colorjs.io/fn';
   import type { Writable } from 'svelte/store';
 
   export let type: 'bg' | 'fg';
-  export let color: Writable<Color>;
-  export let space: Writable<ColorSpace>;
+  export let color: Writable<ColorObject>;
+  export let space: ColorSpaceId;
 
-  $: display = $color.toString({ inGamut: false });
+  $: display = serialize($color, { inGamut: false });
   $: displayType = type === 'bg' ? 'Background' : 'Foreground';
   $: editing = false;
-  $: inputValue = '' as string | ColorString;
+  $: inputValue = '';
   let hasError = false;
 
   // When not editing, sync input value with color (e.g. when sliders change)
@@ -36,13 +36,13 @@
     if (display !== value) {
       let newColor;
       try {
-        newColor = new Color(value).to($space);
+        newColor = to(value, space);
       } catch (error) {
         hasError = true;
         console.error(error);
       }
       if (newColor) {
-        color.set(newColor);
+        $color = newColor;
       }
     }
   };

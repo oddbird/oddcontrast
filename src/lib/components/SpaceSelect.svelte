@@ -1,16 +1,21 @@
 <script lang="ts">
-  import Color from 'colorjs.io';
+  import type { ColorSpaceObject } from 'colorjs.io/fn';
+  import { ColorSpace, to } from 'colorjs.io/fn';
 
   import { SPACES } from '$lib/constants';
   import { bg, fg, space } from '$lib/stores';
 
+  let spaces: ColorSpaceObject[] = [];
+
+  $: spaces = SPACES.map((s) => ColorSpace.get(s));
+
   // Update color formats when space selection changes
   $: {
-    if ($bg.spaceId !== $space) {
-      $bg = $bg.to($space);
+    if ($bg.space.id !== $space) {
+      $bg = to($bg, $space);
     }
-    if ($fg.spaceId !== $space) {
-      $fg = $fg.to($space);
+    if ($fg.space.id !== $space) {
+      $fg = to($fg, $space);
     }
   }
 </script>
@@ -18,10 +23,10 @@
 <div data-field="color-space">
   <label for="color-space" data-label>Color Format</label>
   <select name="color-space" id="color-space" bind:value={$space}>
-    {#each SPACES as spaceId}
-      <option value={Color.spaces[spaceId].id}
-        >{Color.spaces[spaceId].name}</option
-      >
+    {#each spaces as s}
+      {#if s}
+        <option value={s.id}>{s.name}</option>
+      {/if}
     {/each}
   </select>
 </div>

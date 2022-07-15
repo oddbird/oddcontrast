@@ -1,12 +1,14 @@
 <script lang="ts">
+  import { display } from 'colorjs.io/fn';
+
   import Colors from '$lib/components/colors/index.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import Header from '$lib/components/Header.svelte';
   import Results from '$lib/components/Results.svelte';
   import { bg, fg } from '$lib/stores';
 
-  $: bg_fallback = $bg.display();
-  $: fg_fallback = $fg.display();
+  $: bg_fallback = display($bg);
+  $: fg_fallback = display($fg);
 </script>
 
 <div

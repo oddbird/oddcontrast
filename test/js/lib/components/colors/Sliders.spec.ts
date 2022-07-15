@@ -1,15 +1,16 @@
 import { fireEvent, render } from '@testing-library/svelte';
-import Color from 'colorjs.io';
 import { get, writable } from 'svelte/store';
 
 import Sliders from '$lib/components/colors/Sliders.svelte';
+import { HSL_WHITE } from '$test/fixtures';
 
 describe('Sliders', () => {
   it('renders editable sliders', async () => {
-    const color = writable(new Color('hsl', [0, 0, 0]));
+    const color = writable(HSL_WHITE);
     const { getByLabelText } = render(Sliders, {
       type: 'bg',
       color,
+      space: 'hsl',
     });
     const sliders = {
       h: getByLabelText('Hue'),

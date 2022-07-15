@@ -1,8 +1,8 @@
-import type { ColorSpace } from 'colorjs.io';
+import type { ColorSpaceId } from 'colorjs.io/fn';
 
-export const SLIDERS: { [key in ColorSpace]: string[] } = {
+export const SLIDERS: { [key in ColorSpaceId]: string[] } = {
   hsl: ['h', 's', 'l'],
   oklch: ['l', 'c', 'h'],
 };
 
-export const SPACES: ColorSpace[] = ['oklch', 'hsl'];
+export const SPACES: ColorSpaceId[] = ['oklch', 'hsl'];

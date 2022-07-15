@@ -1,23 +1,23 @@
 <script lang="ts">
-  import type { ColorSpace } from 'colorjs.io';
-  import type Color from 'colorjs.io';
+  import type { ColorObject, ColorSpaceId } from 'colorjs.io/fn';
+  import { inGamut, serialize, to } from 'colorjs.io/fn';
 
   import SupportWarning from '$lib/components/colors/SupportWarning.svelte';
 
   export let type: 'bg' | 'fg';
-  export let color: Color;
-  export let space: ColorSpace;
+  export let color: ColorObject;
+  export let space: ColorSpaceId;
 
-  $: targetColor = color.to(space);
-  $: inGamut = targetColor.inGamut();
-  $: targetColorValue = targetColor.toString({ inGamut: false });
+  $: targetColor = to(color, space);
+  $: isInGamut = inGamut(targetColor);
+  $: targetColorValue = serialize(targetColor, { inGamut: false });
 </script>
 
 <ul data-group="output {type}">
   <li>
     <span data-color-info="value">{targetColorValue}</span>
     <SupportWarning {space} />
-    {#if !inGamut}
+    {#if !isInGamut}
       <span data-color-info="warning">This color is out of gamut.</span>
     {/if}
   </li>

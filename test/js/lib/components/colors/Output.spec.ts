@@ -1,33 +1,34 @@
 import { render } from '@testing-library/svelte';
-import Color from 'colorjs.io';
+import { ColorSpace, serialize, to } from 'colorjs.io/fn';
 
 import Output from '$lib/components/colors/Output.svelte';
+import { HSL_WHITE, HSL_WHITE_SERIALIZED } from '$test/fixtures';
 
 describe('Output', () => {
   it('renders color in selected format', async () => {
-    const color = new Color('hsl', [1, 2, 3]);
     const { getByText } = render(Output, {
       type: 'bg',
-      color,
+      color: HSL_WHITE,
       space: 'hsl',
     });
 
-    expect(getByText('hsl(1 2% 3%)')).toBeVisible();
+    expect(getByText(HSL_WHITE_SERIALIZED)).toBeVisible();
   });
 
   it('renders color in other format', async () => {
-    const color = new Color('hsl', [1, 2, 3]);
     const { getByText } = render(Output, {
       type: 'bg',
-      color,
+      color: HSL_WHITE,
       space: 'oklch',
     });
 
-    expect(getByText(color.to('oklch').toString() as string)).toBeVisible();
+    expect(
+      getByText(serialize(to(HSL_WHITE, 'oklch'), { inGamut: false })),
+    ).toBeVisible();
   });
 
   it('renders warning if out of gamut', async () => {
-    const color = new Color('oklch', [0.01, 0.02, 0]);
+    const color = { space: ColorSpace.get('oklch'), coords: [0.01, 0.02, 0] };
     const { getByText } = render(Output, {
       type: 'fg',
       color,

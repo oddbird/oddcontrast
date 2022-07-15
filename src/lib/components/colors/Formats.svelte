@@ -1,13 +1,12 @@
 <script lang="ts">
-  import type Color from 'colorjs.io';
-  import type { ColorSpace } from 'colorjs.io';
+  import type { ColorObject, ColorSpaceId } from 'colorjs.io/fn';
 
   import Output from '$lib/components/colors/Output.svelte';
   import { SPACES } from '$lib/constants';
 
   export let type: 'bg' | 'fg';
-  export let color: Color;
-  export let space: ColorSpace;
+  export let color: ColorObject;
+  export let space: ColorSpaceId;
 
   $: displayType = type === 'bg' ? 'Background' : 'Foreground';
   $: otherSpaces = SPACES.filter((s) => s !== space);
