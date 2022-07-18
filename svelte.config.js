@@ -13,7 +13,7 @@ const config = {
   }),
 
   kit: {
-    adapter: process.env.VITEST ? undefined : adapter(),
+    adapter: adapter(),
   },
 };
 
