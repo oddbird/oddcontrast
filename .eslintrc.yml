@@ -34,3 +34,11 @@ rules:
   import/order: 0
   simple-import-sort/imports: 1
   sort-imports: 0
+
+  # ESLint
+  no-warning-comments:
+    - 1
+    - terms:
+        - todo
+        - fixme
+        - '@@@'

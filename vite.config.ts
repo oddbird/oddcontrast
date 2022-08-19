@@ -1,21 +1,27 @@
+/// <reference types="vitest" />
+/// <reference types="@sveltejs/kit/types" />
+
 import { sveltekit } from '@sveltejs/kit/vite';
 import path from 'path';
+import { defineConfig } from 'vite';
 
-/** @type {import('vite').UserConfig} */
-const config = {
-  plugins: [sveltekit()],
+export default defineConfig({
   resolve: {
     alias: {
       $src: path.resolve('./src'),
       $test: path.resolve('./test/js'),
     },
   },
+  plugins: [sveltekit()],
+  /**
+   * @see https://vitest.dev/config/#configuration
+   */
   test: {
     include: ['./test/js/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     globals: true,
     environment: 'jsdom',
     watch: false,
-    setupFiles: './test/js/setup.ts',
+    setupFiles: './test/js/setup.js',
     clearMocks: true,
     reporters: 'dot',
     coverage: {
@@ -24,8 +30,8 @@ const config = {
       include: ['src/**/*.{js,ts,svelte}'],
       exclude: [
         'src/**/*.d.ts',
-        'src/routes/docs.ts',
-        'src/routes/__layout.svelte',
+        'src/routes/docs/**/*',
+        'src/routes/+layout.*',
       ],
       all: true,
       skipFull: true,
@@ -35,6 +41,4 @@ const config = {
       statements: 90,
     },
   },
-};
-
-export default config;
+});

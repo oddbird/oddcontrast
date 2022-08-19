@@ -1,10 +1,10 @@
 import { render } from '@testing-library/svelte';
 
-import Index from '$src/routes/index.svelte';
+import Page from '$src/routes/+page.svelte';
 
-describe('Index', () => {
+describe('Page', () => {
   beforeEach((context) => {
-    context.result = render(Index);
+    context.result = render(Page);
   });
 
   it('shows the proper heading', ({ result }) => {
