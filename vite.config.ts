@@ -35,10 +35,6 @@ export default defineConfig({
       ],
       all: true,
       skipFull: true,
-      lines: 90,
-      functions: 90,
-      branches: 50, // Seems to be a bug in Svelte component branch coverage
-      statements: 90,
     },
   },
 });
