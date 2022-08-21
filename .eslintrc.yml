@@ -28,7 +28,7 @@ settings:
   svelte3/typescript: true
   import/resolver:
     typescript:
-      project: 'tsconfig.json'
+      project: tsconfig.json
 rules:
   # Import
   import/order: 0

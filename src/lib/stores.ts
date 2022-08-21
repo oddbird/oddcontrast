@@ -2,6 +2,7 @@ import type { ColorSpaceId } from 'colorjs.io/fn';
 import { ColorSpace } from 'colorjs.io/fn';
 import { writable } from 'svelte/store';
 
+// eslint-disable-next-line import/no-unresolved
 import { browser, dev } from '$app/env';
 
 export const INITIAL_VALUES = {

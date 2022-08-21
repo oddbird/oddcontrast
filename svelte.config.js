@@ -13,6 +13,10 @@ const config = {
   }),
 
   kit: {
+    alias: {
+      '$src/*': 'src/*',
+      '$test/*': 'test/js/*',
+    },
     adapter: adapter(),
   },
 };

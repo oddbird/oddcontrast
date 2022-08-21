@@ -39,11 +39,11 @@
     "colorjs.io": "^0.4.0"
   },
   "devDependencies": {
-    "@sveltejs/adapter-auto": "^1.0.0-next.64",
-    "@sveltejs/kit": "^1.0.0-next.427",
+    "@sveltejs/adapter-auto": "^1.0.0-next.65",
+    "@sveltejs/kit": "^1.0.0-next.428",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/svelte": "^3.2.0",
-    "@types/node": "*",
+    "@types/node": "18.7.8",
     "@typescript-eslint/eslint-plugin": "^5.33.1",
     "@typescript-eslint/parser": "^5.33.1",
     "@vitest/coverage-c8": "^0.22.1",
@@ -61,7 +61,7 @@
     "postcss": "^8.4.16",
     "prettier": "^2.7.1",
     "prettier-plugin-svelte": "^2.7.0",
-    "sass": "^1.54.4",
+    "sass": "^1.54.5",
     "sass-true": "^6.1.0",
     "sassdoc": "^2.7.4",
     "sassdoc-theme-herman": "^4.0.2",
