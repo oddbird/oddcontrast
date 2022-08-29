@@ -3,8 +3,8 @@ import '$lib/utils/initColors';
 
 import { vi } from 'vitest';
 
-// https://github.com/sveltejs/kit/issues/5879
-vi.mock('$app/env', () => {
+// https://github.com/sveltejs/kit/issues/6259
+vi.mock('$app/environment', () => {
   return {
     browser: true,
     dev: false,

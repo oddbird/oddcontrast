@@ -3,7 +3,7 @@ import { ColorSpace } from 'colorjs.io/fn';
 import { writable } from 'svelte/store';
 
 // eslint-disable-next-line import/no-unresolved
-import { browser, dev } from '$app/env';
+import { browser, dev } from '$app/environment';
 
 export const INITIAL_VALUES = {
   space: 'oklch' as ColorSpaceId,
