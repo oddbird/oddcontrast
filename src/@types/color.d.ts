@@ -57,6 +57,12 @@ declare module 'colorjs.io/fn' {
 
   export function inGamut(color: ColorObject): boolean;
 
+  export function contrast(
+    background: ColorObject,
+    foreground: ColorObject,
+    algorithm: string,
+  ): number;
+
   export const HSL = ColorSpaceObject;
   export const Lab = ColorSpaceObject;
   export const LCH = ColorSpaceObject;

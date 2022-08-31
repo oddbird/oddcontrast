@@ -21,7 +21,8 @@
 /// when focussed or active.
 /// @group a11y
 .sr-only {
-  &:not(:focus, :active) {
+  &:not(:focus),
+  &:not(:active) {
     @include config.is-hidden;
   }
 }

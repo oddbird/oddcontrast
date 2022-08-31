@@ -6,3 +6,14 @@ export const SLIDERS: { [key in ColorSpaceId]: string[] } = {
 };
 
 export const SPACES: ColorSpaceId[] = ['oklch', 'hsl'];
+
+export const RATIOS = {
+  AA: {
+    Normal: 4.5,
+    Large: 3,
+  },
+  AAA: {
+    Normal: 7,
+    Large: 4.5,
+  },
+};
