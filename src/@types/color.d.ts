@@ -19,7 +19,7 @@ declare module 'colorjs.io/fn' {
   export interface ColorObject {
     space: ColorSpaceObject;
     coords: [number, number, number];
-    alpha: number;
+    alpha?: number;
   }
 
   export interface ColorString extends String {

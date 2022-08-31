@@ -1,4 +1,4 @@
-import type { ColorSpaceId } from 'colorjs.io/fn';
+import type { ColorObject, ColorSpaceId } from 'colorjs.io/fn';
 import { ColorSpace } from 'colorjs.io/fn';
 import { writable } from 'svelte/store';
 
@@ -24,8 +24,8 @@ const INITIAL_FG = {
 };
 
 export const space = writable<ColorSpaceId>(INITIAL_VALUES.space);
-export const bg = writable(INITIAL_BG);
-export const fg = writable(INITIAL_FG);
+export const bg = writable<ColorObject>(INITIAL_BG);
+export const fg = writable<ColorObject>(INITIAL_FG);
 
 export const reset = () => {
   bg.set(INITIAL_BG);
