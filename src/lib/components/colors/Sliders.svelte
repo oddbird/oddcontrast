@@ -48,6 +48,18 @@
         />
       </div>
     {/each}
+    <div data-field="color-slider">
+      <label for="{type}_alpha" data-label>Alpha</label>
+      <input
+        id="{type}_alpha"
+        name="{type}_alpha"
+        type="range"
+        min={0}
+        max={1}
+        step={getStep([0, 1])}
+        bind:value={$color.alpha}
+      />
+    </div>
   </form>
 </div>
 
