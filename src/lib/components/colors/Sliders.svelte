@@ -1,9 +1,9 @@
 <script lang="ts">
   import type { ColorObject, ColorSpaceId } from 'colorjs.io/fn';
-  import { ColorSpace } from 'colorjs.io/fn';
   import type { Writable } from 'svelte/store';
 
   import { SLIDERS } from '$lib/constants';
+  import { ColorSpace } from '$lib/stores';
 
   export let type: 'bg' | 'fg';
   export let color: Writable<ColorObject>;

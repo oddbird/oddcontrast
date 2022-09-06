@@ -1,8 +1,6 @@
-<script lang="ts" context="module">
+<script>
   // Import global styles
   import '$src/sass/app.scss';
-  // Register necessary color spaces
-  import '$lib/utils/initColors';
 </script>
 
 <svelte:head>

@@ -1,7 +1,8 @@
 import { render } from '@testing-library/svelte';
-import { ColorSpace, serialize, to } from 'colorjs.io/fn';
+import { serialize, to } from 'colorjs.io/fn';
 
 import Output from '$lib/components/colors/Output.svelte';
+import { ColorSpace } from '$lib/stores';
 import { HSL_WHITE, HSL_WHITE_SERIALIZED } from '$test/fixtures';
 
 describe('Output', () => {
