@@ -2,8 +2,6 @@
 
 _OddBird's color contrast checker for modern CSS color formats_
 
-[![Build Status](https://github.com/oddbird/oddcontrast/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/oddbird/oddcontrast/actions/workflows/test.yml)
-
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b5488a16-3ab0-4f72-b8cb-251d528babb8/deploy-status)](https://app.netlify.com/sites/oddcontrast/deploys)
 
 ## Developing
