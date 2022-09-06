@@ -1,2 +1,1 @@
-// Register necessary color spaces
-import '$lib/utils/initColors';
+export const prerender = true;

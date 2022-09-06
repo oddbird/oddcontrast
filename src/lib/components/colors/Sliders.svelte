@@ -1,9 +1,9 @@
 <script lang="ts">
   import type { ColorObject, ColorSpaceId } from 'colorjs.io/fn';
-  import { ColorSpace } from 'colorjs.io/fn';
   import type { Writable } from 'svelte/store';
 
   import { SLIDERS } from '$lib/constants';
+  import { ColorSpace } from '$lib/stores';
 
   export let type: 'bg' | 'fg';
   export let color: Writable<ColorObject>;
@@ -48,6 +48,18 @@
         />
       </div>
     {/each}
+    <div data-field="color-slider">
+      <label for="{type}_alpha" data-label>Alpha</label>
+      <input
+        id="{type}_alpha"
+        name="{type}_alpha"
+        type="range"
+        min={0}
+        max={1}
+        step={getStep([0, 1])}
+        bind:value={$color.alpha}
+      />
+    </div>
   </form>
 </div>
 

@@ -18,7 +18,7 @@
 /// A class to hide content visually,
 /// while remaining visible to screen readers.
 /// Interactive elements will also become visble
-/// when focussed or active.
+/// when focused or active.
 /// @group a11y
 .sr-only {
   &:not(:focus, :active) {

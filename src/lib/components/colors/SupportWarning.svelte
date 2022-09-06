@@ -1,6 +1,8 @@
 <script lang="ts">
   import type { ColorSpaceId } from 'colorjs.io/fn';
-  import { ColorSpace, display } from 'colorjs.io/fn';
+  import { display } from 'colorjs.io/fn';
+
+  import { ColorSpace } from '$lib/stores';
 
   export let space: ColorSpaceId;
 
@@ -17,7 +19,7 @@
 
 {#if !isSupported}
   <span data-color-info="warning">
-    {space} is
+    {spaceObject.name} is
     <a
       href="https://caniuse.com/mdn-css_types_color_oklab,mdn-css_types_color_oklch,mdn-css_types_color_hsla,mdn-css_types_color_hsl"
     >
