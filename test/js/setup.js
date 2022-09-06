@@ -1,5 +1,4 @@
 import '@testing-library/jest-dom';
-import '$lib/utils/initColors';
 
 import { vi } from 'vitest';
 

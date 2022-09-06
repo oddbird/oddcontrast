@@ -1,9 +1,9 @@
 <script lang="ts">
   import type { ColorSpaceObject } from 'colorjs.io/fn';
-  import { ColorSpace, to } from 'colorjs.io/fn';
+  import { to } from 'colorjs.io/fn';
 
   import { SPACES } from '$lib/constants';
-  import { bg, fg, space } from '$lib/stores';
+  import { bg, ColorSpace, fg, space } from '$lib/stores';
 
   let spaces: ColorSpaceObject[] = [];
 
