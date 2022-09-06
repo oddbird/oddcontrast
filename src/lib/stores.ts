@@ -1,9 +1,31 @@
 import type { ColorSpaceId } from 'colorjs.io/fn';
-import { ColorSpace } from 'colorjs.io/fn';
+import {
+  ColorSpace,
+  HSL,
+  Lab,
+  LCH,
+  OKLCH,
+  P3,
+  REC_2020,
+  sRGB,
+} from 'colorjs.io/fn';
 import { writable } from 'svelte/store';
 
 // eslint-disable-next-line import/no-unresolved
 import { browser, dev } from '$app/environment';
+
+// Register supported color spaces
+ColorSpace.register(HSL);
+ColorSpace.register(OKLCH);
+
+// Register default fallback color spaces
+ColorSpace.register(sRGB);
+ColorSpace.register(LCH);
+ColorSpace.register(Lab);
+ColorSpace.register(REC_2020);
+ColorSpace.register(P3);
+
+export { ColorSpace };
 
 export const INITIAL_VALUES = {
   space: 'oklch' as ColorSpaceId,

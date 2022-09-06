@@ -1,6 +1,8 @@
 <script lang="ts">
   import type { ColorSpaceId } from 'colorjs.io/fn';
-  import { ColorSpace, display } from 'colorjs.io/fn';
+  import { display } from 'colorjs.io/fn';
+
+  import { ColorSpace } from '$lib/stores';
 
   export let space: ColorSpaceId;
 
