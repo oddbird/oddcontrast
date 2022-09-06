@@ -134,7 +134,7 @@
     &:before {
       --checkerboard-start: 50%;
       --checkerboard-width: 50%;
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><rect fill="%23f7f7f7" width="30" height="30"/><rect x="30" y="30" width="30" height="30" fill="%23f7f7f7"/></svg>');
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><rect fill="%23e8e8e8" width="30" height="30"/><rect x="30" y="30" width="30" height="30" fill="%23e8e8e8"/></svg>');
       background-position: 0 0;
       background-size: 30px 30px;
       z-index: -1;
