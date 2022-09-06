@@ -8,9 +8,20 @@ _OddBird's color contrast checker for modern CSS color formats_
 
 ## Developing
 
-If you are using VS Code devcontainers open the project folder and run "Re-open
-in container", then follow the steps below. To develop outside devcontainers
-first install the frontend dependencies with `yarn install`, then:
+To develop with local versions of Node/Yarn, first install the frontend
+dependencies with `yarn install`, then:
+
+```bash
+yarn dev
+
+# or start the server and open the app in a new browser tab
+yarn dev --open
+```
+
+## Developing (Docker-based)
+
+If you are using VS Code devcontainers to manage Node/Yarn versions, open the
+project folder and run "Re-open in container", then:
 
 ```bash
 yarn dev
@@ -31,4 +42,6 @@ You can preview the production build with `yarn preview`.
 
 ## Deploying
 
-The staging site is automatically deployed via Netlify to <https://oddcontrast.netlify.app/> every time a commit is made on the `main` branch.
+The staging site is automatically deployed via Netlify to
+<https://oddcontrast.netlify.app/> every time a commit is made on the `main`
+branch.
