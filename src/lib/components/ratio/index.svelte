@@ -28,25 +28,42 @@
       <span class="sr-only">The contrast ratio is</span>
       {displayRatio}:1
     </h3>
-    <Result level="AA" type="Normal" {ratio} />
-    <Result level="AAA" type="Normal" {ratio} />
-    <Result level="AA" type="Large" {ratio} />
-    <Result level="AAA" type="Large" {ratio} />
+    <div class="result-status">
+      <Result level="AA" type="Normal" {ratio} />
+      <Result level="AAA" type="Normal" {ratio} />
+      <Result level="AA" type="Large" {ratio} />
+      <Result level="AAA" type="Large" {ratio} />
+    </div>
   </div>
 
-  <div>
-    <h4>AA Contrast Ratio</h4>
-    <span><strong>{RATIOS.AA.Normal}</strong> : 1</span><span>Normal Text</span>
-    <span><strong>{RATIOS.AA.Large}</strong> : 1</span><span>Large Text</span>
+  <div class="contrast-defined">
+    <h4 class="label">AA Contrast Ratio</h4>
 
-    <h4>AAA Contrast Ratio</h4>
-    <span><strong>{RATIOS.AAA.Normal}</strong> : 1</span><span>Normal Text</span
-    >
-    <span><strong>{RATIOS.AAA.Large}</strong> : 1</span><span>Large Text</span>
+    <dl>
+      <dt><strong>{RATIOS.AA.Normal}</strong> : 1</dt>
+      <dd>Normal Text</dd>
 
-    <h4>Large Text Size</h4>
-    <span><strong>≥ 18 pt / 24 px</strong></span><span>Regular Weight</span>
-    <span><strong>≥ 14 pt / 19 px</strong></span><span>Bold Weight</span>
+      <dt><strong>{RATIOS.AA.Large}</strong> : 1</dt>
+      <dd>Large Text</dd>
+    </dl>
+
+    <h4 class="label">AAA Contrast Ratio</h4>
+    <dl>
+      <dt><strong>{RATIOS.AAA.Normal}</strong> : 1</dt>
+      <dd>Normal Text</dd>
+
+      <dt><strong>{RATIOS.AAA.Large}</strong> : 1</dt>
+      <dd>Large Text</dd>
+    </dl>
+
+    <h4 class="label">Large Text Size</h4>
+    <dl>
+      <dt><strong>≥ 18 pt / 24 px</strong></dt>
+      <dd>Regular Weight</dd>
+
+      <dt><strong>≥ 14 pt / 19 px</strong></dt>
+      <dd>Bold Weight</dd>
+    </dl>
   </div>
 </aside>
 
@@ -62,5 +79,19 @@
       gap: var(--double-gutter);
       grid-template-columns: 1fr auto;
     }
+  }
+
+  .result-status {
+    display: grid;
+    gap: var(--double-gutter);
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: var(--triple-gutter);
+    text-align: center;
+  }
+
+  .result-ratio {
+    font-size: var(--xlarge);
+    line-height: 1.1;
+    margin-bottom: var(--triple-gutter);
   }
 </style>

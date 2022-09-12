@@ -11,7 +11,7 @@
 </script>
 
 <div data-pass={pass}>
-  <div>
+  <div data-pass-text>
     {#if pass}
       <Check />
       Pass
@@ -20,6 +20,27 @@
       Fail
     {/if}
   </div>
-  {level}
-  {type}
+  <div class="label">
+    {level}
+    {type}
+  </div>
 </div>
+
+<style lang="scss">
+  @use 'config';
+
+  [data-pass-text] {
+    --icon-size: var(--status-icon);
+    align-items: center;
+    background-color: var(--fgcolor);
+    border-radius: var(--border-radius);
+    color: var(--bgcolor);
+    display: flex;
+    font-size: var(--input-large);
+    font-weight: bold;
+    gap: var(--shim-plus);
+    justify-content: center;
+    margin-bottom: var(--shim);
+    padding: var(--gutter);
+  }
+</style>

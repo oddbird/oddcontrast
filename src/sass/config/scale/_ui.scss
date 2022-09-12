@@ -5,6 +5,7 @@
 
 $border-width: 1px;
 $border-width-lg: 3px;
-$border-radius: 1rem;
+$border-radius: var(--shim);
 $logo: 12rem;
 $swatch: 3.25rem;
+$status-icon: 0.75em;
