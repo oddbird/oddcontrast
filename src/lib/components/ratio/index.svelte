@@ -73,19 +73,18 @@
     background-color: var(--bgcolor);
     color: var(--fgcolor);
     display: grid;
-    gap: var(--double-gutter);
+    gap: var(--result-layout-gap, var(--double-gutter));
     grid-template:
       'contrastinfo' min-content
       'status' min-content / 1fr;
 
     @include config.between('sm-page-break', 'lg-page-break') {
-      display: grid;
-      gap: var(--gutter-plus);
+      --result-layout-gap: var(--gutter-plus);
       grid-template: 'contrastinfo status' auto / 1fr 1fr;
     }
 
     @include config.above('lg-page-break') {
-      gap: var(--triple-gutter);
+      --result-layout-gap: var(--triple-gutter);
     }
   }
 
