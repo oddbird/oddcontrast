@@ -123,20 +123,20 @@
     }
   }
 
-  .result-status {
-    display: grid;
-    gap: var(--gutter) var(--double-gutter);
-    grid-area: status;
-    grid-template-columns: 1fr 1fr;
-    text-align: center;
-  }
-
   .result-ratio {
     grid-area: number;
 
     @include config.above('lg-page-break') {
       --heading-size: var(--xlarge);
     }
+  }
+
+  .result-status {
+    display: grid;
+    gap: var(--gutter) var(--double-gutter);
+    grid-area: status;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
   }
 
   a {
