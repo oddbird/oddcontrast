@@ -34,6 +34,7 @@ h4 {
 
 [data-heading~='large'] {
   --heading-size: var(--large);
+
   line-height: 1.1;
   margin-bottom: var(--gutter);
 }
@@ -72,7 +73,6 @@ strong {
 
 [data-color-info~='value'] {
   --color-info-size: var(--color-value-size, var(--medium));
-
 }
 
 [data-color-info~='warning'] {

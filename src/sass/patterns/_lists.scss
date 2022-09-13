@@ -17,6 +17,7 @@ li {
 dl {
   display: grid;
   grid-template-columns: auto 1fr;
+  margin-block: var(--half-shim) var(--double-gutter);
 }
 
 dd {

@@ -41,6 +41,7 @@
     gap: var(--shim-plus);
     justify-content: center;
     margin-bottom: var(--shim);
-    padding: var(--gutter);
+    padding: var(--results-padding-block, var(--shim))
+      var(--results-padding-inline, var(--gutter));
   }
 </style>

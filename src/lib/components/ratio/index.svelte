@@ -10,30 +10,27 @@
 </script>
 
 <aside data-layout="results">
-  <div class="contrast-info">
-    <h2 data-heading="large"><strong>Current</strong> Ratio</h2>
+  <h2 data-heading="large"><strong>Current</strong> Ratio</h2>
 
-    <p>
-      In WCAG 2, contrast is a measure of the difference in perceived brightness
-      between two colors, expressed as a ratio. <a
-        href="https://webaim.org/articles/contrast/#ratio"
-        target="_blank"
-        rel="noopener noreferrer">webaim.org/articles/contrast/#ratio</a
-      >
-    </p>
-  </div>
+  <h3 class="result-ratio">
+    <span class="sr-only">The contrast ratio is</span>
+    {displayRatio}:1
+  </h3>
 
-  <div class="result-group">
-    <h3 class="result-ratio">
-      <span class="sr-only">The contrast ratio is</span>
-      {displayRatio}:1
-    </h3>
-    <div class="result-status">
-      <Result level="AA" type="Normal" {ratio} />
-      <Result level="AAA" type="Normal" {ratio} />
-      <Result level="AA" type="Large" {ratio} />
-      <Result level="AAA" type="Large" {ratio} />
-    </div>
+  <p class="ratio-intro">
+    In WCAG 2, contrast is a measure of the difference in perceived brightness
+    between two colors, expressed as a ratio. <a
+      href="https://webaim.org/articles/contrast/#ratio"
+      target="_blank"
+      rel="noopener noreferrer">webaim.org/articles/contrast/#ratio</a
+    >
+  </p>
+
+  <div class="result-status">
+    <Result level="AA" type="Normal" {ratio} />
+    <Result level="AAA" type="Normal" {ratio} />
+    <Result level="AA" type="Large" {ratio} />
+    <Result level="AAA" type="Large" {ratio} />
   </div>
 
   <div class="contrast-defined">
@@ -73,25 +70,61 @@
   [data-layout='results'] {
     background-color: var(--bgcolor);
     color: var(--fgcolor);
+    display: grid;
+    gap: var(--gutter-plus);
+    grid-template:
+      'headline' auto
+      'rationumber' auto
+      'status' auto
+      'ratiointro' 0 / 1fr;
 
     @include config.between('sm-page-break', 'lg-page-break') {
       display: grid;
-      gap: var(--double-gutter);
-      grid-template-columns: 1fr auto;
+      gap: var(--gutter-plus);
+      grid-template:
+        'headline   rationumber  status' auto
+        'ratiointro ratiointro   status' 1fr / minmax(32ch, min-content)
+        min-content 1fr;
     }
+  }
+
+  [data-heading] {
+    grid-area: headline;
+    margin: 0 0 var(--gutter);
+  }
+
+  .result-ratio {
+    grid-area: rationumber;
+  }
+
+  .ratio-intro {
+    grid-area: ratiointro;
   }
 
   .result-status {
     display: grid;
     gap: var(--double-gutter);
+    grid-area: status;
     grid-template-columns: 1fr 1fr;
-    margin-bottom: var(--triple-gutter);
     text-align: center;
+
+    @include config.above('lg-page-break') {
+      margin-bottom: var(--triple-gutter);
+    }
   }
 
   .result-ratio {
-    font-size: var(--xlarge);
+    font-size: var(--ratio-size, var(--large));
     line-height: 1.1;
-    margin-bottom: var(--triple-gutter);
+
+    @include config.above('lg-page-break') {
+      --ratio-size: var(--xlarge);
+      margin-bottom: var(--triple-gutter);
+    }
+  }
+
+  a {
+    --link: var(--fgcolor);
+    --link-focus: var(--fgcolor);
   }
 </style>
