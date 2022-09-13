@@ -141,7 +141,16 @@
 
   a {
     --link: var(--fgcolor);
-    --link-focus: var(--fgcolor);
+    --link-focus: var(--bgcolor);
+    // a tiny bit of breathing room for states
+    padding-inline: 0.5ch;
+    margin-inline-start: -0.5ch;
+
+    &:hover,
+    &:focus {
+      background-color: var(--fgcolor);
+      border-radius: var(--border-radius);
+    }
   }
 
   .contrast-defined {
