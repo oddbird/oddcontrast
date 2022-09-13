@@ -40,8 +40,13 @@
     font-weight: bold;
     gap: var(--shim-plus);
     justify-content: center;
-    margin-bottom: var(--shim);
-    padding: var(--results-padding-block, var(--shim))
-      var(--results-padding-inline, var(--gutter));
+    margin-bottom: var(--results-margin-bottom, var(--half-shim));
+    padding: var(--results-padding-block, 0) var(--results-padding-inline, 0);
+
+    @include config.above('sm-page-break') {
+      --results-margin-bottom: var(--shim);
+      --results-padding-block: var(--shim);
+      --results-padding-inline: var(--gutter);
+    }
   }
 </style>
