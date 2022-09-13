@@ -13,7 +13,7 @@
   <div class="contrast-info">
     <h2 data-heading="large"><strong>Current</strong> Ratio</h2>
 
-    <h3 class="result-ratio">
+    <h3 data-heading="large" class="result-ratio">
       <span class="sr-only">The contrast ratio is</span>
       {displayRatio}:1
     </h3>
@@ -115,10 +115,6 @@
     margin: 0;
   }
 
-  .result-ratio {
-    grid-area: number;
-  }
-
   .result-intro {
     grid-area: intro;
 
@@ -136,12 +132,10 @@
   }
 
   .result-ratio {
-    font-size: var(--ratio-size, var(--large));
-    line-height: 1.1;
-    margin: 0;
+    grid-area: number;
 
     @include config.above('lg-page-break') {
-      --ratio-size: var(--xlarge);
+      --heading-size: var(--xlarge);
     }
   }
 
