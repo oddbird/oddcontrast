@@ -15,6 +15,10 @@
   --icon-width: var(--logo);
 }
 
+[data-icon='newtab'] {
+  --icon-size: var(--icon-small);
+}
+
 [data-icon~='check'] {
   --icon-height: 21px;
   --icon-width: auto;

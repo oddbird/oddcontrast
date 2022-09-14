@@ -4,6 +4,7 @@
   import Result from '$lib/components/ratio/Result.svelte';
   import { RATIOS } from '$lib/constants';
   import { bg, fg } from '$lib/stores';
+  import Tab from '$src/lib/icons/Tab.svelte';
 
   $: ratio = contrast($bg, $fg, 'WCAG21');
   $: displayRatio = Math.round((ratio + Number.EPSILON) * 100) / 100;
@@ -24,7 +25,9 @@
         href="https://webaim.org/articles/contrast/#ratio"
         target="_blank"
         rel="noopener noreferrer"
-        >Learn more about contrast ratio requirements.</a
+        >Learn more about contrast ratio <span class="no-wrap"
+          >requirements. <Tab /></span
+        ></a
       >
     </p>
   </div>
@@ -141,15 +144,14 @@
 
   a {
     --link: var(--fgcolor);
-    --link-focus: var(--bgcolor);
-    // a tiny bit of breathing room for states
-    padding-inline: 0.5ch;
-    margin-inline-start: -0.5ch;
+    --link-focus: var(--fgcolor);
+    border-bottom: 1px solid var(--fgcolor);
+    text-decoration: none;
+    transition: border-bottom-width var(--fast) ease-out;
 
     &:hover,
     &:focus {
-      background-color: var(--fgcolor);
-      border-radius: var(--border-radius);
+      border-bottom-width: 3px;
     }
   }
 
