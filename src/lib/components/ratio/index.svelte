@@ -26,7 +26,8 @@
         target="_blank"
         rel="noopener noreferrer"
         >Learn more about contrast ratio <span class="no-wrap"
-          >requirements. <Tab /></span
+          >requirements. <span class="sr-only">(opens in a new tab)</span>
+          <Tab /></span
         ></a
       >
     </p>
