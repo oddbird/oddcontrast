@@ -112,7 +112,6 @@
 
   [data-heading] {
     grid-area: heading;
-    margin: 0;
   }
 
   .result-intro {
