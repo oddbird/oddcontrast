@@ -23,7 +23,8 @@
       between two colors, expressed as a ratio. <a
         href="https://webaim.org/articles/contrast/#ratio"
         target="_blank"
-        rel="noopener noreferrer">webaim.org/articles/contrast/#ratio</a
+        rel="noopener noreferrer"
+        >Learn more about contrast ratio requirements.</a
       >
     </p>
   </div>
