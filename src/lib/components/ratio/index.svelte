@@ -8,9 +8,10 @@
 
   $: ratio = contrast($bg, $fg, 'WCAG21');
   $: displayRatio = Math.round((ratio + Number.EPSILON) * 100) / 100;
+  $: pass = ratio >= RATIOS.AAA.Normal;
 </script>
 
-<aside data-layout="results">
+<aside data-layout="results" data-pass={pass}>
   <div class="contrast-info">
     <h2 data-heading="large"><strong>Current</strong> Ratio</h2>
 
