@@ -5,7 +5,7 @@
 
 <header data-layout="header">
   <h1 class="app-logo">
-    <Icon name="logo" size="large" />
+    <Icon name="logo" />
     <span class="sr-only">OddContrast</span>
   </h1>
   <SpaceSelect />

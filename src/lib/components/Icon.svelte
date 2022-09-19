@@ -14,7 +14,7 @@
   };
 
   export let name: string;
-  export let size = 'small';
+  export let size: string | null = null;
 </script>
 
 <svelte:component
