@@ -79,4 +79,9 @@
     stroke: var(--text);
     stroke-width: 0.04rem;
   }
+
+  [data-icon] {
+    --icon-height: auto;
+    --icon-width: var(--logo);
+  }
 </style>

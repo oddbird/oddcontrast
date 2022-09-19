@@ -29,7 +29,6 @@
   @use 'config';
 
   [data-pass-text] {
-    --icon-size: var(--icon-large);
     align-items: center;
     background-color: var(--fgcolor);
     border-radius: var(--border-radius);

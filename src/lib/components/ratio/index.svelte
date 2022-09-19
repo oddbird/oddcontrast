@@ -27,7 +27,7 @@
         rel="noopener noreferrer"
         >Learn more about contrast ratio <span class="no-wrap"
           >requirements. <span class="sr-only">(opens in a new tab)</span>
-          <Icon name="newtab" /></span
+          <Icon name="newtab" size="small" /></span
         ></a
       >
     </p>
