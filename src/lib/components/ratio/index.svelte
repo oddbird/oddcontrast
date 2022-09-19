@@ -1,10 +1,10 @@
 <script lang="ts">
   import { contrast } from 'colorjs.io/fn';
 
+  import Icon from '$lib/components/Icon.svelte';
   import Result from '$lib/components/ratio/Result.svelte';
   import { RATIOS } from '$lib/constants';
   import { bg, fg } from '$lib/stores';
-  import Tab from '$src/lib/icons/Tab.svelte';
 
   $: ratio = contrast($bg, $fg, 'WCAG21');
   $: displayRatio = Math.round((ratio + Number.EPSILON) * 100) / 100;
@@ -27,7 +27,7 @@
         rel="noopener noreferrer"
         >Learn more about contrast ratio <span class="no-wrap"
           >requirements. <span class="sr-only">(opens in a new tab)</span>
-          <Tab /></span
+          <Icon name="newtab" /></span
         ></a
       >
     </p>

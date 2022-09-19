@@ -1,7 +1,6 @@
 <script lang="ts">
+  import Icon from '$lib/components/Icon.svelte';
   import { RATIOS } from '$lib/constants';
-  import Check from '$lib/icons/Check.svelte';
-  import Warning from '$lib/icons/Warning.svelte';
 
   export let level: 'AA' | 'AAA';
   export let type: 'Normal' | 'Large';
@@ -13,10 +12,10 @@
 <div data-pass={pass}>
   <div data-pass-text>
     {#if pass}
-      <Check />
+      <Icon name="check" />
       Pass
     {:else}
-      <Warning />
+      <Icon name="warning" />
       Fail
     {/if}
   </div>

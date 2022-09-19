@@ -3,7 +3,7 @@
   width="25.43"
   height="25.43"
   viewBox="0 0 25.43 25.43"
-  data-icon="newtab"
+  {...$$restProps}
 >
   <path
     id="box"

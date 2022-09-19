@@ -3,7 +3,7 @@
   width="26"
   height="22.76"
   viewBox="0 0 26 22.76"
-  data-icon="warning"
+  {...$$restProps}
 >
   <path
     id="warning"

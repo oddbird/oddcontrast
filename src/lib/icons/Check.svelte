@@ -3,7 +3,7 @@
   width="39"
   height="27.81"
   viewBox="0 0 39 27.81"
-  data-icon="check"
+  {...$$restProps}
 >
   <path
     id="check"
