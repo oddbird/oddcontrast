@@ -30,9 +30,9 @@
 
   [data-pass-text] {
     align-items: center;
-    background-color: var(--fgcolor);
+    background-color: var(--status-result-bg, var(--text));
     border-radius: var(--border-radius);
-    color: var(--bgcolor);
+    color: var(--status-result-fg, var(--bg));
     display: flex;
     font-size: var(--input-large);
     font-weight: bold;
@@ -46,5 +46,20 @@
       --results-padding-block: var(--shim);
       --results-padding-inline: var(--gutter);
     }
+  }
+
+  .label {
+    background-color: var(--status-result-label-bg, var(--text));
+    color: var(--status-result-label-fg, var(--bg));
+    border-radius: var(--border-radius);
+    display: inline-block;
+    padding: var(--quarter-shim) var(--shim);
+  }
+
+  [data-pass='true'] {
+    --status-result-fg: var(--bgcolor);
+    --status-result-bg: var(--fgcolor);
+    --status-result-label-bg: var(--bgcolor);
+    --status-result-label-fg: var(--fgcolor);
   }
 </style>
