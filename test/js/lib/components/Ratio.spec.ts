@@ -9,10 +9,10 @@ describe('Ratio', () => {
   });
 
   it('displays passing/failing ratio', () => {
-    const { getByText, queryAllByText } = render(Ratio);
+    const { getByText, queryAllByText, queryByText } = render(Ratio);
 
-    expect(getByText('5.77:1')).toBeVisible();
+    expect(getByText('7.16:1')).toBeVisible();
     expect(queryAllByText('Pass')).not.toBeNull();
-    expect(getByText('Fail')).toBeVisible();
+    expect(queryByText('Fail')).toBeNull();
   });
 });
