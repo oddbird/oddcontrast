@@ -1,0 +1,10 @@
+@use '../config';
+
+// Themes for Status
+// -----------------
+
+// If the ratio is too low, make sure important info has high enough contrast
+[data-pass='false'] {
+  --status-result-bg: var(--text);
+  --status-result-fg: var(--bg);
+}

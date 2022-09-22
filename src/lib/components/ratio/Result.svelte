@@ -30,9 +30,9 @@
 
   [data-pass-text] {
     align-items: center;
-    background-color: var(--status-result-bg, var(--text));
+    background-color: var(--status-result-bg, var(--fgcolor));
     border-radius: var(--border-radius);
-    color: var(--status-result-fg, var(--bg));
+    color: var(--status-result-fg, var(--bgcolor));
     display: flex;
     font-size: var(--input-large);
     font-weight: bold;
@@ -49,17 +49,10 @@
   }
 
   .label {
-    background-color: var(--status-result-label-bg, var(--text));
-    color: var(--status-result-label-fg, var(--bg));
+    background-color: var(--status-result-bg, transparent);
+    color: var(--status-result-fg, var(--fgcolor));
     border-radius: var(--border-radius);
     display: inline-block;
     padding: var(--quarter-shim) var(--shim);
-  }
-
-  [data-pass='true'] {
-    --status-result-fg: var(--bgcolor);
-    --status-result-bg: var(--fgcolor);
-    --status-result-label-bg: var(--bgcolor);
-    --status-result-label-fg: var(--fgcolor);
   }
 </style>

@@ -8,16 +8,16 @@
 
   $: ratio = contrast($bg, $fg, 'WCAG21');
   $: displayRatio = Math.round((ratio + Number.EPSILON) * 100) / 100;
-  $: pass = ratio >= RATIOS.AAA.Normal;
+  $: pass = ratio >= RATIOS.AA.Large;
 </script>
 
-<aside data-layout="results" data-pass={pass}>
+<aside data-layout="results">
   <div class="contrast-info">
     <h2 data-heading="large"><strong>Current</strong> Ratio</h2>
 
-    <h3 data-heading="large" class="result-ratio">
+    <h3 data-pass={pass} data-heading="large" class="result-ratio">
       <span class="sr-only">The contrast ratio is</span>
-      {displayRatio}:1
+      <span class="result-ratio-number">{displayRatio}:1</span>
     </h3>
 
     <p class="result-intro">
@@ -63,10 +63,10 @@
 
     <h4 class="label">Large Text Size</h4>
     <dl>
-      <dt><strong>≥ 18 pt / 24 px</strong></dt>
+      <dt><strong>≥ 24px</strong></dt>
       <dd>Regular Weight</dd>
 
-      <dt><strong>≥ 14 pt / 19 px</strong></dt>
+      <dt><strong>≥ 19px</strong></dt>
       <dd>Bold Weight</dd>
     </dl>
   </div>
@@ -109,6 +109,7 @@
     }
 
     @include config.above('lg-page-break') {
+      gap: var(--shim);
       grid-template:
         'heading' auto
         'intro' auto
@@ -122,6 +123,7 @@
 
   .result-intro {
     grid-area: intro;
+    margin-bottom: var(--gutter);
 
     @include config.below('sm-page-break') {
       display: none;
@@ -130,10 +132,15 @@
 
   .result-ratio {
     grid-area: number;
+    display: inline-flex;
+    line-height: 0.7; // weird number alignment
+  }
 
-    @include config.above('lg-page-break') {
-      --heading-size: var(--xlarge);
-    }
+  .result-ratio-number {
+    background-color: var(--status-result-bg, var(--bgcolor));
+    border-radius: var(--border-radius);
+    color: var(--status-result-fg, var(--fgcolor));
+    padding: var(--shim-plus) var(--gutter) var(--gutter-plus);
   }
 
   .result-status {
