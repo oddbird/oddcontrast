@@ -29,8 +29,8 @@ export { ColorSpace };
 
 export const INITIAL_VALUES = {
   space: 'oklch' as ColorSpaceId,
-  bg_coord: [0.4712, 0.0704, 223.44] as [number, number, number],
-  fg_coord: [0.9505, 0.013, 219.61] as [number, number, number],
+  bg_coord: [0.384, 0.069, 262] as [number, number, number],
+  fg_coord: [0.89, 0.035, 238] as [number, number, number],
   alpha: 1,
 };
 
