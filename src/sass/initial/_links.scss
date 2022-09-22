@@ -28,10 +28,14 @@ a {
   &:link,
   &:visited {
     color: var(--link, var(--action));
+    text-decoration: solid underline;
+    text-decoration-thickness: 1px;
+    transition: color var(--fast), text-decoration-thickness var(--fast);
   }
 
   &:hover,
   &:focus {
     color: var(--link-focus, var(--active));
+    text-decoration-thickness: 4px;
   }
 }

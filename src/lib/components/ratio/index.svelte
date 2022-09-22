@@ -27,8 +27,10 @@
         target="_blank"
         rel="noopener noreferrer"
         >Learn more about contrast ratio <span class="no-wrap"
-          >requirements. <span class="sr-only">(opens in a new tab)</span>
-          <Icon name="newtab" size="small" /></span
+          >requirements.<span class="sr-only">(opens in a new tab)</span><Icon
+            name="newtab"
+            size="small"
+          /></span
         ></a
       >
     </p>
@@ -152,22 +154,14 @@
     text-align: center;
   }
 
-  a {
-    --link: var(--fgcolor);
-    --link-focus: var(--fgcolor);
-    border-bottom: 1px solid var(--fgcolor);
-    text-decoration: none;
-    transition: border-bottom-width var(--fast) ease-out;
-
-    &:hover,
-    &:focus {
-      border-bottom-width: 3px;
-    }
-  }
-
   .contrast-defined {
     @include config.below('lg-page-break') {
       display: none;
     }
+  }
+
+  a {
+    --link: var(--fgcolor);
+    --link-focus: var(--fgcolor);
   }
 </style>
