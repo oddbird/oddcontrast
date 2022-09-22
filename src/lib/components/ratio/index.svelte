@@ -101,7 +101,7 @@
       'heading' min-content
       'number' min-content / 100%;
 
-    @include config.between('sm-page-break', 'lg-page-break') {
+    @include config.between('sm-column-break', 'lg-page-break') {
       gap: var(--shim) var(--gutter);
       grid-template:
         'heading number' min-content
@@ -131,6 +131,7 @@
   }
 
   .result-ratio {
+    align-items: start;
     grid-area: number;
     display: inline-flex;
     line-height: 0.7; // weird number alignment
