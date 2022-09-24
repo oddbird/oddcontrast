@@ -50,8 +50,8 @@
 
   .label {
     background-color: var(--status-result-bg, transparent);
-    color: var(--status-result-fg, var(--fgcolor));
     border-radius: var(--border-radius);
+    color: var(--status-result-fg, var(--fgcolor));
     display: inline-block;
     padding: var(--quarter-shim) var(--shim);
   }

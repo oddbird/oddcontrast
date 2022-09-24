@@ -97,8 +97,8 @@
   }
 
   .contrast-info {
-    grid-area: contrastinfo;
     display: grid;
+    grid-area: contrastinfo;
     grid-template:
       'heading' min-content
       'number' min-content / 100%;
@@ -134,8 +134,8 @@
 
   .result-ratio {
     align-items: start;
-    grid-area: number;
     display: inline-flex;
+    grid-area: number;
     line-height: 0.7; // weird number alignment
   }
 
