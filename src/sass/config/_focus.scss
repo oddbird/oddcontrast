@@ -17,6 +17,6 @@
   outline-color: var(--focus-ring, var(--text, currentColor));
   outline-offset: var(--outline-offset, 0);
   outline-style: var(--outline-style, dotted);
-  outline-width: var(--outline-width, var(--border-width-sm));
+  outline-width: var(--outline-width, var(--border-width));
   /* stylelint-enable declaration-block-no-redundant-longhand-properties */
 }

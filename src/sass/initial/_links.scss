@@ -29,13 +29,13 @@ a {
   &:visited {
     color: var(--link, var(--action));
     text-decoration: solid underline;
-    text-decoration-thickness: 1px;
+    text-decoration-thickness: var(--line-thickness, var(--border-width));
     transition: color var(--fast), text-decoration-thickness var(--fast);
   }
 
   &:hover,
   &:focus {
     color: var(--link-focus, var(--active));
-    text-decoration-thickness: 4px;
+    --line-thickness: var(--border-width-lg);
   }
 }
