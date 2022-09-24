@@ -36,6 +36,7 @@ a {
   &:hover,
   &:focus {
     color: var(--link-focus, var(--active));
+
     --line-thickness: var(--border-width-lg);
   }
 }
