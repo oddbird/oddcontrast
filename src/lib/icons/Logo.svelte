@@ -1,7 +1,7 @@
 <svg
-  data-icon="logo"
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 417.82 51.3"
+  {...$$restProps}
 >
   <g id="oddcontrast-logo">
     <path
@@ -78,5 +78,10 @@
   .outline {
     stroke: var(--text);
     stroke-width: 0.04rem;
+  }
+
+  [data-icon] {
+    --icon-height: auto;
+    --icon-width: var(--logo);
   }
 </style>

@@ -1,11 +1,11 @@
 <script lang="ts">
-  import Logo from '$lib/components/Logo.svelte';
+  import Icon from '$lib/components/Icon.svelte';
   import SpaceSelect from '$lib/components/SpaceSelect.svelte';
 </script>
 
 <header data-layout="header">
   <h1 class="app-logo">
-    <Logo />
+    <Icon name="logo" />
     <span class="sr-only">OddContrast</span>
   </h1>
   <SpaceSelect />

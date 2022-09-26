@@ -34,6 +34,8 @@ h4 {
 
 [data-heading~='large'] {
   --heading-size: var(--large);
+
+  line-height: 1.1;
 }
 
 @mixin heading() {
@@ -59,7 +61,7 @@ p {
 }
 
 strong {
-  font-weight: 700;
+  font-weight: bold;
 }
 
 [data-color-info] {
@@ -87,4 +89,8 @@ strong {
     --warning-padding-block: var(--gutter);
     --warning-align: center;
   }
+}
+
+.no-wrap {
+  white-space: nowrap;
 }

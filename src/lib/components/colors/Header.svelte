@@ -104,6 +104,7 @@
 
   .swatch {
     border: var(--border-width) solid var(--border);
+    border-radius: var(--border-radius);
     grid-area: swatch;
     height: 100%;
     position: relative;
@@ -118,6 +119,11 @@
       &:after {
         background-color: var(--fgcolor);
       }
+    }
+
+    // helps with minor gap showing in some browsers
+    &:after {
+      border-radius: calc(var(--border-radius) - 1px);
     }
 
     &:before,
@@ -137,6 +143,7 @@
       background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><rect fill="%23e8e8e8" width="30" height="30"/><rect x="30" y="30" width="30" height="30" fill="%23e8e8e8"/></svg>');
       background-position: 0 0;
       background-size: 30px 30px;
+      border-radius: 0 var(--border-radius) var(--border-radius) 0;
       z-index: -1;
     }
   }

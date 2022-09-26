@@ -4,7 +4,7 @@
   import Colors from '$lib/components/colors/index.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import Header from '$lib/components/Header.svelte';
-  import Results from '$lib/components/Results.svelte';
+  import Ratio from '$lib/components/ratio/index.svelte';
   import { bg, fg } from '$lib/stores';
 
   $: bg_fallback = display($bg);
@@ -16,7 +16,7 @@
   style="--fgcolor: {fg_fallback}; --bgcolor: {bg_fallback};"
 >
   <Header />
-  <Results />
+  <Ratio />
   <main data-layout="main">
     <Colors />
   </main>

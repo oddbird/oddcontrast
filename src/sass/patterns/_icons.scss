@@ -5,12 +5,11 @@
 [data-icon] {
   fill: currentcolor;
   display: inline-block;
-  height: var(--icon-height, var(--icon-size, 1em));
+  height: var(--icon-height, var(--icon-size, var(--icon-size-default)));
   overflow: visible;
-  width: var(--icon-width, var(--icon-size, 1em));
+  width: var(--icon-width, var(--icon-size, var(--icon-size-default)));
 }
 
-[data-icon~='logo'] {
-  --icon-height: auto;
-  --icon-width: var(--logo);
+[data-icon-size='small'] {
+  --icon-size: var(--icon-small);
 }

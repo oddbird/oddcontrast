@@ -6,7 +6,7 @@ import { ColorSpace } from '$lib/stores';
 import { HSL_WHITE, HSL_WHITE_SERIALIZED } from '$test/fixtures';
 
 describe('Output', () => {
-  it('renders color in selected format', async () => {
+  it('renders color in selected format', () => {
     const { getByText } = render(Output, {
       type: 'bg',
       color: HSL_WHITE,
@@ -16,7 +16,7 @@ describe('Output', () => {
     expect(getByText(HSL_WHITE_SERIALIZED)).toBeVisible();
   });
 
-  it('renders color in other format', async () => {
+  it('renders color in other format', () => {
     const { getByText } = render(Output, {
       type: 'bg',
       color: HSL_WHITE,
@@ -28,7 +28,7 @@ describe('Output', () => {
     ).toBeVisible();
   });
 
-  it('renders warning if out of gamut', async () => {
+  it('renders warning if out of gamut', () => {
     const color = { space: ColorSpace.get('oklch'), coords: [0.01, 0.02, 0] };
     const { getByText } = render(Output, {
       type: 'fg',

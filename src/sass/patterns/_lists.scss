@@ -13,3 +13,13 @@ li {
   display: flex;
   gap: var(--gutter);
 }
+
+dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  margin-block: var(--half-shim) var(--double-gutter);
+}
+
+dd {
+  margin-inline-start: var(--gutter);
+}
