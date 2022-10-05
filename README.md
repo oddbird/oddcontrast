@@ -10,10 +10,10 @@ To develop with local versions of Node/Yarn, first install the frontend
 dependencies with `yarn install`, then:
 
 ```bash
-yarn dev
+yarn serve
 
 # or start the server and open the app in a new browser tab
-yarn dev --open
+yarn serve --open
 ```
 
 ## Developing (Docker-based)
@@ -22,10 +22,10 @@ If you are using VS Code devcontainers to manage Node/Yarn versions, open the
 project folder and run "Re-open in container", then:
 
 ```bash
-yarn dev
+yarn serve
 
 # or start the server and open the app in a new browser tab
-yarn dev --open
+yarn serve --open
 ```
 
 ## Building
