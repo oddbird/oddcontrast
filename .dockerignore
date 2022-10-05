@@ -30,7 +30,7 @@ docker-compose.yml
 node_modules/
 npm-debug.log
 static/built/
-static/docs/
+static/styleguide/
 yarn-error.log
 
 !.svelte-kit/tsconfig.json

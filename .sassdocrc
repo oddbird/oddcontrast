@@ -1,5 +1,5 @@
 src: './src/sass/**/*.scss'
-dest: './static/docs'
+dest: './static/styleguide'
 theme: 'herman'
 shortcutIcon: './static/favicon.ico'
 verbose: true

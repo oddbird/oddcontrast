@@ -1,8 +1,8 @@
 <script lang="ts">
   import { contrast } from 'colorjs.io/fn';
 
-  import Icon from '$lib/components/Icon.svelte';
   import Result from '$lib/components/ratio/Result.svelte';
+  import ExternalLink from '$lib/components/util/ExternalLink.svelte';
   import { RATIOS } from '$lib/constants';
   import { bg, fg } from '$lib/stores';
 
@@ -22,16 +22,9 @@
 
     <p class="result-intro">
       In WCAG 2, contrast is a measure of the difference in perceived brightness
-      between two colors, expressed as a ratio. <a
+      between two colors, expressed as a ratio. <ExternalLink
         href="https://webaim.org/articles/contrast/#ratio"
-        target="_blank"
-        rel="noopener noreferrer"
-        >Learn more about contrast ratio <span class="no-wrap"
-          >requirements.<span class="sr-only">(opens in a new tab)</span><Icon
-            name="newtab"
-            size="small"
-          /></span
-        ></a
+        >Learn more about contrast ratio requirements.</ExternalLink
       >
     </p>
   </div>
@@ -130,6 +123,11 @@
     @include config.below('sm-page-break') {
       display: none;
     }
+
+    :global(a) {
+      --link: var(--fgcolor);
+      --link-focus: var(--fgcolor);
+    }
   }
 
   .result-ratio {
@@ -158,10 +156,5 @@
     @include config.below('lg-page-break') {
       display: none;
     }
-  }
-
-  a {
-    --link: var(--fgcolor);
-    --link-focus: var(--fgcolor);
   }
 </style>

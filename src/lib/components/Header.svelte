@@ -1,6 +1,13 @@
 <script lang="ts">
-  import Icon from '$lib/components/Icon.svelte';
   import SpaceSelect from '$lib/components/SpaceSelect.svelte';
+  import ExternalLink from '$lib/components/util/ExternalLink.svelte';
+  import Icon from '$lib/components/util/Icon.svelte';
+
+  const links = [
+    ['GitHub', 'https://github.com/oddbird/oddcontrast'],
+    ['Twitter', 'https://twitter.com/oddbird'],
+    ['GitHub', 'https://www.oddbird.net/'],
+  ];
 </script>
 
 <header data-layout="header">
@@ -10,19 +17,13 @@
   </h1>
   <SpaceSelect />
   <ul data-nav="social" data-list="inline">
-    <li>
-      <a href="https://github.com/oddbird"
-        >Icon<span class="sr-only">GitHub</span></a
-      >
-    </li>
-    <li>
-      <a href="https://twitter.com/oddbird"
-        >Icon<span class="sr-only">Twitter</span></a
-      >
-    </li>
-    <li>
-      <a href="https://oddbird.net">Icon<span class="sr-only">OddBird</span></a>
-    </li>
+    {#each links as [name, href]}
+      <li>
+        <ExternalLink {href} showIcon={false}
+          >Icon<span class="sr-only">{name}</span></ExternalLink
+        >
+      </li>
+    {/each}
   </ul>
 </header>
 

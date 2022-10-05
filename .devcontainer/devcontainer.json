@@ -91,7 +91,7 @@
       "yarn-error.log": true,
       ".svelte-kit": true,
       "static/built": true,
-      "static/docs": true,
+      "static/styleguide": true,
       ".yarn": true
     }
   }

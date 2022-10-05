@@ -4,5 +4,5 @@
 /.svelte-kit
 /coverage
 /static/built
-/static/docs
+/static/styleguide
 node_modules
