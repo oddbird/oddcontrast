@@ -40,15 +40,15 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^1.0.0-next.80",
-    "@sveltejs/kit": "^1.0.0-next.507",
+    "@sveltejs/kit": "^1.0.0-next.511",
     "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/svelte": "^3.2.1",
+    "@testing-library/svelte": "^3.2.2",
     "@types/node": "*",
-    "@typescript-eslint/eslint-plugin": "^5.38.1",
-    "@typescript-eslint/parser": "^5.38.1",
-    "@vitest/coverage-c8": "^0.23.4",
+    "@typescript-eslint/eslint-plugin": "^5.39.0",
+    "@typescript-eslint/parser": "^5.39.0",
+    "@vitest/coverage-c8": "^0.24.0",
     "chokidar-cli": "^3.0.0",
-    "eslint": "^8.24.0",
+    "eslint": "^8.25.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^3.5.1",
     "eslint-plugin-import": "^2.26.0",
@@ -74,8 +74,8 @@
     "svelte-preprocess": "^4.10.7",
     "ts-node": "^10.9.1",
     "typescript": "^4.8.4",
-    "vite": "^3.1.4",
-    "vitest": "^0.23.4"
+    "vite": "^3.1.7",
+    "vitest": "^0.24.0"
   },
   "resolutions": {
     "tslib": ">=2"
