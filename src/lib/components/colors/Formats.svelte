@@ -1,7 +1,8 @@
 <script lang="ts">
-  import type { ColorObject, ColorSpaceId } from 'colorjs.io/fn';
+  import type { ColorObject } from 'colorjs.io/types/src/color';
 
   import Output from '$lib/components/colors/Output.svelte';
+  import type { ColorSpaceId } from '$lib/constants';
   import { SPACES } from '$lib/constants';
 
   export let type: 'bg' | 'fg';

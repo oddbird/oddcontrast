@@ -1302,10 +1302,9 @@ colord@^2.9.3:
   resolved "https://registry.yarnpkg.com/colord/-/colord-2.9.3.tgz#4f8ce919de456f1d5c1c368c307fe20f3e59fb43"
   integrity sha512-jeC1axXpnb0/2nn/Y1LPuLdgXBLH7aDcHu4KEKfqw3CUhX7ZpfBSlPKyqXE6btIgEzfWtrX3/tyBCaCvXvMkOw==
 
-colorjs.io@^0.4.0:
+"colorjs.io@git+https://github.com/oddbird/color.js#types-build":
   version "0.4.0"
-  resolved "https://registry.yarnpkg.com/colorjs.io/-/colorjs.io-0.4.0.tgz#2a9c6d9a727f990c127f1922d62439d286f92a6d"
-  integrity sha512-AUKG9GCDSHsFRUnxGrEMCm6nq6lxddnDvD0avmsy/klCEk68htpqgl9IERGtGoxaGJlr7uP5wmD381gY2uG8hw==
+  resolved "git+https://github.com/oddbird/color.js#29def3abe3b2ef92d74e70b913d7413796b90002"
 
 combined-stream@^1.0.8:
   version "1.0.8"

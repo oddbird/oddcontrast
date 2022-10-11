@@ -1,4 +1,3 @@
-import type { ColorObject, ColorSpaceId } from 'colorjs.io/fn';
 import {
   ColorSpace,
   HSL,
@@ -9,10 +8,12 @@ import {
   REC_2020,
   sRGB,
 } from 'colorjs.io/fn';
+import type { ColorObject } from 'colorjs.io/types/src/color';
 import { writable } from 'svelte/store';
 
 // eslint-disable-next-line import/no-unresolved
 import { browser, dev } from '$app/environment';
+import type { ColorSpaceId } from '$lib/constants';
 
 // Register supported color spaces
 ColorSpace.register(HSL);

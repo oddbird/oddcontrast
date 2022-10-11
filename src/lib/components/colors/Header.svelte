@@ -1,7 +1,9 @@
 <script lang="ts">
-  import type { ColorObject, ColorSpaceId } from 'colorjs.io/fn';
   import { serialize, to } from 'colorjs.io/fn';
+  import type { ColorObject } from 'colorjs.io/types/src/color';
   import type { Writable } from 'svelte/store';
+
+  import type { ColorSpaceId } from '$lib/constants';
 
   export let type: 'bg' | 'fg';
   export let color: Writable<ColorObject>;
