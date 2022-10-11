@@ -19,6 +19,6 @@
 
 <style lang="scss">
   svg {
-    margin-left: var(--newtab-margin, 0.5ch);
+    margin-left: var(--newtab-margin, 0.3ch);
   }
 </style>

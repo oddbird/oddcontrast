@@ -30,7 +30,7 @@ export default defineConfig({
       include: ['src/**/*.{js,ts,svelte}'],
       exclude: [
         'src/**/*.d.ts',
-        'src/routes/docs/**/*',
+        'src/routes/styleguide/**/*',
         'src/routes/+layout.*',
       ],
       all: true,

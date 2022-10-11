@@ -10,9 +10,9 @@
   },
   "type": "module",
   "scripts": {
-    "svelte:dev": "vite dev --host 0.0.0.0",
+    "svelte:serve": "vite dev --host 0.0.0.0",
     "svelte:build": "vite build",
-    "dev": "npm-run-all docs -p \"svelte:dev {@}\" watch:docs --",
+    "serve": "npm-run-all docs -p \"svelte:serve {@}\" watch:docs --",
     "build": "run-s docs svelte:build",
     "preview": "vite preview",
     "check": "svelte-check",

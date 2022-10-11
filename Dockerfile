@@ -12,4 +12,4 @@ COPY . /app
 # Avoid building prod assets in development
 RUN if [ "${BUILD_ENV}" = "production" ] ; then yarn build ; else mkdir -p dist ; fi
 
-CMD yarn dev
+CMD yarn serve

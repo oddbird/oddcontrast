@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Icon from '$lib/components/Icon.svelte';
+  import Icon from '$lib/components/util/Icon.svelte';
   import { RATIOS } from '$lib/constants';
 
   export let level: 'AA' | 'AAA';
