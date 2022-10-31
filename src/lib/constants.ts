@@ -1,4 +1,4 @@
-import type { ColorSpaceId } from 'colorjs.io/fn';
+export type ColorSpaceId = 'hsl' | 'oklch';
 
 export const SLIDERS: { [key in ColorSpaceId]: string[] } = {
   hsl: ['h', 's', 'l'],

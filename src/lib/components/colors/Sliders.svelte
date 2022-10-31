@@ -1,7 +1,8 @@
 <script lang="ts">
-  import type { ColorObject, ColorSpaceId } from 'colorjs.io/fn';
+  import type { ColorObject } from 'colorjs.io/types/src/color';
   import type { Writable } from 'svelte/store';
 
+  import type { ColorSpaceId } from '$lib/constants';
   import { SLIDERS } from '$lib/constants';
   import { ColorSpace } from '$lib/stores';
 
@@ -15,7 +16,9 @@
     name: spaceObject.coords[id].name,
     range: spaceObject.coords[id].range ||
       spaceObject.coords[id].refRange || [0, 1],
-    index: ColorSpace.resolveCoord({ space: spaceObject, coordId: id }).index,
+    index: Number(
+      ColorSpace.resolveCoord({ space: spaceObject, coordId: id }).index,
+    ),
   }));
 
   const getStep = (range: [number, number]) => {

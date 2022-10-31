@@ -36,16 +36,16 @@
   },
   "dependencies": {
     "accoutrement": "^4.0.3",
-    "colorjs.io": "^0.4.0"
+    "colorjs.io": "^0.4.1"
   },
   "devDependencies": {
-    "@sveltejs/adapter-auto": "^1.0.0-next.84",
-    "@sveltejs/kit": "^1.0.0-next.522",
+    "@sveltejs/adapter-auto": "^1.0.0-next.85",
+    "@sveltejs/kit": "^1.0.0-next.528",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/svelte": "^3.2.2",
     "@types/node": "*",
-    "@typescript-eslint/eslint-plugin": "^5.40.1",
-    "@typescript-eslint/parser": "^5.40.1",
+    "@typescript-eslint/eslint-plugin": "^5.41.0",
+    "@typescript-eslint/parser": "^5.41.0",
     "@vitest/coverage-c8": "^0.24.3",
     "chokidar-cli": "^3.0.0",
     "eslint": "^8.26.0",
@@ -54,7 +54,7 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-simple-import-sort": "^8.0.0",
     "eslint-plugin-svelte3": "^4.0.0",
-    "jsdom": "^20.0.1",
+    "jsdom": "^20.0.2",
     "mocha": "^10.1.0",
     "mockdate": "^3.0.5",
     "npm-run-all": "^4.1.5",
@@ -67,14 +67,14 @@
     "sassdoc-theme-herman": "^4.0.2",
     "stylelint": "^14.14.0",
     "stylelint-config-prettier": "^9.0.3",
-    "stylelint-config-standard-scss": "^5.0.0",
+    "stylelint-config-standard-scss": "^6.0.0",
     "stylelint-prettier": "^2.0.0",
     "svelte": "^3.52.0",
     "svelte-check": "^2.9.2",
     "svelte-preprocess": "^4.10.7",
     "ts-node": "^10.9.1",
     "typescript": "^4.8.4",
-    "vite": "^3.1.8",
+    "vite": "^3.2.1",
     "vitest": "^0.24.3"
   },
   "resolutions": {

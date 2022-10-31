@@ -1,11 +1,10 @@
 <script lang="ts">
-  import type { ColorSpaceObject } from 'colorjs.io/fn';
   import { to } from 'colorjs.io/fn';
 
   import { SPACES } from '$lib/constants';
   import { bg, ColorSpace, fg, space } from '$lib/stores';
 
-  let spaces: ColorSpaceObject[] = [];
+  let spaces: ColorSpace[] = [];
 
   $: spaces = SPACES.map((s) => ColorSpace.get(s));
 
