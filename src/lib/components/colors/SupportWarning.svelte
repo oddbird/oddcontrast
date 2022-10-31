@@ -1,8 +1,8 @@
 <script lang="ts">
-  import type { ColorSpaceId } from 'colorjs.io/fn';
   import { display } from 'colorjs.io/fn';
 
   import ExternalLink from '$lib/components/util/ExternalLink.svelte';
+  import type { ColorSpaceId } from '$lib/constants';
   import { ColorSpace } from '$lib/stores';
 
   export let space: ColorSpaceId;

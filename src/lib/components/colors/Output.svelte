@@ -1,8 +1,9 @@
 <script lang="ts">
-  import type { ColorObject, ColorSpaceId } from 'colorjs.io/fn';
   import { inGamut, serialize, to } from 'colorjs.io/fn';
+  import type { ColorObject } from 'colorjs.io/types/src/color';
 
   import SupportWarning from '$lib/components/colors/SupportWarning.svelte';
+  import type { ColorSpaceId } from '$lib/constants';
 
   export let type: 'bg' | 'fg';
   export let color: ColorObject;
