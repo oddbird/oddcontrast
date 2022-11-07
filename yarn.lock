@@ -1303,7 +1303,7 @@ colord@^2.9.3:
   resolved "https://registry.yarnpkg.com/colord/-/colord-2.9.3.tgz#4f8ce919de456f1d5c1c368c307fe20f3e59fb43"
   integrity sha512-jeC1axXpnb0/2nn/Y1LPuLdgXBLH7aDcHu4KEKfqw3CUhX7ZpfBSlPKyqXE6btIgEzfWtrX3/tyBCaCvXvMkOw==
 
-colorjs.io@^0.4.1-patch.1:
+colorjs.io@0.4.1-patch.1:
   version "0.4.1-patch.1"
   resolved "https://registry.yarnpkg.com/colorjs.io/-/colorjs.io-0.4.1-patch.1.tgz#3c9388703184196053337b59f8f4338f2b043095"
   integrity sha512-7UWunVDvnUtWRvGD0hEuGyxIvZvw4QbV8/Hz5fhePZdzyvZ8/Ze3mVGxa/8B084jZGBKJDX0ZwHPL/FDn7PZZA==
