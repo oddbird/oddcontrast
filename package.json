@@ -36,31 +36,31 @@
   },
   "dependencies": {
     "accoutrement": "^4.0.3",
-    "colorjs.io": "^0.4.1-patch.1"
+    "colorjs.io": "^0.4.2"
   },
   "devDependencies": {
-    "@sveltejs/adapter-auto": "^1.0.0-next.87",
-    "@sveltejs/kit": "^1.0.0-next.544",
+    "@sveltejs/adapter-auto": "^1.0.0-next.88",
+    "@sveltejs/kit": "^1.0.0-next.553",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/svelte": "^3.2.2",
     "@types/node": "*",
-    "@typescript-eslint/eslint-plugin": "^5.42.1",
-    "@typescript-eslint/parser": "^5.42.1",
-    "@vitest/coverage-c8": "^0.25.1",
+    "@typescript-eslint/eslint-plugin": "^5.43.0",
+    "@typescript-eslint/parser": "^5.43.0",
+    "@vitest/coverage-c8": "^0.25.2",
     "chokidar-cli": "^3.0.0",
-    "eslint": "^8.27.0",
+    "eslint": "^8.28.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^3.5.2",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-simple-import-sort": "^8.0.0",
     "eslint-plugin-svelte3": "^4.0.0",
-    "jsdom": "^20.0.2",
+    "jsdom": "^20.0.3",
     "mocha": "^10.1.0",
     "mockdate": "^3.0.5",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.19",
     "prettier": "^2.7.1",
-    "prettier-plugin-svelte": "^2.8.0",
+    "prettier-plugin-svelte": "^2.8.1",
     "sass": "^1.56.1",
     "sass-true": "^6.1.0",
     "sassdoc": "^2.7.4",
@@ -73,9 +73,9 @@
     "svelte-check": "^2.9.2",
     "svelte-preprocess": "^4.10.7",
     "ts-node": "^10.9.1",
-    "typescript": "^4.8.4",
-    "vite": "^3.2.3",
-    "vitest": "^0.25.1"
+    "typescript": "^4.9.3",
+    "vite": "^3.2.4",
+    "vitest": "^0.25.2"
   },
   "resolutions": {
     "tslib": ">=2"
