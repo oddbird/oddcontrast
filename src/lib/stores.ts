@@ -9,10 +9,9 @@ import {
   sRGB,
 } from 'colorjs.io/fn';
 import type { ColorObject } from 'colorjs.io/types/src/color';
+import { BROWSER, DEV } from 'esm-env';
 import { writable } from 'svelte/store';
 
-// eslint-disable-next-line import/no-unresolved
-import { browser, dev } from '$app/environment';
 import type { ColorSpaceId } from '$lib/constants';
 
 // Register supported color spaces
@@ -56,7 +55,7 @@ export const reset = () => {
 };
 
 /* c8 ignore next 5 */
-if (browser && dev) {
+if (BROWSER && DEV) {
   bg.subscribe(($bg) => (window.bg = $bg));
   fg.subscribe(($fg) => (window.fg = $fg));
   window.ColorSpace = ColorSpace;

@@ -13,6 +13,13 @@ export default defineConfig({
     },
   },
   plugins: [sveltekit()],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        includePaths: [path.resolve('./src/sass/')],
+      },
+    },
+  },
   /**
    * @see https://vitest.dev/config/#configuration
    */
