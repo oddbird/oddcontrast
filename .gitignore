@@ -2,7 +2,11 @@
 *.log
 *~
 /.svelte-kit
+/build
 /coverage
+/package
 /static/built
 /static/styleguide
 node_modules
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*

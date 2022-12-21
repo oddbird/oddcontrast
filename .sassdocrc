@@ -15,8 +15,9 @@ herman:
   customCSS: './static/built/app.css'
   sass:
     jsonFile: './static/built/json.css'
-    includePaths:
-      - 'src/sass'
+    sassOptions:
+      loadPaths:
+        - 'src/sass'
     use:
       - 'config'
 display:
