@@ -1,11 +1,14 @@
 !.*
 .git/
-.svelte-kit/
 .vscode/
 .yarn/
 .yarnrc
+/.svelte-kit
+/build
+/package
 coverage.xml
 coverage/
 node_modules/
 static/built/
 static/styleguide/
+yarn.lock
