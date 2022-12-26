@@ -44,9 +44,9 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/svelte": "^3.2.2",
     "@types/node": "*",
-    "@typescript-eslint/eslint-plugin": "^5.46.1",
-    "@typescript-eslint/parser": "^5.46.1",
-    "@vitest/coverage-c8": "^0.25.8",
+    "@typescript-eslint/eslint-plugin": "^5.47.0",
+    "@typescript-eslint/parser": "^5.47.0",
+    "@vitest/coverage-c8": "^0.26.2",
     "chokidar-cli": "^3.0.0",
     "eslint": "^8.30.0",
     "eslint-config-prettier": "^8.5.0",
@@ -61,7 +61,7 @@
     "postcss": "^8.4.20",
     "prettier": "^2.8.1",
     "prettier-plugin-svelte": "^2.9.0",
-    "sass": "^1.57.0",
+    "sass": "^1.57.1",
     "sass-true": "^7.0.0",
     "sassdoc": "^2.7.4",
     "sassdoc-theme-herman": "^5.0.1",
@@ -70,11 +70,11 @@
     "stylelint-config-standard-scss": "^6.1.0",
     "stylelint-prettier": "^2.0.0",
     "svelte": "^3.55.0",
-    "svelte-check": "^2.10.2",
+    "svelte-check": "^3.0.1",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.4",
-    "vite": "^4.0.2",
-    "vitest": "^0.25.8"
+    "vite": "^4.0.3",
+    "vitest": "^0.26.2"
   },
   "resolutions": {
     "tslib": ">=2"
