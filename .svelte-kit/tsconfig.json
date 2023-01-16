@@ -47,6 +47,9 @@
 	],
 	"exclude": [
 		"../node_modules/**",
-		"./[!ambient.d.ts]**"
+		"./[!ambient.d.ts]**",
+		"../src/service-worker.js",
+		"../src/service-worker.ts",
+		"../src/service-worker.d.ts"
 	]
 }
