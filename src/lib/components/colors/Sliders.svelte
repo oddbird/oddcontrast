@@ -10,16 +10,28 @@
   export let color: Writable<ColorObject>;
   export let space: ColorSpaceId;
 
+  type Slider = {
+    id: string;
+    name: string;
+    range: [number, number];
+    index: number;
+  };
+
   $: spaceObject = ColorSpace.get(space);
-  $: sliders = SLIDERS[space].map((id) => ({
-    id,
-    name: spaceObject.coords[id].name,
-    range: spaceObject.coords[id].range ||
-      spaceObject.coords[id].refRange || [0, 1],
-    index: Number(
-      ColorSpace.resolveCoord({ space: spaceObject, coordId: id }).index,
-    ),
-  }));
+  $: sliders = SLIDERS[space].map((id: string): Slider => {
+    const coord = (spaceObject as ColorSpace).coords[id];
+    return {
+      id,
+      name: coord?.name ?? '',
+      range: coord?.range || coord?.refRange || [0, 1],
+      index: Number(
+        ColorSpace.resolveCoord({
+          space: spaceObject as ColorSpace,
+          coordId: id,
+        }).index,
+      ),
+    };
+  });
 
   const getStep = (range: [number, number]) => {
     const diff = range[1] - range[0];

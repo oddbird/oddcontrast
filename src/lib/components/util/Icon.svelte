@@ -18,7 +18,7 @@
 </script>
 
 <svelte:component
-  this={icons[name] || false}
+  this={icons[name] ?? null}
   data-icon={name}
   data-icon-size={size}
   aria-hidden="true"

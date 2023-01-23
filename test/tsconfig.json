@@ -4,5 +4,11 @@
     "isolatedModules": false,
     "types": ["vitest/globals"]
   },
-  "include": ["./**/*.ts"]
+  "include": [
+    "./**/*.ts",
+    "../.eslintrc.cjs",
+    "../svelte.config.js",
+    "../vite.config.ts",
+    "../src/**/*.d.ts"
+  ]
 }

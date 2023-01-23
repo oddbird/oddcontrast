@@ -12,13 +12,13 @@ describe('Space', () => {
   it('renders editable space select', async () => {
     const { getByLabelText } = render(Space);
 
-    expect(get(bg).space.id).toEqual('oklch');
-    expect(get(fg).space.id).toEqual('oklch');
+    expect(get(bg).space.id).toBe('oklch');
+    expect(get(fg).space.id).toBe('oklch');
 
     const select = getByLabelText('Color Format');
     await fireEvent.change(select, { target: { value: 'hsl' } });
 
-    expect(get(bg).space.id).toEqual('hsl');
-    expect(get(fg).space.id).toEqual('hsl');
+    expect(get(bg).space.id).toBe('hsl');
+    expect(get(fg).space.id).toBe('hsl');
   });
 });

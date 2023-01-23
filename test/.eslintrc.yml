@@ -1,4 +1,14 @@
 # http://eslint.org/docs/rules/
 
 env:
-  jest: true
+  'jest/globals': true
+plugins:
+  - jest
+extends:
+  - 'plugin:jest/recommended'
+  - 'plugin:jest/style'
+rules:
+  '@typescript-eslint/unbound-method': 0
+  'jest/unbound-method': 1
+  'jest/no-deprecated-functions': 0
+  'jest/no-done-callback': 0

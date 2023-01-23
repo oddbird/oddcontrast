@@ -1,13 +1,18 @@
+import type { RenderResult } from '@testing-library/svelte';
 import { render } from '@testing-library/svelte';
 
 import Page from '$src/routes/+page.svelte';
 
+interface TestContext {
+  result: RenderResult<Page>;
+}
+
 describe('Page', () => {
-  beforeEach((context) => {
+  beforeEach<TestContext>((context) => {
     context.result = render(Page);
   });
 
-  it('shows the proper heading', ({ result }) => {
+  it<TestContext>('shows the proper heading', ({ result }) => {
     const { getByText } = result;
 
     expect(getByText('OddContrast')).toBeInTheDocument();
