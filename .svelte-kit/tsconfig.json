@@ -1,18 +1,17 @@
 {
 	"compilerOptions": {
-		"baseUrl": "..",
 		"paths": {
 			"$src/*": [
-				"src/*"
+				"../src/*"
 			],
 			"$test/*": [
-				"test/js/*"
+				"../test/js/*"
 			],
 			"$lib": [
-				"src/lib"
+				"../src/lib"
 			],
 			"$lib/*": [
-				"src/lib/*"
+				"../src/lib/*"
 			]
 		},
 		"rootDirs": [
