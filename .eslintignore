@@ -11,4 +11,5 @@ coverage/
 node_modules/
 static/built/
 static/styleguide/
+test/js/setup.js
 yarn.lock

@@ -6,12 +6,6 @@ import path from 'path';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  resolve: {
-    alias: {
-      $src: path.resolve('./src'),
-      $test: path.resolve('./test/js'),
-    },
-  },
   plugins: [sveltekit()],
   css: {
     preprocessorOptions: {

@@ -1,13 +1,4 @@
-import { Queries } from '@testing-library/dom';
 import { TestingLibraryMatchers } from '@testing-library/jest-dom/matchers';
-import { RenderResult } from '@testing-library/svelte';
-import type { SvelteComponent } from 'svelte/types/runtime';
-
-declare module 'vitest' {
-  export interface TestContext {
-    result: RenderResult<SvelteComponent, Queries>;
-  }
-}
 
 declare global {
   namespace jest {

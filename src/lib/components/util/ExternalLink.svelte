@@ -1,7 +1,7 @@
 <script lang="ts">
   import Icon from '$lib/components/util/Icon.svelte';
 
-  export let href: string;
+  export let href: string | undefined;
   export let showIcon = true;
 </script>
 
