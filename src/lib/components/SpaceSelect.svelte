@@ -10,10 +10,10 @@
 
   // Update color formats when space selection changes
   $: {
-    if ($bg.space.id !== $space) {
+    if (($bg.space as ColorSpace).id !== $space) {
       $bg = to($bg, $space);
     }
-    if ($fg.space.id !== $space) {
+    if (($fg.space as ColorSpace).id !== $space) {
       $fg = to($fg, $space);
     }
   }
