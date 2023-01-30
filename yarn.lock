@@ -308,15 +308,15 @@
   dependencies:
     import-meta-resolve "^2.2.0"
 
-"@sveltejs/kit@^1.3.3":
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.3.3.tgz#6d9fc7a02a845b49971037330d86907add4a18f9"
-  integrity sha512-z/Of+rnKhNCvFArymTpmiNsAZZnclD8qR9d/YZJi3ZziLh/OI7L/Ca8/n6Hnd5NqLKB6/NzOC0Fgr12VHMY3nQ==
+"@sveltejs/kit@^1.3.4":
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.3.4.tgz#fc08cc60576b416d8d791c13ed7b20a8cd501027"
+  integrity sha512-4+8/1Mn5P7R7r+r8pttLJ1CC1yEWxVm+KFQL6S4mPyJjzAnZOMiX0lq1qkltwgzvGMtBgda5jpxti1Oi4TgeIg==
   dependencies:
     "@sveltejs/vite-plugin-svelte" "^2.0.0"
     "@types/cookie" "^0.5.1"
     cookie "^0.5.0"
-    devalue "^4.2.2"
+    devalue "^4.2.3"
     esm-env "^1.0.0"
     kleur "^4.1.5"
     magic-string "^0.27.0"
@@ -1709,10 +1709,10 @@ detect-indent@^6.1.0:
   resolved "https://registry.yarnpkg.com/detect-indent/-/detect-indent-6.1.0.tgz#592485ebbbf6b3b1ab2be175c8393d04ca0d57e6"
   integrity sha512-reYkTUJAZb9gUuZ2RvVCNhVHdg62RHnJ7WJl8ftMi4diZ6NWlciOzQN88pUhSELEwflJht4oQDv0F0BMlwaYtA==
 
-devalue@^4.2.2:
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/devalue/-/devalue-4.2.2.tgz#5d1ec7cbd82b7873460037f59a1ce834c0100b96"
-  integrity sha512-Pkwd8qrI9O20VJ14fBNHu+on99toTNZFbgWRpZbC0zbDXpnE2WHYcrC1fHhMsF/3Ee+2yaW7vEujAT7fCYgqrA==
+devalue@^4.2.3:
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/devalue/-/devalue-4.2.3.tgz#313bb7e7cf74100bfddab9182b2d1b48ba14701a"
+  integrity sha512-JG6Q248aN0pgFL57e3zqTVeFraBe+5W2ugvv1mLXsJP6YYIYJhRZhAl7QP8haJrqob6X10F9NEkuCvNILZTPeQ==
 
 diff-sequences@^29.3.1:
   version "29.3.1"
