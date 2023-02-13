@@ -2,5 +2,4 @@
 @use 'config/color/docs' as color-docs;
 @use 'config/scale/docs' as scale-docs;
 @use 'sassdoc-theme-herman/scss/utilities' as herman;
-
 @include herman.export(herman.$herman);
