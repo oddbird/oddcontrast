@@ -70,7 +70,7 @@
     "sassdoc-theme-herman": "^5.0.1",
     "stylelint": "^15.2.0",
     "stylelint-config-standard-scss": "^7.0.1",
-    "svelte": "^3.56.0",
+    "svelte": "3.55.1",
     "svelte-check": "^3.1.2",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.5",
