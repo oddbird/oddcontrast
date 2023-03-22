@@ -2,8 +2,11 @@
   import type { SvelteComponent } from 'svelte';
 
   import Check from '$lib/icons/Check.svelte';
+  import GitHub from '$lib/icons/GitHub.svelte';
   import Logo from '$lib/icons/Logo.svelte';
   import NewTab from '$lib/icons/NewTab.svelte';
+  import OddBird from '$lib/icons/OddBird.svelte';
+  import Twitter from '$lib/icons/Twitter.svelte';
   import Warning from '$lib/icons/Warning.svelte';
 
   const icons: { [key: string]: typeof SvelteComponent } = {
@@ -11,6 +14,9 @@
     logo: Logo,
     newtab: NewTab,
     warning: Warning,
+    github: GitHub,
+    twitter: Twitter,
+    oddbird: OddBird,
   };
 
   export let name: string;
