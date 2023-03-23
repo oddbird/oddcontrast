@@ -10,7 +10,7 @@
 
 <style lang="scss">
   [data-icon] {
-    // since OddBrid is so short, let's increase the size to balance visually
+    // since OddBird is so short, let's increase the size to balance visually
     --icon-width: calc(var(--icon-size-default) + 0.5rem);
   }
 </style>
