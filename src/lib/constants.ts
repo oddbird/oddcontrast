@@ -17,3 +17,18 @@ export const RATIOS = {
     Large: 4.5,
   },
 };
+
+export const SOCIAL_LINKS = [
+  {
+    name: 'GitHub',
+    icon: 'github',
+    href: 'https://github.com/oddbird/oddcontrast',
+  },
+  { name: 'OddBird', icon: 'oddbird', href: 'https://www.oddbird.net/' },
+  { name: 'Twitter', icon: 'twitter', href: 'https://twitter.com/oddbird' },
+  {
+    name: 'Mastodon',
+    icon: 'mastodon',
+    href: 'https://front-end.social/@OddBird',
+  },
+];

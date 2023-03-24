@@ -5,7 +5,7 @@ ul {
 }
 
 li {
-  padding-bottom: var(--gutter);
+  padding-bottom: var(--li-padding-bottom, var(--gutter));
 }
 
 [data-list='inline'] {

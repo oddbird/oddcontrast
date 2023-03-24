@@ -14,7 +14,7 @@
 
 <style lang="scss">
   [data-icon] {
-    // a small increase in width to make it visually equal to warning
-    --icon-width: calc(var(--icon-size-default) + 0.15em);
+    // a small change in width to make it visually equal to warning
+    --icon-width: calc(var(--icon-size-default) - 0.2em);
   }
 </style>
