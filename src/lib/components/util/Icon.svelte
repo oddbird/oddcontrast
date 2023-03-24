@@ -4,6 +4,7 @@
   import Check from '$lib/icons/Check.svelte';
   import GitHub from '$lib/icons/GitHub.svelte';
   import Logo from '$lib/icons/Logo.svelte';
+  import Mastodon from '$lib/icons/Mastodon.svelte';
   import NewTab from '$lib/icons/NewTab.svelte';
   import OddBird from '$lib/icons/OddBird.svelte';
   import Twitter from '$lib/icons/Twitter.svelte';
@@ -17,6 +18,7 @@
     github: GitHub,
     twitter: Twitter,
     oddbird: OddBird,
+    mastodon: Mastodon,
   };
 
   export let name: string;

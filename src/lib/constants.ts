@@ -24,6 +24,11 @@ export const SOCIAL_LINKS = [
     icon: 'github',
     href: 'https://github.com/oddbird/oddcontrast',
   },
-  { name: 'Twitter', icon: 'twitter', href: 'https://twitter.com/oddbird' },
   { name: 'OddBird', icon: 'oddbird', href: 'https://www.oddbird.net/' },
+  { name: 'Twitter', icon: 'twitter', href: 'https://twitter.com/oddbird' },
+  {
+    name: 'Mastodon',
+    icon: 'mastodon',
+    href: 'https://front-end.social/@OddBird',
+  },
 ];
