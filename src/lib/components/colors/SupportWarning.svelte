@@ -15,7 +15,7 @@
     },
     { inGamut: false },
   ).color;
-  $: isSupported = (fallbackColor.space ).id === space;
+  $: isSupported = fallbackColor.space.id === space;
 </script>
 
 {#if !isSupported}
