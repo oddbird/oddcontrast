@@ -1,12 +1,12 @@
 <script lang="ts">
   import { serialize, to } from 'colorjs.io/fn';
-  import type { ColorObject } from 'colorjs.io/types/src/color';
+  import type { PlainColorObject } from 'colorjs.io/types/src/color';
   import type { Writable } from 'svelte/store';
 
   import type { ColorSpaceId } from '$lib/constants';
 
   export let type: 'bg' | 'fg';
-  export let color: Writable<ColorObject>;
+  export let color: Writable<PlainColorObject>;
   export let space: ColorSpaceId;
 
   $: display = serialize($color, { inGamut: false });

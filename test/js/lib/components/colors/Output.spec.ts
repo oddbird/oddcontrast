@@ -1,6 +1,6 @@
 import { render } from '@testing-library/svelte';
 import { serialize, to } from 'colorjs.io/fn';
-import type { ColorObject } from 'colorjs.io/types/src/color';
+import type { PlainColorObject } from 'colorjs.io/types/src/color';
 
 import Output from '$lib/components/colors/Output.svelte';
 import { ColorSpace } from '$lib/stores';
@@ -30,9 +30,10 @@ describe('Output', () => {
   });
 
   it('renders warning if out of gamut', () => {
-    const color: ColorObject = {
+    const color: PlainColorObject = {
       space: ColorSpace.get('oklch'),
       coords: [0.01, 0.02, 0],
+      alpha: 1,
     };
     const { getByText } = render(Output, {
       type: 'fg',

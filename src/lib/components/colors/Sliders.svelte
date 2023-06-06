@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { ColorObject } from 'colorjs.io/types/src/color';
+  import type { PlainColorObject } from 'colorjs.io/types/src/color';
   import type { Writable } from 'svelte/store';
 
   import type { ColorSpaceId } from '$lib/constants';
@@ -7,7 +7,7 @@
   import { ColorSpace } from '$lib/stores';
 
   export let type: 'bg' | 'fg';
-  export let color: Writable<ColorObject>;
+  export let color: Writable<PlainColorObject>;
   export let space: ColorSpaceId;
 
   type Slider = {
