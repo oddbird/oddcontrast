@@ -1,10 +1,10 @@
 import { ColorSpace } from 'colorjs.io/fn';
-import type { ColorObject } from 'colorjs.io/types/src/color';
+import type { PlainColorObject } from 'colorjs.io/types/src/color';
 
 declare global {
   interface Window {
-    bg?: ColorObject;
-    fg?: ColorObject;
+    bg?: PlainColorObject;
+    fg?: PlainColorObject;
     ColorSpace?: typeof ColorSpace;
   }
 }

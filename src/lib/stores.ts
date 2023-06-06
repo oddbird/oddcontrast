@@ -8,7 +8,7 @@ import {
   REC_2020,
   sRGB,
 } from 'colorjs.io/fn';
-import type { ColorObject } from 'colorjs.io/types/src/color';
+import type { PlainColorObject } from 'colorjs.io/types/src/color';
 import { BROWSER, DEV } from 'esm-env';
 import { writable } from 'svelte/store';
 
@@ -46,8 +46,8 @@ const INITIAL_FG = {
 };
 
 export const space = writable<ColorSpaceId>(INITIAL_VALUES.space);
-export const bg = writable<ColorObject>(INITIAL_BG);
-export const fg = writable<ColorObject>(INITIAL_FG);
+export const bg = writable<PlainColorObject>(INITIAL_BG);
+export const fg = writable<PlainColorObject>(INITIAL_FG);
 
 export const reset = () => {
   bg.set(INITIAL_BG);

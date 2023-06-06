@@ -1,6 +1,6 @@
 import { get } from 'svelte/store';
 
-import { bg, ColorSpace, fg, INITIAL_VALUES, reset } from '$lib/stores';
+import { bg, fg, INITIAL_VALUES, reset } from '$lib/stores';
 import { HSL_WHITE } from '$test/fixtures';
 
 describe('reset', () => {
@@ -9,7 +9,7 @@ describe('reset', () => {
     fg.set(HSL_WHITE);
     reset();
 
-    expect((get(fg).space as ColorSpace).id).toEqual(INITIAL_VALUES.space);
-    expect((get(bg).space as ColorSpace).id).toEqual(INITIAL_VALUES.space);
+    expect(get(fg).space.id).toEqual(INITIAL_VALUES.space);
+    expect(get(bg).space.id).toEqual(INITIAL_VALUES.space);
   });
 });

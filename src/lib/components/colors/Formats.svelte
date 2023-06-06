@@ -1,12 +1,12 @@
 <script lang="ts">
-  import type { ColorObject } from 'colorjs.io/types/src/color';
+  import type { PlainColorObject } from 'colorjs.io/types/src/color';
 
   import Output from '$lib/components/colors/Output.svelte';
   import type { ColorSpaceId } from '$lib/constants';
   import { SPACES } from '$lib/constants';
 
   export let type: 'bg' | 'fg';
-  export let color: ColorObject;
+  export let color: PlainColorObject;
   export let space: ColorSpaceId;
 
   $: displayType = type === 'bg' ? 'Background' : 'Foreground';

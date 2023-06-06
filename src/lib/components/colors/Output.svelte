@@ -1,12 +1,12 @@
 <script lang="ts">
   import { inGamut, serialize, to } from 'colorjs.io/fn';
-  import type { ColorObject } from 'colorjs.io/types/src/color';
+  import type { PlainColorObject } from 'colorjs.io/types/src/color';
 
   import SupportWarning from '$lib/components/colors/SupportWarning.svelte';
   import type { ColorSpaceId } from '$lib/constants';
 
   export let type: 'bg' | 'fg';
-  export let color: ColorObject;
+  export let color: PlainColorObject;
   export let space: ColorSpaceId;
 
   $: targetColor = to(color, space);
