@@ -1,12 +1,31 @@
-export type ColorSpaceId = 'hsl' | 'oklch' | 'oklab';
+export type ColorSpaceId =
+  | 'hsl'
+  | 'oklch'
+  | 'oklab'
+  | 'p3'
+  | 'lab'
+  | 'lch'
+  | 'srgb';
 
 export const SLIDERS: { [key in ColorSpaceId]: string[] } = {
   hsl: ['h', 's', 'l'],
   oklch: ['l', 'c', 'h'],
   oklab: ['l', 'a', 'b'],
+  p3: ['r', 'g', 'b'],
+  lab: ['l', 'a', 'b'],
+  lch: ['l', 'c', 'h'],
+  srgb: ['r', 'g', 'b'],
 };
 
-export const SPACES: ColorSpaceId[] = ['hsl', 'oklch', 'oklab'];
+export const SPACES: ColorSpaceId[] = [
+  'hsl',
+  'oklch',
+  'oklab',
+  'p3',
+  'lab',
+  'lch',
+  'srgb',
+];
 
 export const RATIOS = {
   AA: {
