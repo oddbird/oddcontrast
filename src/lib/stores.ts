@@ -3,6 +3,7 @@ import {
   HSL,
   Lab,
   LCH,
+  OKLab,
   OKLCH,
   P3,
   REC_2020,
@@ -17,6 +18,7 @@ import type { ColorSpaceId } from '$lib/constants';
 // Register supported color spaces
 ColorSpace.register(HSL);
 ColorSpace.register(OKLCH);
+ColorSpace.register(OKLab);
 
 // Register default fallback color spaces
 ColorSpace.register(sRGB);
