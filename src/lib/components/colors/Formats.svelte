@@ -18,6 +18,7 @@
   {#each otherSpaces as s (s)}
     <Output {type} {color} space={s} />
   {/each}
+  <Output {type} {color} space={'hex'} />
 </div>
 
 <style lang="scss">

@@ -7,17 +7,22 @@
 
   export let type: 'bg' | 'fg';
   export let color: PlainColorObject;
-  export let space: ColorSpaceId;
+  export let space: ColorSpaceId | 'hex';
 
-  $: targetColor = to(color, space);
+  $: targetSpace = (space === 'hex' ? 'srgb' : space) as ColorSpaceId;
+
+  $: targetColor = to(color, targetSpace);
   $: isInGamut = inGamut(targetColor);
-  $: targetColorValue = serialize(targetColor, { inGamut: false });
+  $: targetColorValue = serialize(targetColor, {
+    format: space,
+    inGamut: false,
+  });
 </script>
 
 <ul data-group="output {type}">
   <li>
     <span data-color-info="value">{targetColorValue}</span>
-    <SupportWarning {space} />
+    <SupportWarning space={targetSpace} />
     {#if !isInGamut}
       <span data-color-info="warning">This color is out of gamut.</span>
     {/if}
