@@ -5,7 +5,8 @@ export type ColorSpaceId =
   | 'p3'
   | 'lab'
   | 'lch'
-  | 'srgb';
+  | 'srgb'
+  | 'hex';
 
 export const SLIDERS: { [key in ColorSpaceId]: string[] } = {
   hsl: ['h', 's', 'l'],
@@ -15,6 +16,7 @@ export const SLIDERS: { [key in ColorSpaceId]: string[] } = {
   lab: ['l', 'a', 'b'],
   lch: ['l', 'c', 'h'],
   srgb: ['r', 'g', 'b'],
+  hex: ['r', 'g', 'b'],
 };
 
 export const SPACES: ColorSpaceId[] = [
@@ -25,6 +27,7 @@ export const SPACES: ColorSpaceId[] = [
   'lab',
   'lch',
   'srgb',
+  'hex',
 ];
 
 export const RATIOS = {

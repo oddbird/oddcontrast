@@ -9,7 +9,7 @@
   export let color: PlainColorObject;
   export let space: ColorSpaceId | 'hex';
 
-  $: targetSpace = (space === 'hex' ? 'srgb' : space) as ColorSpaceId;
+  $: targetSpace = (space === 'hex' ? 'srgb' : space);
 
   $: targetColor = to(color, targetSpace);
   $: isInGamut = inGamut(targetColor);

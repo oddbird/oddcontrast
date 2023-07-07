@@ -7,9 +7,11 @@
 
   export let type: 'bg' | 'fg';
   export let color: Writable<PlainColorObject>;
-  export let space: ColorSpaceId;
+  export let space: ColorSpaceId | 'hex';
 
-  $: display = serialize($color, { inGamut: false });
+  $: targetSpace = space === 'hex' ? 'srgb' : space;
+
+  $: display = serialize($color, { inGamut: false, format: space });
   $: displayType = type === 'bg' ? 'Background' : 'Foreground';
   $: editing = false;
   $: inputValue = '';
@@ -38,7 +40,7 @@
     if (display !== value) {
       let newColor;
       try {
-        newColor = to(value, space);
+        newColor = to(value, targetSpace);
       } catch (error) {
         hasError = true;
         console.error(error);

@@ -7,7 +7,9 @@
 
   export let space: ColorSpaceId;
 
-  $: spaceObject = ColorSpace.get(space);
+  $: targetSpace = space === 'hex' ? 'srgb' : space;
+
+  $: spaceObject = ColorSpace.get(targetSpace);
   $: fallbackColor = display(
     {
       space: spaceObject,
@@ -15,7 +17,7 @@
     },
     { inGamut: false },
   ).color;
-  $: isSupported = fallbackColor.space.id === space;
+  $: isSupported = fallbackColor.space.id === targetSpace;
 </script>
 
 {#if !isSupported}

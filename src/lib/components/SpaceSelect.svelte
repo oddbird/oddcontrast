@@ -1,20 +1,25 @@
 <script lang="ts">
   import { to } from 'colorjs.io/fn';
 
-  import { SPACES } from '$lib/constants';
+  import { type ColorSpaceId, SPACES } from '$lib/constants';
   import { bg, ColorSpace, fg, space } from '$lib/stores';
 
   let spaces: ColorSpace[] = [];
 
-  $: spaces = SPACES.map((s) => ColorSpace.get(s));
+  $: spaces = SPACES.map((s) => {
+    if (s === 'hex') return { id: 'hex', name: 'Hex' } as ColorSpace;
+    return ColorSpace.get(s);
+  });
+  console.log(spaces);
+  $: targetSpace = ($space === 'hex' ? 'srgb' : $space) as ColorSpaceId;
 
   // Update color formats when space selection changes
   $: {
-    if ($bg.space.id !== $space) {
-      $bg = to($bg, $space);
+    if ($bg.space.id !== targetSpace) {
+      $bg = to($bg, targetSpace);
     }
-    if ($fg.space.id !== $space) {
-      $fg = to($fg, $space);
+    if ($fg.space.id !== targetSpace) {
+      $fg = to($fg, targetSpace);
     }
   }
 </script>
