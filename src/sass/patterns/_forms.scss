@@ -23,7 +23,9 @@ select {
 }
 
 input {
-  transition: outline-color var(--fast), outline-style var(--fast);
+  transition:
+    outline-color var(--fast),
+    outline-style var(--fast);
 
   [data-needs-changes] & {
     --focus-ring: var(--warning);
