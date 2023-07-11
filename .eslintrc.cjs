@@ -13,23 +13,27 @@ module.exports = {
     es2017: true,
     node: true,
   },
-  plugins: ['simple-import-sort', 'import', 'svelte3', '@typescript-eslint'],
+  plugins: ['simple-import-sort', 'import', '@typescript-eslint'],
   extends: [
     'eslint:recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'plugin:svelte/recommended',
+    'plugin:svelte/prettier',
     'prettier',
   ],
   overrides: [
     {
       files: ['*.svelte'],
-      processor: 'svelte3/svelte3',
+      parser: 'svelte-eslint-parser',
+      parserOptions: {
+        parser: '@typescript-eslint/parser',
+      },
     },
   ],
   settings: {
-    'svelte3/typescript': true,
     'import/resolver': {
       typescript: {
         project: ['tsconfig.json', 'test/tsconfig.json'],

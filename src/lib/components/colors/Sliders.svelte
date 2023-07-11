@@ -19,14 +19,14 @@
 
   $: spaceObject = ColorSpace.get(space);
   $: sliders = SLIDERS[space].map((id: string): Slider => {
-    const coord = (spaceObject as ColorSpace).coords[id];
+    const coord = spaceObject.coords[id];
     return {
       id,
       name: coord?.name ?? '',
       range: coord?.range || coord?.refRange || [0, 1],
       index: Number(
         ColorSpace.resolveCoord({
-          space: spaceObject as ColorSpace,
+          space: spaceObject,
           coordId: id,
         }).index,
       ),
