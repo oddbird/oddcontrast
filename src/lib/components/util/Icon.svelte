@@ -10,7 +10,8 @@
   import Twitter from '$lib/icons/Twitter.svelte';
   import Warning from '$lib/icons/Warning.svelte';
 
-  const icons: { [key: string]: typeof SvelteComponent } = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const icons: { [key: string]: typeof SvelteComponent<any> } = {
     check: Check,
     logo: Logo,
     newtab: NewTab,

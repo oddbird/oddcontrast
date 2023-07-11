@@ -23,7 +23,9 @@ button {
   display: inline-flex;
   padding: var(--btn-padding-block, var(--half-shim))
     var(--btn-padding-inline, var(--gutter));
-  transition: color var(--fast), background-color var(--fast);
+  transition:
+    color var(--fast),
+    background-color var(--fast);
 
   &:hover,
   &:focus {
