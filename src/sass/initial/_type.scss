@@ -49,7 +49,7 @@ h4 {
 .section-heading {
   @include heading;
 
-  --label-margin-bottom: var(--gutter);
+  --label-margin-bottom: var(--gutter-plus);
 
   @include config.below('sm-page-break') {
     --heading-size: var(--medium);
@@ -67,18 +67,13 @@ strong {
 [data-color-info] {
   display: block;
   color: var(--color-info-color);
-  font-size: var(--color-info-size);
-}
-
-[data-color-info~='value'] {
-  --color-info-size: var(--color-value-size, var(--medium));
 }
 
 [data-color-info~='warning'] {
   --color-info-color: var(--warning);
-  --color-info-size: var(--warning-size);
 
   background: var(--warning-bg, transparent);
+  font-size: var(--color-info-size, var(--warning-size));
   margin-bottom: var(--warning-margin-bottom);
   padding-block: var(--warning-padding-block);
   text-align: var(--warning-align, left);
@@ -88,5 +83,27 @@ strong {
     --warning-margin-bottom: var(--double-gutter);
     --warning-padding-block: var(--gutter);
     --warning-align: center;
+  }
+}
+
+[data-color-info~='value'],
+[data-input='color'] {
+  font-size: var(--tool-font-size, var(--small));
+
+  // Container widths here were determined by when the longer color values (p3)
+  // would overflow the container
+  @container tool (min-width: 20rem) {
+    --tool-font-size: var(--input-small);
+  }
+
+  @container tool (min-width: 25rem) {
+    --tool-font-size: var(--medium);
+  }
+}
+
+// Allow input to continue its font-size growth once more
+[data-input='color'] {
+  @container tool (min-width: 30rem) {
+    --tool-font-size: var(--input-large);
   }
 }

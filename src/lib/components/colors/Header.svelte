@@ -68,6 +68,7 @@
 <div
   data-group="header {type}"
   data-colors="preview"
+  data-column="tool"
   data-needs-changes={hasError}
 >
   <div class="swatch {type}" />
@@ -154,13 +155,8 @@
 
   [data-input='color'] {
     border-width: 0 0 var(--border-width) 0;
-    font-size: var(--input-size, var(--input-large));
     grid-area: input;
     padding: var(--shim) 0.25ch;
-
-    @include config.between('sm-page-break', 'lg-page-break') {
-      --input-size: var(--input-small);
-    }
   }
 
   [data-color-info='warning'] {

@@ -13,7 +13,7 @@
   $: otherFormats = FORMATS.filter((s) => s !== format);
 </script>
 
-<div data-content="formats">
+<div data-content="formats" data-column="tool">
   <h4 class="small-only label">{displayType} Color</h4>
   {#each otherFormats as format (format)}
     <Output {type} {color} {format} />
@@ -23,5 +23,9 @@
 <style lang="scss">
   [data-content~='formats'] {
     margin-bottom: var(--double-gutter);
+  }
+
+  .label {
+    --label-margin-bottom: var(--gutter);
   }
 </style>

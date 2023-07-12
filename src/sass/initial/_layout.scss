@@ -101,3 +101,7 @@ body {
 [data-group='sliders fg'] {
   grid-area: fgslide;
 }
+
+[data-column~='tool'] {
+  container: tool / inline-size;
+}
