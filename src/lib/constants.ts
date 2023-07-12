@@ -1,14 +1,8 @@
-export type ColorSpaceId =
-  | 'hsl'
-  | 'oklch'
-  | 'oklab'
-  | 'p3'
-  | 'lab'
-  | 'lch'
-  | 'srgb'
-  | 'hex';
+type ColorSpaceId = 'hsl' | 'oklch' | 'oklab' | 'p3' | 'lab' | 'lch' | 'srgb';
 
-export const SLIDERS: { [key in ColorSpaceId]: string[] } = {
+export type ColorFormatId = ColorSpaceId | 'hex';
+
+export const SLIDERS: { [key in ColorFormatId]: string[] } = {
   hsl: ['h', 's', 'l'],
   oklch: ['l', 'c', 'h'],
   oklab: ['l', 'a', 'b'],
@@ -19,7 +13,7 @@ export const SLIDERS: { [key in ColorSpaceId]: string[] } = {
   hex: ['r', 'g', 'b'],
 };
 
-export const SPACES: ColorSpaceId[] = [
+export const SPACES: ColorFormatId[] = [
   'hsl',
   'oklch',
   'oklab',

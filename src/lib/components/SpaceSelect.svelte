@@ -1,7 +1,7 @@
 <script lang="ts">
   import { to } from 'colorjs.io/fn';
 
-  import { type ColorSpaceId, SPACES } from '$lib/constants';
+  import { SPACES } from '$lib/constants';
   import { bg, ColorSpace, fg, space } from '$lib/stores';
 
   let spaces: ColorSpace[] = [];
@@ -10,8 +10,8 @@
     if (s === 'hex') return { id: 'hex', name: 'Hex' } as ColorSpace;
     return ColorSpace.get(s);
   });
-  console.log(spaces);
-  $: targetSpace = ($space === 'hex' ? 'srgb' : $space) as ColorSpaceId;
+
+  $: targetSpace = $space === 'hex' ? 'srgb' : $space;
 
   // Update color formats when space selection changes
   $: {

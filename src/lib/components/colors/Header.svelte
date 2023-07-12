@@ -3,14 +3,13 @@
   import type { PlainColorObject } from 'colorjs.io/types/src/color';
   import type { Writable } from 'svelte/store';
 
-  import type { ColorSpaceId } from '$lib/constants';
+  import type { ColorFormatId } from '$lib/constants';
 
   export let type: 'bg' | 'fg';
   export let color: Writable<PlainColorObject>;
-  export let space: ColorSpaceId | 'hex';
+  export let space: ColorFormatId;
 
   $: targetSpace = space === 'hex' ? 'srgb' : space;
-
   $: display = serialize($color, { inGamut: false, format: space });
   $: displayType = type === 'bg' ? 'Background' : 'Foreground';
   $: editing = false;
