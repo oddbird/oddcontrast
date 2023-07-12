@@ -4,13 +4,14 @@
   import type { Writable } from 'svelte/store';
 
   import type { ColorFormatId } from '$lib/constants';
+  import { getSpaceFromFormatId } from '$lib/utils';
 
   export let type: 'bg' | 'fg';
   export let color: Writable<PlainColorObject>;
-  export let space: ColorFormatId;
+  export let format: ColorFormatId;
 
-  $: targetSpace = space === 'hex' ? 'srgb' : space;
-  $: display = serialize($color, { inGamut: false, format: space });
+  $: targetSpace = getSpaceFromFormatId(format);
+  $: display = serialize($color, { inGamut: false, format });
   $: displayType = type === 'bg' ? 'Background' : 'Foreground';
   $: editing = false;
   $: inputValue = '';

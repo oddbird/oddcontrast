@@ -5,21 +5,15 @@
   import type { ColorFormatId } from '$lib/constants';
   import { SLIDERS } from '$lib/constants';
   import { ColorSpace } from '$lib/stores';
+  import { getSpaceFromFormatId } from '$lib/utils';
 
   export let type: 'bg' | 'fg';
   export let color: Writable<PlainColorObject>;
-  export let space: ColorFormatId;
+  export let format: ColorFormatId;
 
-  type Slider = {
-    id: string;
-    name: string;
-    range: [number, number];
-    index: number;
-  };
-
-  $: targetSpace = space === 'hex' ? 'srgb' : space;
+  $: targetSpace = getSpaceFromFormatId(format);
   $: spaceObject = ColorSpace.get(targetSpace);
-  $: sliders = SLIDERS[space].map((id: string): Slider => {
+  $: sliders = SLIDERS[format].map((id) => {
     const coord = spaceObject.coords[id];
     return {
       id,

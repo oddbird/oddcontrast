@@ -1,16 +1,17 @@
 <script lang="ts">
   import { to } from 'colorjs.io/fn';
 
-  import { SPACES } from '$lib/constants';
-  import { bg, ColorSpace, fg, space } from '$lib/stores';
+  import { FORMATS } from '$lib/constants';
+  import { bg, ColorSpace, fg, format } from '$lib/stores';
+  import { getSpaceFromFormatId } from '$lib/utils';
 
   let spaces: ColorSpace[] = [];
 
-  $: spaces = SPACES.map((s) => {
+  $: spaces = FORMATS.map((s) => {
     if (s === 'hex') return { id: 'hex', name: 'Hex' } as ColorSpace;
     return ColorSpace.get(s);
   });
-  $: targetSpace = $space === 'hex' ? 'srgb' : $space;
+  $: targetSpace = getSpaceFromFormatId($format);
 
   // Update color formats when space selection changes
   $: {
@@ -23,9 +24,9 @@
   }
 </script>
 
-<div data-field="color-space">
-  <label for="color-space" data-label>Color Format</label>
-  <select name="color-space" id="color-space" bind:value={$space}>
+<div data-field="color-format">
+  <label for="color-format" data-label>Color Format</label>
+  <select name="color-format" id="color-format" bind:value={$format}>
     {#each spaces as s}
       {#if s}
         <option value={s.id}>{s.name}</option>
@@ -37,7 +38,7 @@
 <style lang="scss">
   @use 'config';
 
-  [data-field='color-space'] {
+  [data-field='color-format'] {
     align-items: center;
     column-gap: var(--gutter);
     display: grid;

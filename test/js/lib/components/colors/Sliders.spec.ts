@@ -10,7 +10,7 @@ describe('Sliders', () => {
     const { getByLabelText } = render(Sliders, {
       type: 'bg',
       color,
-      space: 'hsl',
+      format: 'hsl',
     });
     const sliders = {
       h: getByLabelText('Hue'),

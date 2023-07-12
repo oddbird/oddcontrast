@@ -11,7 +11,7 @@ describe('Output', () => {
     const { getByText } = render(Output, {
       type: 'bg',
       color: HSL_WHITE,
-      space: 'hsl',
+      format: 'hsl',
     });
 
     expect(getByText(HSL_WHITE_SERIALIZED)).toBeVisible();
@@ -21,7 +21,7 @@ describe('Output', () => {
     const { getByText } = render(Output, {
       type: 'bg',
       color: HSL_WHITE,
-      space: 'oklch',
+      format: 'oklch',
     });
 
     expect(
@@ -38,7 +38,7 @@ describe('Output', () => {
     const { getByText } = render(Output, {
       type: 'fg',
       color,
-      space: 'hsl',
+      format: 'hsl',
     });
 
     expect(getByText('out of gamut', { exact: false })).toBeVisible();

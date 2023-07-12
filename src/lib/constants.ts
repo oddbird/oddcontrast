@@ -13,7 +13,7 @@ export const SLIDERS: { [key in ColorFormatId]: string[] } = {
   hex: ['r', 'g', 'b'],
 };
 
-export const SPACES: ColorFormatId[] = [
+export const FORMATS: ColorFormatId[] = [
   'hsl',
   'oklch',
   'oklab',

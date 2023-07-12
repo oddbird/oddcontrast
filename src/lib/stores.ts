@@ -30,24 +30,24 @@ ColorSpace.register(REC_2020);
 export { ColorSpace };
 
 export const INITIAL_VALUES = {
-  space: 'oklch' as ColorFormatId,
+  format: 'oklch' as ColorFormatId,
   bg_coord: [0.384, 0.069, 262] as [number, number, number],
   fg_coord: [0.89, 0.035, 238] as [number, number, number],
   alpha: 1,
 };
 
 const INITIAL_BG = {
-  space: ColorSpace.get(INITIAL_VALUES.space),
+  space: ColorSpace.get(INITIAL_VALUES.format),
   coords: INITIAL_VALUES.bg_coord,
   alpha: INITIAL_VALUES.alpha,
 };
 const INITIAL_FG = {
-  space: ColorSpace.get(INITIAL_VALUES.space),
+  space: ColorSpace.get(INITIAL_VALUES.format),
   coords: INITIAL_VALUES.fg_coord,
   alpha: INITIAL_VALUES.alpha,
 };
 
-export const space = writable<ColorFormatId>(INITIAL_VALUES.space);
+export const format = writable<ColorFormatId>(INITIAL_VALUES.format);
 export const bg = writable<PlainColorObject>(INITIAL_BG);
 export const fg = writable<PlainColorObject>(INITIAL_FG);
 

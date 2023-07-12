@@ -3,20 +3,20 @@
 
   import Output from '$lib/components/colors/Output.svelte';
   import type { ColorFormatId } from '$lib/constants';
-  import { SPACES } from '$lib/constants';
+  import { FORMATS } from '$lib/constants';
 
   export let type: 'bg' | 'fg';
   export let color: PlainColorObject;
-  export let space: ColorFormatId;
+  export let format: ColorFormatId;
 
   $: displayType = type === 'bg' ? 'Background' : 'Foreground';
-  $: otherSpaces = SPACES.filter((s) => s !== space);
+  $: otherFormats = FORMATS.filter((s) => s !== format);
 </script>
 
 <div data-content="formats">
   <h4 class="small-only label">{displayType} Color</h4>
-  {#each otherSpaces as s (s)}
-    <Output {type} {color} space={s} />
+  {#each otherFormats as format (format)}
+    <Output {type} {color} {format} />
   {/each}
 </div>
 
