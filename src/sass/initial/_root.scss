@@ -10,4 +10,8 @@ html {
 
   font-size: config.size('rem');
   line-height: config.ratio('line-height');
+
+  &::selection {
+    @include config.colors--;
+  }
 }
