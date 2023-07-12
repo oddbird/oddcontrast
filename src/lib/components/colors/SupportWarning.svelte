@@ -8,7 +8,6 @@
   export let space: ColorFormatId;
 
   $: targetSpace = space === 'hex' ? 'srgb' : space;
-
   $: spaceObject = ColorSpace.get(targetSpace);
   $: fallbackColor = display(
     {

@@ -16,8 +16,8 @@
     range: [number, number];
     index: number;
   };
-  $: targetSpace = space === 'hex' ? 'srgb' : space;
 
+  $: targetSpace = space === 'hex' ? 'srgb' : space;
   $: spaceObject = ColorSpace.get(targetSpace);
   $: sliders = SLIDERS[space].map((id: string): Slider => {
     const coord = spaceObject.coords[id];

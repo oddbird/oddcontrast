@@ -10,7 +10,6 @@
     if (s === 'hex') return { id: 'hex', name: 'Hex' } as ColorSpace;
     return ColorSpace.get(s);
   });
-
   $: targetSpace = $space === 'hex' ? 'srgb' : $space;
 
   // Update color formats when space selection changes
