@@ -1,27 +1,27 @@
-type ColorSpaceId = 'hsl' | 'oklch' | 'oklab' | 'p3' | 'lab' | 'lch' | 'srgb';
+type ColorSpaceId = 'hsl' | 'lab' | 'lch' | 'oklab' | 'oklch' | 'p3' | 'srgb';
 
 export type ColorFormatId = ColorSpaceId | 'hex';
 
 export const SLIDERS: { [key in ColorFormatId]: string[] } = {
+  hex: ['r', 'g', 'b'],
   hsl: ['h', 's', 'l'],
-  oklch: ['l', 'c', 'h'],
-  oklab: ['l', 'a', 'b'],
-  p3: ['r', 'g', 'b'],
   lab: ['l', 'a', 'b'],
   lch: ['l', 'c', 'h'],
+  oklab: ['l', 'a', 'b'],
+  oklch: ['l', 'c', 'h'],
+  p3: ['r', 'g', 'b'],
   srgb: ['r', 'g', 'b'],
-  hex: ['r', 'g', 'b'],
 };
 
 export const FORMATS: ColorFormatId[] = [
+  'hex',
   'hsl',
-  'oklch',
-  'oklab',
-  'p3',
   'lab',
   'lch',
+  'oklab',
+  'oklch',
+  'p3',
   'srgb',
-  'hex',
 ];
 
 export const RATIOS = {
