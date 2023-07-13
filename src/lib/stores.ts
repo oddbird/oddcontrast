@@ -17,11 +17,11 @@ import type { ColorFormatId } from '$lib/constants';
 
 // Register supported color spaces
 ColorSpace.register(HSL);
-ColorSpace.register(OKLCH);
-ColorSpace.register(OKLab);
-ColorSpace.register(P3);
 ColorSpace.register(Lab);
 ColorSpace.register(LCH);
+ColorSpace.register(OKLab);
+ColorSpace.register(OKLCH);
+ColorSpace.register(P3);
 ColorSpace.register(sRGB);
 
 // Register necessary default fallback color space
