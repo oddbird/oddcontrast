@@ -41,6 +41,6 @@ describe('Output', () => {
       format: 'hsl',
     });
 
-    expect(getByText('out of gamut', { exact: false })).toBeVisible();
+    expect(getByText('outside the HSL gamut', { exact: false })).toBeVisible();
   });
 });
