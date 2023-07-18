@@ -2,23 +2,18 @@
   import type { PlainColorObject } from 'colorjs.io/types/src/color';
   import type { Writable } from 'svelte/store';
 
-  import type { ColorSpaceId } from '$lib/constants';
+  import type { ColorFormatId } from '$lib/constants';
   import { SLIDERS } from '$lib/constants';
   import { ColorSpace } from '$lib/stores';
+  import { getSpaceFromFormatId } from '$lib/utils';
 
   export let type: 'bg' | 'fg';
   export let color: Writable<PlainColorObject>;
-  export let space: ColorSpaceId;
+  export let format: ColorFormatId;
 
-  type Slider = {
-    id: string;
-    name: string;
-    range: [number, number];
-    index: number;
-  };
-
-  $: spaceObject = ColorSpace.get(space);
-  $: sliders = SLIDERS[space].map((id: string): Slider => {
+  $: targetSpace = getSpaceFromFormatId(format);
+  $: spaceObject = ColorSpace.get(targetSpace);
+  $: sliders = SLIDERS[format].map((id) => {
     const coord = spaceObject.coords[id];
     return {
       id,

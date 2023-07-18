@@ -9,7 +9,7 @@ describe('reset', () => {
     fg.set(HSL_WHITE);
     reset();
 
-    expect(get(fg).space.id).toEqual(INITIAL_VALUES.space);
-    expect(get(bg).space.id).toEqual(INITIAL_VALUES.space);
+    expect(get(fg).space.id).toEqual(INITIAL_VALUES.format);
+    expect(get(bg).space.id).toEqual(INITIAL_VALUES.format);
   });
 });

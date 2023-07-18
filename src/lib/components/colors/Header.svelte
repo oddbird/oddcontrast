@@ -3,13 +3,15 @@
   import type { PlainColorObject } from 'colorjs.io/types/src/color';
   import type { Writable } from 'svelte/store';
 
-  import type { ColorSpaceId } from '$lib/constants';
+  import type { ColorFormatId } from '$lib/constants';
+  import { getSpaceFromFormatId } from '$lib/utils';
 
   export let type: 'bg' | 'fg';
   export let color: Writable<PlainColorObject>;
-  export let space: ColorSpaceId;
+  export let format: ColorFormatId;
 
-  $: display = serialize($color, { inGamut: false });
+  $: targetSpace = getSpaceFromFormatId(format);
+  $: display = serialize($color, { inGamut: false, format });
   $: displayType = type === 'bg' ? 'Background' : 'Foreground';
   $: editing = false;
   $: inputValue = '';
@@ -38,7 +40,7 @@
     if (display !== value) {
       let newColor;
       try {
-        newColor = to(value, space);
+        newColor = to(value, targetSpace);
       } catch (error) {
         hasError = true;
         console.error(error);
@@ -66,6 +68,7 @@
 <div
   data-group="header {type}"
   data-colors="preview"
+  data-column="tool"
   data-needs-changes={hasError}
 >
   <div class="swatch {type}" />
@@ -152,13 +155,8 @@
 
   [data-input='color'] {
     border-width: 0 0 var(--border-width) 0;
-    font-size: var(--input-size, var(--input-large));
     grid-area: input;
     padding: var(--shim) 0.25ch;
-
-    @include config.between('sm-page-break', 'lg-page-break') {
-      --input-size: var(--input-small);
-    }
   }
 
   [data-color-info='warning'] {

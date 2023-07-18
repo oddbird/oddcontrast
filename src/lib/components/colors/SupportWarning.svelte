@@ -2,12 +2,14 @@
   import { display } from 'colorjs.io/fn';
 
   import ExternalLink from '$lib/components/util/ExternalLink.svelte';
-  import type { ColorSpaceId } from '$lib/constants';
+  import type { ColorFormatId } from '$lib/constants';
   import { ColorSpace } from '$lib/stores';
+  import { getSpaceFromFormatId } from '$lib/utils';
 
-  export let space: ColorSpaceId;
+  export let format: ColorFormatId;
 
-  $: spaceObject = ColorSpace.get(space);
+  $: targetSpace = getSpaceFromFormatId(format);
+  $: spaceObject = ColorSpace.get(targetSpace);
   $: fallbackColor = display(
     {
       space: spaceObject,
@@ -15,14 +17,14 @@
     },
     { inGamut: false },
   ).color;
-  $: isSupported = fallbackColor.space.id === space;
+  $: isSupported = fallbackColor.space.id === targetSpace;
 </script>
 
 {#if !isSupported}
   <span data-color-info="warning">
     {spaceObject.name} is
     <ExternalLink
-      href="https://caniuse.com/mdn-css_types_color_oklab,mdn-css_types_color_oklch,mdn-css_types_color_hsla,mdn-css_types_color_hsl"
+      href="https://caniuse.com/css-lch-lab,mdn-css_types_color_hsl,mdn-css_types_color_hsla,mdn-css_types_color_oklab,mdn-css_types_color_oklch,css-color-function"
     >
       not supported by your current browser.</ExternalLink
     >

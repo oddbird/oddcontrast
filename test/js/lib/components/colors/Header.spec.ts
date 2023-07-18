@@ -11,7 +11,7 @@ describe('Header', () => {
     const { getByLabelText } = render(Header, {
       type: 'bg',
       color,
-      space: 'hsl',
+      format: 'hsl',
     });
     const input = getByLabelText('Background Color');
     await fireEvent.focus(input);
@@ -31,7 +31,7 @@ describe('Header', () => {
     const { getByText, getByLabelText } = render(Header, {
       type: 'fg',
       color,
-      space: 'hsl',
+      format: 'hsl',
     });
     const input = getByLabelText('Foreground Color');
     await fireEvent.focus(input);
@@ -55,7 +55,7 @@ describe('Header', () => {
       const { getByText, getByLabelText } = render(Header, {
         type: 'fg',
         color,
-        space: 'hsl',
+        format: 'hsl',
       });
       const input = getByLabelText('Foreground Color');
       await fireEvent.focus(input);
@@ -78,7 +78,7 @@ describe('Header', () => {
       const { getByLabelText } = render(Header, {
         type: 'fg',
         color,
-        space: 'hsl',
+        format: 'hsl',
       });
       const input = getByLabelText('Foreground Color');
       await fireEvent.focus(input);

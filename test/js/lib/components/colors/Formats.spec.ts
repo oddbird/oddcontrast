@@ -8,7 +8,7 @@ describe('Formats', () => {
     const { getByText } = render(Formats, {
       type: 'bg',
       color: HSL_WHITE,
-      space: 'hsl',
+      format: 'hsl',
     });
 
     expect(getByText('Background Color')).toBeVisible();
@@ -18,7 +18,7 @@ describe('Formats', () => {
     const { getByText } = render(Formats, {
       type: 'fg',
       color: HSL_WHITE,
-      space: 'hsl',
+      format: 'hsl',
     });
 
     expect(getByText('Foreground Color')).toBeVisible();
