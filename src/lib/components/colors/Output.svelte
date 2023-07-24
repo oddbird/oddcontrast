@@ -24,7 +24,9 @@
     <span data-color-info="value">{targetColorValue}</span>
     <SupportWarning {format} />
     {#if !isInGamut}
-      <span data-color-info="warning">This color is outside the {targetColor.space.name} gamut.</span>
+      <span data-color-info="warning"
+        >This color is outside the {targetColor.space.name} gamut.</span
+      >
     {/if}
   </li>
 </ul>
