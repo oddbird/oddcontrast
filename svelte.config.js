@@ -13,6 +13,9 @@ const config = {
       $test: 'test/js',
     },
     adapter: adapter(),
+    env: {
+      publicPrefix: '',
+    },
   },
 };
 
