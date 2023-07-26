@@ -5,7 +5,7 @@
   import type { ColorFormatId } from '$lib/constants';
   import { SLIDERS } from '$lib/constants';
   import { ColorSpace } from '$lib/stores';
-  import { getSpaceFromFormatId } from '$lib/utils';
+  import { getSpaceFromFormatId, sliderGradient } from '$lib/utils';
 
   export let type: 'bg' | 'fg';
   export let color: Writable<PlainColorObject>;
@@ -15,18 +15,23 @@
   $: spaceObject = ColorSpace.get(targetSpace);
   $: sliders = SLIDERS[format].map((id) => {
     const coord = spaceObject.coords[id];
+    const range = coord?.range || coord?.refRange || [0, 1];
+    const gradient = sliderGradient($color, id, range);
     return {
       id,
       name: coord?.name ?? '',
-      range: coord?.range || coord?.refRange || [0, 1],
+      range: range,
       index: Number(
         ColorSpace.resolveCoord({
           space: spaceObject,
           coordId: id,
         }).index,
       ),
+      gradient: gradient,
     };
   });
+
+  $: alphaGradient = sliderGradient($color, 'alpha', [0, $color.alpha]);
 
   const getStep = (range: [number, number]) => {
     const diff = range[1] - range[0];
@@ -54,6 +59,7 @@
           min={slider.range[0]}
           max={slider.range[1]}
           step={getStep(slider.range)}
+          style={'--stops: ' + slider.gradient}
           bind:value={$color.coords[slider.index]}
         />
       </div>
@@ -67,6 +73,7 @@
         min={0}
         max={1}
         step={getStep([0, 1])}
+        style={'--stops: ' + alphaGradient}
         bind:value={$color.alpha}
       />
     </div>
@@ -76,6 +83,9 @@
 <style lang="scss">
   input[type='range'] {
     margin: 0;
+    display: block;
+    appearance: none;
+    background: linear-gradient(to right, var(--stops));
   }
 
   [data-group~='sliders'] {
