@@ -33,6 +33,19 @@
 
   $: alphaGradient = sliderGradient($color, 'alpha', [0, $color.alpha]);
 
+  const handleInput = (
+    e: Event & { currentTarget: EventTarget & HTMLInputElement },
+    index?: number,
+  ) => {
+    const { value } = e.currentTarget;
+    const numberVal = Number(value);
+    if (index !== undefined) {
+      $color.coords[index] = numberVal;
+    } else {
+      $color.alpha = numberVal;
+    }
+  };
+
   const getStep = (range: [number, number]) => {
     const diff = range[1] - range[0];
     if (diff <= 1) {
@@ -60,7 +73,8 @@
           max={slider.range[1]}
           step={getStep(slider.range)}
           style={`--stops: ${slider.gradient}`}
-          bind:value={$color.coords[slider.index]}
+          value={$color.coords[slider.index]}
+          on:input={(e) => handleInput(e, slider.index)}
         />
       </div>
     {/each}
@@ -74,7 +88,8 @@
         max={1}
         step={getStep([0, 1])}
         style={`--stops: ${alphaGradient}`}
-        bind:value={$color.alpha}
+        value={$color.alpha}
+        on:input={(e) => handleInput(e)}
       />
     </div>
   </form>
