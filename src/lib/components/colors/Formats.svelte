@@ -15,7 +15,7 @@
 
 <div data-content="formats" data-column="tool">
   <h4 class="small-only label">{displayType} Color</h4>
-  {#each otherFormats as format (format)}
+  {#each otherFormats as format (`${type}-${format}`)}
     <Output {type} {color} {format} />
   {/each}
 </div>

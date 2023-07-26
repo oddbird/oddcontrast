@@ -20,14 +20,14 @@
     return {
       id,
       name: coord?.name ?? '',
-      range: range,
+      range,
       index: Number(
         ColorSpace.resolveCoord({
           space: spaceObject,
           coordId: id,
         }).index,
       ),
-      gradient: gradient,
+      gradient,
     };
   });
 
@@ -49,7 +49,7 @@
 
 <div data-actions="edit-color" data-group="sliders {type}">
   <form>
-    {#each sliders as slider (slider.id)}
+    {#each sliders as slider (`${type}-${format}-${slider.id}`)}
       <div data-field="color-slider">
         <label for="{type}_{slider.id}" data-label>{slider.name}</label>
         <input
@@ -59,7 +59,7 @@
           min={slider.range[0]}
           max={slider.range[1]}
           step={getStep(slider.range)}
-          style={'--stops: ' + slider.gradient}
+          style={`--stops: ${slider.gradient}`}
           bind:value={$color.coords[slider.index]}
         />
       </div>
@@ -73,7 +73,7 @@
         min={0}
         max={1}
         step={getStep([0, 1])}
-        style={'--stops: ' + alphaGradient}
+        style={`--stops: ${alphaGradient}`}
         bind:value={$color.alpha}
       />
     </div>
