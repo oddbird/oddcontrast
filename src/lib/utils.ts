@@ -11,14 +11,14 @@ export const sliderGradient = (
   channel: string,
   range: [number, number],
 ) => {
-  let start = clone(color);
-  let end = clone(color);
+  const start = clone(color);
+  const end = clone(color);
   if (channel === 'alpha') {
     start.alpha = range[0];
     end.alpha = range[1];
   } else {
-    start = set(start, channel, range[0]);
-    end = set(end, channel, range[1]);
+    set(start, channel, range[0]);
+    set(end, channel, range[1]);
   }
 
   const gradientSteps = steps(start, end, {
@@ -26,5 +26,6 @@ export const sliderGradient = (
     space: color.space,
     hue: 'raw',
   });
-  return gradientSteps.map((c) => display(c).toString()).join(', ');
+
+  return gradientSteps.map((c) => display(c)).join(', ');
 };
