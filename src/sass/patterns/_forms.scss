@@ -31,3 +31,52 @@ input {
     --focus-ring: var(--warning);
   }
 }
+
+// ## Range Thumbs
+// ---------------
+/// For some reason you have to style the webkit ones separately so making a
+///   mixin to keep the code dry
+/// @link https://codepen.io/stacy/pen/VwVEOea??editors=0100
+/// @group utilities
+@mixin range-thumb {
+  background-color: transparent;
+  border: var(--border-width-md) solid var(--bg);
+  border-radius:  var(--range-thumb-size);
+  box-shadow: 0 0 3px var(--border-width) var(--text) inset;
+  cursor: pointer;
+}
+
+@mixin range-thumb-focus {
+  box-shadow: 0 0 0 var(--border-width-md) var(--text) inset;
+  outline: var(--text) solid var(--border-width-md);
+  outline-offset: 0;
+}
+
+input[type='range'] {
+  box-shadow: 1px 1px var(--border-width-md) 0 var(--border-light);
+
+  &:focus {
+    outline: none;
+  }
+
+  // Range "Thumb"
+  &::-moz-range-thumb {
+    @include range-thumb;
+  }
+
+  &:focus::-moz-range-thumb {
+    @include range-thumb-focus;
+  }
+
+  // Chrome, Safari, Opera, and Edge Chromium
+  &::-webkit-slider-thumb {
+    @include range-thumb;
+    appearance: none;
+    height: var(--range-thumb-size);
+    width: var(--range-thumb-size);
+  }
+
+  &:focus::-webkit-slider-thumb {
+    @include range-thumb-focus;
+  }
+}
