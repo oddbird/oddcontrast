@@ -37,12 +37,11 @@
     e: Event & { currentTarget: EventTarget & HTMLInputElement },
     index?: number,
   ) => {
-    const { value } = e.currentTarget;
-    const numberVal = Number(value);
+    const value = +e.currentTarget.value;
     if (index !== undefined) {
-      $color.coords[index] = numberVal;
+      $color.coords[index] = value;
     } else {
-      $color.alpha = numberVal;
+      $color.alpha = value;
     }
   };
 
@@ -62,7 +61,7 @@
 
 <div data-actions="edit-color" data-group="sliders {type}">
   <form>
-    {#each sliders as slider (`${type}-${format}-${slider.id}`)}
+    {#each sliders as slider (slider.id)}
       <div data-field="color-slider">
         <label for="{type}_{slider.id}" data-label>{slider.name}</label>
         <input
