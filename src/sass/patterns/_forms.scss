@@ -41,7 +41,7 @@ input {
 @mixin range-thumb {
   background-color: transparent;
   border: var(--border-width-md) solid var(--bg);
-  border-radius:  var(--range-thumb-size);
+  border-radius: var(--range-thumb-size);
   box-shadow: 0 0 3px var(--border-width) var(--text) inset;
   cursor: pointer;
 }
@@ -71,6 +71,7 @@ input[type='range'] {
   // Chrome, Safari, Opera, and Edge Chromium
   &::-webkit-slider-thumb {
     @include range-thumb;
+
     appearance: none;
     height: var(--range-thumb-size);
     width: var(--range-thumb-size);
