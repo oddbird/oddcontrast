@@ -103,10 +103,11 @@
   }
 
   [data-group~='sliders'] {
+    --label-margin-bottom: var(--half-shim);
     margin-bottom: var(--triple-gutter);
   }
 
   [data-field~='color-slider'] {
-    margin-bottom: var(--shim);
+    margin-bottom: var(--shim-plus);
   }
 </style>

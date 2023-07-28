@@ -39,21 +39,21 @@ input {
 /// @link https://codepen.io/stacy/pen/VwVEOea??editors=0100
 /// @group utilities
 @mixin range-thumb {
-  background-color: transparent;
-  border: var(--border-width-md) solid var(--bg);
+  background-color: var(--text);
+  border: var(--border-width-md) solid var(--text);
   border-radius:  var(--range-thumb-size);
-  box-shadow: 0 0 3px var(--border-width) var(--text) inset;
   cursor: pointer;
 }
 
 @mixin range-thumb-focus {
-  box-shadow: 0 0 0 var(--border-width-md) var(--text) inset;
   outline: var(--text) solid var(--border-width-md);
-  outline-offset: 0;
+  outline-offset: -1px;
 }
 
 input[type='range'] {
+  border-radius: var(--range-input);
   box-shadow: 1px 1px var(--border-width-md) 0 var(--border-light);
+  height: var(--range-input);
 
   &:focus {
     outline: none;
