@@ -40,7 +40,7 @@
     if (display !== value) {
       let newColor;
       try {
-        newColor = to(value, targetSpace);
+        newColor = to(value, targetSpace, { inGamut: true });
       } catch (error) {
         hasError = true;
         console.error(error);
