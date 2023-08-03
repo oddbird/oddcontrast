@@ -40,14 +40,17 @@ input {
 /// @group utilities
 @mixin range-thumb {
   background-color: var(--text);
-  border: var(--border-width-md) solid var(--text);
+  border: var(--border-width) solid var(--bg);
   border-radius: var(--range-thumb-size);
   cursor: pointer;
+  height: var(--range-thumb-size);
+  outline: var(--thumb-outline-color, transparent) solid var(--border-width);
+  transition: outline var(--fast);
+  width: var(--range-thumb-size);
 }
 
 @mixin range-thumb-focus {
-  outline: var(--text) solid var(--border-width-md);
-  outline-offset: -1px;
+  --thumb-outline-color:  var(--text);
 }
 
 input[type='range'] {
@@ -64,8 +67,11 @@ input[type='range'] {
     @include range-thumb;
   }
 
-  &:focus::-moz-range-thumb {
-    @include range-thumb-focus;
+  &:active,
+  &:focus {
+    &::-moz-range-thumb {
+      @include range-thumb-focus;
+    }
   }
 
   // Chrome, Safari, Opera, and Edge Chromium
@@ -73,11 +79,12 @@ input[type='range'] {
     @include range-thumb;
 
     appearance: none;
-    height: var(--range-thumb-size);
-    width: var(--range-thumb-size);
   }
 
-  &:focus::-webkit-slider-thumb {
-    @include range-thumb-focus;
+  &:active,
+  &:focus {
+    &::-webkit-slider-thumb {
+      @include range-thumb-focus;
+    }
   }
 }
