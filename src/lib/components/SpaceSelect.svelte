@@ -16,10 +16,10 @@
   // Update color formats when space selection changes
   $: {
     if ($bg.space.id !== targetSpace) {
-      $bg = to($bg, targetSpace);
+      $bg = to($bg, targetSpace, { inGamut: true });
     }
     if ($fg.space.id !== targetSpace) {
-      $fg = to($fg, targetSpace);
+      $fg = to($fg, targetSpace, { inGamut: true });
     }
   }
 </script>

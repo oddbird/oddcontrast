@@ -31,3 +31,56 @@ input {
     --focus-ring: var(--warning);
   }
 }
+
+// ## Range Thumbs
+// ---------------
+/// For some reason you have to style the webkit and moz ranges separately.
+/// This is a mixin to keep the code dry
+/// @link https://codepen.io/stacy/pen/VwVEOea??editors=0100
+/// @group utilities
+@mixin range-thumb {
+  background-color: var(--text);
+  border: var(--border-width) solid var(--bg);
+  border-radius: var(--range-thumb-size);
+  cursor: pointer;
+  height: var(--range-thumb-size);
+  outline: var(--thumb-outline-color, transparent) solid var(--border-width);
+  transition: outline var(--fast);
+  width: var(--range-thumb-size);
+}
+
+@mixin range-thumb-focus {
+  --thumb-outline-color: var(--text);
+}
+
+input[type='range'] {
+  border-radius: var(--range-input);
+  box-shadow: 1px 1px var(--border-width-md) 0 var(--border-light);
+  height: var(--range-input);
+
+  &:focus {
+    outline: none;
+  }
+
+  // Range "Thumb"
+  &::-moz-range-thumb {
+    @include range-thumb;
+  }
+
+  &:active::-moz-range-thumb,
+  &:focus::-moz-range-thumb {
+    @include range-thumb-focus;
+  }
+
+  // Chrome, Safari, Opera, and Edge Chromium
+  &::-webkit-slider-thumb {
+    @include range-thumb;
+
+    appearance: none;
+  }
+
+  &:active::-webkit-slider-thumb,
+  &:focus::-webkit-slider-thumb {
+    @include range-thumb-focus;
+  }
+}

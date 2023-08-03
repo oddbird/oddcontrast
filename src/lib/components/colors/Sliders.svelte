@@ -5,7 +5,7 @@
   import type { ColorFormatId } from '$lib/constants';
   import { SLIDERS } from '$lib/constants';
   import { ColorSpace } from '$lib/stores';
-  import { getSpaceFromFormatId } from '$lib/utils';
+  import { getSpaceFromFormatId, sliderGradient } from '$lib/utils';
 
   export let type: 'bg' | 'fg';
   export let color: Writable<PlainColorObject>;
@@ -15,18 +15,35 @@
   $: spaceObject = ColorSpace.get(targetSpace);
   $: sliders = SLIDERS[format].map((id) => {
     const coord = spaceObject.coords[id];
+    const range = coord?.range || coord?.refRange || [0, 1];
+    const gradient = sliderGradient($color, id, range);
     return {
       id,
       name: coord?.name ?? '',
-      range: coord?.range || coord?.refRange || [0, 1],
+      range,
       index: Number(
         ColorSpace.resolveCoord({
           space: spaceObject,
           coordId: id,
         }).index,
       ),
+      gradient,
     };
   });
+
+  $: alphaGradient = sliderGradient($color, 'alpha', [0, $color.alpha]);
+
+  const handleInput = (
+    e: Event & { currentTarget: EventTarget & HTMLInputElement },
+    index?: number,
+  ) => {
+    const value = +e.currentTarget.value;
+    if (index !== undefined) {
+      $color.coords[index] = value;
+    } else {
+      $color.alpha = value;
+    }
+  };
 
   const getStep = (range: [number, number]) => {
     const diff = range[1] - range[0];
@@ -54,7 +71,9 @@
           min={slider.range[0]}
           max={slider.range[1]}
           step={getStep(slider.range)}
-          bind:value={$color.coords[slider.index]}
+          style={`--stops: ${slider.gradient}`}
+          value={$color.coords[slider.index]}
+          on:input={(e) => handleInput(e, slider.index)}
         />
       </div>
     {/each}
@@ -67,7 +86,9 @@
         min={0}
         max={1}
         step={getStep([0, 1])}
-        bind:value={$color.alpha}
+        style={`--stops: ${alphaGradient}`}
+        value={$color.alpha}
+        on:input={(e) => handleInput(e)}
       />
     </div>
   </form>
@@ -76,13 +97,17 @@
 <style lang="scss">
   input[type='range'] {
     margin: 0;
+    display: block;
+    appearance: none;
+    background: linear-gradient(to right, var(--stops));
   }
 
   [data-group~='sliders'] {
+    --label-margin-bottom: var(--half-shim);
     margin-bottom: var(--triple-gutter);
   }
 
   [data-field~='color-slider'] {
-    margin-bottom: var(--shim);
+    margin-bottom: var(--shim-plus);
   }
 </style>

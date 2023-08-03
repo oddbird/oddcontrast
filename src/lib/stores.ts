@@ -32,8 +32,8 @@ export { ColorSpace };
 
 export const INITIAL_VALUES = {
   format: 'oklch' as ColorFormatId,
-  bg_coord: [0.384, 0.069, 262] as [number, number, number],
-  fg_coord: [0.89, 0.035, 238] as [number, number, number],
+  bg_coord: [0.3259, 0.1333, 265.49] as [number, number, number],
+  fg_coord: [0.8241, 0.1061, 0.8587] as [number, number, number],
   alpha: 1,
 };
 
