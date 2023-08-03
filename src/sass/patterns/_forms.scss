@@ -34,8 +34,8 @@ input {
 
 // ## Range Thumbs
 // ---------------
-/// For some reason you have to style the webkit ones separately so making a
-///   mixin to keep the code dry
+/// For some reason you have to style the webkit and moz ranges separately.
+/// This is a mixin to keep the code dry
 /// @link https://codepen.io/stacy/pen/VwVEOea??editors=0100
 /// @group utilities
 @mixin range-thumb {
@@ -50,7 +50,7 @@ input {
 }
 
 @mixin range-thumb-focus {
-  --thumb-outline-color:  var(--text);
+  --thumb-outline-color: var(--text);
 }
 
 input[type='range'] {
@@ -67,11 +67,9 @@ input[type='range'] {
     @include range-thumb;
   }
 
-  &:active,
-  &:focus {
-    &::-moz-range-thumb {
-      @include range-thumb-focus;
-    }
+  &:active::-moz-range-thumb,
+  &:focus::-moz-range-thumb {
+    @include range-thumb-focus;
   }
 
   // Chrome, Safari, Opera, and Edge Chromium
@@ -81,10 +79,8 @@ input[type='range'] {
     appearance: none;
   }
 
-  &:active,
-  &:focus {
-    &::-webkit-slider-thumb {
-      @include range-thumb-focus;
-    }
+  &:active::-webkit-slider-thumb,
+  &:focus::-webkit-slider-thumb {
+    @include range-thumb-focus;
   }
 }
