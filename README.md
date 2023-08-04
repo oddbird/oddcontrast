@@ -41,5 +41,5 @@ You can preview the production build with `yarn preview`.
 ## Deploying
 
 The staging site is automatically deployed via Netlify to
-<https://oddcontrast.netlify.app/> every time a commit is made on the `main`
+<https://www.oddcontrast.com/> every time a commit is made on the `main`
 branch.
