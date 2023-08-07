@@ -3,10 +3,9 @@
   "title": "OddContrast",
   "version": "0.0.1",
   "license": "BSD-3-Clause",
-  "private": "true",
   "engines": {
-    "node": "^16.14",
-    "yarn": "^1.22"
+    "node": "^18",
+    "yarn": "^3"
   },
   "type": "module",
   "scripts": {
@@ -76,7 +75,7 @@
     "ts-node": "^10.9.1",
     "typescript": "^5.1.6",
     "vite": "^4.4.9",
-    "vitest": "^0.34.1"
+    "vitest": "0.33.0"
   },
   "resolutions": {
     "tslib": ">=2"
@@ -85,5 +84,6 @@
     "ignore": [
       "@types/node"
     ]
-  }
+  },
+  "packageManager": "yarn@3.6.1"
 }

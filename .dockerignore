@@ -23,15 +23,22 @@
 .nvmrc
 .svelte-kit/
 .vscode/
-.yarn/
-.yarnrc
 coverage/
 docker-compose.yml
 node_modules/
 npm-debug.log
 static/built/
 static/styleguide/
+
+# Yarn
+.pnp.*
+.yarn/*
 yarn-error.log
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
 
 !.svelte-kit/tsconfig.json
 !README.md
