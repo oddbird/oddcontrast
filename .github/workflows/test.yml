@@ -21,7 +21,7 @@ jobs:
           cache: yarn
       - name: Build
         run: |
-          yarn install --frozen-lockfile
+          yarn install --immutable
           yarn build
       - name: Upload built files
         uses: actions/upload-artifact@v3
@@ -46,7 +46,7 @@ jobs:
           path: .svelte-kit
       - name: Test
         run: |
-          yarn install --frozen-lockfile
+          yarn install --immutable
           yarn test
 
   lint:
@@ -66,5 +66,5 @@ jobs:
           path: .svelte-kit
       - name: Lint
         run: |
-          yarn install --frozen-lockfile
+          yarn install --immutable
           yarn lint:ci

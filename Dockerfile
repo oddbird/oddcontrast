@@ -1,11 +1,14 @@
-FROM node:16
+FROM node:18
 
 ARG BUILD_ENV=development
 WORKDIR /app
 
 COPY ./package.json package.json
 COPY ./yarn.lock yarn.lock
-RUN yarn install --check-files
+# Use local version of Yarn:
+COPY ./.yarnrc.yml .yarnrc.yml
+COPY ./.yarn/releases .yarn/releases
+RUN yarn install --immutable
 
 COPY . /app
 
