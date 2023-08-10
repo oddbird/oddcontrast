@@ -36,7 +36,7 @@ function decodeColor(colorHash: string, format: ColorFormatId) {
   colorHash = colorHash.replaceAll('~', '%');
   colorHash = colorHash.replaceAll('*', '#');
   try {
-    return to(colorHash, format, { inGamut: true });
+    return to(colorHash, getSpaceFromFormatId(format), { inGamut: true });
   } catch (error) {
     return;
   }
