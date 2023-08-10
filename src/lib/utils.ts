@@ -39,17 +39,24 @@ export const hashToStoreValues = (
   format: ColorFormatId;
 } | void => {
   if (hash === '') return;
+  hash = decodeURIComponent(hash);
 
-  const [formatValue, bgValue, fgValue] = hash.replace('#', '').split('|') as [
+  const [formatValue, bgValue, fgValue] = hash.split('__') as [
     string,
     string,
     string,
   ];
   if (!bgValue || !fgValue) return;
 
-  const bgColor = parse(bgValue.replaceAll('_', ' '));
+  function decodeColor(colorHash: string) {
+    colorHash = colorHash.replaceAll('_', ' ');
+    colorHash = colorHash.replaceAll('~', '%');
+    return parse(colorHash);
+  }
+
+  const bgColor = decodeColor(bgValue);
   if (!bgColor) return;
-  const fgColor = parse(fgValue.replaceAll('_', ' '));
+  const fgColor = decodeColor(fgValue);
   if (!fgColor) return;
 
   if (!FORMATS.includes(formatValue as ColorFormatId)) return;
@@ -67,4 +74,20 @@ export const hashToStoreValues = (
   };
 
   return { bg, fg, format };
+};
+
+export const storeValuesToHash = (
+  bg: PlainColorObject,
+  fg: PlainColorObject,
+  format: string,
+) => {
+  function encodeColor(color: PlainColorObject) {
+    let res = display(color) || '';
+    res = res.replaceAll(' ', '_');
+    res = res.replaceAll('%', '~');
+    return res;
+  }
+  const bgParam = encodeColor(bg);
+  const fgParam = encodeColor(fg);
+  return encodeURIComponent(`${format}__${bgParam}__${fgParam}`);
 };

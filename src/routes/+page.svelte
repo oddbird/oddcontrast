@@ -7,29 +7,27 @@
   import Header from '$lib/components/Header.svelte';
   import Ratio from '$lib/components/ratio/index.svelte';
   import { bg, fg, format } from '$lib/stores';
-  import { hashToStoreValues } from '$src/lib/utils';
+  import { hashToStoreValues, storeValuesToHash } from '$src/lib/utils';
 
   $: bg_fallback = display($bg);
   $: fg_fallback = display($fg);
 
   onMount(() => {
     hashToColors();
-
     bg.subscribe(colorsToHash);
     fg.subscribe(colorsToHash);
     format.subscribe(colorsToHash);
   });
 
   function colorsToHash() {
-    const bgParam = display($bg).replaceAll(' ', '_');
-    const fgParam = display($fg).replaceAll(' ', '_');
-    history.replaceState('', '', `#${$format}|${bgParam}|${fgParam}`);
+    const hashString = storeValuesToHash($bg, $fg, $format);
+    history.replaceState('', '', `#${hashString}`);
   }
 
   function hashToColors() {
     const hash = window.location.hash;
 
-    const result = hashToStoreValues(hash);
+    const result = hashToStoreValues(hash.replace('#', ''));
     if (!result) return;
 
     bg.set(result.bg);
