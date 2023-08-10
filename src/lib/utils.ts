@@ -51,7 +51,11 @@ export const hashToStoreValues = (
   function decodeColor(colorHash: string) {
     colorHash = colorHash.replaceAll('_', ' ');
     colorHash = colorHash.replaceAll('~', '%');
-    return parse(colorHash);
+    try {
+      return parse(colorHash);
+    } catch (error) {
+      return;
+    }
   }
 
   const bgColor = decodeColor(bgValue);

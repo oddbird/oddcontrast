@@ -6,7 +6,7 @@
   import Footer from '$lib/components/Footer.svelte';
   import Header from '$lib/components/Header.svelte';
   import Ratio from '$lib/components/ratio/index.svelte';
-  import { bg, fg, format } from '$lib/stores';
+  import { bg, fg, format, reset } from '$lib/stores';
   import { hashToStoreValues, storeValuesToHash } from '$src/lib/utils';
 
   $: bg_fallback = display($bg);
@@ -28,7 +28,10 @@
     const hash = window.location.hash;
 
     const result = hashToStoreValues(hash.replace('#', ''));
-    if (!result) return;
+    if (!result) {
+      reset();
+      return;
+    }
 
     bg.set(result.bg);
     fg.set(result.fg);
