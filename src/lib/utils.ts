@@ -81,7 +81,7 @@ export const storeValuesToHash = (
   fg: PlainColorObject,
   format: ColorFormatId,
 ) => {
-  const bgParam = encodeColor(bg);
-  const fgParam = encodeColor(fg);
+  const bgParam = encodeColor(bg, format);
+  const fgParam = encodeColor(fg, format);
   return encodeURIComponent(`${format}__${bgParam}__${fgParam}`);
 };
