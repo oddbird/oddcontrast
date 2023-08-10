@@ -83,10 +83,10 @@ export const hashToStoreValues = (
 export const storeValuesToHash = (
   bg: PlainColorObject,
   fg: PlainColorObject,
-  format: string,
+  format: ColorFormatId,
 ) => {
   function encodeColor(color: PlainColorObject) {
-    let res = display(color) || '';
+    let res = serialize(color, { format, inGamut: false }) || '';
     res = res.replaceAll(' ', '_');
     res = res.replaceAll('%', '~');
     return res;
