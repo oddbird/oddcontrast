@@ -1,5 +1,5 @@
 import { clone, ColorSpace, display, parse, set, steps } from 'colorjs.io/fn';
-import type { Coords, PlainColorObject } from 'colorjs.io/types/src/color';
+import type { PlainColorObject } from 'colorjs.io/types/src/color';
 
 import type { ColorFormatId } from '$lib/constants';
 import { FORMATS } from '$lib/constants';

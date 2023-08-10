@@ -2,7 +2,6 @@
   import { display } from 'colorjs.io/fn';
   import { onMount } from 'svelte';
 
-  import { browser } from '$app/environment';
   import Colors from '$lib/components/colors/index.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import Header from '$lib/components/Header.svelte';
