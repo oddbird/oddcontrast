@@ -1,7 +1,8 @@
-import { clone, display, set, steps } from 'colorjs.io/fn';
-import type { PlainColorObject } from 'colorjs.io/types/src/color';
+import { clone, ColorSpace, display, parse, set, steps } from 'colorjs.io/fn';
+import type { Coords, PlainColorObject } from 'colorjs.io/types/src/color';
 
 import type { ColorFormatId } from '$lib/constants';
+import { FORMATS } from '$lib/constants';
 
 export const getSpaceFromFormatId = (formatId: ColorFormatId) =>
   formatId === 'hex' ? 'srgb' : formatId;
@@ -28,4 +29,41 @@ export const sliderGradient = (
   });
 
   return gradientSteps.map((c) => display(c)).join(', ');
+};
+
+export const hashToStoreValues = (
+  hash: string,
+): {
+  bg: PlainColorObject;
+  fg: PlainColorObject;
+  format: ColorFormatId;
+} | void => {
+  if (hash === '') return;
+
+  const [bgValue, fgValue] = hash.replace('#', '').split('|') as [
+    string,
+    string,
+  ];
+  if (!bgValue || !fgValue) return;
+
+  const bgColor = parse(bgValue.replaceAll('_', ' '));
+  if (!bgColor) return;
+  const fgColor = parse(fgValue.replaceAll('_', ' '));
+  if (!fgColor) return;
+
+  if (!FORMATS.includes(bgColor.spaceId as ColorFormatId)) return;
+  const format = bgColor.spaceId as ColorFormatId;
+
+  const bg = {
+    space: ColorSpace.get(bgColor.spaceId),
+    coords: bgColor.coords,
+    alpha: bgColor.alpha || 1,
+  };
+  const fg = {
+    space: ColorSpace.get(fgColor.spaceId),
+    coords: fgColor.coords,
+    alpha: fgColor.alpha || 1,
+  };
+
+  return { bg, fg, format };
 };
