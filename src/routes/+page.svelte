@@ -17,7 +17,6 @@
     hashToColors();
     bg.subscribe(debouncedColorsToHash);
     fg.subscribe(debouncedColorsToHash);
-    format.subscribe(debouncedColorsToHash);
   });
 
   function colorsToHash() {
@@ -31,10 +30,7 @@
     const hash = window.location.hash;
 
     const result = hashToStoreValues(hash.replace('#', ''));
-    if (!result) {
-      reset();
-      return;
-    }
+    if (!result) return;
 
     bg.set(result.bg);
     fg.set(result.fg);
