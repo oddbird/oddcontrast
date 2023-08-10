@@ -24,7 +24,7 @@
   function colorsToHash() {
     const bgParam = display($bg).replaceAll(' ', '_');
     const fgParam = display($fg).replaceAll(' ', '_');
-    history.replaceState('', '', `#${bgParam}|${fgParam}`);
+    history.replaceState('', '', `#${$format}|${bgParam}|${fgParam}`);
   }
 
   function hashToColors() {

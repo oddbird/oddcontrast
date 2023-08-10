@@ -40,7 +40,8 @@ export const hashToStoreValues = (
 } | void => {
   if (hash === '') return;
 
-  const [bgValue, fgValue] = hash.replace('#', '').split('|') as [
+  const [formatValue, bgValue, fgValue] = hash.replace('#', '').split('|') as [
+    string,
     string,
     string,
   ];
@@ -51,8 +52,8 @@ export const hashToStoreValues = (
   const fgColor = parse(fgValue.replaceAll('_', ' '));
   if (!fgColor) return;
 
-  if (!FORMATS.includes(bgColor.spaceId as ColorFormatId)) return;
-  const format = bgColor.spaceId as ColorFormatId;
+  if (!FORMATS.includes(formatValue as ColorFormatId)) return;
+  const format = formatValue as ColorFormatId;
 
   const bg = {
     space: ColorSpace.get(bgColor.spaceId),
