@@ -17,6 +17,7 @@
     hashToColors();
     bg.subscribe(debouncedColorsToHash);
     fg.subscribe(debouncedColorsToHash);
+    format.subscribe(debouncedColorsToHash);
   });
 
   function colorsToHash() {

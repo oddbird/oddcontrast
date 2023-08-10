@@ -34,6 +34,7 @@ export const sliderGradient = (
 function decodeColor(colorHash: string, format: ColorFormatId) {
   colorHash = colorHash.replaceAll('_', ' ');
   colorHash = colorHash.replaceAll('~', '%');
+  colorHash = colorHash.replaceAll('*', '#');
   try {
     return to(colorHash, format, { inGamut: true });
   } catch (error) {
@@ -45,6 +46,7 @@ function encodeColor(color: PlainColorObject, format: ColorFormatId) {
   let res = serialize(color, { format, inGamut: false }) || '';
   res = res.replaceAll(' ', '_');
   res = res.replaceAll('%', '~');
+  res = res.replaceAll('#', '*');
   return res;
 }
 
