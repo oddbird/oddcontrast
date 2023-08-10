@@ -1,5 +1,6 @@
 <script lang="ts">
   import { display } from 'colorjs.io/fn';
+  import debounce from 'lodash/debounce';
   import { onMount } from 'svelte';
 
   import Colors from '$lib/components/colors/index.svelte';
@@ -14,15 +15,17 @@
 
   onMount(() => {
     hashToColors();
-    bg.subscribe(colorsToHash);
-    fg.subscribe(colorsToHash);
-    format.subscribe(colorsToHash);
+    bg.subscribe(debouncedColorsToHash);
+    fg.subscribe(debouncedColorsToHash);
+    format.subscribe(debouncedColorsToHash);
   });
 
   function colorsToHash() {
     const hashString = storeValuesToHash($bg, $fg, $format);
     history.replaceState('', '', `#${hashString}`);
   }
+
+  const debouncedColorsToHash = debounce(colorsToHash, 100);
 
   function hashToColors() {
     const hash = window.location.hash;
