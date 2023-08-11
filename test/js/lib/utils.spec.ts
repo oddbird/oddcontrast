@@ -43,6 +43,9 @@ const cases = [
 ];
 describe('Utils', () => {
   describe('hashToStoreValues', () => {
+    beforeEach(() => {
+      vi.spyOn(console, 'error').mockImplementation(() => {});
+    });
     test.each([
       ['empty', ''],
       ['missing colors', 'lab'],
