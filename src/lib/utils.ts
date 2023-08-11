@@ -38,6 +38,7 @@ function decodeColor(colorHash: string, format: ColorFormatId) {
   try {
     return to(colorHash, getSpaceFromFormatId(format), { inGamut: true });
   } catch (error) {
+    console.error(error);
     return;
   }
 }
