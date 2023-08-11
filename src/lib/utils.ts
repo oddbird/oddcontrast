@@ -43,7 +43,7 @@ function decodeColor(colorHash: string, format: ColorFormatId) {
 }
 
 function encodeColor(color: PlainColorObject, format: ColorFormatId) {
-  let res = serialize(color, { format, inGamut: false }) || '';
+  let res = serialize(color, { format, inGamut: false });
   res = res.replaceAll(' ', '_');
   res = res.replaceAll('%', '~');
   res = res.replaceAll('#', '*');
