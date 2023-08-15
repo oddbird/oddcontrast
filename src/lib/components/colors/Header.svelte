@@ -3,6 +3,7 @@
   import type { PlainColorObject } from 'colorjs.io/types/src/color';
   import type { Writable } from 'svelte/store';
 
+  import Icon from '$lib/components/util/Icon.svelte';
   import type { ColorFormatId } from '$lib/constants';
   import { getSpaceFromFormatId } from '$lib/utils';
 
@@ -63,6 +64,10 @@
         break;
     }
   };
+
+  function copyOutput() {
+    void navigator.clipboard.writeText(display);
+  }
 </script>
 
 <div
@@ -86,6 +91,10 @@
     on:input={handleInput}
     on:keydown={handleKeydown}
   />
+  <button on:click={copyOutput} type="button" data-btn>
+    <Icon name="copy" />
+    <span class="sr-only">Click to copy</span>
+  </button>
   {#if hasError}
     <div data-color-info="warning">Could not parse input as a valid color.</div>
   {/if}

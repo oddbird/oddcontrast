@@ -2,6 +2,7 @@
   import type { SvelteComponent } from 'svelte';
 
   import Check from '$lib/icons/Check.svelte';
+  import Copy from '$lib/icons/Copy.svelte';
   import GitHub from '$lib/icons/GitHub.svelte';
   import Logo from '$lib/icons/Logo.svelte';
   import Mastodon from '$lib/icons/Mastodon.svelte';
@@ -13,6 +14,7 @@
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const icons: { [key: string]: typeof SvelteComponent<any> } = {
     check: Check,
+    copy: Copy,
     logo: Logo,
     newtab: NewTab,
     warning: Warning,

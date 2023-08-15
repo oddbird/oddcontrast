@@ -3,6 +3,7 @@
   import type { PlainColorObject } from 'colorjs.io/types/src/color';
 
   import SupportWarning from '$lib/components/colors/SupportWarning.svelte';
+  import Icon from '$lib/components/util/Icon.svelte';
   import type { ColorFormatId } from '$lib/constants';
   import { getSpaceFromFormatId } from '$lib/utils';
 
@@ -17,10 +18,17 @@
     format,
     inGamut: false,
   });
+  function copyOutput() {
+    void navigator.clipboard.writeText(targetColorValue);
+  }
 </script>
 
 <ul data-group="output {type}">
   <li>
+    <button on:click={copyOutput} type="button" data-btn>
+      <Icon name="copy" />
+      <span class="sr-only">Click to copy</span>
+    </button>
     <span data-color-info="value">{targetColorValue}</span>
     <SupportWarning {format} />
     {#if !isInGamut}
