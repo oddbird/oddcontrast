@@ -9,12 +9,16 @@
   export let type: 'bg' | 'fg';
   export let color: Writable<PlainColorObject>;
   export let format: ColorFormatId;
+  export let premultipliedFg: PlainColorObject | null;
 
   $: targetSpace = getSpaceFromFormatId(format);
   $: display = serialize($color, { inGamut: false, format });
   $: displayType = type === 'bg' ? 'Background' : 'Foreground';
   $: editing = false;
   $: inputValue = '';
+  $: displayPremultipliedFg = premultipliedFg
+    ? serialize(premultipliedFg, { inGamut: false, format })
+    : '';
   let hasError = false;
 
   // When not editing, sync input value with color (e.g. when sliders change)
@@ -89,6 +93,15 @@
   {#if hasError}
     <div data-color-info="warning">Could not parse input as a valid color.</div>
   {/if}
+  {#if premultipliedFg}
+    <div
+      data-color-info="premultiplied"
+      style="--premultipliedFg:{serialize(premultipliedFg)}"
+    >
+      {displayPremultipliedFg}
+      <span class="premultipliedFg"></span>
+    </div>
+  {/if}
 </div>
 
 <style lang="scss">
@@ -151,6 +164,14 @@
       border-radius: 0 var(--border-radius) var(--border-radius) 0;
       z-index: -1;
     }
+  }
+
+  .premultipliedFg {
+    background-color: var(--premultipliedFg);
+    width: 10pt;
+    height: 10pt;
+    border: 1pt solid black;
+    display: inline-block;
   }
 
   [data-input='color'] {

@@ -1,12 +1,18 @@
 <script lang="ts">
-  import { contrast } from 'colorjs.io/fn';
+  import { clone, contrast, serialize } from 'colorjs.io/fn';
 
   import Result from '$lib/components/ratio/Result.svelte';
   import ExternalLink from '$lib/components/util/ExternalLink.svelte';
   import { RATIOS } from '$lib/constants';
-  import { bg, fg } from '$lib/stores';
+  import { bg, premultipliedFg } from '$lib/stores';
 
-  $: ratio = contrast($bg, $fg, 'WCAG21');
+  let ratio: number;
+
+  $: {
+    const bgNoAlpha = clone($bg);
+    bgNoAlpha.alpha = 1;
+    ratio = contrast(bgNoAlpha, $premultipliedFg, 'WCAG21');
+  }
   $: displayRatio = Math.round((ratio + Number.EPSILON) * 100) / 100;
   $: pass = ratio >= RATIOS.AA.Large;
 </script>
@@ -38,7 +44,7 @@
 
   <div class="contrast-defined">
     <h4 class="label">AA Contrast Ratio</h4>
-
+    {serialize($premultipliedFg)}
     <dl>
       <dt><strong>{RATIOS.AA.Normal}</strong> : 1</dt>
       <dd>Normal Text</dd>

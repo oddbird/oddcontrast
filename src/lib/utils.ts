@@ -1,4 +1,4 @@
-import { clone, display, serialize, set, steps, to } from 'colorjs.io/fn';
+import { clone, display, mix, serialize, set, steps, to } from 'colorjs.io/fn';
 import type { PlainColorObject } from 'colorjs.io/types/src/color';
 
 import type { ColorFormatId } from '$lib/constants';
@@ -87,4 +87,22 @@ export const storeValuesToHash = (
   const bgParam = encodeColor(bg, format);
   const fgParam = encodeColor(fg, format);
   return encodeURIComponent(`${format}__${bgParam}__${fgParam}`);
+};
+
+export const premultiplyFG = ([fg, bg, format]: [
+  fg: PlainColorObject,
+  bg: PlainColorObject,
+  format: ColorFormatId,
+]) => {
+  const bgNoAlpha = clone(bg);
+  bgNoAlpha.alpha = 1;
+  const fgNoAlpha = clone(fg);
+  fgNoAlpha.alpha = 1;
+  const space = getSpaceFromFormatId(format);
+  return mix(fgNoAlpha, bgNoAlpha, 1 - fg.alpha, {
+    // Mix in oklch for more consistent adjustments
+    // This does not match https://www.w3.org/TR/compositing-1/#simplealphacompositing
+    space: 'oklch',
+    outputSpace: space,
+  });
 };

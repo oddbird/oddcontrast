@@ -10,11 +10,13 @@ import {
   sRGB,
 } from 'colorjs.io/fn';
 import type { PlainColorObject } from 'colorjs.io/types/src/color';
-import { writable } from 'svelte/store';
+import { derived, writable } from 'svelte/store';
 
 // eslint-disable-next-line import/no-unresolved
 import { browser, dev } from '$app/environment';
 import type { ColorFormatId } from '$lib/constants';
+
+import { premultiplyFG } from './utils';
 
 // Register supported color spaces
 ColorSpace.register(HSL);
@@ -51,6 +53,7 @@ const INITIAL_FG = {
 export const format = writable<ColorFormatId>(INITIAL_VALUES.format);
 export const bg = writable<PlainColorObject>(INITIAL_BG);
 export const fg = writable<PlainColorObject>(INITIAL_FG);
+export const premultipliedFg = derived([fg, bg, format], premultiplyFG);
 
 export const reset = () => {
   bg.set(INITIAL_BG);
