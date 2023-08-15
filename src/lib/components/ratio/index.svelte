@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { clone, contrast, serialize } from 'colorjs.io/fn';
+  import { clone, contrast } from 'colorjs.io/fn';
 
   import Result from '$lib/components/ratio/Result.svelte';
   import ExternalLink from '$lib/components/util/ExternalLink.svelte';
@@ -44,7 +44,6 @@
 
   <div class="contrast-defined">
     <h4 class="label">AA Contrast Ratio</h4>
-    {serialize($premultipliedFg)}
     <dl>
       <dt><strong>{RATIOS.AA.Normal}</strong> : 1</dt>
       <dd>Normal Text</dd>
