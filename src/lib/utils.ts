@@ -7,10 +7,6 @@ import { FORMATS } from '$lib/constants';
 export const getSpaceFromFormatId = (formatId: ColorFormatId) =>
   formatId === 'hex' ? 'srgb' : formatId;
 
-// hsl should be mixed in the srgb space for a more uniform hue gradient
-export const getMixSpaceFromFormatId = (formatId: ColorFormatId) =>
-  ['hex', 'hsl'].includes(formatId) ? 'srgb' : formatId;
-
 export const sliderGradient = (
   color: PlainColorObject,
   channel: string,
@@ -102,9 +98,11 @@ export const premultiplyFG = ([fg, bg, format]: [
   bgNoAlpha.alpha = 1;
   const fgNoAlpha = clone(fg);
   fgNoAlpha.alpha = 1;
-  const space = getMixSpaceFromFormatId(format);
+
   return mix(fgNoAlpha, bgNoAlpha, 1 - fg.alpha, {
-    space,
-    outputSpace: space,
+    // We always mix in srgb, as we are approximating the color as it will be
+    // displayed on a monitor.
+    space: 'srgb',
+    outputSpace: format,
   });
 };

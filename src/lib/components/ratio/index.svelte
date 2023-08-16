@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { clone, contrast } from 'colorjs.io/fn';
+  import { clone, contrast, serialize } from 'colorjs.io/fn';
 
   import Result from '$lib/components/ratio/Result.svelte';
   import ExternalLink from '$lib/components/util/ExternalLink.svelte';
   import { RATIOS } from '$lib/constants';
-  import { bg, premultipliedFg } from '$lib/stores';
+  import { bg, fg, premultipliedFg } from '$lib/stores';
 
   let ratio: number;
 
@@ -33,6 +33,13 @@
         >Learn more about contrast ratio requirements.</ExternalLink
       >
     </p>
+  </div>
+
+  <div class="compare-alpha">
+    <div style="--alpha-color:{serialize($fg)}">With alpha</div>
+    <div style="--alpha-color:{serialize($premultipliedFg)}">
+      Alpha premultipled
+    </div>
   </div>
 
   <div class="result-status">
@@ -160,6 +167,16 @@
   .contrast-defined {
     @include config.below('lg-page-break') {
       display: none;
+    }
+  }
+  .compare-alpha {
+    display: flex;
+    color: black;
+    > div {
+      background-color: var(--alpha-color);
+      height: 4em;
+      border: 1pt solid white;
+      flex: auto;
     }
   }
 </style>
