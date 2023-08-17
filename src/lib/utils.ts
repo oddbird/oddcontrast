@@ -103,6 +103,6 @@ export const premultiplyFG = ([fg, bg, format]: [
     // We always mix in srgb, as we are approximating the color as it will be
     // displayed on a monitor.
     space: 'srgb',
-    outputSpace: format,
+    outputSpace: getSpaceFromFormatId(format),
   });
 };
