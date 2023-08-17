@@ -11,6 +11,7 @@ describe('Header', () => {
     const { getByLabelText } = render(Header, {
       type: 'bg',
       color,
+      premultipliedFg: HSL_WHITE,
       format: 'hsl',
     });
     const input = getByLabelText('Background Color');
@@ -31,6 +32,7 @@ describe('Header', () => {
     const { getByText, getByLabelText } = render(Header, {
       type: 'fg',
       color,
+      premultipliedFg: HSL_WHITE,
       format: 'hsl',
     });
     const input = getByLabelText('Foreground Color');
@@ -55,6 +57,7 @@ describe('Header', () => {
       const { getByText, getByLabelText } = render(Header, {
         type: 'fg',
         color,
+        premultipliedFg: HSL_WHITE,
         format: 'hsl',
       });
       const input = getByLabelText('Foreground Color');
@@ -78,6 +81,7 @@ describe('Header', () => {
       const { getByLabelText } = render(Header, {
         type: 'fg',
         color,
+        premultipliedFg: HSL_WHITE,
         format: 'hsl',
       });
       const input = getByLabelText('Foreground Color');
