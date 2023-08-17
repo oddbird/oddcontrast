@@ -11,7 +11,8 @@
   $: {
     const bgNoAlpha = clone($bg);
     bgNoAlpha.alpha = 1;
-    ratio = contrast(bgNoAlpha, $premultipliedFg, 'WCAG21');
+
+    ratio = contrast(bgNoAlpha, $premultipliedFg || $fg, 'WCAG21');
   }
   $: displayRatio = Math.round((ratio + Number.EPSILON) * 100) / 100;
   $: pass = ratio >= RATIOS.AA.Large;
@@ -35,12 +36,16 @@
     </p>
   </div>
 
-  <div class="compare-alpha">
-    <div style="--alpha-color:{serialize($fg)}">With alpha</div>
-    <div style="--alpha-color:{serialize($premultipliedFg)}">
-      Alpha premultipled
+  {#if $premultipliedFg}
+    Because WCAG 2 doesn't account for alpha, this is approximated by
+    premultiplying the foreground color in the sRGB space.
+    <div class="compare-alpha">
+      <div style="--alpha-color:{serialize($fg)}">With alpha</div>
+      <div style="--alpha-color:{serialize($premultipliedFg)}">
+        Alpha premultipled
+      </div>
     </div>
-  </div>
+  {/if}
 
   <div class="result-status">
     <Result level="AA" type="Normal" {ratio} />

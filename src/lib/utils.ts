@@ -94,6 +94,7 @@ export const premultiplyFG = ([fg, bg, format]: [
   bg: PlainColorObject,
   format: ColorFormatId,
 ]) => {
+  if (fg.alpha === 1) return;
   const bgNoAlpha = clone(bg);
   bgNoAlpha.alpha = 1;
   const fgNoAlpha = clone(fg);
