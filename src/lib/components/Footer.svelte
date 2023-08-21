@@ -9,7 +9,8 @@
 
 <footer data-layout="footer">
   <span>
-    &copy; {start}{year > start ? `–${year}` : ''} OddBird.
+    &copy; {start}{year > start ? `–${year}` : ''} OddBird. OddContrast is built
+    with <ExternalLink href="https://colorjs.io/">color.js</ExternalLink>
   </span>
   <ul data-nav="social" data-list="inline">
     {#each SOCIAL_LINKS as { name, icon, href }}
