@@ -25,8 +25,8 @@
 
 <ul data-group="output {type}">
   <li>
-    <button on:click={copyOutput} type="button" data-btn>
-      <Icon name="copy" />
+    <button on:click={copyOutput} type="button" data-btn="icon">
+      <Icon name="clipboard" />
       <span class="sr-only">Click to copy</span>
     </button>
     <span data-color-info="value">{targetColorValue}</span>
@@ -38,3 +38,20 @@
     {/if}
   </li>
 </ul>
+
+<style lang="scss">
+  li {
+    display: grid;
+    grid-template:
+      'copy color' auto
+      'copy message' 3ex / var(--icon-medium) 1fr;
+  }
+
+  [data-color-info='value'] {
+    grid-area: color;
+  }
+
+  [data-color-info='warning'] {
+    grid-area: message;
+  }
+</style>

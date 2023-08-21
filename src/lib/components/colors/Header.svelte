@@ -91,8 +91,8 @@
     on:input={handleInput}
     on:keydown={handleKeydown}
   />
-  <button on:click={copyOutput} type="button" data-btn>
-    <Icon name="copy" />
+  <button on:click={copyOutput} type="button" data-btn="icon">
+    <Icon name="clipboard" size="medium" />
     <span class="sr-only">Click to copy</span>
   </button>
   {#if hasError}
@@ -105,11 +105,12 @@
 
   [data-colors] {
     display: grid;
+    column-gap: var(--shim);
     grid-template:
-      'label' auto
-      'swatch' var(--swatch-height, var(--swatch))
-      'input' auto
-      'error' minmax(var(--double-gutter), auto) / 1fr;
+      'label label' auto
+      'swatch swatch' var(--swatch-height, var(--swatch))
+      'copy input' auto
+      'error error' minmax(var(--double-gutter), auto) / var(--icon-medium) 1fr;
 
     @include config.above('sm-page-break') {
       --swatch-height: calc(2 * var(--swatch));
