@@ -36,6 +36,7 @@ export default defineConfig({
       ],
       all: true,
       skipFull: true,
+      reportOnFailure: true,
     },
   },
 });
