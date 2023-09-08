@@ -81,7 +81,7 @@
     "vitest": "^0.34.4"
   },
   "resolutions": {
-    "tslib": ">=2"
+    "vite": "<5"
   },
   "yarn-upgrade-all": {
     "ignore": [
