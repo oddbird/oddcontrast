@@ -97,13 +97,14 @@
   @use 'config';
 
   [data-colors] {
+    align-items: center;
     display: grid;
     column-gap: var(--shim);
     grid-template:
       'label label' auto
       'swatch swatch' var(--swatch-height, var(--swatch))
       'copy input' auto
-      'error error' minmax(var(--double-gutter), auto) / var(--icon-medium) 1fr;
+      'error error' minmax(var(--double-gutter), auto) / auto 1fr;
 
     @include config.above('sm-page-break') {
       --swatch-height: calc(2 * var(--swatch));

@@ -38,7 +38,7 @@
     display: grid;
     grid-template:
       'copy color' auto
-      'copy message' 3ex / var(--icon-medium) 1fr;
+      'copy message' 3ex / auto 1fr;
   }
 
   [data-color-info='value'] {
