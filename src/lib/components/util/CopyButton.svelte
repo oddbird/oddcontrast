@@ -21,7 +21,7 @@
     <Icon name="clipboard" {size} />
     <span class="sr-only">Click to copy</span>
   {:else}
-    <Icon name="check" {size} />
+    <Icon name="copy" {size} />
     <span class="sr-only">Copied</span>
   {/if}
 </button>

@@ -15,3 +15,4 @@ $border-light: tools.tint(brand.$brand-blue, 65%);
 $warning: tools.shade(brand.$brand-pink, 5%);
 $action: tools.shade(brand.$brand-pink, 15%);
 $active: brand.$brand-blue;
+$success: oklab(51.527% -0.099 0.0131);
