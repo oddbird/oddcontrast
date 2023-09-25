@@ -1,6 +1,7 @@
 @forward 'accoutrement/sass/tools' with (
-  $size-var-prefix: '',
-  $ratio-var-prefix: '',
   $color-var-prefix: '',
+  $easing-var-prefix: '',
+  $ratio-var-prefix: '',
+  $size-var-prefix: '',
   $time-var-prefix: ''
 );

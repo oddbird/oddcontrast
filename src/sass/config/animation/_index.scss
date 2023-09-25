@@ -1,0 +1,39 @@
+@use 'sassdoc-theme-herman/scss/utilities' as herman;
+@use '../tools';
+@use 'easing';
+@use 'times';
+@use 'sass:meta';
+@forward 'easing';
+@forward 'times';
+
+/// # Animation Config
+/// Accoutrement maps for storing global animation tokens.
+/// @link https://www.oddbird.net/accoutrement/docs/animate.html
+///   Accoutrement Animate
+/// @group animation
+
+/// ## Easing
+/// ---------
+/// Named easings that can be re-used to create consistent movement.
+/// @group animation
+/// @example scss
+///   @use 'config/animation/easing';
+///   @use 'config/tools';
+///   @use 'sass:meta';
+///
+///   @each $name, $easing in tools.compile-easing(meta.module-variables('easing')) {
+///   /* #{$name}: #{$easing}; */
+///   }
+
+/// ## Times
+/// ---------
+/// Named times that can be re-used to create consistent motion timing.
+/// @group animation
+/// @example scss
+///   @use 'config/animation/times';
+///   @use 'config/tools';
+///   @use 'sass:meta';
+///
+///   @each $name, $time in tools.compile-times(meta.module-variables('times')) {
+///   /* #{$name}: #{$time}; */
+///   }
