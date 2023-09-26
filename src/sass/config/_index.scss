@@ -23,7 +23,6 @@
 @use 'scale/spacing';
 @use 'scale/text';
 @use 'scale/ui' as scale-ui;
-
 @include tools.add-colors(meta.module-variables('brand'));
 @include tools.add-colors(meta.module-variables('color-ui'));
 @include tools.add-sizes(meta.module-variables('ratio'));
