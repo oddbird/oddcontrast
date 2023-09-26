@@ -5,6 +5,7 @@
   import Clipboard from '$lib/icons/Clipboard.svelte';
   import Copy from '$lib/icons/Copy.svelte';
   import GitHub from '$lib/icons/GitHub.svelte';
+  import LinkedIn from '$lib/icons/LinkedIn.svelte';
   import Logo from '$lib/icons/Logo.svelte';
   import Mastodon from '$lib/icons/Mastodon.svelte';
   import NewTab from '$lib/icons/NewTab.svelte';
@@ -23,6 +24,7 @@
     github: GitHub,
     twitter: Twitter,
     oddbird: OddBird,
+    linkedin: LinkedIn,
     mastodon: Mastodon,
   };
 

@@ -44,6 +44,11 @@ export const SOCIAL_LINKS = [
   { name: 'OddBird', icon: 'oddbird', href: 'https://www.oddbird.net/' },
   { name: 'Twitter', icon: 'twitter', href: 'https://twitter.com/oddbird' },
   {
+    name: 'LinkedIn',
+    icon: 'linkedin',
+    href: 'https://www.linkedin.com/company/oddbird',
+  },
+  {
     name: 'Mastodon',
     icon: 'mastodon',
     href: 'https://front-end.social/@OddBird',
