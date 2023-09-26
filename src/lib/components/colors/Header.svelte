@@ -99,7 +99,6 @@
   [data-colors] {
     align-items: center;
     display: grid;
-    column-gap: var(--shim);
     grid-template:
       'label label' auto
       'swatch swatch' var(--swatch-height, var(--swatch))
