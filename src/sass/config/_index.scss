@@ -6,12 +6,12 @@
 @forward 'scale';
 @forward 'utilities';
 
-/**
- * To turn Sass tokens into CSS custom properties:
- *   - load each color module with `@use`
- *   - use the `tools.add-colors` mixin with the `sass:meta` module to create a map of the variables in the imported module
- *   - in `initial/_root.scss` call the `config.colors--()` mixin to create custom properties
- */
+// To turn Sass tokens into CSS custom properties:
+//   - load each color module with `@use`
+//   - use the `tools.add-*` mixin with the `sass:meta` module to create a
+//       map of the variables in the imported module
+//   - in `initial/_root.scss` call the `config.*--()` mixin to create
+//       custom properties
 @use 'tools';
 @use 'sass:meta';
 @use 'animation/easing';
@@ -23,8 +23,7 @@
 @use 'scale/spacing';
 @use 'scale/text';
 @use 'scale/ui' as scale-ui;
-@include tools.add-easing(meta.module-variables('easing'));
-@include tools.add-times(meta.module-variables('times'));
+
 @include tools.add-colors(meta.module-variables('brand'));
 @include tools.add-colors(meta.module-variables('color-ui'));
 @include tools.add-sizes(meta.module-variables('ratio'));
@@ -32,3 +31,5 @@
 @include tools.add-sizes(meta.module-variables('spacing'));
 @include tools.add-sizes(meta.module-variables('text'));
 @include tools.add-sizes(meta.module-variables('scale-ui'));
+@include tools.add-easing(meta.module-variables('easing'));
+@include tools.add-times(meta.module-variables('times'));
