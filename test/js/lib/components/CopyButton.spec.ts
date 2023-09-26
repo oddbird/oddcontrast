@@ -35,7 +35,7 @@ describe('Copy Button', () => {
     const button = getByRole('button');
     expect(button.firstChild).toHaveAttribute('data-icon', 'clipboard');
     await fireEvent.click(button);
-    expect(button.firstChild).toHaveAttribute('data-icon', 'check');
+    expect(button.firstChild).toHaveAttribute('data-icon', 'copy');
     vi.runAllTimers();
     await waitFor(() => {
       expect(button.firstChild).toHaveAttribute('data-icon', 'clipboard');
