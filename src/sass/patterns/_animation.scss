@@ -1,10 +1,6 @@
-/// ## Animation Patterns
-/// ---------------------
+/// Animation Patterns
+/// ------------------
 
-/// ### Grow In
-/// -----------
-/// Scale something from 0 to 1
-/// @group animation
 @keyframes grow-in {
   0% {
     transform: scale(0);
