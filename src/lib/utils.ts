@@ -1,4 +1,4 @@
-import { clone, display, serialize, set, steps, to } from 'colorjs.io/fn';
+import { clone, display, mix, serialize, set, steps, to } from 'colorjs.io/fn';
 import type { PlainColorObject } from 'colorjs.io/types/src/color';
 
 import type { ColorFormatId } from '$lib/constants';
@@ -87,4 +87,23 @@ export const storeValuesToHash = (
   const bgParam = encodeColor(bg, format);
   const fgParam = encodeColor(fg, format);
   return encodeURIComponent(`${format}__${bgParam}__${fgParam}`);
+};
+
+export const premultiplyFG = ([fg, bg, format]: [
+  fg: PlainColorObject,
+  bg: PlainColorObject,
+  format: ColorFormatId,
+]) => {
+  if (fg.alpha === 1) return;
+  const bgNoAlpha = clone(bg);
+  bgNoAlpha.alpha = 1;
+  const fgNoAlpha = clone(fg);
+  fgNoAlpha.alpha = 1;
+
+  return mix(fgNoAlpha, bgNoAlpha, 1 - fg.alpha, {
+    // We always mix in srgb, as we are approximating the color as it will be
+    // displayed on a monitor.
+    space: 'srgb',
+    outputSpace: getSpaceFromFormatId(format),
+  });
 };

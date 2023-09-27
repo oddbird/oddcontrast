@@ -1,12 +1,19 @@
 <script lang="ts">
-  import { contrast } from 'colorjs.io/fn';
+  import { clone, contrast, serialize } from 'colorjs.io/fn';
 
   import Result from '$lib/components/ratio/Result.svelte';
   import ExternalLink from '$lib/components/util/ExternalLink.svelte';
   import { RATIOS } from '$lib/constants';
-  import { bg, fg } from '$lib/stores';
+  import { bg, fg, premultipliedFg } from '$lib/stores';
 
-  $: ratio = contrast($bg, $fg, 'WCAG21');
+  let ratio: number;
+
+  $: {
+    const bgNoAlpha = clone($bg);
+    bgNoAlpha.alpha = 1;
+
+    ratio = contrast(bgNoAlpha, $premultipliedFg || $fg, 'WCAG21');
+  }
   $: displayRatio = Math.round((ratio + Number.EPSILON) * 100) / 100;
   $: pass = ratio >= RATIOS.AA.Large;
 </script>
@@ -29,6 +36,17 @@
     </p>
   </div>
 
+  {#if $premultipliedFg}
+    Because WCAG 2 doesn't account for alpha, this is approximated by
+    premultiplying the foreground color in the sRGB space.
+    <div class="compare-alpha">
+      <div style="--alpha-color:{serialize($fg)}">With alpha</div>
+      <div style="--alpha-color:{serialize($premultipliedFg)}">
+        Alpha premultipled
+      </div>
+    </div>
+  {/if}
+
   <div class="result-status">
     <Result level="AA" type="Normal" {ratio} />
     <Result level="AAA" type="Normal" {ratio} />
@@ -38,7 +56,6 @@
 
   <div class="contrast-defined">
     <h4 class="label">AA Contrast Ratio</h4>
-
     <dl>
       <dt><strong>{RATIOS.AA.Normal}</strong> : 1</dt>
       <dd>Normal Text</dd>
@@ -155,6 +172,16 @@
   .contrast-defined {
     @include config.below('lg-page-break') {
       display: none;
+    }
+  }
+  .compare-alpha {
+    display: flex;
+    color: black;
+    > div {
+      background-color: var(--alpha-color);
+      height: 4em;
+      border: 1pt solid white;
+      flex: auto;
     }
   }
 </style>
