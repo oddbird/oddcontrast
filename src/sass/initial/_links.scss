@@ -4,15 +4,16 @@
 /// Initial global defaults for links
 /// @group links
 
+// Hide default browser focus for mouse-users but interactive elements will
+// have custom focus styles applied
+:focus:not(:focus-visible) { outline: none }
+
 // Focus
 // -----
-/// By default, all elements get a dotted outline on focus.
-/// In practice, we can override this when other focus styles exist.
+/// Show focus with keyboard navigation using focus-visible
 /// @group links
-:focus {
+:focus-visible {
   @include config.focus-ring;
-
-  --outline-offset: -1px;
 }
 
 // Links
