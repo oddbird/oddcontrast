@@ -40,4 +40,9 @@ button {
   --btn-border-width: 0;
   --btn-padding-inline: var(--half-shim);
   --btn-text-color-active: var(--action);
+
+  &:focus-visible {
+    --outline-width: 0;
+    transform: scale(1.15);
+  }
 }
