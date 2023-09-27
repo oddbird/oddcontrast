@@ -10,7 +10,6 @@ label {
 
 input,
 select {
-  border-color: var(--border);
   font-family: inherit;
   font-size: inherit;
   width: 100%;
@@ -38,16 +37,6 @@ select {
   border: 0;
   box-shadow: 1px 1px var(--half-shim) var(--border-light);
   padding: var(--half-shim) var(--shim);
-}
-
-input {
-  transition:
-    outline-color var(--fast),
-    outline-style var(--fast);
-
-  [data-needs-changes] & {
-    --focus-ring: var(--warning);
-  }
 }
 
 // ## Range Thumbs
