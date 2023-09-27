@@ -51,13 +51,13 @@ select {
   border-radius: var(--range-thumb-size);
   cursor: pointer;
   height: var(--range-thumb-size);
-  outline: var(--thumb-outline-color, transparent) solid var(--border-width);
+  outline: var(--thumb-outline-color, transparent) solid var(--border-width-md);
   transition: outline var(--fast);
   width: var(--range-thumb-size);
 }
 
 @mixin range-thumb-focus {
-  --thumb-outline-color: var(--text);
+  --thumb-outline-color: var(--action);
 }
 
 input[type='range'] {
