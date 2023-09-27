@@ -6,7 +6,9 @@
 
 // Hide default browser focus for mouse-users but interactive elements will
 // have custom focus styles applied
-:focus:not(:focus-visible) { outline: none }
+:focus:not(:focus-visible) {
+  outline: none;
+}
 
 // Focus
 // -----
@@ -31,8 +33,7 @@ a {
     text-decoration-thickness: var(--line-thickness, var(--border-width));
     transition:
       color var(--fast),
-      text-decoration-thickness var(--fast)
-      transform var(--fast);
+      text-decoration-thickness var(--fast) transform var(--fast);
     transform: scale(1);
   }
 
