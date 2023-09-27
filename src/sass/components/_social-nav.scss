@@ -1,0 +1,18 @@
+[data-nav='social'] {
+  --li-padding-bottom: 0;
+  --link: var(--text);
+  --link-focus: var(--action);
+
+  a {
+    &:link,
+    &:visited {
+      --outline-width: 0;
+
+      display: block;
+
+      &:focus-visible {
+        transform: scale(1.15);
+      }
+    }
+  }
+}

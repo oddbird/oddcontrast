@@ -31,7 +31,9 @@ a {
     text-decoration-thickness: var(--line-thickness, var(--border-width));
     transition:
       color var(--fast),
-      text-decoration-thickness var(--fast);
+      text-decoration-thickness var(--fast)
+      transform var(--fast);
+    transform: scale(1);
   }
 
   &:hover,
