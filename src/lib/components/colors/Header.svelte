@@ -157,9 +157,7 @@
   }
 
   [data-input='color'] {
-    border-width: 0 0 var(--border-width) 0;
     grid-area: input;
-    padding: var(--shim) 0.25ch;
   }
 
   [data-color-info='warning'] {

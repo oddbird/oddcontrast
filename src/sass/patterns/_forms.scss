@@ -16,6 +16,24 @@ select {
   width: 100%;
 }
 
+input {
+  border-color: var(--input-border-color, var(--border));
+  border-width: 0 0 var(--border-width) 0;
+  font-family: inherit;
+  font-size: inherit;
+  padding: var(--shim) 0.25ch;
+
+  &:focus-visible {
+    box-shadow: 0 3px 2px -2px var(--input-shadow-color, currentColor);
+    outline: none;
+  }
+
+  [data-needs-changes~='true'] & {
+    --input-border-color: var(--warning);
+    --input-shadow-color: var(--warning);
+  }
+}
+
 select {
   border: 0;
   box-shadow: 1px 1px var(--half-shim) var(--border-light);
