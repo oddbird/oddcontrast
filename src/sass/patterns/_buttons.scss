@@ -25,7 +25,8 @@ button {
     var(--btn-padding-inline, var(--gutter));
   transition:
     color var(--fast),
-    background-color var(--fast);
+    background-color var(--fast)
+    transform var(--fast);
 
   &:hover,
   &:focus {
