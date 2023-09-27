@@ -103,7 +103,7 @@
       'label label' auto
       'swatch swatch' var(--swatch-height, var(--swatch))
       'copy input' auto
-      'error error' minmax(var(--double-gutter), auto) / auto 1fr;
+      '.... error' minmax(var(--double-gutter), auto) / auto 1fr;
 
     @include config.above('sm-page-break') {
       --swatch-height: calc(2 * var(--swatch));
