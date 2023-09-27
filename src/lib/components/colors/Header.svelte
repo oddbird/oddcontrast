@@ -14,8 +14,8 @@
   $: targetSpace = getSpaceFromFormatId(format);
   $: display = serialize($color, { inGamut: false, format });
   $: displayType = type === 'bg' ? 'Background' : 'Foreground';
-  $: editing = false;
-  $: inputValue = '';
+  let editing = false;
+  let inputValue = '';
   let hasError = false;
 
   // When not editing, sync input value with color (e.g. when sliders change)
