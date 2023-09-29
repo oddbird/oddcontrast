@@ -16,3 +16,8 @@ $warning: tools.shade(brand.$brand-pink, 5%);
 $action: tools.shade(brand.$brand-pink, 15%);
 $active: brand.$brand-blue;
 $success: oklab(51.527% -0.099 0.0131);
+$action-light: color.adjust(
+  brand.$brand-blue,
+  $saturation: -45%,
+  $lightness: 10%
+);

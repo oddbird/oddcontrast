@@ -35,6 +35,7 @@
 
 <style lang="scss">
   li {
+    column-gap: 1ch;
     display: grid;
     grid-template:
       'copy color' auto

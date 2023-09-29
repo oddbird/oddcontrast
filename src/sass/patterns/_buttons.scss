@@ -18,7 +18,7 @@ button {
   border: var(--btn-border-width, var(--border-width, 0)) solid
     var(--btn-border-color-active, var(--btn-border-color, var(--text)));
   border-radius: var(--border-radius);
-  color: var(--btn-text-color, var(--text));
+  color: var(--btn-color, var(--text));
   cursor: pointer;
   display: inline-flex;
   padding: var(--btn-padding-block, var(--half-shim))
@@ -30,7 +30,7 @@ button {
   &:hover,
   &:focus {
     background-color: var(--btn-bg-color-active, var(--text));
-    color: var(--btn-text-color-active, var(--action));
+    color: var(--btn-color-active, var(--action));
   }
 }
 
@@ -38,7 +38,8 @@ button {
   --btn-bg-color-active: transparent;
   --btn-border-width: 0;
   --btn-padding-inline: var(--half-shim);
-  --btn-text-color-active: var(--action);
+  --btn-color-active: var(--action);
+  --btn-color: var(--action-light);
 
   &:focus-visible {
     --outline-width: 0;
