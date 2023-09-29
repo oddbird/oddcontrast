@@ -92,7 +92,11 @@ strong {
 
   // Container widths here were determined by when the longer color values (p3)
   // would overflow the container
-  @container tool (min-width: 20rem) {
+  @container tool (min-width: 15rem) {
+    --tool-font-size: 5cqi;
+  }
+
+  @container tool (min-width: 21rem) {
     --tool-font-size: var(--input-small);
   }
 

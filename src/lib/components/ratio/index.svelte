@@ -98,9 +98,10 @@
 
     @include config.between('sm-column-break', 'lg-page-break') {
       gap: var(--shim) var(--gutter);
+      // fixed width column to prevent layout shift as the ratio number changes
       grid-template:
         'heading number' min-content
-        'intro   intro' 1fr / auto 1fr;
+        'intro   intro' 1fr / auto var(--ratio-width);
     }
 
     @include config.above('lg-page-break') {
@@ -134,6 +135,7 @@
     align-items: start;
     display: inline-flex;
     grid-area: number;
+    justify-content: flex-end;
     line-height: 0.7; // weird number alignment
   }
 

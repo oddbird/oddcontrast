@@ -24,11 +24,3 @@
     {/each}
   </ul>
 </footer>
-
-<style lang="scss">
-  [data-nav='social'] {
-    --li-padding-bottom: 0;
-    --link: var(--text);
-    --link-focus: var(--action);
-  }
-</style>

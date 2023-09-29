@@ -10,26 +10,33 @@ label {
 
 input,
 select {
-  border-color: var(--border);
   font-family: inherit;
   font-size: inherit;
   width: 100%;
+}
+
+input {
+  border-color: var(--input-border-color, var(--border));
+  border-width: 0 0 var(--border-width) 0;
+  font-family: inherit;
+  font-size: inherit;
+  padding: var(--shim) 0.25ch;
+
+  &:focus-visible {
+    box-shadow: 0 3px 2px -2px var(--input-shadow-color, currentColor);
+    outline: none;
+  }
+
+  [data-needs-changes~='true'] & {
+    --input-border-color: var(--warning);
+    --input-shadow-color: var(--warning);
+  }
 }
 
 select {
   border: 0;
   box-shadow: 1px 1px var(--half-shim) var(--border-light);
   padding: var(--half-shim) var(--shim);
-}
-
-input {
-  transition:
-    outline-color var(--fast),
-    outline-style var(--fast);
-
-  [data-needs-changes] & {
-    --focus-ring: var(--warning);
-  }
 }
 
 // ## Range Thumbs
@@ -44,13 +51,13 @@ input {
   border-radius: var(--range-thumb-size);
   cursor: pointer;
   height: var(--range-thumb-size);
-  outline: var(--thumb-outline-color, transparent) solid var(--border-width);
+  outline: var(--thumb-outline-color, transparent) solid var(--border-width-md);
   transition: outline var(--fast);
   width: var(--range-thumb-size);
 }
 
 @mixin range-thumb-focus {
-  --thumb-outline-color: var(--text);
+  --thumb-outline-color: var(--action);
 }
 
 input[type='range'] {

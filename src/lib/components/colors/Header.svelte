@@ -3,6 +3,7 @@
   import type { PlainColorObject } from 'colorjs.io/types/src/color';
   import type { Writable } from 'svelte/store';
 
+  import CopyButton from '$lib/components/util/CopyButton.svelte';
   import type { ColorFormatId } from '$lib/constants';
   import { getSpaceFromFormatId } from '$lib/utils';
 
@@ -13,8 +14,8 @@
   $: targetSpace = getSpaceFromFormatId(format);
   $: display = serialize($color, { inGamut: false, format });
   $: displayType = type === 'bg' ? 'Background' : 'Foreground';
-  $: editing = false;
-  $: inputValue = '';
+  let editing = false;
+  let inputValue = '';
   let hasError = false;
 
   // When not editing, sync input value with color (e.g. when sliders change)
@@ -86,6 +87,7 @@
     on:input={handleInput}
     on:keydown={handleKeydown}
   />
+  <CopyButton text={display} size="medium" />
   {#if hasError}
     <div data-color-info="warning">Could not parse input as a valid color.</div>
   {/if}
@@ -95,12 +97,13 @@
   @use 'config';
 
   [data-colors] {
+    align-items: center;
     display: grid;
     grid-template:
-      'label' auto
-      'swatch' var(--swatch-height, var(--swatch))
-      'input' auto
-      'error' minmax(var(--double-gutter), auto) / 1fr;
+      'label label' auto
+      'swatch swatch' var(--swatch-height, var(--swatch))
+      'copy input' auto
+      '.... error' minmax(var(--double-gutter), auto) / auto 1fr;
 
     @include config.above('sm-page-break') {
       --swatch-height: calc(2 * var(--swatch));
@@ -154,9 +157,7 @@
   }
 
   [data-input='color'] {
-    border-width: 0 0 var(--border-width) 0;
     grid-area: input;
-    padding: var(--shim) 0.25ch;
   }
 
   [data-color-info='warning'] {

@@ -14,9 +14,9 @@
 /// @group focus
 @mixin focus-ring() {
   /* stylelint-disable declaration-block-no-redundant-longhand-properties */
-  outline-color: var(--focus-ring, var(--text, currentColor));
+  outline-color: var(--focus-ring, currentColor);
   outline-offset: var(--outline-offset, 0);
-  outline-style: var(--outline-style, dotted);
-  outline-width: var(--outline-width, var(--border-width));
+  outline-style: var(--outline-style, solid);
+  outline-width: var(--outline-width, var(--border-width-md));
   /* stylelint-enable declaration-block-no-redundant-longhand-properties */
 }

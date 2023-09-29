@@ -2,8 +2,8 @@
 /// @group buttons
 
 button {
-  font-size: inherit;
   font-family: inherit;
+  font-size: inherit;
 }
 
 // Basic Buttons
@@ -14,33 +14,36 @@ button {
 [data-btn] {
   appearance: none;
   align-items: center;
-  background-color: var(--btn-bg-color-active, var(--btn-bg-color, var(--bg)));
+  background-color: var(--btn-bg-color, var(--bg));
   border: var(--btn-border-width, var(--border-width, 0)) solid
     var(--btn-border-color-active, var(--btn-border-color, var(--text)));
   border-radius: var(--border-radius);
-  color: var(--btn-text-color-active, var(--btn-text-color, var(--text)));
+  color: var(--btn-color, var(--text));
   cursor: pointer;
   display: inline-flex;
   padding: var(--btn-padding-block, var(--half-shim))
     var(--btn-padding-inline, var(--gutter));
   transition:
     color var(--fast),
-    background-color var(--fast);
+    background-color var(--fast) transform var(--fast);
 
   &:hover,
   &:focus {
-    --btn-bg-color-active: var(--text);
-    --btn-text-color: var(--bg);
-  }
-
-  &:active,
-  &[aria-pressed='true'] {
-    --btn-bg-color-active: var(--text);
-    --btn-text-color: var(--bg);
+    background-color: var(--btn-bg-color-active, var(--text));
+    color: var(--btn-color-active, var(--action));
   }
 }
 
 [data-btn~='icon'] {
+  --btn-bg-color-active: transparent;
   --btn-border-width: 0;
   --btn-padding-inline: var(--half-shim);
+  --btn-color-active: var(--action);
+  --btn-color: var(--action-light);
+
+  &:focus-visible {
+    --outline-width: 0;
+
+    transform: scale(1.15);
+  }
 }

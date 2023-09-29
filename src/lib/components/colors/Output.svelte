@@ -3,6 +3,7 @@
   import type { PlainColorObject } from 'colorjs.io/types/src/color';
 
   import SupportWarning from '$lib/components/colors/SupportWarning.svelte';
+  import CopyButton from '$lib/components/util/CopyButton.svelte';
   import type { ColorFormatId } from '$lib/constants';
   import { getSpaceFromFormatId } from '$lib/utils';
 
@@ -21,6 +22,7 @@
 
 <ul data-group="output {type}">
   <li>
+    <CopyButton text={targetColorValue} />
     <span data-color-info="value">{targetColorValue}</span>
     <SupportWarning {format} />
     {#if !isInGamut}
@@ -30,3 +32,21 @@
     {/if}
   </li>
 </ul>
+
+<style lang="scss">
+  li {
+    column-gap: 1ch;
+    display: grid;
+    grid-template:
+      'copy color' auto
+      'copy message' 3ex / auto 1fr;
+  }
+
+  [data-color-info='value'] {
+    grid-area: color;
+  }
+
+  [data-color-info='warning'] {
+    grid-area: message;
+  }
+</style>
