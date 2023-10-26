@@ -20,7 +20,7 @@
 </script>
 
 <ul data-group="output {type}">
-  <li>
+  <li data-testid={`format-${format}`}>
     <CopyButton text={targetColorValue} />
     <span data-color-info="value">{targetColorValue}</span>
     <SupportWarning {format} />
