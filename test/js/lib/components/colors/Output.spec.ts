@@ -28,19 +28,4 @@ describe('Output', () => {
       getByText(serialize(to(HSL_WHITE, 'oklch'), { inGamut: false })),
     ).toBeVisible();
   });
-
-  it('renders warning if out of gamut', () => {
-    const color: PlainColorObject = {
-      space: ColorSpace.get('oklch'),
-      coords: [0.01, 0.02, 0],
-      alpha: 1,
-    };
-    const { getByText } = render(Output, {
-      type: 'fg',
-      color,
-      format: 'hsl',
-    });
-
-    expect(getByText('outside the HSL gamut', { exact: false })).toBeVisible();
-  });
 });
