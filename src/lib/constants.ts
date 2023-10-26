@@ -24,6 +24,12 @@ export const FORMATS: ColorFormatId[] = [
   'srgb',
 ];
 
+export const FORMAT_GROUPS: { [key: string]: ColorFormatId[] } = {
+  'sRGB Formats': ['hex', 'hsl', 'srgb'],
+  'Unbounded Spaces': ['lab', 'lch', 'oklab', 'oklch'],
+  'Display p3 Space': ['p3'],
+};
+
 export const RATIOS = {
   AA: {
     Normal: 4.5,
