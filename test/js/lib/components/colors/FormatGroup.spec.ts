@@ -33,8 +33,6 @@ describe('FormatGroup', () => {
     FORMAT_GROUPS[GROUP_NAME]?.forEach((format) => {
       expect(getByTestId(`format-${format}`)).toBeVisible();
     });
-    expect(
-      getByText('Selected color is outside the sRGB gamut.'),
-    ).toBeVisible();
+    expect(getByText('outside the sRGB gamut.')).toBeVisible();
   });
 });
