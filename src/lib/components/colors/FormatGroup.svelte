@@ -3,7 +3,7 @@
   import type { PlainColorObject } from 'colorjs.io/types/src/color';
 
   import Output from '$lib/components/colors/Output.svelte';
-  import type { ColorFormatId } from '$lib/constants';
+  import type { FormatGroup } from '$lib/constants';
   import { ColorSpace } from '$lib/stores';
   import { getSpaceFromFormatId } from '$lib/utils';
 
@@ -11,26 +11,29 @@
 
   export let type: 'bg' | 'fg';
   export let color: PlainColorObject;
-  export let name: string;
-  export let formats: ColorFormatId[];
+  export let formatGroup: FormatGroup;
 
-  $: gamutSpace = ColorSpace.get(
-    getSpaceFromFormatId(formats[0] as ColorFormatId),
-  );
-  $: isInGamut = inGamut(color, gamutSpace);
+  function inGamutForSpace(color: PlainColorObject) {
+    if (!formatGroup.gamutFormat) return true;
+    const gamutSpace = ColorSpace.get(
+      getSpaceFromFormatId(formatGroup.gamutFormat),
+    );
+    return inGamut(color, gamutSpace);
+  }
+  $: isInGamut = inGamutForSpace(color);
 </script>
 
 <div data-content="format-group">
-  <h5>{name}</h5>
+  <h5>{formatGroup.name}</h5>
   {#if !isInGamut}
     <span data-color-info="warning"
       >Selected color is <ExternalLink
         href="https://www.w3.org/TR/css-color-4/#out-of-gamut"
-        >outside the {gamutSpace.name} gamut.</ExternalLink
+        >outside the {formatGroup.gamutName} gamut.</ExternalLink
       ></span
     >
   {/if}
-  {#each formats as format (format)}
+  {#each formatGroup.formats as format (format)}
     <Output {type} {color} {format} />
   {/each}
 </div>

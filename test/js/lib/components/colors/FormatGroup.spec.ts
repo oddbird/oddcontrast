@@ -6,31 +6,29 @@ import { HSL_WHITE, OUT_OF_BOUNDED_GAMUTS } from '$test/fixtures';
 
 describe('FormatGroup', () => {
   it('renders selected group', () => {
-    const GROUP_NAME = 'sRGB Formats';
+    const FORMAT_GROUP = FORMAT_GROUPS[0]!;
     const { getByTestId, getByText } = render(FormatGroup, {
       type: 'bg',
       color: HSL_WHITE,
-      name: GROUP_NAME,
-      formats: FORMAT_GROUPS[GROUP_NAME]!,
+      formatGroup: FORMAT_GROUP,
     });
 
-    expect(getByText(GROUP_NAME)).toBeVisible();
-    FORMAT_GROUPS[GROUP_NAME]?.forEach((format) => {
+    expect(getByText(FORMAT_GROUP.name)).toBeVisible();
+    FORMAT_GROUP.formats.forEach((format) => {
       expect(getByTestId(`format-${format}`)).toBeVisible();
     });
   });
 
   it('renders warning if out of gamut', () => {
-    const GROUP_NAME = 'sRGB Formats';
+    const FORMAT_GROUP = FORMAT_GROUPS[0]!;
     const { getByTestId, getByText } = render(FormatGroup, {
       type: 'bg',
       color: OUT_OF_BOUNDED_GAMUTS,
-      name: GROUP_NAME,
-      formats: FORMAT_GROUPS[GROUP_NAME]!,
+      formatGroup: FORMAT_GROUP,
     });
 
-    expect(getByText(GROUP_NAME)).toBeVisible();
-    FORMAT_GROUPS[GROUP_NAME]?.forEach((format) => {
+    expect(getByText(FORMAT_GROUP.name)).toBeVisible();
+    FORMAT_GROUP.formats.forEach((format) => {
       expect(getByTestId(`format-${format}`)).toBeVisible();
     });
     expect(getByText('outside the sRGB gamut.')).toBeVisible();
