@@ -22,12 +22,14 @@
   <h5>{name}</h5>
   {#if !isInGamut}
     <span data-color-info="warning"
-      >Selected color is outside the {targetColor.space.name} gamut.</span
-    ><ExternalLink href="https://www.w3.org/TR/css-color-4/#out-of-gamut"
-    ></ExternalLink>
+      >Selected color is <ExternalLink
+        href="https://www.w3.org/TR/css-color-4/#out-of-gamut"
+        >outside the {targetColor.space.name} gamut.</ExternalLink
+      ></span
+    >
   {/if}
   {#each formats as format (format)}
-    <Output {type} {color} {format} />
+    <Output {type} color={targetColor} {format} />
   {/each}
 </div>
 

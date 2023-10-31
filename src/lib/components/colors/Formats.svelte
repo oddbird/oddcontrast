@@ -3,7 +3,7 @@
 
   import FormatGroup from '$lib/components/colors/FormatGroup.svelte';
   import type { ColorFormatId } from '$lib/constants';
-  import { FORMAT_GROUPS, FORMATS } from '$lib/constants';
+  import { FORMAT_GROUPS } from '$lib/constants';
 
   export let type: 'bg' | 'fg';
   export let color: PlainColorObject;
@@ -13,7 +13,6 @@
     selectedFormat: ColorFormatId,
   ): typeof FORMAT_GROUPS {
     const otherFormats: typeof FORMAT_GROUPS = {};
-    FORMATS.filter((s) => s !== format);
     Object.keys(FORMAT_GROUPS).forEach((key) => {
       const groupFormats = FORMAT_GROUPS[key]!.filter(
         (s) => s !== selectedFormat,
