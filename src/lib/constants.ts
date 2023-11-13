@@ -33,14 +33,14 @@ export type FormatGroup = {
 
 export const FORMAT_GROUPS: FormatGroup[] = [
   {
-    name: 'sRGB Formats',
+    name: 'sRGB FORMATS',
     formats: ['hex', 'hsl', 'srgb'],
     gamutFormat: 'srgb',
     gamutName: 'sRGB',
   },
-  { name: 'Unbounded Spaces', formats: ['lab', 'lch', 'oklab', 'oklch'] },
+  { name: 'UNBOUNDED SPACES', formats: ['lab', 'lch', 'oklab', 'oklch'] },
   {
-    name: 'Display p3 Space',
+    name: 'DISPLAY P3 SPACE',
     formats: ['p3'],
     gamutFormat: 'p3',
     gamutName: 'p3',
