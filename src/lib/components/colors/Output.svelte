@@ -28,15 +28,13 @@
 </ul>
 
 <style lang="scss">
+  [data-group~='output'] {
+    grid-column: 1 / -1;
+  }
+
   li {
     column-gap: 1ch;
     display: grid;
-    grid-template:
-      'copy color' auto
-      'copy message' 3ex / auto 1fr;
-  }
-
-  [data-color-info='value'] {
-    grid-area: color;
+    grid-template-columns: auto 1fr;
   }
 </style>

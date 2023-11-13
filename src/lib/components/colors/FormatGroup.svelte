@@ -24,7 +24,7 @@
 </script>
 
 <div data-content="format-group">
-  <h5>{formatGroup.name}</h5>
+  <h2 class="label section-heading">{formatGroup.name}</h2>
   {#if !isInGamut}
     <span data-color-info="warning"
       >Selected color is <ExternalLink
@@ -39,7 +39,12 @@
 </div>
 
 <style lang="scss">
-  [data-color-info='warning'] {
-    grid-area: message;
+  [data-content~='format-group'] {
+    --heading-transform: none;
+
+    column-gap: var(--gutter);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    margin-block-end: var(--double-gutter);
   }
 </style>

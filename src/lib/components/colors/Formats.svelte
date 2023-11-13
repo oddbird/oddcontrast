@@ -30,7 +30,7 @@
 </script>
 
 <div data-content="formats" data-column="tool">
-  <h4 class="small-only label">{displayType} Color</h4>
+  <h2 class="small-only label">{displayType} Color</h2>
   {#each otherFormats as formatGroup}
     <FormatGroup {type} {color} {formatGroup} />
   {/each}
@@ -38,10 +38,10 @@
 
 <style lang="scss">
   [data-content~='formats'] {
-    margin-bottom: var(--double-gutter);
+    margin-block-end: var(--double-gutter);
   }
 
-  .label {
-    --label-margin-bottom: var(--gutter);
+  .small-only {
+    margin-block-end: var(--gutter);
   }
 </style>
