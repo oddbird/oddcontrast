@@ -43,7 +43,7 @@ export const FORMAT_GROUPS: FormatGroup[] = [
     name: 'DISPLAY P3 SPACE',
     formats: ['p3'],
     gamutFormat: 'p3',
-    gamutName: 'p3',
+    gamutName: 'P3',
   },
 ];
 
