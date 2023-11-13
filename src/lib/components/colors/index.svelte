@@ -18,7 +18,6 @@
   <Sliders type="fg" color={fg} format={$format} />
 </form>
 
-<h3 class="label section-heading">Additional Formats</h3>
 <div data-layout="split">
   <Formats type="bg" color={$bg} format={$format} />
   <Formats type="fg" color={$fg} format={$format} />
