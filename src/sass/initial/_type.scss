@@ -41,14 +41,14 @@ h3 {
   display: block;
   font-size: var(--heading-size, var(--label-size));
   letter-spacing: var(--heading-letterspacing, 0.05rem);
-  margin-bottom: var(--label-margin-bottom, 0);
+  margin-block-end: var(--label-margin-block-end, 0);
   text-transform: var(--heading-transform, uppercase);
 }
 
 .section-heading {
   @include heading;
 
-  --label-margin-bottom: var(--gutter);
+  --label-margin-block-end: var(--gutter);
 
   @include config.below('sm-page-break') {
     --heading-size: var(--medium);

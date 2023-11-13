@@ -42,6 +42,6 @@
   }
 
   .small-only {
-    margin-block-end: var(--gutter);
+    --label-margin-block-end: var(--gutter);
   }
 </style>
