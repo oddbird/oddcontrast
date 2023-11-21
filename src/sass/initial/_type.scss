@@ -48,8 +48,6 @@ h3 {
 .section-heading {
   @include heading;
 
-  --label-margin-block-end: var(--gutter);
-
   @include config.below('sm-page-break') {
     --heading-size: var(--medium);
   }

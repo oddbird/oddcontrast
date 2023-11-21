@@ -24,15 +24,17 @@
 </script>
 
 <div data-content="format-group">
-  <h2 class="label section-heading">{formatGroup.name}</h2>
-  {#if !isInGamut}
-    <span data-color-info="warning"
-      >Selected color is <ExternalLink
-        href="https://www.w3.org/TR/css-color-4/#out-of-gamut"
-        >outside the {formatGroup.gamutName} gamut.</ExternalLink
-      ></span
-    >
-  {/if}
+  <div class="format-group-heading">
+    <h2 class="label section-heading">{formatGroup.name}</h2>
+    {#if !isInGamut}
+      <span data-color-info="warning"
+        >Selected color is <ExternalLink
+          href="https://www.w3.org/TR/css-color-4/#out-of-gamut"
+          >outside the {formatGroup.gamutName} gamut.</ExternalLink
+        ></span
+      >
+    {/if}
+  </div>
   {#each formatGroup.formats as format (format)}
     <Output {type} {color} {format} />
   {/each}
@@ -46,5 +48,13 @@
     display: grid;
     grid-template-columns: auto 1fr;
     margin-block-end: var(--double-gutter);
+  }
+
+  .format-group-heading {
+    align-items: baseline;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--shim);
+    margin-block-end: var(--gutter);
   }
 </style>
