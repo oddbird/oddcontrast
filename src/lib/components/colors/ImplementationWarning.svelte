@@ -17,8 +17,8 @@
 
 {#if isUnbounded}
   <span data-color-info="warning"
-    ><Icon name="warning" /> Browser rendering of
-    {spaceObject.name} for colors outside of the display gamut is incorrect
+    ><Icon name="warning" /> Browser rendering for colors outside of the display
+    gamut is incorrect
     <ExternalLink href="https://github.com/w3c/csswg-drafts/issues/9449">
       according to the CSS specification.</ExternalLink
     >
