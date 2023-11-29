@@ -1,10 +1,11 @@
 <script lang="ts">
   import ExternalLink from '$lib/components/util/ExternalLink.svelte';
-  import type { ColorFormatId } from '$lib/constants';
-  export let format: ColorFormatId;
   import Icon from '$lib/components/util/Icon.svelte';
+  import type { ColorFormatId } from '$lib/constants';
   import { ColorSpace } from '$lib/stores';
   import { getSpaceFromFormatId } from '$lib/utils';
+
+  export let format: ColorFormatId;
 
   $: targetSpace = getSpaceFromFormatId(format);
   $: spaceObject = ColorSpace.get(targetSpace);
