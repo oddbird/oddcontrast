@@ -9,7 +9,7 @@
 
   $: ratio = contrast($bg, $fg, 'WCAG21');
   $: displayRatio = Math.round((ratio + Number.EPSILON) * 100) / 100;
-  $: pass = ratio >= RATIOS.AA.Large;
+  $: pass = ratio >= RATIOS.AA.Normal;
 </script>
 
 <aside data-layout="results">
