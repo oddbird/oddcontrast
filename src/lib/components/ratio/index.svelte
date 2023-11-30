@@ -6,6 +6,8 @@
   import { RATIOS } from '$lib/constants';
   import { bg, fg } from '$lib/stores';
 
+  import ColorIssues from './ColorIssues.svelte';
+
   $: ratio = contrast($bg, $fg, 'WCAG21');
   $: displayRatio = Math.round((ratio + Number.EPSILON) * 100) / 100;
   $: pass = ratio >= RATIOS.AA.Large;
@@ -65,6 +67,7 @@
       <dd>Bold Weight</dd>
     </dl>
   </div>
+  <ColorIssues {ratio} />
 </aside>
 
 <style lang="scss">
