@@ -1,13 +1,9 @@
 <script lang="ts">
   import { onMount } from 'svelte';
 
-  import { RATIOS } from '$lib/constants';
+  import ExternalLink from '$lib/components/util/ExternalLink.svelte';
 
-  import ExternalLink from '../util/ExternalLink.svelte';
-
-  export let ratio: number;
-
-  $: pass = ratio >= RATIOS['AA']['Normal'];
+  export let pass: boolean;
 
   let startOpen = false;
   onMount(() => {
@@ -18,10 +14,10 @@
 <details open={startOpen} data-pass={pass}>
   <summary>Known Color Issues</summary>
   <dl>
-    <dt>Gamut Mapping implementation</dt>
+    <dt>Gamut Mapping Implementation</dt>
     <dd>
       Browsers implemented gamut mapping using clipping, which is fast but
-      provides inferior results to the algorithm defined in the <ExternalLink
+      provides inferior results compared to the algorithm defined in the <ExternalLink
         href="https://drafts.csswg.org/css-color/#binsearch"
         >CSS Spec</ExternalLink
       >. Until browsers are updated, colors that are out of gamut for your

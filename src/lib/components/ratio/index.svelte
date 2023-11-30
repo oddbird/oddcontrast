@@ -1,12 +1,11 @@
 <script lang="ts">
   import { contrast } from 'colorjs.io/fn';
 
+  import ColorIssues from '$lib/components/ratio/ColorIssues.svelte';
   import Result from '$lib/components/ratio/Result.svelte';
   import ExternalLink from '$lib/components/util/ExternalLink.svelte';
   import { RATIOS } from '$lib/constants';
   import { bg, fg } from '$lib/stores';
-
-  import ColorIssues from './ColorIssues.svelte';
 
   $: ratio = contrast($bg, $fg, 'WCAG21');
   $: displayRatio = Math.round((ratio + Number.EPSILON) * 100) / 100;
@@ -67,7 +66,7 @@
       <dd>Bold Weight</dd>
     </dl>
   </div>
-  <ColorIssues {ratio} />
+  <ColorIssues {pass} />
 </aside>
 
 <style lang="scss">
