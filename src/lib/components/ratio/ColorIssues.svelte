@@ -25,11 +25,13 @@
     </dd>
     <dt>Checking for Out of Gamut Colors</dt>
     <dd>
-      The new color features in CSS now allow for a much wider range of colors,
-      many of which can not be shown on many (or any) screens. When selecting
-      colors, consider that most users will see these colors on a display that
-      supports the <code>sRGB</code> or <code>P3</code> gamut.There are 2
-      primary ways you can get out of gamut:
+      <p>
+        The new color features in CSS now allow for a much wider range of
+        colors, many of which can not be shown on many (or any) screens. When
+        selecting colors, consider that most users will see these colors on a
+        display that supports the <code>sRGB</code> or <code>P3</code> gamut.
+      </p>
+      <p>There are 2 primary ways you can get out of gamut:</p>
       <ol>
         <li>
           Choosing a color in a space with a wider gamut, especially when a
@@ -41,8 +43,10 @@
           boundaries are still valid, and can be entered in the text input.
         </li>
       </ol>
-      When a color is out of gamut for the user's screen, the browser will adjust
-      the color to be in gamut.
+      <p>
+        When a color is out of gamut for the user's screen, the browser will
+        adjust the color to be in gamut.
+      </p>
     </dd>
   </dl>
 </details>
