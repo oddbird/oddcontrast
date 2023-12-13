@@ -31,7 +31,7 @@
         selecting colors, consider that most users will see these colors on a
         display that supports the <code>sRGB</code> or <code>P3</code> gamut.
       </p>
-      <p>There are 2 primary ways you can get out of gamut:</p>
+      <p>There are two primary ways a color can be out of gamut:</p>
       <ol>
         <li>
           Choosing a color in a space with a wider gamut, especially when a
