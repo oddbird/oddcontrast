@@ -12,9 +12,9 @@
 </script>
 
 <details class="known-issues" open={startOpen} data-pass={pass}>
-  <summary><strong>Known Color Issues</strong></summary>
+  <summary>Known Color Issues</summary>
   <dl class="issues-list">
-    <dt><strong>Gamut Mapping Implementation</strong></dt>
+    <dt>Gamut Mapping Implementation</dt>
     <dd>
       <p>
         Browsers implemented gamut mapping using clipping, which is fast but
@@ -38,6 +38,10 @@
     gap: var(--gutter);
     grid-auto-rows: auto;
     grid-template-columns: 1fr;
+  }
+
+  dt {
+    font-weight: bold;
   }
   dd {
     --description-margin-inline: 0;
