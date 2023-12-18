@@ -12,9 +12,9 @@
 </script>
 
 <details open={startOpen} data-pass={pass}>
-  <summary>Known Color Issues</summary>
+  <summary><strong>Known Color Issues</strong></summary>
   <dl>
-    <dt>Gamut Mapping Implementation</dt>
+    <dt><strong>Gamut Mapping Implementation</strong></dt>
     <dd>
       Browsers implemented gamut mapping using clipping, which is fast but
       provides inferior results compared to the algorithm defined in the <ExternalLink
@@ -28,17 +28,17 @@
 
 <style lang="scss">
   // Overrides the pattern from _lists
+  summary {
+    cursor: pointer;
+    margin-block-end: var(--gutter);
+  }
   dl {
     display: block;
-  }
-  dt {
-    font-weight: bold;
   }
   dd {
     margin-inline-start: 0;
   }
   summary {
-    font-weight: bold;
     list-style-position: outside;
   }
   details {
