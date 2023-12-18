@@ -16,12 +16,14 @@
   <dl>
     <dt><strong>Gamut Mapping Implementation</strong></dt>
     <dd>
-      Browsers implemented gamut mapping using clipping, which is fast but
-      provides inferior results compared to the algorithm defined in the <ExternalLink
-        href="https://drafts.csswg.org/css-color/#binsearch"
-        >CSS Spec</ExternalLink
-      >. Until browsers are updated, colors that are out of gamut for your
-      screen may be displayed very differently than expected.
+      <p>
+        Browsers implemented gamut mapping using clipping, which is fast but
+        provides inferior results compared to the algorithm defined in the <ExternalLink
+          href="https://drafts.csswg.org/css-color/#binsearch"
+          >CSS Spec</ExternalLink
+        >. Until browsers are updated, colors that are out of gamut for your
+        screen may be displayed very differently than expected.
+      </p>
     </dd>
   </dl>
 </details>
