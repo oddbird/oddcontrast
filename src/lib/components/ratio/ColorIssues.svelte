@@ -11,17 +11,19 @@
   });
 </script>
 
-<details open={startOpen} data-pass={pass}>
+<details class="known-issues" open={startOpen} data-pass={pass}>
   <summary>Known Color Issues</summary>
-  <dl>
+  <dl class="issues-list">
     <dt>Gamut Mapping Implementation</dt>
     <dd>
-      Browsers implemented gamut mapping using clipping, which is fast but
-      provides inferior results compared to the algorithm defined in the <ExternalLink
-        href="https://drafts.csswg.org/css-color/#binsearch"
-        >CSS Spec</ExternalLink
-      >. Until browsers are updated, colors that are out of gamut for your
-      screen may be displayed very differently than expected.
+      <p>
+        Browsers implemented gamut mapping using clipping, which is fast but
+        provides inferior results compared to the algorithm defined in the <ExternalLink
+          href="https://drafts.csswg.org/css-color/#binsearch"
+          >CSS Spec</ExternalLink
+        >. Until browsers are updated, colors that are out of gamut for your
+        screen may be displayed very differently than expected.
+      </p>
     </dd>
     <dt>Checking for Out of Gamut Colors</dt>
     <dd>
@@ -52,24 +54,25 @@
 </details>
 
 <style lang="scss">
-  // Overrides the pattern from _lists
-  dl {
-    display: block;
+  .known-issues {
+    grid-area: knownissues;
+    padding: var(--shim) var(--double-gutter);
   }
+  .issues-list {
+    display: grid;
+    gap: var(--gutter);
+    grid-auto-rows: auto;
+    grid-template-columns: 1fr;
+  }
+
   dt {
     font-weight: bold;
   }
   dd {
-    margin-inline-start: 0;
+    --description-margin-inline: 0;
   }
-  summary {
-    font-weight: bold;
-    list-style-position: outside;
-  }
-  details {
-    background-color: var(--status-result-bg, var(--bgcolor));
-    border-radius: var(--border-radius);
-    color: var(--status-result-fg, var(--fgcolor));
-    padding: var(--double-gutter);
+
+  p {
+    margin-block-end: var(--gutter);
   }
 </style>

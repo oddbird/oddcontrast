@@ -11,7 +11,22 @@ li {
 [data-list='inline'] {
   align-items: center;
   display: flex;
-  gap: var(--gutter);
+  gap: var(--shim);
+}
+
+details {
+  --link: var(--fgcolor);
+  --link-focus: var(--fgcolor);
+
+  background-color: var(--status-result-bg, var(--bgcolor));
+  border-radius: var(--border-radius);
+  color: var(--status-result-fg, var(--fgcolor));
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  list-style-position: outside;
 }
 
 dl {
@@ -21,5 +36,5 @@ dl {
 }
 
 dd {
-  margin-inline-start: var(--gutter);
+  margin-inline-start: var(--description-margin-inline, var(--gutter));
 }
