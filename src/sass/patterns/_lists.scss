@@ -21,7 +21,12 @@ details {
   background-color: var(--status-result-bg, var(--bgcolor));
   border-radius: var(--border-radius);
   color: var(--status-result-fg, var(--fgcolor));
-  padding: var(--double-gutter);
+}
+
+summary {
+  cursor: pointer;
+  list-style-position: outside;
+  margin-block-end: var(--gutter);
 }
 
 dl {
@@ -31,5 +36,5 @@ dl {
 }
 
 dd {
-  margin-inline-start: var(--gutter);
+  margin-inline-start: var(--description-margin-inline, var(--gutter));
 }

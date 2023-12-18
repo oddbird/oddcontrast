@@ -29,18 +29,10 @@
 </details>
 
 <style lang="scss">
-  // Overrides the pattern from _lists
-  summary {
-    cursor: pointer;
-    margin-block-end: var(--gutter);
-  }
   dl {
     display: block;
   }
   dd {
-    margin-inline-start: 0;
-  }
-  summary {
-    list-style-position: outside;
+    --description-margin-inline: 0;
   }
 </style>
