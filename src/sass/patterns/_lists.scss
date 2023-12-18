@@ -11,7 +11,7 @@ li {
 [data-list='inline'] {
   align-items: center;
   display: flex;
-  gap: var(--gutter);
+  gap: var(--shim);
 }
 
 details {
