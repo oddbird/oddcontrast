@@ -24,7 +24,7 @@ jobs:
           yarn install --immutable
           yarn build
       - name: Upload built files
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: built
           path: .svelte-kit
