@@ -35,9 +35,9 @@
   }
   .issues-list {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-auto-rows: auto;
     gap: var(--gutter);
+    grid-auto-rows: auto;
+    grid-template-columns: 1fr;
   }
   dd {
     --description-margin-inline: 0;
