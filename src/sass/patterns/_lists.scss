@@ -14,6 +14,16 @@ li {
   gap: var(--gutter);
 }
 
+details {
+  --link: var(--fgcolor);
+  --link-focus: var(--fgcolor);
+
+  background-color: var(--status-result-bg, var(--bgcolor));
+  border-radius: var(--border-radius);
+  color: var(--status-result-fg, var(--fgcolor));
+  padding: var(--double-gutter);
+}
+
 dl {
   display: grid;
   grid-template-columns: auto 1fr;

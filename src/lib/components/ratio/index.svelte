@@ -25,8 +25,8 @@
       In WCAG 2, contrast is a measure of the difference in perceived brightness
       between two colors, expressed as a ratio. <ExternalLink
         href="https://webaim.org/articles/contrast/#ratio"
-        >Learn more about contrast ratio requirements.</ExternalLink
-      >
+        >Learn more about contrast ratio requirements</ExternalLink
+      >.
     </p>
   </div>
 

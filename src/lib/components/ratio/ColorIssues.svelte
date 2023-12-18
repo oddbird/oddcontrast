@@ -43,10 +43,4 @@
   summary {
     list-style-position: outside;
   }
-  details {
-    background-color: var(--status-result-bg, var(--bgcolor));
-    border-radius: var(--border-radius);
-    color: var(--status-result-fg, var(--fgcolor));
-    padding: var(--double-gutter);
-  }
 </style>
