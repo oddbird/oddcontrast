@@ -11,9 +11,9 @@
   });
 </script>
 
-<details open={startOpen} data-pass={pass}>
+<details class="known-issues" open={startOpen} data-pass={pass}>
   <summary><strong>Known Color Issues</strong></summary>
-  <dl>
+  <dl class="issues-list">
     <dt><strong>Gamut Mapping Implementation</strong></dt>
     <dd>
       <p>
@@ -29,10 +29,21 @@
 </details>
 
 <style lang="scss">
-  dl {
-    display: block;
+  .known-issues {
+    grid-area: knownissues;
+    padding: var(--shim) var(--double-gutter);
+  }
+  .issues-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    gap: var(--gutter);
   }
   dd {
     --description-margin-inline: 0;
+  }
+
+  p {
+    margin-block-end: var(--gutter);
   }
 </style>

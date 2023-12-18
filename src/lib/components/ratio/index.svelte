@@ -79,11 +79,15 @@
     gap: var(--result-layout-gap, var(--double-gutter));
     grid-template:
       'contrastinfo' min-content
-      'status' min-content / 1fr;
+      'status' min-content
+      'contrastdefined' min-content
+      'knownissues' min-content / 1fr;
 
     @include config.between('sm-page-break', 'lg-page-break') {
       --result-layout-gap: var(--gutter-plus);
-      grid-template: 'contrastinfo status' auto / 1fr 1fr;
+      grid-template:
+        'contrastinfo status' auto
+        '... knownissues' auto / 1fr 1fr;
     }
 
     @include config.above('lg-page-break') {
