@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { inGamut, serialize, to } from 'colorjs.io/fn';
+  import { serialize, to } from 'colorjs.io/fn';
   import type { PlainColorObject } from 'colorjs.io/types/src/color';
 
   import SupportWarning from '$lib/components/colors/SupportWarning.svelte';
@@ -13,7 +13,6 @@
 
   $: targetSpace = getSpaceFromFormatId(format);
   $: targetColor = to(color, targetSpace);
-  $: isInGamut = inGamut(targetColor);
   $: targetColorValue = serialize(targetColor, {
     format,
     inGamut: false,
@@ -21,32 +20,21 @@
 </script>
 
 <ul data-group="output {type}">
-  <li>
+  <li data-testid={`format-${format}`}>
     <CopyButton text={targetColorValue} />
     <span data-color-info="value">{targetColorValue}</span>
     <SupportWarning {format} />
-    {#if !isInGamut}
-      <span data-color-info="warning"
-        >This color is outside the {targetColor.space.name} gamut.</span
-      >
-    {/if}
   </li>
 </ul>
 
 <style lang="scss">
+  [data-group~='output'] {
+    grid-column: 1 / -1;
+  }
+
   li {
     column-gap: 1ch;
     display: grid;
-    grid-template:
-      'copy color' auto
-      'copy message' 3ex / auto 1fr;
-  }
-
-  [data-color-info='value'] {
-    grid-area: color;
-  }
-
-  [data-color-info='warning'] {
-    grid-area: message;
+    grid-template-columns: auto 1fr;
   }
 </style>

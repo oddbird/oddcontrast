@@ -165,7 +165,7 @@
   }
 
   [data-label] {
-    --label-margin-bottom: var(--half-shim);
+    --label-margin-block-end: var(--half-shim);
     grid-area: label;
   }
 

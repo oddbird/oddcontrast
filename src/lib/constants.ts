@@ -24,6 +24,29 @@ export const FORMATS: ColorFormatId[] = [
   'srgb',
 ];
 
+export type FormatGroup = {
+  name: string;
+  formats: ColorFormatId[];
+  gamutFormat?: ColorFormatId;
+  gamutName?: string;
+};
+
+export const FORMAT_GROUPS: FormatGroup[] = [
+  {
+    name: 'sRGB FORMATS',
+    formats: ['hex', 'hsl', 'srgb'],
+    gamutFormat: 'srgb',
+    gamutName: 'sRGB',
+  },
+  { name: 'UNBOUNDED SPACES', formats: ['lab', 'lch', 'oklab', 'oklch'] },
+  {
+    name: 'DISPLAY P3 SPACE',
+    formats: ['p3'],
+    gamutFormat: 'p3',
+    gamutName: 'P3',
+  },
+];
+
 export const RATIOS = {
   AA: {
     Normal: 4.5,
