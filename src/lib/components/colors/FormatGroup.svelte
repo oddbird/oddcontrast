@@ -44,9 +44,6 @@
   [data-content~='format-group'] {
     --heading-transform: none;
 
-    column-gap: var(--gutter);
-    display: grid;
-    grid-template-columns: auto 1fr;
     margin-block-end: var(--double-gutter);
   }
 
