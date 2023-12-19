@@ -76,7 +76,7 @@
     background-color: var(--bgcolor);
     color: var(--fgcolor);
     display: grid;
-    gap: var(--result-layout-gap, var(--double-gutter));
+    gap: var(--result-layout-gap, var(--shim));
     grid-template:
       'contrastinfo' min-content
       'status' min-content

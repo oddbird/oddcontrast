@@ -33,6 +33,10 @@ dl {
   display: grid;
   grid-template-columns: auto 1fr;
   margin-block: var(--half-shim) var(--double-gutter);
+
+  &:last-child {
+    margin-block-end: 0;
+  }
 }
 
 dd {

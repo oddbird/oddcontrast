@@ -31,13 +31,40 @@
 <style lang="scss">
   .known-issues {
     grid-area: knownissues;
-    padding: var(--shim) var(--double-gutter);
+    margin-inline: calc(var(--gutter) * -1);
+    padding: var(--gutter);
+  }
+
+  summary {
+    align-items: center;
+    display: grid;
+    gap: var(--shim-plus);
+    grid-template-columns: max-content var(--triangle-height);
+    &::marker {
+      content: none;
+    }
+    &::before {
+      border-color: transparent transparent transparent currentColor;
+      border-style: solid;
+      border-width: var(--triangle-width) 0 var(--triangle-width)
+        var(--triangle-height);
+      content: '';
+      grid-column: 2;
+      grid-row: 1;
+      margin-top: var(--half-shim);
+      transform: rotate;
+    }
+  }
+
+  [open] summary::before {
+    transform: rotate(90deg);
   }
   .issues-list {
     display: grid;
-    gap: var(--gutter);
+    gap: var(--half-shim);
     grid-auto-rows: auto;
     grid-template-columns: 1fr;
+    margin-block-start: var(--gutter);
   }
 
   dt {
