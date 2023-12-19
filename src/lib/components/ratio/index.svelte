@@ -37,7 +37,7 @@
   </div>
 
   <div class="contrast-defined">
-    <h4 class="label">AA Contrast Ratio</h4>
+    <h3 class="label">AA Contrast Ratio</h3>
 
     <dl>
       <dt><strong>{RATIOS.AA.Normal}</strong> : 1</dt>
@@ -47,7 +47,7 @@
       <dd>Large Text</dd>
     </dl>
 
-    <h4 class="label">AAA Contrast Ratio</h4>
+    <h3 class="label">AAA Contrast Ratio</h3>
     <dl>
       <dt><strong>{RATIOS.AAA.Normal}</strong> : 1</dt>
       <dd>Normal Text</dd>
@@ -56,7 +56,7 @@
       <dd>Large Text</dd>
     </dl>
 
-    <h4 class="label">Large Text Size</h4>
+    <h3 class="label">Large Text Size</h3>
     <dl>
       <dt><strong>≥ 24px</strong></dt>
       <dd>Regular Weight</dd>
@@ -135,8 +135,11 @@
     align-items: start;
     display: inline-flex;
     grid-area: number;
-    justify-content: flex-end;
     line-height: 0.7; // weird number alignment
+
+    @include config.between('sm-column-break', 'lg-page-break') {
+      justify-content: flex-end;
+    }
   }
 
   .result-ratio-number {

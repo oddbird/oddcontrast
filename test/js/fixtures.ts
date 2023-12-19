@@ -18,3 +18,9 @@ export const HSL_BLACK: PlainColorObject = {
 };
 
 export const HSL_WHITE_SERIALIZED = serialize(HSL_WHITE, { inGamut: false });
+
+export const OUT_OF_BOUNDED_GAMUTS: PlainColorObject = {
+  space: ColorSpace.get('oklch'),
+  coords: [1, 1, 1],
+  alpha: 1,
+};

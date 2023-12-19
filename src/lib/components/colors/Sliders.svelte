@@ -103,7 +103,7 @@
   }
 
   [data-group~='sliders'] {
-    --label-margin-bottom: var(--half-shim);
+    --label-margin-block-end: var(--half-shim);
     margin-bottom: var(--triple-gutter);
   }
 
