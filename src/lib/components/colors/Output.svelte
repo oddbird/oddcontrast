@@ -33,7 +33,8 @@
   }
 
   li {
-    column-gap: 1ch;
+    align-items: center;
+    column-gap: 0.5ch;
     display: grid;
     grid-template-columns: auto 1fr;
   }
