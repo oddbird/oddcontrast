@@ -1,0 +1,42 @@
+// The Details disclosure element
+// ------------------------------
+
+details {
+  --link: var(--fgcolor);
+  --link-focus: var(--fgcolor);
+
+  background-color: var(--status-result-bg, var(--bgcolor));
+  border-radius: var(--border-radius);
+  color: var(--status-result-fg, var(--fgcolor));
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+
+  // Hides marker some browsers add
+  &::marker {
+    content: none;
+  }
+
+  // Hides marker webkit adds
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &::before {
+    border-color: transparent transparent transparent currentColor;
+    border-style: solid;
+    border-width: var(--triangle-width) 0 var(--triangle-width)
+    var(--triangle-height);
+    content: '';
+    grid-column: 2;
+    grid-row: 1;
+    transform: rotate(0deg);
+    transition: all 1s ease-out 100ms;
+
+    [open] & {
+      transform: rotate(90deg);
+    }
+  }
+}

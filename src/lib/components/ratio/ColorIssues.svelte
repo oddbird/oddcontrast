@@ -65,27 +65,6 @@
     display: grid;
     gap: var(--shim-plus);
     grid-template-columns: max-content var(--triangle-height);
-
-    &::marker {
-      content: none;
-    }
-
-    &::before {
-      border-color: transparent transparent transparent currentColor;
-      border-style: solid;
-      border-width: var(--triangle-width) 0 var(--triangle-width)
-        var(--triangle-height);
-      content: '';
-      grid-column: 2;
-      grid-row: 1;
-      margin-block-start: var(--half-shim);
-      transform: rotate(0);
-      transition: transform 150ms;
-    }
-  }
-
-  [open] summary::before {
-    transform: rotate(90deg);
   }
 
   .issues-list {

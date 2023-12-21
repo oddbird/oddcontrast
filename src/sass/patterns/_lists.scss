@@ -14,19 +14,6 @@ li {
   gap: var(--shim);
 }
 
-details {
-  --link: var(--fgcolor);
-  --link-focus: var(--fgcolor);
-
-  background-color: var(--status-result-bg, var(--bgcolor));
-  border-radius: var(--border-radius);
-  color: var(--status-result-fg, var(--fgcolor));
-}
-
-summary {
-  cursor: pointer;
-  font-weight: bold;
-}
 
 dl {
   display: grid;
