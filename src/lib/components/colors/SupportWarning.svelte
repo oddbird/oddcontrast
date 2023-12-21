@@ -30,3 +30,9 @@
     >
   </span>
 {/if}
+
+<style lang="scss">
+  [data-color-info~='warning'] {
+    grid-column: 1 / -1;
+  }
+</style>
