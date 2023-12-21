@@ -65,9 +65,11 @@
     display: grid;
     gap: var(--shim-plus);
     grid-template-columns: max-content var(--triangle-height);
+
     &::marker {
       content: none;
     }
+
     &::before {
       border-color: transparent transparent transparent currentColor;
       border-style: solid;
@@ -76,14 +78,16 @@
       content: '';
       grid-column: 2;
       grid-row: 1;
-      margin-top: var(--half-shim);
-      transform: rotate;
+      margin-block-start: var(--half-shim);
+      transform: rotate(0);
+      transition: transform 150ms;
     }
   }
 
   [open] summary::before {
     transform: rotate(90deg);
   }
+
   .issues-list {
     display: grid;
     gap: var(--half-shim);
@@ -95,6 +99,7 @@
   dt {
     font-weight: bold;
   }
+
   dd {
     --description-margin-inline: 0;
   }
