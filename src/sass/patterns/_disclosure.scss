@@ -25,10 +25,10 @@ summary {
   }
 
   &::before {
-    border-color: transparent transparent transparent currentColor;
+    border-color: transparent transparent transparent currentcolor;
     border-style: solid;
     border-width: var(--triangle-width) 0 var(--triangle-width)
-    var(--triangle-height);
+      var(--triangle-height);
     content: '';
     grid-column: 2;
     grid-row: 1;
