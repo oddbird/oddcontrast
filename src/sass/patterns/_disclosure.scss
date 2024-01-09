@@ -33,11 +33,11 @@ summary {
     grid-column: 2;
     grid-row: 1;
     margin-block-start: var(--half-shim);
-    transform: rotate(0deg);
-    transition: transform var(--fast);
+    rotate: var(--rotate-triangle, none);
+    transition: rotate var(--fast);
 
     [open] & {
-      transform: rotate(90deg);
+      --rotate-triangle: 90deg;
     }
   }
 }
