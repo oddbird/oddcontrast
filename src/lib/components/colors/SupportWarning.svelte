@@ -26,8 +26,8 @@
     <ExternalLink
       href="https://caniuse.com/css-lch-lab,mdn-css_types_color_hsl,mdn-css_types_color_hsla,mdn-css_types_color_oklab,mdn-css_types_color_oklch,css-color-function"
     >
-      not supported by your current browser.</ExternalLink
-    >
+      not supported by your current browser</ExternalLink
+    >.
   </span>
 {/if}
 

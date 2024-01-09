@@ -31,9 +31,9 @@ ColorSpace.register(REC_2020);
 export { ColorSpace };
 
 export const INITIAL_VALUES = {
-  format: 'oklch' as ColorFormatId,
-  bg_coord: [0.3259, 0.1333, 265.49] as [number, number, number],
-  fg_coord: [0.8241, 0.1061, 0.8587] as [number, number, number],
+  format: 'p3' as ColorFormatId,
+  bg_coord: [0.0967, 0.167, 0.4494] as [number, number, number],
+  fg_coord: [0.951, 0.675, 0.7569] as [number, number, number],
   alpha: 1,
 };
 

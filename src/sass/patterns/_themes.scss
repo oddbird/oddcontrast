@@ -5,6 +5,8 @@
 
 // If the ratio is too low, make sure important info has high enough contrast
 [data-pass='false'] {
+  --link: var(--status-result-fg);
+  --link-focus: var(--status-result-fg);
   --status-result-bg: var(--text);
   --status-result-fg: var(--bg);
 }

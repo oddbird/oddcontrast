@@ -11,15 +11,19 @@ li {
 [data-list='inline'] {
   align-items: center;
   display: flex;
-  gap: var(--gutter);
+  gap: var(--shim);
 }
 
 dl {
   display: grid;
   grid-template-columns: auto 1fr;
   margin-block: var(--half-shim) var(--double-gutter);
+
+  &:last-child {
+    margin-block-end: 0;
+  }
 }
 
 dd {
-  margin-inline-start: var(--gutter);
+  margin-inline-start: var(--description-margin-inline, var(--gutter));
 }

@@ -1,6 +1,7 @@
 <script lang="ts">
   import { contrast } from 'colorjs.io/fn';
 
+  import ColorIssues from '$lib/components/ratio/ColorIssues.svelte';
   import Result from '$lib/components/ratio/Result.svelte';
   import ExternalLink from '$lib/components/util/ExternalLink.svelte';
   import { RATIOS } from '$lib/constants';
@@ -8,7 +9,7 @@
 
   $: ratio = contrast($bg, $fg, 'WCAG21');
   $: displayRatio = Math.round((ratio + Number.EPSILON) * 100) / 100;
-  $: pass = ratio >= RATIOS.AA.Large;
+  $: pass = ratio >= RATIOS.AA.Normal;
 </script>
 
 <aside data-layout="results">
@@ -24,8 +25,8 @@
       In WCAG 2, contrast is a measure of the difference in perceived brightness
       between two colors, expressed as a ratio. <ExternalLink
         href="https://webaim.org/articles/contrast/#ratio"
-        >Learn more about contrast ratio requirements.</ExternalLink
-      >
+        >Learn more about contrast ratio requirements</ExternalLink
+      >.
     </p>
   </div>
 
@@ -65,6 +66,7 @@
       <dd>Bold Weight</dd>
     </dl>
   </div>
+  <ColorIssues {pass} />
 </aside>
 
 <style lang="scss">
@@ -74,14 +76,18 @@
     background-color: var(--bgcolor);
     color: var(--fgcolor);
     display: grid;
-    gap: var(--result-layout-gap, var(--double-gutter));
+    gap: var(--result-layout-gap, var(--shim));
     grid-template:
       'contrastinfo' min-content
-      'status' min-content / 1fr;
+      'status' min-content
+      'contrastdefined' min-content
+      'knownissues' min-content / 1fr;
 
     @include config.between('sm-page-break', 'lg-page-break') {
       --result-layout-gap: var(--gutter-plus);
-      grid-template: 'contrastinfo status' auto / 1fr 1fr;
+      grid-template:
+        'contrastinfo status' auto
+        '... knownissues' auto / 1fr 1fr;
     }
 
     @include config.above('lg-page-break') {
