@@ -54,10 +54,14 @@
 </details>
 
 <style lang="scss">
+  @use 'config';
   .known-issues {
     grid-area: knownissues;
-    margin-inline: calc(var(--gutter) * -1);
     padding: var(--gutter);
+
+    @include config.above('lg-page-break') {
+      margin-inline: calc(var(--gutter) * -1);
+    }
   }
 
   summary {
