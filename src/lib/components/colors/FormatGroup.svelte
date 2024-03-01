@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { inGamut } from 'colorjs.io/fn';
-  import type { PlainColorObject } from 'colorjs.io/types/src/color';
+  import { inGamut, type PlainColorObject } from 'colorjs.io/fn';
 
   import Output from '$lib/components/colors/Output.svelte';
   import type { FormatGroup } from '$lib/constants';

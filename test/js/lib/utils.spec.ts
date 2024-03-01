@@ -1,8 +1,7 @@
 // Color spaces setup happens in stores, imported here as side effect
 import '$lib/stores';
 
-import { serialize, to } from 'colorjs.io/fn';
-import type { PlainColorObject } from 'colorjs.io/types/src/color';
+import { type PlainColorObject, serialize, to } from 'colorjs.io/fn';
 
 import type { ColorFormatId } from '$lib/constants';
 import {

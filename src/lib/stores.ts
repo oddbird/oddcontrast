@@ -6,10 +6,10 @@ import {
   OKLab,
   OKLCH,
   P3,
+  type PlainColorObject,
   REC_2020,
   sRGB,
 } from 'colorjs.io/fn';
-import type { PlainColorObject } from 'colorjs.io/types/src/color';
 import { writable } from 'svelte/store';
 
 // eslint-disable-next-line import/no-unresolved

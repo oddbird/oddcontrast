@@ -1,7 +1,7 @@
 // Sass Tests
 // ==========
 
-@use 'true' as *;
+@use 'pkg:sass-true' as *;
 
 @include describe('fake test') {
   @include it('passes') {

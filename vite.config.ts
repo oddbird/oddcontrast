@@ -1,8 +1,8 @@
 /// <reference types="vitest" />
-/// <reference types="@sveltejs/kit/types" />
 
 import { sveltekit } from '@sveltejs/kit/vite';
 import path from 'path';
+import { NodePackageImporter } from 'sass';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
@@ -11,6 +11,7 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         includePaths: [path.resolve('./src/sass/')],
+        pkgImporter: new NodePackageImporter('.'),
       },
     },
   },

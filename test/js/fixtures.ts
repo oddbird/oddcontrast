@@ -1,5 +1,4 @@
-import { serialize } from 'colorjs.io/fn';
-import type { PlainColorObject } from 'colorjs.io/types/src/color';
+import { type PlainColorObject, serialize } from 'colorjs.io/fn';
 
 import { ColorSpace } from '$lib/stores';
 

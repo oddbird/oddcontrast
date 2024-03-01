@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { serialize, to } from 'colorjs.io/fn';
-  import type { PlainColorObject } from 'colorjs.io/types/src/color';
+  import { type PlainColorObject, serialize, to } from 'colorjs.io/fn';
   import type { Writable } from 'svelte/store';
 
   import CopyButton from '$lib/components/util/CopyButton.svelte';

@@ -3,6 +3,8 @@
   import debounce from 'lodash/debounce';
   import { onMount } from 'svelte';
 
+  // eslint-disable-next-line import/no-unresolved
+  import { replaceState } from '$app/navigation';
   import Colors from '$lib/components/colors/index.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import Header from '$lib/components/Header.svelte';
@@ -22,7 +24,7 @@
 
   function colorsToHash() {
     const hashString = storeValuesToHash($bg, $fg, $format);
-    history.replaceState('', '', `#${hashString}`);
+    replaceState(`#${hashString}`, {});
   }
 
   const debouncedColorsToHash = debounce(colorsToHash, 100);

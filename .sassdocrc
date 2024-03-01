@@ -18,7 +18,6 @@ herman:
     sassOptions:
       loadPaths:
         - 'src/sass'
-        - 'node_modules'
     use:
       - 'config'
 display:
