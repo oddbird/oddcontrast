@@ -1,5 +1,12 @@
-import { clone, display, serialize, set, steps, to } from 'colorjs.io/fn';
-import type { PlainColorObject } from 'colorjs.io/types/src/color';
+import {
+  clone,
+  display,
+  type PlainColorObject,
+  serialize,
+  set,
+  steps,
+  to,
+} from 'colorjs.io/fn';
 
 import type { ColorFormatId } from '$lib/constants';
 import { FORMATS } from '$lib/constants';

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { PlainColorObject } from 'colorjs.io/types/src/color';
+  import type { PlainColorObject } from 'colorjs.io/fn';
   import type { Writable } from 'svelte/store';
 
   import type { ColorFormatId } from '$lib/constants';

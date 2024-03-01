@@ -1,5 +1,4 @@
-import { ColorSpace } from 'colorjs.io/fn';
-import type { PlainColorObject } from 'colorjs.io/types/src/color';
+import { ColorSpace, PlainColorObject } from 'colorjs.io/fn';
 
 declare global {
   interface Window {

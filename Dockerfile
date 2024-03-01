@@ -1,4 +1,4 @@
-FROM node:18
+FROM node:20
 
 ARG BUILD_ENV=development
 WORKDIR /app
@@ -7,7 +7,7 @@ COPY ./package.json package.json
 COPY ./yarn.lock yarn.lock
 # Use local version of Yarn:
 COPY ./.yarnrc.yml .yarnrc.yml
-COPY ./.yarn/releases .yarn/releases
+RUN corepack enable
 RUN yarn install --immutable
 
 COPY . /app
