@@ -9,6 +9,7 @@
     "../.eslintrc.cjs",
     "../svelte.config.js",
     "../vite.config.ts",
+    "../vitest.config.ts",
     "../src/**/*.d.ts"
   ]
 }

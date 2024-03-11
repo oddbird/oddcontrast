@@ -40,7 +40,6 @@
 		"ambient.d.ts",
 		"non-ambient.d.ts",
 		"./types/**/$types.d.ts",
-		"../svelte.config.js",
 		"../vite.config.js",
 		"../vite.config.ts",
 		"../src/**/*.js",
@@ -51,6 +50,9 @@
 		"../tests/**/*.svelte"
 	],
 	"exclude": [
-		"../node_modules/**"
+		"../node_modules/**",
+		"../src/service-worker.js",
+		"../src/service-worker.ts",
+		"../src/service-worker.d.ts"
 	]
 }
