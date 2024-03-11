@@ -2,7 +2,7 @@
 .git/
 .vscode/
 .yarn/
-.yarnrc
+.yarnrc.yml
 /.svelte-kit
 /build
 /package
