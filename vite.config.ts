@@ -9,7 +9,7 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         includePaths: [path.resolve('./src/sass/')],
-        pkgImporter: new NodePackageImporter('.'),
+        pkgImporter: new NodePackageImporter(),
       },
     },
   },
