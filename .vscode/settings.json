@@ -11,6 +11,9 @@
     "typescript",
     "svelte"
   ],
+  "eslint.options": {
+    "extensions": [".js", ".cjs", ".svelte", ".ts", ".cts"]
+  },
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
