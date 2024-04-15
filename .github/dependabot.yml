@@ -16,9 +16,23 @@ updates:
       time: '04:00'
       timezone: America/New_York
     groups:
-      prod:
+      prod-major:
         dependency-type: production
-      dev:
+        update-types:
+          - 'major'
+      prod-minor:
+        dependency-type: production
+        update-types:
+          - 'minor'
+          - 'patch'
+      dev-major:
         dependency-type: development
+        update-types:
+          - 'major'
+      dev-minor:
+        dependency-type: development
+        update-types:
+          - 'minor'
+          - 'patch'
     ignore:
       - dependency-name: '@types/node'
