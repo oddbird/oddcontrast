@@ -1,4 +1,8 @@
-import { defineConfig, mergeConfig } from 'vitest/config';
+import {
+  coverageConfigDefaults,
+  defineConfig,
+  mergeConfig,
+} from 'vitest/config';
 
 import viteConfig from './vite.config.js';
 
@@ -24,6 +28,7 @@ export default mergeConfig(
           'src/**/*.d.ts',
           'src/routes/styleguide/**/*',
           'src/routes/+layout.*',
+          ...coverageConfigDefaults.exclude,
         ],
         all: true,
         skipFull: true,

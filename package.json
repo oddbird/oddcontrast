@@ -50,7 +50,7 @@
     "@types/node": "*",
     "@typescript-eslint/eslint-plugin": "^7.16.0",
     "@typescript-eslint/parser": "^7.16.0",
-    "@vitest/coverage-v8": "^2.0.2",
+    "@vitest/coverage-v8": "^2.0.3",
     "chokidar-cli": "^3.0.0",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
@@ -78,7 +78,7 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.5.3",
     "vite": "^5.3.3",
-    "vitest": "^2.0.2"
+    "vitest": "^2.0.3"
   },
   "packageManager": "yarn@4.3.1"
 }
