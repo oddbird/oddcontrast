@@ -1,8 +1,9 @@
-import path from 'path';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
 import { runSass } from 'sass-true';
-import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const sassFile = path.join(__dirname, 'test.scss');
 
-runSass({ describe, it }, sassFile);
+runSass({ describe, it, sass: 'sass-embedded' }, sassFile);

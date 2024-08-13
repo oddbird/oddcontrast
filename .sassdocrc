@@ -14,6 +14,7 @@ herman:
     - 'hsl'
   customCSS: './static/built/app.css'
   sass:
+    implementation: 'sass-embedded'
     jsonFile: './static/built/json.css'
     sassOptions:
       loadPaths:

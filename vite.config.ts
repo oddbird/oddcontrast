@@ -1,6 +1,7 @@
+import { fileURLToPath, URL } from 'node:url';
+
 import { sveltekit } from '@sveltejs/kit/vite';
-import path from 'path';
-import { NodePackageImporter } from 'sass';
+import { NodePackageImporter } from 'sass-embedded';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
@@ -8,8 +9,9 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        includePaths: [path.resolve('./src/sass/')],
-        pkgImporter: new NodePackageImporter(),
+        api: 'modern',
+        loadPaths: [fileURLToPath(new URL('./src/sass/', import.meta.url))],
+        importers: [new NodePackageImporter()],
       },
     },
   },
