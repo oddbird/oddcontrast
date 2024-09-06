@@ -29,6 +29,7 @@ jobs:
         with:
           name: built
           path: .svelte-kit
+          include-hidden-files: true
 
   test:
     name: Test
