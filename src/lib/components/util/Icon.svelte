@@ -14,7 +14,7 @@
   import Warning from '$lib/icons/Warning.svelte';
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const icons: { [key: string]: typeof SvelteComponent<any> } = {
+  const icons: Record<string, typeof SvelteComponent<any>> = {
     check: Check,
     clipboard: Clipboard,
     copy: Copy,

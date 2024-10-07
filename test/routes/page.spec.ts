@@ -1,5 +1,4 @@
-import type { RenderResult } from '@testing-library/svelte';
-import { render } from '@testing-library/svelte';
+import { render, type RenderResult } from '@testing-library/svelte';
 
 import Page from '$src/routes/+page.svelte';
 

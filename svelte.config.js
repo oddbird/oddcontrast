@@ -20,7 +20,7 @@ const config = {
   kit: {
     alias: {
       $src: 'src',
-      $test: 'test/js',
+      $test: 'test',
     },
     adapter: adapter(),
     env: {
