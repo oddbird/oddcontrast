@@ -8,10 +8,10 @@
 				"../src/*"
 			],
 			"$test": [
-				"../test/js"
+				"../test"
 			],
 			"$test/*": [
-				"../test/js/*"
+				"../test/*"
 			],
 			"$lib": [
 				"../src/lib"

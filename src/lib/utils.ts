@@ -8,8 +8,7 @@ import {
   to,
 } from 'colorjs.io/fn';
 
-import type { ColorFormatId } from '$lib/constants';
-import { FORMATS } from '$lib/constants';
+import { type ColorFormatId, FORMATS } from '$lib/constants';
 
 export const getSpaceFromFormatId = (formatId: ColorFormatId) =>
   formatId === 'hex' ? 'srgb' : formatId;

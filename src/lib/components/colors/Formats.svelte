@@ -2,11 +2,11 @@
   import type { PlainColorObject } from 'colorjs.io/fn';
 
   import FormatGroup from '$lib/components/colors/FormatGroup.svelte';
-  import type {
-    ColorFormatId,
-    FormatGroup as FormatGroupType,
+  import {
+    type ColorFormatId,
+    FORMAT_GROUPS,
+    type FormatGroup as FormatGroupType,
   } from '$lib/constants';
-  import { FORMAT_GROUPS } from '$lib/constants';
 
   export let type: 'bg' | 'fg';
   export let color: PlainColorObject;

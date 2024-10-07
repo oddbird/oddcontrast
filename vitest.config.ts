@@ -13,11 +13,11 @@ export default mergeConfig(
   viteConfig,
   defineConfig({
     test: {
-      include: ['./test/js/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+      include: ['./test/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
       globals: true,
       environment: 'jsdom',
       watch: false,
-      setupFiles: './test/js/setup.js',
+      setupFiles: './test/setup.ts',
       clearMocks: true,
       reporters: 'dot',
       coverage: {

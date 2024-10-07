@@ -36,6 +36,5 @@ updates:
           - 'patch'
     ignore:
       - dependency-name: '@types/node'
-      - dependency-name: 'eslint'
         update-types:
           - 'version-update:semver-major'

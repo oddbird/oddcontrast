@@ -6,7 +6,7 @@
   },
   "include": [
     "./**/*.ts",
-    "../.eslintrc.cjs",
+    "../eslint.config.js",
     "../svelte.config.js",
     "../vite.config.ts",
     "../vitest.config.ts",

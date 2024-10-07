@@ -2,8 +2,7 @@
   import type { PlainColorObject } from 'colorjs.io/fn';
   import type { Writable } from 'svelte/store';
 
-  import type { ColorFormatId } from '$lib/constants';
-  import { SLIDERS } from '$lib/constants';
+  import { type ColorFormatId, SLIDERS } from '$lib/constants';
   import { ColorSpace } from '$lib/stores';
   import { getSpaceFromFormatId, sliderGradient } from '$lib/utils';
 
@@ -15,7 +14,7 @@
   $: spaceObject = ColorSpace.get(targetSpace);
   $: sliders = SLIDERS[format].map((id) => {
     const coord = spaceObject.coords[id];
-    const range = coord?.range || coord?.refRange || [0, 1];
+    const range = coord?.range ?? coord?.refRange ?? [0, 1];
     const gradient = sliderGradient($color, id, range);
     return {
       id,

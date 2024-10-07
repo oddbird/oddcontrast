@@ -24,12 +24,12 @@ export const FORMATS: ColorFormatId[] = [
   'srgb',
 ];
 
-export type FormatGroup = {
+export interface FormatGroup {
   name: string;
   formats: ColorFormatId[];
   gamutFormat?: ColorFormatId;
   gamutName?: string;
-};
+}
 
 export const FORMAT_GROUPS: FormatGroup[] = [
   {
