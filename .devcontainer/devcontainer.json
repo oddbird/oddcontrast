@@ -31,45 +31,39 @@
         "terminal.integrated.defaultProfile.linux": "bash",
         "editor.bracketPairColorization.enabled": true,
         "editor.codeActionsOnSave": {
-          "source.fixAll.eslint": true
+          "source.fixAll": "explicit"
         },
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true,
+        "editor.insertSpaces": true,
+        "editor.rulers": [80],
         "editor.tabSize": 2,
+        "eslint.useFlatConfig": true,
         "eslint.validate": ["javascript", "typescript", "svelte"],
+        "eslint.workingDirectories": [{ "mode": "auto" }],
+        "files.eol": "\n",
         "files.insertFinalNewline": true,
         "files.trimFinalNewlines": true,
         "files.trimTrailingWhitespace": true,
-        "javascript.suggestionActions.enabled": false,
+        "prettier.documentSelectors": ["**/*.svg"],
         "remote.extensionKind": {
           "ms-azuretools.vscode-docker": "workspace"
         },
+        "scss.lint.unknownAtRules": "ignore",
+        "scss.validate": false,
+        "stylelint.validate": ["scss"],
         "svelte.enable-ts-plugin": true,
         "typescript.preferences.quoteStyle": "single",
         "typescript.tsdk": "node_modules/typescript/lib",
-        "[javascript]": {
-          "editor.rulers": [80]
-        },
-        "[restructuredtext]": {
-          "editor.rulers": [80]
-        },
-        "[markdown]": {
-          "editor.rulers": [80]
-        },
-        "[svelte]": {
-          "editor.defaultFormatter": "svelte.svelte-vscode",
-          "editor.rulers": [80]
-        },
-        "[typescript]": {
-          "editor.rulers": [80]
-        },
         "[html]": {
           "editor.formatOnSave": false
         },
+        "[svelte]": {
+          "editor.defaultFormatter": "svelte.svelte-vscode"
+        },
         "[scss]": {
-          "editor.rulers": [80],
           "editor.codeActionsOnSave": {
-            "source.fixAll.stylelint": true
+            "source.fixAll.stylelint": "explicit"
           }
         },
         "files.exclude": {
@@ -77,7 +71,6 @@
           "**/.DS_Store": true,
           ".coverage": true,
           "coverage": true,
-          "htmlcov": true,
           ".tags": true,
           ".cache": true,
           "collected-assets": true,

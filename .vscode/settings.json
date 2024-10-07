@@ -26,7 +26,7 @@
     "editor.formatOnSave": false
   },
   "[svelte]": {
-    "editor.defaultFormatter": "svelte.svelte-vscode",
+    "editor.defaultFormatter": "svelte.svelte-vscode"
   },
   "[scss]": {
     "editor.codeActionsOnSave": {
@@ -50,6 +50,10 @@
     "**/*.js.map": true,
     "yarn.lock": true,
     "yarn-debug.log": true,
-    "yarn-error.log": true
+    "yarn-error.log": true,
+    ".svelte-kit": true,
+    "static/built": true,
+    "static/styleguide": true,
+    ".yarn": true
   }
 }
