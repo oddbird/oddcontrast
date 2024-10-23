@@ -2,6 +2,10 @@ import { fireEvent, render, waitFor } from '@testing-library/svelte';
 
 import CopyButton from '$lib/components/util/CopyButton.svelte';
 
+function getFirstNonCommentChild(node: Node) {
+  return [...node.childNodes].find((x) => x.nodeType !== Node.COMMENT_NODE);
+}
+
 describe('Copy Button', () => {
   beforeEach(() => {
     vi.useFakeTimers();
@@ -17,7 +21,10 @@ describe('Copy Button', () => {
     });
     const button = getByRole('button');
 
-    expect(button.firstChild).toHaveAttribute('data-icon', 'clipboard');
+    expect(getFirstNonCommentChild(button)).toHaveAttribute(
+      'data-icon',
+      'clipboard',
+    );
   });
 
   it('copies content', async () => {
@@ -27,7 +34,10 @@ describe('Copy Button', () => {
     });
     const button = getByRole('button');
 
-    expect(button.firstChild).toHaveAttribute('data-icon', 'clipboard');
+    expect(getFirstNonCommentChild(button)).toHaveAttribute(
+      'data-icon',
+      'clipboard',
+    );
 
     await fireEvent.click(button);
 
@@ -40,15 +50,24 @@ describe('Copy Button', () => {
     });
     const button = getByRole('button');
 
-    expect(button.firstChild).toHaveAttribute('data-icon', 'clipboard');
+    expect(getFirstNonCommentChild(button)).toHaveAttribute(
+      'data-icon',
+      'clipboard',
+    );
 
     await fireEvent.click(button);
 
-    expect(button.firstChild).toHaveAttribute('data-icon', 'copy');
+    expect(getFirstNonCommentChild(button)).toHaveAttribute(
+      'data-icon',
+      'copy',
+    );
 
     vi.runAllTimers();
     await waitFor(() => {
-      expect(button.firstChild).toHaveAttribute('data-icon', 'clipboard');
+      expect(getFirstNonCommentChild(button)).toHaveAttribute(
+        'data-icon',
+        'clipboard',
+      );
     });
   });
 });

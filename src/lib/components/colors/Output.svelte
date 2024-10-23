@@ -6,16 +6,22 @@
   import type { ColorFormatId } from '$lib/constants';
   import { getSpaceFromFormatId } from '$lib/utils';
 
-  export let type: 'bg' | 'fg';
-  export let color: PlainColorObject;
-  export let format: ColorFormatId;
+  interface Props {
+    type: 'bg' | 'fg';
+    color: PlainColorObject;
+    format: ColorFormatId;
+  }
 
-  $: targetSpace = getSpaceFromFormatId(format);
-  $: targetColor = to(color, targetSpace);
-  $: targetColorValue = serialize(targetColor, {
-    format,
-    inGamut: false,
-  });
+  let { type, color, format }: Props = $props();
+
+  let targetSpace = $derived(getSpaceFromFormatId(format));
+  let targetColor = $derived(to(color, targetSpace));
+  let targetColorValue = $derived(
+    serialize(targetColor, {
+      format,
+      inGamut: false,
+    }),
+  );
 </script>
 
 <ul data-group="output {type}">

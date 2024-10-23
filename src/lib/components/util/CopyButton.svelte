@@ -1,10 +1,14 @@
 <script lang="ts">
   import Icon from '$lib/components/util/Icon.svelte';
 
-  export let text: string;
-  export let size: string | null = null;
+  interface Props {
+    text: string;
+    size?: string | null;
+  }
 
-  let justCopied = false;
+  let { text, size = null }: Props = $props();
+
+  let justCopied = $state(false);
   let timeout: ReturnType<typeof setTimeout>;
 
   const copyOutput = () => {
@@ -17,7 +21,7 @@
   };
 </script>
 
-<button on:click={copyOutput} type="button" data-btn="icon">
+<button onclick={copyOutput} type="button" data-btn="icon">
   {#if !justCopied}
     <Icon name="clipboard" {size} />
     <span class="sr-only">Click to copy</span>

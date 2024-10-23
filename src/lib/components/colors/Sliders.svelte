@@ -6,31 +6,39 @@
   import { ColorSpace } from '$lib/stores';
   import { getSpaceFromFormatId, sliderGradient } from '$lib/utils';
 
-  export let type: 'bg' | 'fg';
-  export let color: Writable<PlainColorObject>;
-  export let format: ColorFormatId;
+  interface Props {
+    type: 'bg' | 'fg';
+    color: Writable<PlainColorObject>;
+    format: ColorFormatId;
+  }
 
-  $: targetSpace = getSpaceFromFormatId(format);
-  $: spaceObject = ColorSpace.get(targetSpace);
-  $: sliders = SLIDERS[format].map((id) => {
-    const coord = spaceObject.coords[id];
-    const range = coord?.range ?? coord?.refRange ?? [0, 1];
-    const gradient = sliderGradient($color, id, range);
-    return {
-      id,
-      name: coord?.name ?? '',
-      range,
-      index: Number(
-        ColorSpace.resolveCoord({
-          space: spaceObject,
-          coordId: id,
-        }).index,
-      ),
-      gradient,
-    };
-  });
+  let { type, color, format }: Props = $props();
 
-  $: alphaGradient = sliderGradient($color, 'alpha', [0, $color.alpha]);
+  let targetSpace = $derived(getSpaceFromFormatId(format));
+  let spaceObject = $derived(ColorSpace.get(targetSpace));
+  let sliders = $derived(
+    SLIDERS[format].map((id) => {
+      const coord = spaceObject.coords[id];
+      const range = coord?.range ?? coord?.refRange ?? [0, 1];
+      const gradient = sliderGradient($color, id, range);
+      return {
+        id,
+        name: coord?.name ?? '',
+        range,
+        index: Number(
+          ColorSpace.resolveCoord({
+            space: spaceObject,
+            coordId: id,
+          }).index,
+        ),
+        gradient,
+      };
+    }),
+  );
+
+  let alphaGradient = $derived(
+    sliderGradient($color, 'alpha', [0, $color.alpha]),
+  );
 
   const handleInput = (
     e: Event & { currentTarget: EventTarget & HTMLInputElement },
@@ -72,7 +80,7 @@
           step={getStep(slider.range)}
           style={`--stops: ${slider.gradient}`}
           value={$color.coords[slider.index]}
-          on:input={(e) => handleInput(e, slider.index)}
+          oninput={(e) => handleInput(e, slider.index)}
         />
       </div>
     {/each}
@@ -87,7 +95,7 @@
         step={getStep([0, 1])}
         style={`--stops: ${alphaGradient}`}
         value={$color.alpha}
-        on:input={(e) => handleInput(e)}
+        oninput={(e) => handleInput(e)}
       />
     </div>
   </form>

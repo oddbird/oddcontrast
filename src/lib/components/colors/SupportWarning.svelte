@@ -6,18 +6,24 @@
   import { ColorSpace } from '$lib/stores';
   import { getSpaceFromFormatId } from '$lib/utils';
 
-  export let format: ColorFormatId;
+  interface Props {
+    format: ColorFormatId;
+  }
 
-  $: targetSpace = getSpaceFromFormatId(format);
-  $: spaceObject = ColorSpace.get(targetSpace);
-  $: fallbackColor = display(
-    {
-      space: spaceObject,
-      coords: spaceObject.white,
-    },
-    { inGamut: false },
-  ).color;
-  $: isSupported = fallbackColor.space.id === targetSpace;
+  let { format }: Props = $props();
+
+  let targetSpace = $derived(getSpaceFromFormatId(format));
+  let spaceObject = $derived(ColorSpace.get(targetSpace));
+  let fallbackColor = $derived(
+    display(
+      {
+        space: spaceObject,
+        coords: spaceObject.white,
+      },
+      { inGamut: false },
+    ).color,
+  );
+  let isSupported = $derived(fallbackColor.space.id === targetSpace);
 </script>
 
 {#if !isSupported}

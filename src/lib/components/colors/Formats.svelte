@@ -8,9 +8,13 @@
     type FormatGroup as FormatGroupType,
   } from '$lib/constants';
 
-  export let type: 'bg' | 'fg';
-  export let color: PlainColorObject;
-  export let format: ColorFormatId;
+  interface Props {
+    type: 'bg' | 'fg';
+    color: PlainColorObject;
+    format: ColorFormatId;
+  }
+
+  let { type, color, format }: Props = $props();
 
   function otherFormatGroups(
     selectedFormat: ColorFormatId,
@@ -25,8 +29,8 @@
     return otherFormats;
   }
 
-  $: displayType = type === 'bg' ? 'Background' : 'Foreground';
-  $: otherFormats = otherFormatGroups(format);
+  let displayType = $derived(type === 'bg' ? 'Background' : 'Foreground');
+  let otherFormats = $derived(otherFormatGroups(format));
 </script>
 
 <div data-content="formats" data-column="tool">

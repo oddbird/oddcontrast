@@ -3,9 +3,13 @@
 
   import ExternalLink from '$lib/components/util/ExternalLink.svelte';
 
-  export let pass: boolean;
+  interface Props {
+    pass: boolean;
+  }
 
-  let startOpen = false;
+  let { pass }: Props = $props();
+
+  let startOpen = $state(false);
   onMount(() => {
     startOpen = window.matchMedia('(min-width: 80em)').matches;
   });
