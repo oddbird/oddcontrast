@@ -30,7 +30,6 @@ export default [
       'static/built/*',
       'static/styleguide/*',
       'yarn.lock',
-      'vite.config.ts.timestamp*',
     ],
   },
   js.configs.recommended,

@@ -43,7 +43,7 @@
     "@sveltejs/kit": "^2.7.2",
     "@sveltejs/vite-plugin-svelte": "^4.0.0",
     "@testing-library/jest-dom": "^6.5.0",
-    "@testing-library/svelte": "^5.2.3",
+    "@testing-library/svelte": "^5.2.4",
     "@types/eslint-config-prettier": "^6.11.3",
     "@types/eslint__js": "^8.42.3",
     "@types/lodash": "^4.17.10",

@@ -34,10 +34,10 @@
 
   let { name, size = null }: Props = $props();
 
-  const SvelteComponent_1 = $derived(icons[name] ?? null);
+  const IconComponent = $derived(icons[name] ?? null);
 </script>
 
-<SvelteComponent_1
+<IconComponent
   data-icon={name}
   data-icon-size={size}
   aria-hidden="true"

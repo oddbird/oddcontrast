@@ -788,9 +788,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/svelte@npm:^5.2.3":
-  version: 5.2.3
-  resolution: "@testing-library/svelte@npm:5.2.3"
+"@testing-library/svelte@npm:^5.2.4":
+  version: 5.2.4
+  resolution: "@testing-library/svelte@npm:5.2.4"
   dependencies:
     "@testing-library/dom": "npm:^10.0.0"
   peerDependencies:
@@ -802,7 +802,7 @@ __metadata:
       optional: true
     vitest:
       optional: true
-  checksum: 10/db39a364f2d5f9cfa3c0479f2ef91da58b73599e884aeedd6059401c5f519878d37398bf14786b29cee201e8ff9c4536f24118f12274f38fbd83c788ba9c610e
+  checksum: 10/b2c2c7d3dcfcc271ffcc8c74b41fb32cce934d73ff13326c12ad9c352ab3a73b9e6b38465f56f9fab1d9836cded33fd6deff4071dbd0a81fd2827cf7c9703be9
   languageName: node
   linkType: hard
 
@@ -5955,7 +5955,7 @@ __metadata:
     "@sveltejs/kit": "npm:^2.7.2"
     "@sveltejs/vite-plugin-svelte": "npm:^4.0.0"
     "@testing-library/jest-dom": "npm:^6.5.0"
-    "@testing-library/svelte": "npm:^5.2.3"
+    "@testing-library/svelte": "npm:^5.2.4"
     "@types/eslint-config-prettier": "npm:^6.11.3"
     "@types/eslint__js": "npm:^8.42.3"
     "@types/lodash": "npm:^4.17.10"
