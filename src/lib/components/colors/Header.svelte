@@ -1,26 +1,32 @@
 <script lang="ts">
   import { type PlainColorObject, serialize, to } from 'colorjs.io/fn';
-  import type { Writable } from 'svelte/store';
+  import { type Writable } from 'svelte/store';
 
   import CopyButton from '$lib/components/util/CopyButton.svelte';
   import type { ColorFormatId } from '$lib/constants';
   import { getSpaceFromFormatId } from '$lib/utils';
 
-  export let type: 'bg' | 'fg';
-  export let color: Writable<PlainColorObject>;
-  export let format: ColorFormatId;
+  interface Props {
+    type: 'bg' | 'fg';
+    color: Writable<PlainColorObject>;
+    format: ColorFormatId;
+  }
 
-  $: targetSpace = getSpaceFromFormatId(format);
-  $: display = serialize($color, { inGamut: false, format });
-  $: displayType = type === 'bg' ? 'Background' : 'Foreground';
-  let editing = false;
-  let inputValue = '';
-  let hasError = false;
+  let { type, color, format }: Props = $props();
+
+  let targetSpace = $derived(getSpaceFromFormatId(format));
+  let display = $derived(serialize($color, { inGamut: false, format }));
+  let displayType = $derived(type === 'bg' ? 'Background' : 'Foreground');
+  let editing = $state(false);
+  let inputValue = $state('');
+  let hasError = $state(false);
 
   // When not editing, sync input value with color (e.g. when sliders change)
-  $: if (!editing) {
-    inputValue = display;
-  }
+  $effect(() => {
+    if (!editing) {
+      inputValue = display;
+    }
+  });
 
   const handleFocus = () => {
     editing = true;
@@ -71,7 +77,7 @@
   data-column="tool"
   data-needs-changes={hasError}
 >
-  <div class="swatch {type}" />
+  <div class="swatch {type}"></div>
   <label for="{type}-color" data-label>
     {displayType} Color
   </label>
@@ -81,10 +87,10 @@
     type="text"
     data-input="color"
     value={inputValue}
-    on:focus={handleFocus}
-    on:blur={handleBlur}
-    on:input={handleInput}
-    on:keydown={handleKeydown}
+    onfocus={handleFocus}
+    onblur={handleBlur}
+    oninput={handleInput}
+    onkeydown={handleKeydown}
   />
   <CopyButton text={display} size="medium" />
   {#if hasError}

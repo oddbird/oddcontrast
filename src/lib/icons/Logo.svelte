@@ -1,8 +1,13 @@
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 417.82 51.3"
-  {...$$restProps}
->
+<script lang="ts">
+  // eslint-disable-next-line @typescript-eslint/consistent-indexed-object-style
+  interface Props {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    [key: string]: any;
+  }
+  let { ...rest }: Props = $props();
+</script>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 417.82 51.3" {...rest}>
   <g id="oddcontrast-logo">
     <path
       id="logo-t2"

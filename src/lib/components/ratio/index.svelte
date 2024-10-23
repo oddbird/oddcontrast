@@ -7,9 +7,9 @@
   import { RATIOS } from '$lib/constants';
   import { bg, fg } from '$lib/stores';
 
-  $: ratio = contrast($bg, $fg, 'WCAG21');
-  $: displayRatio = Math.round((ratio + Number.EPSILON) * 100) / 100;
-  $: pass = ratio >= RATIOS.AA.Normal;
+  let ratio = $derived(contrast($bg, $fg, 'WCAG21'));
+  let displayRatio = $derived(Math.round((ratio + Number.EPSILON) * 100) / 100);
+  let pass = $derived(ratio >= RATIOS.AA.Normal);
 </script>
 
 <aside data-layout="results">

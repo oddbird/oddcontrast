@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { SvelteComponent } from 'svelte';
+  import type { Component } from 'svelte';
 
   import Check from '$lib/icons/Check.svelte';
   import Clipboard from '$lib/icons/Clipboard.svelte';
@@ -13,8 +13,7 @@
   import Twitter from '$lib/icons/Twitter.svelte';
   import Warning from '$lib/icons/Warning.svelte';
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const icons: Record<string, typeof SvelteComponent<any>> = {
+  const icons: Record<string, Component> = {
     check: Check,
     clipboard: Clipboard,
     copy: Copy,
@@ -28,12 +27,17 @@
     mastodon: Mastodon,
   };
 
-  export let name: string;
-  export let size: string | null = null;
+  interface Props {
+    name: string;
+    size?: string | null;
+  }
+
+  let { name, size = null }: Props = $props();
+
+  const SvelteComponent_1 = $derived(icons[name] ?? null);
 </script>
 
-<svelte:component
-  this={icons[name] ?? null}
+<SvelteComponent_1
   data-icon={name}
   data-icon-size={size}
   aria-hidden="true"

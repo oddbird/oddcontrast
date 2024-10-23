@@ -12,8 +12,8 @@
   import { bg, fg, format } from '$lib/stores';
   import { hashToStoreValues, storeValuesToHash } from '$src/lib/utils';
 
-  $: bg_fallback = display($bg);
-  $: fg_fallback = display($fg);
+  let bg_fallback = $derived(display($bg));
+  let fg_fallback = $derived(display($fg));
 
   onMount(() => {
     hashToColors();

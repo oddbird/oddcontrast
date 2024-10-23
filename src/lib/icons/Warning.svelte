@@ -1,9 +1,18 @@
+<script lang="ts">
+  // eslint-disable-next-line @typescript-eslint/consistent-indexed-object-style
+  interface Props {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    [key: string]: any;
+  }
+  let { ...rest }: Props = $props();
+</script>
+
 <svg
   xmlns="http://www.w3.org/2000/svg"
   width="26"
   height="22.76"
   viewBox="0 0 26 22.76"
-  {...$$restProps}
+  {...rest}
 >
   <path
     id="warning"
