@@ -50,6 +50,7 @@ jobs:
       - name: Test
         run: |
           yarn install --immutable
+          yarn sync
           yarn test
 
   lint:
@@ -71,4 +72,5 @@ jobs:
       - name: Lint
         run: |
           yarn install --immutable
+          yarn sync
           yarn lint:ci
