@@ -1,23 +1,19 @@
 <script lang="ts">
   import { to } from 'colorjs.io/fn';
-  import { run } from 'svelte/legacy';
 
   import { FORMATS } from '$lib/constants';
   import { bg, ColorSpace, fg, format } from '$lib/stores';
   import { getSpaceFromFormatId } from '$lib/utils';
 
-  let spaces: ColorSpace[] = $state([]);
-
-  run(() => {
-    spaces = FORMATS.map((s) => {
-      if (s === 'hex') return { id: 'hex', name: 'Hex' } as ColorSpace;
-      return ColorSpace.get(s);
-    });
+  let spaces: ColorSpace[] = FORMATS.map((s) => {
+    if (s === 'hex') return { id: 'hex', name: 'Hex' } as ColorSpace;
+    return ColorSpace.get(s);
   });
-  let targetSpace = $derived(getSpaceFromFormatId($format));
 
   // Update color formats when space selection changes
-  run(() => {
+  // Use $effect.pre to change colors before the $format update is applied.
+  $effect.pre(() => {
+    let targetSpace = getSpaceFromFormatId($format);
     if ($bg.space.id !== targetSpace) {
       $bg = to($bg, targetSpace, { inGamut: true });
     }
