@@ -46,6 +46,8 @@
           // If it's possibly hex without a hash, add a hash and try again.
           if ([3, 4, 6, 8].includes(value.length)) {
             newColor = to(`#${value}`, targetSpace, { inGamut: true });
+          } else {
+            throw error;
           }
           // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (errorWithHash) {
