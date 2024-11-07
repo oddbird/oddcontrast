@@ -10,13 +10,13 @@
 
 <SupportWarning format={$format} />
 
-<div data-form="contrast-checker" data-layout="color-form">
+<form data-form="contrast-checker" data-layout="color-form">
   <Header type="bg" color={bg} format={$format} />
   <Sliders type="bg" color={bg} format={$format} />
 
   <Header type="fg" color={fg} format={$format} />
   <Sliders type="fg" color={fg} format={$format} />
-</div>
+</form>
 
 <div data-layout="split">
   <Formats type="bg" color={$bg} format={$format} />

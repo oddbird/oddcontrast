@@ -67,38 +67,36 @@
 </script>
 
 <div data-actions="edit-color" data-group="sliders {type}">
-  <form>
-    {#each sliders as slider (slider.id)}
-      <div data-field="color-slider">
-        <label for="{type}_{slider.id}" data-label>{slider.name}</label>
-        <input
-          id="{type}_{slider.id}"
-          name="{type}_{slider.id}"
-          type="range"
-          min={slider.range[0]}
-          max={slider.range[1]}
-          step={getStep(slider.range)}
-          style={`--stops: ${slider.gradient}`}
-          value={$color.coords[slider.index]}
-          oninput={(e) => handleInput(e, slider.index)}
-        />
-      </div>
-    {/each}
+  {#each sliders as slider (slider.id)}
     <div data-field="color-slider">
-      <label for="{type}_alpha" data-label>Alpha</label>
+      <label for="{type}_{slider.id}" data-label>{slider.name}</label>
       <input
-        id="{type}_alpha"
-        name="{type}_alpha"
+        id="{type}_{slider.id}"
+        name="{type}_{slider.id}"
         type="range"
-        min={0}
-        max={1}
-        step={getStep([0, 1])}
-        style={`--stops: ${alphaGradient}`}
-        value={$color.alpha}
-        oninput={(e) => handleInput(e)}
+        min={slider.range[0]}
+        max={slider.range[1]}
+        step={getStep(slider.range)}
+        style={`--stops: ${slider.gradient}`}
+        value={$color.coords[slider.index]}
+        oninput={(e) => handleInput(e, slider.index)}
       />
     </div>
-  </form>
+  {/each}
+  <div data-field="color-slider">
+    <label for="{type}_alpha" data-label>Alpha</label>
+    <input
+      id="{type}_alpha"
+      name="{type}_alpha"
+      type="range"
+      min={0}
+      max={1}
+      step={getStep([0, 1])}
+      style={`--stops: ${alphaGradient}`}
+      value={$color.alpha}
+      oninput={(e) => handleInput(e)}
+    />
+  </div>
 </div>
 
 <style lang="scss">
