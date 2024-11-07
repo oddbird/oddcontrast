@@ -48,8 +48,19 @@
       try {
         newColor = to(value, targetSpace, { inGamut: true });
       } catch (error) {
-        hasError = true;
-        console.error(error);
+        try {
+          // If it's possibly hex without a hash, add a hash and try again.
+          if ([3, 4, 6, 8].includes(value.length)) {
+            newColor = to(`#${value}`, targetSpace, { inGamut: true });
+          } else {
+            throw error;
+          }
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        } catch (errorWithHash) {
+          hasError = true;
+          // Log original error
+          console.error(error);
+        }
       }
       if (newColor) {
         $color = newColor;
