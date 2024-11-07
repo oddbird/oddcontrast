@@ -23,6 +23,40 @@ describe('Header', () => {
     expect(actual.coords).toEqual([0, 100, 50]);
   });
 
+  it('handles hex with a preceding hash', async () => {
+    const color = writable(HSL_WHITE);
+    const { getByLabelText } = render(Header, {
+      type: 'bg',
+      color,
+      format: 'hsl',
+    });
+    const input = getByLabelText('Background Color');
+    await fireEvent.focus(input);
+    await fireEvent.input(input, { target: { value: '#f00' } });
+    await fireEvent.blur(input);
+    const actual = get(color);
+
+    expect(actual.space).toEqual(HSL);
+    expect(actual.coords).toEqual([0, 100, 50]);
+  });
+
+  it('handles hex without a preceding hash', async () => {
+    const color = writable(HSL_WHITE);
+    const { getByLabelText } = render(Header, {
+      type: 'bg',
+      color,
+      format: 'hsl',
+    });
+    const input = getByLabelText('Background Color');
+    await fireEvent.focus(input);
+    await fireEvent.input(input, { target: { value: 'f00' } });
+    await fireEvent.blur(input);
+    const actual = get(color);
+
+    expect(actual.space).toEqual(HSL);
+    expect(actual.coords).toEqual([0, 100, 50]);
+  });
+
   it('shows error on invalid color', async () => {
     vi.spyOn(console, 'error').mockImplementation(() => {
       /* do nothing */
