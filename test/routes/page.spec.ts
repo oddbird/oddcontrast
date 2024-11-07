@@ -3,7 +3,7 @@ import { render, type RenderResult } from '@testing-library/svelte';
 import Page from '$src/routes/+page.svelte';
 
 interface TestContext {
-  result: RenderResult<Page>;
+  result: RenderResult<typeof Page>;
 }
 
 describe('Page', () => {
