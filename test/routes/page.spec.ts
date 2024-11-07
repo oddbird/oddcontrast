@@ -8,6 +8,7 @@ interface TestContext {
 
 describe('Page', () => {
   beforeEach<TestContext>((context) => {
+    vi.useFakeTimers();
     context.result = render(Page);
   });
 

@@ -1,5 +1,4 @@
 import { svelteTesting } from '@testing-library/svelte/vite';
-import type { PluginOption } from 'vite';
 import {
   coverageConfigDefaults,
   defineConfig,
@@ -8,24 +7,13 @@ import {
 
 import viteConfig from './vite.config.js';
 
-// Run tests in browser environment
-// https://github.com/testing-library/svelte-testing-library/issues/222
-const vitestBrowserConditionPlugin: PluginOption = {
-  name: 'vite-plugin-vitest-browser-condition',
-  config({ resolve }) {
-    if (process.env.VITEST) {
-      resolve?.conditions?.unshift('browser');
-    }
-  },
-};
-
 /**
  * @see https://vitest.dev/config/#configuration
  */
 export default mergeConfig(
   viteConfig,
   defineConfig({
-    plugins: [vitestBrowserConditionPlugin, svelteTesting()],
+    plugins: [svelteTesting()],
     test: {
       include: ['./test/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
       globals: true,
