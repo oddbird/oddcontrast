@@ -5,23 +5,22 @@
   import { bg, ColorSpace, fg, format } from '$lib/stores';
   import { getSpaceFromFormatId } from '$lib/utils';
 
-  let spaces: ColorSpace[] = [];
-
-  $: spaces = FORMATS.map((s) => {
+  let spaces: ColorSpace[] = FORMATS.map((s) => {
     if (s === 'hex') return { id: 'hex', name: 'Hex' } as ColorSpace;
     return ColorSpace.get(s);
   });
-  $: targetSpace = getSpaceFromFormatId($format);
 
   // Update color formats when space selection changes
-  $: {
+  // Use $effect.pre to change colors before the $format update is applied.
+  $effect.pre(() => {
+    let targetSpace = getSpaceFromFormatId($format);
     if ($bg.space.id !== targetSpace) {
       $bg = to($bg, targetSpace, { inGamut: true });
     }
     if ($fg.space.id !== targetSpace) {
       $fg = to($fg, targetSpace, { inGamut: true });
     }
-  }
+  });
 </script>
 
 <div data-field="color-format">

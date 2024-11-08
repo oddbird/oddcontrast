@@ -2,11 +2,15 @@
   import Icon from '$lib/components/util/Icon.svelte';
   import { RATIOS } from '$lib/constants';
 
-  export let level: 'AA' | 'AAA';
-  export let type: 'Normal' | 'Large';
-  export let ratio: number;
+  interface Props {
+    level: 'AA' | 'AAA';
+    type: 'Normal' | 'Large';
+    ratio: number;
+  }
 
-  $: pass = ratio >= RATIOS[level][type];
+  let { level, type, ratio }: Props = $props();
+
+  let pass = $derived(ratio >= RATIOS[level][type]);
 </script>
 
 <div data-pass={pass}>

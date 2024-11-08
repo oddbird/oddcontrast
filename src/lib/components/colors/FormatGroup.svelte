@@ -8,9 +8,13 @@
 
   import ExternalLink from '../util/ExternalLink.svelte';
 
-  export let type: 'bg' | 'fg';
-  export let color: PlainColorObject;
-  export let formatGroup: FormatGroup;
+  interface Props {
+    type: 'bg' | 'fg';
+    color: PlainColorObject;
+    formatGroup: FormatGroup;
+  }
+
+  let { type, color, formatGroup }: Props = $props();
 
   function inGamutForSpace(color: PlainColorObject) {
     if (!formatGroup.gamutFormat) return true;
@@ -19,7 +23,7 @@
     );
     return inGamut(color, gamutSpace);
   }
-  $: isInGamut = inGamutForSpace(color);
+  let isInGamut = $derived(inGamutForSpace(color));
 </script>
 
 <div data-content="format-group">

@@ -1,9 +1,16 @@
-<script>
+<script lang="ts">
   // Import global styles
   import '$src/sass/app.scss';
 
+  import type { Snippet } from 'svelte';
+
   // eslint-disable-next-line import/no-unresolved
   import { CONTEXT } from '$env/static/public';
+
+  interface Props {
+    children: Snippet;
+  }
+  let { children }: Props = $props();
 </script>
 
 <svelte:head>
@@ -18,4 +25,4 @@
   {/if}
 </svelte:head>
 
-<slot />
+{@render children()}

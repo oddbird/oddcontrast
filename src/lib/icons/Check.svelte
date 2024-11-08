@@ -1,9 +1,13 @@
+<script lang="ts">
+  let props = $props();
+</script>
+
 <svg
   xmlns="http://www.w3.org/2000/svg"
   width="39"
   height="27.81"
   viewBox="0 0 39 27.81"
-  {...$$restProps}
+  {...props}
 >
   <path
     id="check"

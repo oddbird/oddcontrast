@@ -2,7 +2,7 @@ type ColorSpaceId = 'hsl' | 'lab' | 'lch' | 'oklab' | 'oklch' | 'p3' | 'srgb';
 
 export type ColorFormatId = ColorSpaceId | 'hex';
 
-export const SLIDERS: { [key in ColorFormatId]: string[] } = {
+export const SLIDERS: Record<ColorFormatId, string[]> = {
   hex: ['r', 'g', 'b'],
   hsl: ['h', 's', 'l'],
   lab: ['l', 'a', 'b'],

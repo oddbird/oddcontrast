@@ -1,8 +1,12 @@
+<script lang="ts">
+  let props = $props();
+</script>
+
 <svg
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 24.12 24.12"
   data-icon-theme="success"
-  {...$$restProps}
+  {...props}
 >
   <path
     id="checkmark"
