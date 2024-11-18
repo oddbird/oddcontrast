@@ -38,7 +38,7 @@
     "colorjs.io": "^0.5.2"
   },
   "devDependencies": {
-    "@eslint/js": "^9.15.0",
+    "@eslint/js": "9.14.0",
     "@sveltejs/adapter-auto": "^3.3.1",
     "@sveltejs/kit": "^2.8.1",
     "@sveltejs/vite-plugin-svelte": "^4.0.1",
@@ -54,7 +54,7 @@
     "@vitest/coverage-v8": "^2.1.5",
     "@vitest/eslint-plugin": "^1.1.10",
     "chokidar-cli": "^3.0.0",
-    "eslint": "^9.15.0",
+    "eslint": "9.14.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-import-resolver-typescript": "^3.6.3",
     "eslint-plugin-import": "^2.31.0",
@@ -72,7 +72,7 @@
     "sassdoc-theme-herman": "^6.0.2",
     "stylelint": "^16.10.0",
     "stylelint-config-standard-scss": "^13.1.0",
-    "svelte": "^5.2.2",
+    "svelte": "^5.2.3",
     "svelte-check": "^4.0.9",
     "svelte-eslint-parser": "^0.43.0",
     "typescript": "^5.6.3",
