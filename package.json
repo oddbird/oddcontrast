@@ -40,7 +40,7 @@
   "devDependencies": {
     "@eslint/js": "9.14.0",
     "@sveltejs/adapter-auto": "^3.3.1",
-    "@sveltejs/kit": "^2.8.1",
+    "@sveltejs/kit": "^2.8.3",
     "@sveltejs/vite-plugin-svelte": "^4.0.1",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/svelte": "^5.2.4",
