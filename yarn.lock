@@ -347,7 +347,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/js@npm:9.15.0":
+"@eslint/js@npm:9.15.0, @eslint/js@npm:^9.15.0":
   version: 9.15.0
   resolution: "@eslint/js@npm:9.15.0"
   checksum: 10/cdea71574a8be164147f426ffa5eca05a9c7fbfbae98387ed0cf772292fc9fb5ded69ce96eac110aaa633f6b7504ec551e1d33f2d6690ae95b11ec395553bae1
@@ -3145,7 +3145,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:9.15.0":
+"eslint@npm:^9.15.0":
   version: 9.15.0
   resolution: "eslint@npm:9.15.0"
   dependencies:
@@ -5914,7 +5914,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "oddcontrast@workspace:."
   dependencies:
-    "@eslint/js": "npm:9.15.0"
+    "@eslint/js": "npm:^9.15.0"
     "@sveltejs/adapter-auto": "npm:^3.3.1"
     "@sveltejs/kit": "npm:^2.8.3"
     "@sveltejs/vite-plugin-svelte": "npm:^4.0.2"
@@ -5932,7 +5932,7 @@ __metadata:
     accoutrement: "npm:^4.0.5"
     chokidar-cli: "npm:^3.0.0"
     colorjs.io: "npm:^0.5.2"
-    eslint: "npm:9.15.0"
+    eslint: "npm:^9.15.0"
     eslint-config-prettier: "npm:^9.1.0"
     eslint-import-resolver-typescript: "npm:^3.6.3"
     eslint-plugin-import: "npm:^2.31.0"
