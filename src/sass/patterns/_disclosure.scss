@@ -2,12 +2,13 @@
 // ------------------------------
 
 details {
-  --link: var(--fgcolor);
-  --link-focus: var(--fgcolor);
+  // --link: var(--fgcolor);
+  // --link-focus: var(--fgcolor);
 
-  background-color: var(--status-result-bg, var(--bgcolor));
+  // background-color: var(--status-result-bg, var(--bgcolor));
   border-radius: var(--border-radius);
-  color: var(--status-result-fg, var(--fgcolor));
+
+  // color: var(--status-result-fg, var(--fgcolor));
 }
 
 summary {

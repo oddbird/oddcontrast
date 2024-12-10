@@ -3,19 +3,13 @@
 
   import ExternalLink from '$lib/components/util/ExternalLink.svelte';
 
-  interface Props {
-    pass: boolean;
-  }
-
-  let { pass }: Props = $props();
-
   let startOpen = $state(false);
   onMount(() => {
     startOpen = window.matchMedia('(min-width: 80em)').matches;
   });
 </script>
 
-<details class="known-issues" open={startOpen} data-pass={pass}>
+<details class="known-issues" open={startOpen}>
   <summary>Known Color Issues</summary>
   <dl class="issues-list">
     <dt>Gamut Mapping Implementation</dt>
