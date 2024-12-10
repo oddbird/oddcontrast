@@ -54,24 +54,6 @@
         adjust the color to be in gamut.
       </p>
     </dd>
-    <dt>Background Color Alpha Values</dt>
-    <dd>
-      <p>
-        WCAG 2 contrast does not consider alpha values. Because we don't know
-        what is behind your background color, we can't estimate the contrast. If
-        the background color is not opaque, the contrast ratio is computed
-        without background or foreground opacity.
-      </p>
-    </dd>
-    <dt>Foreground Color Alpha Values</dt>
-    <dd>
-      <p>
-        WCAG 2 contrast does not consider alpha values, but we can approximate a
-        ratio by premultiplying a semi-transparent foreground color in the sRGB
-        space. In practice, the displayed foreground color may vary, depending
-        on the display and browser.
-      </p>
-    </dd>
   </dl>
 </details>
 
