@@ -95,6 +95,7 @@
       style={`--stops: ${alphaGradient}`}
       value={$color.alpha}
       oninput={(e) => handleInput(e)}
+      data-channel="alpha"
     />
   </div>
 </div>
@@ -104,7 +105,17 @@
     margin: 0;
     display: block;
     appearance: none;
-    background: linear-gradient(to right, var(--stops));
+    background: linear-gradient(to right, var(--stops)),
+      repeating-linear-gradient(
+        -45deg,
+        white 0%,
+        white 1%,
+        #ffd0d0 1%,
+        #ffd0d0 2%
+      );
+    &[data-channel='alpha'] {
+      background: linear-gradient(to right, var(--stops));
+    }
   }
 
   [data-group~='sliders'] {

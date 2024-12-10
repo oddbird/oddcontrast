@@ -1,6 +1,7 @@
 import {
   clone,
   display,
+  inGamut,
   type PlainColorObject,
   serialize,
   set,
@@ -32,9 +33,34 @@ export const sliderGradient = (
     steps: 10,
     space: color.space,
     hue: 'raw',
+    maxDeltaE: 10,
+  });
+  let wasInGamut = false;
+  const inGamutSteps: string[] = [];
+  const stepWidth = 100 / (gradientSteps.length - 1);
+
+  if (channel === 'alpha') {
+    return gradientSteps.map((c) => display(c)).join(', ');
+  }
+
+  gradientSteps.forEach((step, index) => {
+    if (inGamut(step, 'p3')) {
+      if (!wasInGamut) {
+        inGamutSteps.push(`transparent ${stepWidth * (index + 1)}%`);
+      }
+      wasInGamut = true;
+      inGamutSteps.push(`${display(step)} ${stepWidth * index}%`);
+    } else {
+      if (wasInGamut) {
+        inGamutSteps.push(`transparent ${stepWidth * (index - 1)}%`);
+      }
+      inGamutSteps.push(`transparent ${stepWidth * index}%`);
+
+      wasInGamut = false;
+    }
   });
 
-  return gradientSteps.map((c) => display(c)).join(', ');
+  return inGamutSteps.join(', ');
 };
 
 function decodeColor(colorHash: string, format: ColorFormatId) {
