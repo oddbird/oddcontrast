@@ -1,15 +1,29 @@
 <script lang="ts">
-  import { contrast } from 'colorjs.io/fn';
+  import { contrast, mix } from 'colorjs.io/fn';
 
   import ColorIssues from '$lib/components/ratio/ColorIssues.svelte';
   import Result from '$lib/components/ratio/Result.svelte';
   import ExternalLink from '$lib/components/util/ExternalLink.svelte';
+  import Icon from '$lib/components/util/Icon.svelte';
   import { RATIOS } from '$lib/constants';
   import { bg, fg } from '$lib/stores';
 
-  let ratio = $derived(contrast($bg, $fg, 'WCAG21'));
+  let fgPremultiplied = $derived.by(() => {
+    if ($fg.alpha === 1 || $bg.alpha !== 1) return $fg;
+    return mix($bg, $fg, $fg.alpha, {
+      space: 'srgb',
+      premultiplied: false,
+    });
+  });
+  let ratio = $derived(contrast($bg, fgPremultiplied, 'WCAG21'));
   let displayRatio = $derived(Math.round((ratio + Number.EPSILON) * 100) / 100);
   let pass = $derived(ratio >= RATIOS.AA.Normal);
+  let alphaWarning = $derived.by(() => {
+    if ($bg.alpha !== 1)
+      return 'Alpha is not considered when the background is not opaque.';
+    if ($fg.alpha !== 1) return 'This ratio is our best estimate.';
+    return null;
+  });
 </script>
 
 <aside data-layout="results">
@@ -20,6 +34,9 @@
       <span class="sr-only">The contrast ratio is</span>
       <span class="result-ratio-number">{displayRatio}:1</span>
     </h3>
+    {#if alphaWarning}
+      <p><Icon name="warning" />{alphaWarning}</p>
+    {/if}
 
     <p class="result-intro">
       In WCAG 2, contrast is a measure of the difference in perceived brightness
