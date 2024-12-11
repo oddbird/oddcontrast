@@ -115,14 +115,7 @@
     margin: 0;
     display: block;
     appearance: none;
-    background: linear-gradient(to right, var(--stops)),
-      repeating-linear-gradient(
-        -45deg,
-        white 0%,
-        white 1%,
-        #ffd0d0 1%,
-        #ffd0d0 2%
-      );
+    background: linear-gradient(to right, var(--stops));
     &[data-channel='alpha'] {
       background: linear-gradient(to right, var(--stops)),
         url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><rect fill="%23e8e8e8" width="30" height="30"/><rect x="30" y="30" width="30" height="30" fill="%23e8e8e8"/></svg>');
