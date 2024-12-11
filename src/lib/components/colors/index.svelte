@@ -3,7 +3,7 @@
   import Header from '$lib/components/colors/Header.svelte';
   import Sliders from '$lib/components/colors/Sliders.svelte';
   import SupportWarning from '$lib/components/colors/SupportWarning.svelte';
-  import { bg, fg, format } from '$lib/stores';
+  import { bg, fg, format, switchColors } from '$lib/stores';
 </script>
 
 <h2 class="sr-only">Check the contrast ratio between two colors</h2>
@@ -13,7 +13,7 @@
 <form data-form="contrast-checker" data-layout="color-form">
   <Header type="bg" color={bg} format={$format} />
   <Sliders type="bg" color={bg} format={$format} />
-
+  <button type="button" on:click={switchColors}>Switch colors</button>
   <Header type="fg" color={fg} format={$format} />
   <Sliders type="fg" color={fg} format={$format} />
 </form>
