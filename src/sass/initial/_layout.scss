@@ -81,8 +81,8 @@ body {
   @include config.above('sm-page-break') {
     display: grid;
     grid-template:
-      'bginput fginput' auto
-      'bgslide fgslide' auto / 1fr 1fr;
+      'bginput switch fginput' auto
+      'bgslide . fgslide' auto / 1fr min-content 1fr;
   }
 }
 
