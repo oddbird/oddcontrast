@@ -4,6 +4,7 @@
 
   import CopyButton from '$lib/components/util/CopyButton.svelte';
   import type { ColorFormatId } from '$lib/constants';
+  import { switchColors } from '$lib/stores';
   import { getSpaceFromFormatId } from '$lib/utils';
 
   interface Props {
@@ -20,6 +21,7 @@
   let editing = $state(false);
   let inputValue = $state('');
   let hasError = $state(false);
+  let isDragging = false;
 
   // When not editing, sync input value with color (e.g. when sliders change)
   $effect(() => {
@@ -80,6 +82,12 @@
         break;
     }
   };
+  const switchColorsT = () => {
+    switchColors();
+  };
+  const makeDropable = (event: DragEvent) => {
+    if (!isDragging) event.preventDefault();
+  };
 </script>
 
 <div
@@ -88,7 +96,16 @@
   data-column="tool"
   data-needs-changes={hasError}
 >
-  <div class="swatch {type}"></div>
+  <div
+    role="complementary"
+    class="swatch {type}"
+    draggable="true"
+    ondrop={switchColorsT}
+    ondragenter={makeDropable}
+    ondragover={makeDropable}
+    ondragstart={() => (isDragging = true)}
+    ondragend={() => (isDragging = false)}
+  ></div>
   <label for="{type}-color" data-label>
     {displayType} Color
   </label>
