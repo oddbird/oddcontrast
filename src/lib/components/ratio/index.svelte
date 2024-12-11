@@ -21,7 +21,8 @@
   let alphaWarning = $derived.by(() => {
     if ($bg.alpha !== 1)
       return 'Alpha is not considered when the background is not opaque.';
-    if ($fg.alpha !== 1) return 'This ratio is our best estimate with transparency.';
+    if ($fg.alpha !== 1)
+      return 'This ratio is our best estimate with transparency.';
     return null;
   });
 </script>
@@ -90,7 +91,9 @@
   @use 'config';
 
   [data-layout='results'] {
-    background-color: var(--bgcolor);
+    background: linear-gradient(90deg, var(--bgcolor), var(--bgcolor)),
+      url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><rect fill="%23e8e8e8" width="30" height="30"/><rect x="30" y="30" width="30" height="30" fill="%23e8e8e8"/></svg>');
+    background-size: 30px 30px;
     color: var(--fgcolor);
     display: grid;
     gap: var(--result-layout-gap, var(--shim));
