@@ -35,7 +35,7 @@ export const sliderGradient = (
     hue: 'raw',
     maxDeltaE: 10,
   });
-  let wasInGamut = false;
+  let wasInGamut: boolean;
   const inGamutSteps: string[] = [];
   const stepWidth = 100 / (gradientSteps.length - 1);
 
@@ -45,13 +45,13 @@ export const sliderGradient = (
 
   gradientSteps.forEach((step, index) => {
     if (inGamut(step, 'p3')) {
-      if (!wasInGamut) {
+      if (wasInGamut === false) {
         inGamutSteps.push(`transparent ${stepWidth * (index + 1)}%`);
       }
       wasInGamut = true;
       inGamutSteps.push(`${display(step)} ${stepWidth * index}%`);
     } else {
-      if (wasInGamut) {
+      if (wasInGamut === true) {
         inGamutSteps.push(`transparent ${stepWidth * (index - 1)}%`);
       }
       inGamutSteps.push(`transparent ${stepWidth * index}%`);
