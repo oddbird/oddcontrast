@@ -24,7 +24,7 @@
 </script>
 
 <div data-field="color-format">
-  <label for="color-format" data-label>Color Format</label>
+  <label for="color-format" data-label>Format</label>
   <select name="color-format" id="color-format" bind:value={$format}>
     {#each spaces as space (space.id)}
       {#if space}
