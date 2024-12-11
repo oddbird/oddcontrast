@@ -28,11 +28,13 @@ export const sliderGradient = ({
   const start = clone(color);
   const end = clone(color);
   if (channel === 'alpha') {
-    start.alpha = range[0];
-    end.alpha = range[1];
+    start.alpha = 0;
+    end.alpha = 1;
   } else {
     set(start, channel, range[0]);
+    start.alpha = 1;
     set(end, channel, range[1]);
+    end.alpha = 1;
   }
 
   const gradientSteps = steps(start, end, {
