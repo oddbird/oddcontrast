@@ -47,7 +47,7 @@ export const sliderGradient = ({
   const inGamutSteps: string[] = [];
   const stepWidth = 100 / (gradientSteps.length - 1);
 
-  if (channel === 'alpha') {
+  if (channel === 'alpha' || gamut === null) {
     return gradientSteps.map((c) => display(c)).join(', ');
   }
 
