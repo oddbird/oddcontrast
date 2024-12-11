@@ -9,16 +9,22 @@ import {
   to,
 } from 'colorjs.io/fn';
 
-import { type ColorFormatId, FORMATS } from '$lib/constants';
+import { type ColorFormatId, type ColorGamutId, FORMATS } from '$lib/constants';
 
 export const getSpaceFromFormatId = (formatId: ColorFormatId) =>
   formatId === 'hex' ? 'srgb' : formatId;
 
-export const sliderGradient = (
-  color: PlainColorObject,
-  channel: string,
-  range: [number, number],
-) => {
+export const sliderGradient = ({
+  color,
+  channel,
+  range,
+  gamut,
+}: {
+  color: PlainColorObject;
+  channel: string;
+  range: [number, number];
+  gamut: ColorGamutId;
+}) => {
   const start = clone(color);
   const end = clone(color);
   if (channel === 'alpha') {
@@ -44,7 +50,7 @@ export const sliderGradient = (
   }
 
   gradientSteps.forEach((step, index) => {
-    if (inGamut(step, 'p3')) {
+    if (inGamut(step, gamut)) {
       if (wasInGamut === false) {
         inGamutSteps.push(`transparent ${stepWidth * (index + 1)}%`);
       }

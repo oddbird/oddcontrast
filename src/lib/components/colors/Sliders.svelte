@@ -3,7 +3,7 @@
   import type { Writable } from 'svelte/store';
 
   import { type ColorFormatId, SLIDERS } from '$lib/constants';
-  import { ColorSpace } from '$lib/stores';
+  import { ColorSpace, gamut } from '$lib/stores';
   import { getSpaceFromFormatId, sliderGradient } from '$lib/utils';
 
   interface Props {
@@ -20,7 +20,12 @@
     SLIDERS[format].map((id) => {
       const coord = spaceObject.coords[id];
       const range = coord?.range ?? coord?.refRange ?? [0, 1];
-      const gradient = sliderGradient($color, id, range);
+      const gradient = sliderGradient({
+        color: $color,
+        channel: id,
+        range: range,
+        gamut: $gamut,
+      });
       return {
         id,
         name: coord?.name ?? '',
@@ -37,7 +42,12 @@
   );
 
   let alphaGradient = $derived(
-    sliderGradient($color, 'alpha', [0, $color.alpha]),
+    sliderGradient({
+      color: $color,
+      channel: 'alpha',
+      range: [0, $color.alpha],
+      gamut: $gamut,
+    }),
   );
 
   const handleInput = (
