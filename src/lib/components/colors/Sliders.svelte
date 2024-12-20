@@ -3,7 +3,7 @@
   import type { Writable } from 'svelte/store';
 
   import { type ColorFormatId, SLIDERS } from '$lib/constants';
-  import { ColorSpace } from '$lib/stores';
+  import { ColorSpace, gamut } from '$lib/stores';
   import { getSpaceFromFormatId, sliderGradient } from '$lib/utils';
 
   interface Props {
@@ -20,7 +20,12 @@
     SLIDERS[format].map((id) => {
       const coord = spaceObject.coords[id];
       const range = coord?.range ?? coord?.refRange ?? [0, 1];
-      const gradient = sliderGradient($color, id, range);
+      const gradient = sliderGradient({
+        color: $color,
+        channel: id,
+        range: range,
+        gamut: $gamut,
+      });
       return {
         id,
         name: coord?.name ?? '',
@@ -37,7 +42,12 @@
   );
 
   let alphaGradient = $derived(
-    sliderGradient($color, 'alpha', [0, $color.alpha]),
+    sliderGradient({
+      color: $color,
+      channel: 'alpha',
+      range: [0, $color.alpha],
+      gamut: $gamut,
+    }),
   );
 
   const handleInput = (
@@ -95,6 +105,7 @@
       style={`--stops: ${alphaGradient}`}
       value={$color.alpha}
       oninput={(e) => handleInput(e)}
+      data-channel="alpha"
     />
   </div>
 </div>
@@ -105,6 +116,10 @@
     display: block;
     appearance: none;
     background: linear-gradient(to right, var(--stops));
+    &[data-channel='alpha'] {
+      background: linear-gradient(to right, var(--stops)),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><rect fill="%23e8e8e8" width="30" height="30"/><rect x="30" y="30" width="30" height="30" fill="%23e8e8e8"/></svg>');
+    }
   }
 
   [data-group~='sliders'] {
