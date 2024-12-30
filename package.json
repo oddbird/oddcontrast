@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "license": "BSD-3-Clause",
   "engines": {
-    "node": "^20"
+    "node": "^22"
   },
   "type": "module",
   "scripts": {
@@ -47,8 +47,8 @@
     "@types/eslint-config-prettier": "^6.11.3",
     "@types/eslint__js": "^8.42.3",
     "@types/lodash": "^4.17.13",
-    "@types/node": "^20",
-    "@typescript-eslint/utils": "^8.18.2",
+    "@types/node": "^22",
+    "@typescript-eslint/utils": "^8.19.0",
     "@vitest/coverage-v8": "^2.1.8",
     "@vitest/eslint-plugin": "^1.1.21",
     "chokidar-cli": "^3.0.0",
@@ -74,12 +74,13 @@
     "svelte-check": "^4.1.1",
     "svelte-eslint-parser": "^0.43.0",
     "typescript": "^5.7.2",
-    "typescript-eslint": "^8.18.2",
+    "typescript-eslint": "^8.19.0",
     "vite": "^6.0.6",
     "vitest": "^2.1.8"
   },
   "resolutions": {
-    "vite": "^6.0.2"
+    "@types/node": "^22",
+    "vite": ">=6"
   },
-  "packageManager": "yarn@4.5.3"
+  "packageManager": "yarn@4.6.0"
 }
