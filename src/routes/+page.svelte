@@ -10,6 +10,7 @@
   import Header from '$lib/components/Header.svelte';
   import Ratio from '$lib/components/ratio/index.svelte';
   import { bg, fg, format } from '$lib/stores';
+  import ColorIssues from '$src/lib/components/ratio/ColorIssues.svelte';
   import { hashToStoreValues, storeValuesToHash } from '$src/lib/utils';
 
   let bg_fallback = $derived(display($bg));
@@ -49,6 +50,7 @@
   <Ratio />
   <main data-layout="main">
     <Colors />
+    <ColorIssues />
   </main>
   <Footer />
 </div>
