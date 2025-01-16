@@ -1,4 +1,5 @@
 <script lang="ts">
+  import GamutSelect from '$lib/components/GamutSelect.svelte';
   import SpaceSelect from '$lib/components/SpaceSelect.svelte';
   import Icon from '$lib/components/util/Icon.svelte';
 </script>
@@ -9,6 +10,7 @@
     <span class="sr-only">OddContrast</span>
   </h1>
   <SpaceSelect />
+  <GamutSelect />
 </header>
 
 <style lang="scss">

@@ -1,6 +1,7 @@
 import {
   clone,
   display,
+  inGamut,
   type PlainColorObject,
   serialize,
   set,
@@ -8,33 +9,66 @@ import {
   to,
 } from 'colorjs.io/fn';
 
-import { type ColorFormatId, FORMATS } from '$lib/constants';
+import { type ColorFormatId, type ColorGamutId, FORMATS } from '$lib/constants';
 
 export const getSpaceFromFormatId = (formatId: ColorFormatId) =>
   formatId === 'hex' ? 'srgb' : formatId;
 
-export const sliderGradient = (
-  color: PlainColorObject,
-  channel: string,
-  range: [number, number],
-) => {
+export const sliderGradient = ({
+  color,
+  channel,
+  range,
+  gamut,
+}: {
+  color: PlainColorObject;
+  channel: string;
+  range: [number, number];
+  gamut: ColorGamutId;
+}) => {
   const start = clone(color);
   const end = clone(color);
   if (channel === 'alpha') {
-    start.alpha = range[0];
-    end.alpha = range[1];
+    start.alpha = 0;
+    end.alpha = 1;
   } else {
     set(start, channel, range[0]);
+    start.alpha = 1;
     set(end, channel, range[1]);
+    end.alpha = 1;
   }
 
   const gradientSteps = steps(start, end, {
     steps: 10,
     space: color.space,
     hue: 'raw',
+    maxDeltaE: 10,
+  });
+  let wasInGamut: boolean;
+  const inGamutSteps: string[] = [];
+  const stepWidth = 100 / (gradientSteps.length - 1);
+
+  if (channel === 'alpha' || gamut === null) {
+    return gradientSteps.map((c) => display(c)).join(', ');
+  }
+
+  gradientSteps.forEach((step, index) => {
+    if (inGamut(step, gamut)) {
+      if (wasInGamut === false) {
+        inGamutSteps.push(`transparent ${stepWidth * (index + 1)}%`);
+      }
+      wasInGamut = true;
+      inGamutSteps.push(`${display(step)} ${stepWidth * index}%`);
+    } else {
+      if (wasInGamut === true) {
+        inGamutSteps.push(`transparent ${stepWidth * (index - 1)}%`);
+      }
+      inGamutSteps.push(`transparent ${stepWidth * index}%`);
+
+      wasInGamut = false;
+    }
   });
 
-  return gradientSteps.map((c) => display(c)).join(', ');
+  return inGamutSteps.join(', ');
 };
 
 function decodeColor(colorHash: string, format: ColorFormatId) {
