@@ -68,8 +68,8 @@
       <p>
         WCAG 2 contrast does not consider alpha values, but we can approximate a
         ratio by premultiplying a semi-transparent foreground color in the sRGB
-        space. In practice, the displayed foreground color may vary, depending
-        on the display and browser.
+        space. In practice, the displayed foreground color may vary depending on
+        the display and browser.
       </p>
     </dd>
   </dl>
