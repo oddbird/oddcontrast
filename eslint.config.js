@@ -1,4 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access, import/no-named-as-default-member */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable import/no-named-as-default-member */
 
 import js from '@eslint/js';
 import tsParser from '@typescript-eslint/parser';
@@ -93,14 +94,14 @@ export default [
     files: ['test/**/*.spec.{js,ts}'],
     languageOptions: {
       globals: {
-        ...vitest.environments.env.globals,
+        ...vitest.environments?.env?.globals,
       },
     },
     plugins: {
       vitest,
     },
     rules: {
-      ...vitest.configs.recommended.rules,
+      ...vitest.configs?.recommended?.rules,
       '@typescript-eslint/unbound-method': 'off',
     },
   },
