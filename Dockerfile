@@ -1,4 +1,4 @@
-FROM node:20
+FROM node:22
 
 ARG BUILD_ENV=development
 WORKDIR /app
