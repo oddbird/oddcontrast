@@ -36,7 +36,7 @@
       <span class="result-ratio-number">{displayRatio}:1</span>
     </h3>
     {#if alphaWarning}
-      <p><Icon name="warning" />{alphaWarning}</p>
+      <p class="result-warning"><Icon name="warning" />{alphaWarning}</p>
     {/if}
 
     <p class="result-intro">
@@ -119,23 +119,25 @@
     display: grid;
     grid-area: contrastinfo;
     grid-template:
-      'heading' min-content
-      'number' min-content / 100%;
+      'heading heading' min-content
+      'number warning' var(--ratio-warning-height) / auto auto;
 
     @include config.between('sm-column-break', 'lg-page-break') {
       gap: var(--shim) var(--gutter);
       // fixed width column to prevent layout shift as the ratio number changes
+      // fixed row height to prevent layout shift when warning appears
       grid-template:
         'heading number' min-content
+        'heading warning' var(--ratio-warning-height)
         'intro   intro' 1fr / auto var(--ratio-width);
     }
 
     @include config.above('lg-page-break') {
       gap: var(--shim);
       grid-template:
-        'heading' auto
-        'intro' auto
-        'number' auto / 100%;
+        'heading heading' auto
+        'intro intro' auto
+        'number warning' var(--ratio-warning-height) / var(--ratio-width) auto;
     }
   }
 
@@ -166,6 +168,10 @@
     @include config.between('sm-column-break', 'lg-page-break') {
       justify-content: flex-end;
     }
+  }
+
+  .result-warning {
+    grid-area: warning;
   }
 
   .result-ratio-number {
