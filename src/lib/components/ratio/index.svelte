@@ -36,7 +36,11 @@
       <span class="result-ratio-number">{displayRatio}:1</span>
     </h3>
     {#if alphaWarning}
-      <p class="result-warning"><Icon name="warning" />{alphaWarning}</p>
+      <div class="result-warning-info">
+        <p data-color-info="warning" class="result-warning">
+          <Icon name="warning" />{alphaWarning}
+        </p>
+      </div>
     {/if}
 
     <p class="result-intro">
@@ -116,20 +120,26 @@
   }
 
   .contrast-info {
+    column-gap: var(--shim);
     display: grid;
     grid-area: contrastinfo;
+    // fixed row height to prevent layout shift when warning appears
     grid-template:
       'heading heading' min-content
-      'number warning' var(--ratio-warning-height) / auto auto;
+      'number warning' var(--ratio-warning-height) / auto 1fr;
+    margin-block-end: var(--contrast-info-block-end, var(--gutter));
 
     @include config.between('sm-column-break', 'lg-page-break') {
+      --contrast-info-block-end: 0;
       gap: var(--shim) var(--gutter);
       // fixed width column to prevent layout shift as the ratio number changes
       // fixed row height to prevent layout shift when warning appears
       grid-template:
         'heading number' min-content
-        'heading warning' var(--ratio-warning-height)
-        'intro   intro' 1fr / auto var(--ratio-width);
+        'intro warning' var(--ratio-warning-height) / auto minmax(
+          var(--ratio-width),
+          1fr
+        );
     }
 
     @include config.above('lg-page-break') {
@@ -160,18 +170,29 @@
   }
 
   .result-ratio {
-    align-items: start;
+    align-items: var(--result-ratio-align, center);
     display: inline-flex;
     grid-area: number;
     line-height: 0.7; // weird number alignment
 
     @include config.between('sm-column-break', 'lg-page-break') {
+      --result-ratio-align: start;
       justify-content: flex-end;
     }
   }
-
-  .result-warning {
+  .result-warning-info {
+    align-items: center;
+    display: flex;
     grid-area: warning;
+  }
+  .result-warning {
+    --warning-bg: var(--bg);
+    --warning-padding-block: var(--shim);
+    --warning-padding-inline: var(--shim);
+    --warning-size: border: var(--border-width) solid var(--border);
+    border-radius: var(--border-radius);
+    display: flex;
+    gap: var(--half-shim);
   }
 
   .result-ratio-number {
