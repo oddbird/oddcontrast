@@ -126,20 +126,19 @@
     // fixed row height to prevent layout shift when warning appears
     grid-template:
       'heading heading' min-content
-      'number warning' var(--ratio-warning-height) / auto 1fr;
+      'number warning' var(--ratio-warning-height)
+      / auto 1fr;
     margin-block-end: var(--contrast-info-block-end, var(--gutter));
 
-    @include config.between('sm-column-break', 'lg-page-break') {
+    @include config.between('sm-page-break', 'lg-page-break') {
       --contrast-info-block-end: 0;
+
       gap: var(--shim) var(--gutter);
       // fixed width column to prevent layout shift as the ratio number changes
       // fixed row height to prevent layout shift when warning appears
       grid-template:
-        'heading number' min-content
-        'intro warning' var(--ratio-warning-height) / auto minmax(
-          var(--ratio-width),
-          1fr
-        );
+        'heading number' min-content 'warning warning' 3rem
+        'intro intro' auto/auto minmax(var(--ratio-width), 1fr);
     }
 
     @include config.above('lg-page-break') {
@@ -157,7 +156,7 @@
 
   .result-intro {
     grid-area: intro;
-    margin-bottom: var(--gutter);
+    margin-block: var(--gutter);
 
     @include config.below('sm-page-break') {
       display: none;
@@ -170,13 +169,12 @@
   }
 
   .result-ratio {
-    align-items: var(--result-ratio-align, center);
+    align-items: center;
     display: inline-flex;
     grid-area: number;
     line-height: 0.7; // weird number alignment
 
     @include config.between('sm-column-break', 'lg-page-break') {
-      --result-ratio-align: start;
       justify-content: flex-end;
     }
   }
@@ -189,7 +187,8 @@
     --warning-bg: var(--bg);
     --warning-padding-block: var(--shim);
     --warning-padding-inline: var(--shim);
-    --warning-size: border: var(--border-width) solid var(--border);
+    --warning-size: var(--small);
+    border: var(--border-width) solid var(--border);
     border-radius: var(--border-radius);
     display: flex;
     gap: var(--half-shim);
@@ -207,7 +206,12 @@
     gap: var(--gutter) var(--double-gutter);
     grid-area: status;
     grid-template-columns: 1fr 1fr;
+    margin-block-start: var(--result-status-margin-block-start);
     text-align: center;
+
+    @include config.between('sm-column-break', 'lg-page-break') {
+      --result-status-margin-block-start: var(--gutter-plus);
+    }
   }
 
   .contrast-defined {
