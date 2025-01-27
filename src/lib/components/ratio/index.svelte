@@ -22,7 +22,7 @@
     if ($bg.alpha !== 1)
       return 'Alpha is not considered when the background is not opaque.';
     if ($fg.alpha !== 1)
-      return 'This ratio is our best estimate with transparency.';
+      return 'This ratio is our best estimate given the specified foreground alpha value.';
     return null;
   });
 </script>
