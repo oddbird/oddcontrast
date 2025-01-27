@@ -206,12 +206,7 @@
     gap: var(--gutter) var(--double-gutter);
     grid-area: status;
     grid-template-columns: 1fr 1fr;
-    margin-block-start: var(--result-status-margin-block-start);
     text-align: center;
-
-    @include config.between('sm-column-break', 'lg-page-break') {
-      --result-status-margin-block-start: var(--gutter-plus);
-    }
   }
 
   .contrast-defined {
