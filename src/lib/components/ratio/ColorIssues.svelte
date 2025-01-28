@@ -54,19 +54,15 @@
 <style lang="scss">
   @use 'config';
   .known-issues {
-    grid-area: knownissues;
-    padding: var(--gutter);
-
-    @include config.above('lg-page-break') {
-      margin-inline: calc(var(--gutter) * -1);
-    }
+    margin-block-end: var(--spacer);
+    padding: var(--gutter) var(--shim-plus);
   }
 
   summary {
     align-items: center;
     display: grid;
     gap: var(--shim-plus);
-    grid-template-columns: max-content var(--triangle-height);
+    grid-template-columns: var(--triangle-height) max-content;
   }
 
   .issues-list {

@@ -2,13 +2,12 @@
 // ------------------------------
 
 details {
-  // --link: var(--fgcolor);
-  // --link-focus: var(--fgcolor);
+  --link: var(--fgcolor);
+  --link-focus: var(--fgcolor);
 
-  // background-color: var(--status-result-bg, var(--bgcolor));
+  background-color: var(--status-result-bg, var(--bgcolor));
   border-radius: var(--border-radius);
-
-  // color: var(--status-result-fg, var(--fgcolor));
+  color: var(--status-result-fg, var(--fgcolor));
 }
 
 summary {
@@ -31,7 +30,7 @@ summary {
     border-width: var(--triangle-width) 0 var(--triangle-width)
       var(--triangle-height);
     content: '';
-    grid-column: 2;
+    grid-column: 1;
     grid-row: 1;
     margin-block-start: var(--half-shim);
     rotate: var(--rotate-triangle, none);
