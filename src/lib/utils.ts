@@ -9,7 +9,12 @@ import {
   to,
 } from 'colorjs.io/fn';
 
-import { type ColorFormatId, type ColorGamutId, FORMATS } from '$lib/constants';
+import {
+  type ColorFormatId,
+  type ColorGamutId,
+  FORMATS,
+  GAMUT_IDS,
+} from '$lib/constants';
 
 export const getSpaceFromFormatId = (formatId: ColorFormatId) =>
   formatId === 'hex' ? 'srgb' : formatId;
@@ -102,11 +107,13 @@ export const hashToStoreValues = (
   bg: PlainColorObject;
   fg: PlainColorObject;
   format: ColorFormatId;
+  gamut: ColorGamutId | undefined;
 } | void => {
   if (hash === '') return;
   hash = decodeURIComponent(hash);
 
-  const [formatValue, bgValue, fgValue] = hash.split('__') as [
+  const [formatValue, bgValue, fgValue, gamutValue] = hash.split('__') as [
+    string,
     string,
     string,
     string,
@@ -116,20 +123,26 @@ export const hashToStoreValues = (
   if (!FORMATS.includes(formatValue as ColorFormatId)) return;
   const format = formatValue as ColorFormatId;
 
+  const gamut = GAMUT_IDS.includes(gamutValue as ColorGamutId)
+    ? (gamutValue as ColorGamutId)
+    : null;
+
   const bg = decodeColor(bgValue, format);
   if (!bg) return;
   const fg = decodeColor(fgValue, format);
   if (!fg) return;
 
-  return { bg, fg, format };
+  return { bg, fg, format, gamut };
 };
 
 export const storeValuesToHash = (
   bg: PlainColorObject,
   fg: PlainColorObject,
   format: ColorFormatId,
+  gamut: ColorGamutId,
 ) => {
   const bgParam = encodeColor(bg, format);
   const fgParam = encodeColor(fg, format);
-  return encodeURIComponent(`${format}__${bgParam}__${fgParam}`);
+  const gamutParam = gamut ? `__${gamut}` : '';
+  return encodeURIComponent(`${format}__${bgParam}__${fgParam}${gamutParam}`);
 };

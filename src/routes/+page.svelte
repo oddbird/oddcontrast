@@ -9,7 +9,7 @@
   import Footer from '$lib/components/Footer.svelte';
   import Header from '$lib/components/Header.svelte';
   import Ratio from '$lib/components/ratio/index.svelte';
-  import { bg, fg, format } from '$lib/stores';
+  import { bg, fg, format, gamut } from '$lib/stores';
   import { hashToStoreValues, storeValuesToHash } from '$src/lib/utils';
 
   let bg_fallback = $derived(display($bg));
@@ -20,10 +20,11 @@
     bg.subscribe(debouncedColorsToHash);
     fg.subscribe(debouncedColorsToHash);
     format.subscribe(debouncedColorsToHash);
+    gamut.subscribe(debouncedColorsToHash);
   });
 
   function colorsToHash() {
-    const hashString = storeValuesToHash($bg, $fg, $format);
+    const hashString = storeValuesToHash($bg, $fg, $format, $gamut);
     replaceState(`#${hashString}`, {});
   }
 
@@ -38,6 +39,7 @@
     bg.set(result.bg);
     fg.set(result.fg);
     format.set(result.format);
+    gamut.set(result.gamut ?? null);
   }
 </script>
 

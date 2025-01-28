@@ -32,7 +32,7 @@ export { ColorSpace };
 
 export const INITIAL_VALUES = {
   format: 'p3' as ColorFormatId,
-  gamut: 'p3' as ColorGamutId,
+  gamut: null as ColorGamutId | null,
   bg_coord: [0.0967, 0.167, 0.4494] as [number, number, number],
   fg_coord: [0.951, 0.675, 0.7569] as [number, number, number],
   alpha: 1,
@@ -50,7 +50,7 @@ const INITIAL_FG = {
 };
 
 export const format = writable<ColorFormatId>(INITIAL_VALUES.format);
-export const gamut = writable<ColorGamutId>(INITIAL_VALUES.gamut);
+export const gamut = writable<ColorGamutId | null>(INITIAL_VALUES.gamut);
 export const bg = writable<PlainColorObject>(INITIAL_BG);
 export const fg = writable<PlainColorObject>(INITIAL_FG);
 
