@@ -41,9 +41,11 @@ export const sliderGradient = ({
     steps: 10,
     space: color.space,
     hue: 'raw',
+    // Smaller values will take longer, larger will be be less precise and
+    // produce fuzzy edges. This magic number seems to balance that.
     maxDeltaE: 10,
   });
-  let wasInGamut: boolean;
+  let wasInGamut = true;
   const inGamutSteps: string[] = [];
   const stepWidth = 100 / (gradientSteps.length - 1);
 
@@ -51,18 +53,21 @@ export const sliderGradient = ({
     return gradientSteps.map((c) => display(c)).join(', ');
   }
 
+  // Create a linear gradient string, mapping gradientSteps to 0%-100% by
+  // multiplying its index with `stepWidth`.
   gradientSteps.forEach((step, index) => {
     if (inGamut(step, gamut)) {
       if (wasInGamut === false) {
-        inGamutSteps.push(`transparent ${stepWidth * (index + 1)}%`);
+        // Coming back into gamut. Add a transparent gradient step for a crisp
+        // edge.
+        inGamutSteps.push(`transparent ${stepWidth * index}%`);
       }
       wasInGamut = true;
       inGamutSteps.push(`${display(step)} ${stepWidth * index}%`);
-    } else {
-      if (wasInGamut === true) {
-        inGamutSteps.push(`transparent ${stepWidth * (index - 1)}%`);
-      }
-      inGamutSteps.push(`transparent ${stepWidth * index}%`);
+    } else if (wasInGamut === true) {
+      // Leaving gamut. Add a transparent gradient step at the same percent as
+      // the previous in gamut step for a crisp edge.
+      inGamutSteps.push(`transparent ${stepWidth * (index - 1)}%`);
 
       wasInGamut = false;
     }
