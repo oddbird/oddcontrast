@@ -71,6 +71,8 @@
     grid-auto-rows: auto;
     grid-template-columns: 1fr;
     margin-block-start: var(--gutter);
+    max-width: 85ch;
+    padding-inline: var(--double-gutter);
   }
 
   dt {
