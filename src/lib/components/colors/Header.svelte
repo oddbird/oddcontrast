@@ -13,6 +13,8 @@
     format: ColorFormatId;
   }
 
+  const CUSTOM_MIMETYPE = 'text/odd';
+
   let { type, color, format }: Props = $props();
 
   let targetSpace = $derived(getSpaceFromFormatId(format));
@@ -82,11 +84,29 @@
         break;
     }
   };
-  const switchColorsT = () => {
-    switchColors();
+  const onDragStart = (event: DragEvent) => {
+    isDragging = true;
+    if (!event.dataTransfer) return;
+    event.dataTransfer.clearData();
+    event.dataTransfer.setData(CUSTOM_MIMETYPE, type);
+  };
+
+  const onDrop = (event: DragEvent | undefined) => {
+    const droppedType = event?.dataTransfer?.getData(CUSTOM_MIMETYPE);
+    const dragIsFromOther =
+      type === 'fg' ? droppedType === 'bg' : droppedType === 'fg';
+    if (dragIsFromOther) {
+      switchColors();
+    }
   };
   const makeDropable = (event: DragEvent) => {
-    if (!isDragging) event.preventDefault();
+    // DataTransfer values are not available on dragover, but because the types
+    // of items is available, we can use a custom mimetype to check if a swatch
+    // is the drag target.
+    if (!isDragging && event?.dataTransfer?.types.includes(CUSTOM_MIMETYPE)) {
+      // Cancelling the event signals that the dragged item can be dropped here.
+      event.preventDefault();
+    }
   };
 </script>
 
@@ -100,10 +120,10 @@
     role="complementary"
     class="swatch {type}"
     draggable="true"
-    ondrop={switchColorsT}
+    ondrop={onDrop}
     ondragenter={makeDropable}
     ondragover={makeDropable}
-    ondragstart={() => (isDragging = true)}
+    ondragstart={onDragStart}
     ondragend={() => (isDragging = false)}
   ></div>
   <label for="{type}-color" data-label>
