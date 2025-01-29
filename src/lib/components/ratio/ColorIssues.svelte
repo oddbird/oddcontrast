@@ -1,19 +1,13 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
-
   import ExternalLink from '$lib/components/util/ExternalLink.svelte';
-
-  let startOpen = $state(false);
-  onMount(() => {
-    startOpen = window.matchMedia('(min-width: 80em)').matches;
-  });
 </script>
 
-<details class="known-issues" open={startOpen}>
-  <summary>Known Color Issues</summary>
-  <dl class="issues-list">
-    <dt>Gamut Mapping Implementation</dt>
-    <dd>
+<hr />
+<div class="known-issues">
+  <h2 class="section-heading">Known Color Issues</h2>
+  <ul class="issues-list">
+    <li>
+      <h3 class="list-item-heading">Gamut Mapping Implementation</h3>
       <p>
         Browsers implemented gamut mapping using clipping, which is fast but
         provides inferior results compared to the algorithm defined in the <ExternalLink
@@ -22,9 +16,9 @@
         >. Until browsers are updated, colors that are out of gamut for your
         screen may be displayed very differently than expected.
       </p>
-    </dd>
-    <dt>Checking for Out of Gamut Colors</dt>
-    <dd>
+    </li>
+    <li>
+      <h3 class="list-item-heading">Checking for Out of Gamut Colors</h3>
       <p>
         The new color features in CSS allow for a much wider range of colors,
         many of which cannot be shown on many (or any) screens. When selecting
@@ -47,40 +41,27 @@
         When a color is out of gamut for the user's screen, the browser will
         adjust the color to be in gamut.
       </p>
-    </dd>
-  </dl>
-</details>
+    </li>
+  </ul>
+</div>
 
 <style lang="scss">
   @use 'config';
-  .known-issues {
+
+  hr {
+    border: unset;
+    border-block-start: var(--border-width) solid var(--border-light);
     margin-block-end: var(--spacer);
-    padding: var(--gutter) var(--shim-plus);
+    margin-inline: unset;
   }
 
-  summary {
-    align-items: center;
-    display: grid;
-    gap: var(--shim-plus);
-    grid-template-columns: var(--triangle-height) max-content;
+  .known-issues {
+    margin-block-end: var(--spacer);
   }
 
   .issues-list {
-    display: grid;
-    gap: var(--half-shim);
-    grid-auto-rows: auto;
-    grid-template-columns: 1fr;
     margin-block-start: var(--gutter);
-    max-width: 85ch;
-    padding-inline: var(--double-gutter);
-  }
-
-  dt {
-    font-weight: bold;
-  }
-
-  dd {
-    --description-margin-inline: 0;
+    max-inline-size: 85ch;
   }
 
   p {
