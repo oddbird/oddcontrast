@@ -15,7 +15,9 @@
 <form data-form="contrast-checker" data-layout="color-form">
   <Header type="bg" color={bg} format={$format} />
   <Sliders type="bg" color={bg} format={$format} />
-  <SwitchButton />
+  <div data-actions="swap-colors">
+    <SwitchButton />
+  </div>
   <Header type="fg" color={fg} format={$format} />
   <Sliders type="fg" color={fg} format={$format} />
 </form>
@@ -34,5 +36,10 @@
 
   [data-layout] {
     column-gap: var(--triple-gutter);
+  }
+
+  [data-actions='swap-colors'] {
+    display: grid;
+    place-content: center;
   }
 </style>
