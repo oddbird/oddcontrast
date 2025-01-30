@@ -178,11 +178,13 @@
       justify-content: flex-end;
     }
   }
+
   .result-warning-info {
     align-items: center;
     display: flex;
     grid-area: warning;
   }
+
   .result-warning {
     --warning-bg: var(--bg);
     --warning-padding-block: var(--shim);
