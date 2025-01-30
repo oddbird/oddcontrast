@@ -46,7 +46,7 @@ export const sliderGradient = ({
     steps: 10,
     space: color.space,
     hue: 'raw',
-    // Smaller values will take longer, larger will be be less precise and
+    // Smaller values will take longer, larger will be less precise and
     // produce fuzzy edges. This magic number seems to balance that.
     maxDeltaE: 10,
   });
@@ -107,7 +107,7 @@ export const hashToStoreValues = (
   bg: PlainColorObject;
   fg: PlainColorObject;
   format: ColorFormatId;
-  gamut: ColorGamutId | undefined;
+  gamut: ColorGamutId;
 } | void => {
   if (hash === '') return;
   hash = decodeURIComponent(hash);

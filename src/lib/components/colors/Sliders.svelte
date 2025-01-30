@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { PlainColorObject } from 'colorjs.io/fn';
-  import _ from 'lodash';
+  import throttle from 'lodash/throttle';
   import type { Writable } from 'svelte/store';
 
   import { type ColorFormatId, SLIDERS } from '$lib/constants';
@@ -19,7 +19,9 @@
   let spaceObject = $derived(ColorSpace.get(targetSpace));
 
   // Create a throttled value for each channel
-  const throttled = SLIDERS[format].map(() => _.throttle(sliderGradient, 100));
+  const throttled = $derived(
+    SLIDERS[format].map(() => throttle(sliderGradient, 50)),
+  );
 
   let sliders = $derived(
     SLIDERS[format].map((id, index) => {
