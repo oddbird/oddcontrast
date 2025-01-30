@@ -84,6 +84,7 @@
         break;
     }
   };
+
   const onDragStart = (event: DragEvent) => {
     isDragging = true;
     if (!event.dataTransfer) return;
@@ -99,6 +100,7 @@
       switchColors();
     }
   };
+
   const makeDropable = (event: DragEvent) => {
     // DataTransfer values are not available on dragover, but because the types
     // of items is available, we can use a custom mimetype to check if a swatch
