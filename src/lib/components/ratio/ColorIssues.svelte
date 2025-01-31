@@ -46,8 +46,6 @@
 </div>
 
 <style lang="scss">
-  @use 'config';
-
   hr {
     border: unset;
     border-block-start: var(--border-width) solid var(--border-light);
