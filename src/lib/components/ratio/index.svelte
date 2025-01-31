@@ -123,11 +123,9 @@
     column-gap: var(--shim);
     display: grid;
     grid-area: contrastinfo;
-    // fixed row height to prevent layout shift when warning appears
     grid-template:
       'heading heading' min-content
-      'number warning' var(--ratio-warning-height)
-      / auto 1fr;
+      'number warning' min-content / auto 1fr;
     margin-block-end: var(--contrast-info-block-end, var(--gutter));
 
     @include config.between('sm-page-break', 'lg-page-break') {
@@ -135,10 +133,10 @@
 
       gap: var(--shim) var(--gutter);
       // fixed width column to prevent layout shift as the ratio number changes
-      // fixed row height to prevent layout shift when warning appears
       grid-template:
-        'heading number' min-content 'warning warning' 3rem
-        'intro intro' auto/auto minmax(var(--ratio-width), 1fr);
+        'heading heading' min-content
+        'number warning' min-content
+        'intro intro' auto / auto 1fr;
     }
 
     @include config.above('lg-page-break') {
@@ -146,7 +144,7 @@
       grid-template:
         'heading heading' auto
         'intro intro' auto
-        'number warning' var(--ratio-warning-height) / var(--ratio-width) auto;
+        'number warning' min-content / 1fr auto;
     }
   }
 
@@ -209,6 +207,11 @@
     grid-area: status;
     grid-template-columns: 1fr 1fr;
     text-align: center;
+
+    @include config.between('sm-page-break', 'lg-page-break') {
+      grid-template-rows: min-content;
+      padding-block-start: var(--shim-plus);
+    }
   }
 
   .contrast-defined {
