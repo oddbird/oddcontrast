@@ -5,16 +5,27 @@
 </script>
 
 <header data-layout="header">
-  <h1 class="app-logo">
+  <h1 id="app-logo">
     <Icon name="logo" />
     <span class="sr-only">OddContrast</span>
   </h1>
-  <SpaceSelect />
-  <GamutSelect />
+  <div id="color-settings">
+    <SpaceSelect />
+    <GamutSelect />
+  </div>
 </header>
 
 <style lang="scss">
-  .app-logo {
+  #app-logo {
     display: flex;
+    grid-area: logo;
+  }
+
+  #color-settings {
+    display: grid;
+    gap: inherit;
+    grid-area: settings;
+    grid-template-columns: repeat(2, auto);
+    justify-content: safe end;
   }
 </style>
