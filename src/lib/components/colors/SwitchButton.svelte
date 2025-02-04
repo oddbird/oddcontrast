@@ -5,5 +5,5 @@
 
 <button type="button" onclick={switchColors} data-btn="icon switch">
   <Icon name="switch" />
-  <span class="sr-only">Click to swap colors</span></button
+  <span class="sr-only">Swap colors</span></button
 >
