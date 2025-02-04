@@ -48,7 +48,7 @@ export const sliderGradient = ({
     hue: 'raw',
     // Smaller values will take longer, larger will be less precise and
     // produce fuzzy edges. This magic number seems to balance that.
-    maxDeltaE: 10,
+    maxDeltaE: 2,
   });
   let wasInGamut = true;
   const inGamutSteps: string[] = [];
