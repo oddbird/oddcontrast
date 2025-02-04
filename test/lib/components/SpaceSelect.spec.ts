@@ -15,7 +15,7 @@ describe('Space', () => {
     expect(get(bg).space.id).toBe(INITIAL_VALUES.format);
     expect(get(fg).space.id).toBe(INITIAL_VALUES.format);
 
-    const select = getByLabelText('Format');
+    const select = getByLabelText('Color Format');
     await fireEvent.change(select, { target: { value: 'hsl' } });
 
     expect(get(bg).space.id).toBe('hsl');

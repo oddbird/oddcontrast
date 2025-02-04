@@ -14,7 +14,7 @@ describe('Space', () => {
 
     expect(get(gamut)).toBe(INITIAL_VALUES.gamut);
 
-    const select = getByLabelText('Gamut');
+    const select = getByLabelText('Show Gamut');
     await fireEvent.change(select, { target: { value: 'rec2020' } });
 
     expect(get(gamut)).toBe('rec2020');

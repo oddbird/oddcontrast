@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { inGamut,type PlainColorObject, serialize, to } from 'colorjs.io/fn';
+  import { inGamut, type PlainColorObject, serialize, to } from 'colorjs.io/fn';
   import { type Writable } from 'svelte/store';
 
   import CopyButton from '$lib/components/util/CopyButton.svelte';
