@@ -1,10 +1,13 @@
 <script lang="ts">
-  import { type PlainColorObject, serialize, to } from 'colorjs.io/fn';
+  import { inGamut,type PlainColorObject, serialize, to } from 'colorjs.io/fn';
   import { type Writable } from 'svelte/store';
 
   import CopyButton from '$lib/components/util/CopyButton.svelte';
   import type { ColorFormatId } from '$lib/constants';
+  import { gamut } from '$lib/stores';
   import { getSpaceFromFormatId } from '$lib/utils';
+
+  import Icon from '../util/Icon.svelte';
 
   interface Props {
     type: 'bg' | 'fg';
@@ -17,6 +20,7 @@
   let targetSpace = $derived(getSpaceFromFormatId(format));
   let display = $derived(serialize($color, { inGamut: false, format }));
   let displayType = $derived(type === 'bg' ? 'Background' : 'Foreground');
+  let colorInGamut = $derived($gamut ? inGamut($color, $gamut) : true);
   let editing = $state(false);
   let inputValue = $state('');
   let hasError = $state(false);
@@ -88,7 +92,11 @@
   data-column="tool"
   data-needs-changes={hasError}
 >
-  <div class="swatch {type}"></div>
+  <div class="swatch {type} {colorInGamut ? 'in-gamut' : 'out-of-gamut'}">
+    <div class="gamut-warning">
+      <span class="sr-only">Out of gamut</span><Icon name="warning" />
+    </div>
+  </div>
   <label for="{type}-color" data-label>
     {displayType} Color
   </label>
@@ -132,6 +140,9 @@
     grid-area: swatch;
     height: 100%;
     position: relative;
+    &.out-of-gamut {
+      outline: var(--warning) 3pt solid;
+    }
 
     &.bg {
       &:after {

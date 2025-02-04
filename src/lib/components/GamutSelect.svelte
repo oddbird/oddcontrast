@@ -4,7 +4,7 @@
 </script>
 
 <div data-setting="color-gamut">
-  <label for="color-gamut" data-label>Gamut</label>
+  <label for="color-gamut" data-label>Show Gamut</label>
   <select name="color-gamut" id="color-gamut" bind:value={$gamut}>
     {#each GAMUTS as gamut (gamut.format)}
       {#if gamut}
