@@ -69,11 +69,19 @@ body {
   grid-template-columns: auto 1fr;
 }
 
-[data-layout~='split'] {
+[data-layout~='color-formats'] {
   display: grid;
 
   @include config.above('sm-page-break') {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr var(--switch-space) 1fr;
+  }
+}
+
+[data-content='formats'] {
+  @include config.above('sm-page-break') {
+    &:last-of-type {
+      grid-column: 3;
+    }
   }
 }
 
@@ -82,7 +90,7 @@ body {
     display: grid;
     grid-template:
       'bginput switch fginput' auto
-      'bgslide . fgslide' auto / 1fr min-content 1fr;
+      'bgslide . fgslide' auto / 1fr var(--switch-space) 1fr;
   }
 }
 

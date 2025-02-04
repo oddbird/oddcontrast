@@ -22,7 +22,7 @@
   <Sliders type="fg" color={fg} format={$format} />
 </form>
 
-<div data-layout="split">
+<div data-layout="color-formats">
   <Formats type="bg" color={$bg} format={$format} />
   <Formats type="fg" color={$fg} format={$format} />
 </div>
@@ -35,7 +35,7 @@
   }
 
   [data-layout] {
-    column-gap: var(--triple-gutter);
+    column-gap: var(--gutter);
   }
 
   [data-actions='swap-colors'] {
