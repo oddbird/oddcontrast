@@ -1,7 +1,6 @@
 <script lang="ts">
   import { contrast, mix } from 'colorjs.io/fn';
 
-  import ColorIssues from '$lib/components/ratio/ColorIssues.svelte';
   import Result from '$lib/components/ratio/Result.svelte';
   import ExternalLink from '$lib/components/util/ExternalLink.svelte';
   import Icon from '$lib/components/util/Icon.svelte';
@@ -88,7 +87,6 @@
       <dd>Bold Weight</dd>
     </dl>
   </div>
-  <ColorIssues {pass} />
 </aside>
 
 <style lang="scss">

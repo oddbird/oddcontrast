@@ -27,3 +27,8 @@ dl {
 dd {
   margin-inline-start: var(--description-margin-inline, var(--gutter));
 }
+
+.list-item-heading {
+  font-size: var(--small);
+  font-weight: bold;
+}
