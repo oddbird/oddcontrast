@@ -19,9 +19,16 @@
   let pass = $derived(ratio >= RATIOS.AA.Normal);
   let alphaWarning = $derived.by(() => {
     if ($bg.alpha !== 1)
-      return 'Alpha is not considered when the background is not opaque.';
+      return {
+        message: 'Alpha is not considered when the background is not opaque.',
+        anchor: 'background-alpha',
+      };
     if ($fg.alpha !== 1)
-      return 'This ratio is our best estimate given the specified foreground alpha value.';
+      return {
+        message:
+          'This ratio is our best estimate given the specified foreground alpha value.',
+        anchor: 'foreground-alpha',
+      };
     return null;
   });
 </script>
@@ -37,7 +44,8 @@
     {#if alphaWarning}
       <div class="result-warning-info">
         <p data-color-info="warning" class="result-warning">
-          <Icon name="warning" />{alphaWarning}
+          <Icon name="warning" />{alphaWarning.message}
+          <a href="#{alphaWarning.anchor}">Learn more</a>
         </p>
       </div>
     {/if}

@@ -43,7 +43,9 @@
       </p>
     </li>
     <li>
-      <h3 class="list-item-heading">Background Color Alpha Values</h3>
+      <h3 class="list-item-heading" id="background-alpha">
+        Background Color Alpha Values
+      </h3>
       <p>
         WCAG 2 contrast does not consider alpha values. Because we don't know
         what is behind your background color, we can't estimate the contrast. If
@@ -52,7 +54,9 @@
       </p>
     </li>
     <li>
-      <h3 class="list-item-heading">Foreground Color Alpha Values</h3>
+      <h3 class="list-item-heading" id="foreground-alpha">
+        Foreground Color Alpha Values
+      </h3>
       <p>
         WCAG 2 contrast does not consider alpha values, but we can approximate a
         ratio by premultiplying a semi-transparent foreground color in the sRGB
@@ -78,6 +82,11 @@
   .issues-list {
     margin-block-start: var(--gutter);
     max-inline-size: 85ch;
+
+    li:has(h3:target) {
+      color: white;
+      background: var(--success);
+    }
   }
 
   p {
