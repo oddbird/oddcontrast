@@ -2,11 +2,10 @@
   import { inGamut, type PlainColorObject } from 'colorjs.io/fn';
 
   import Output from '$lib/components/colors/Output.svelte';
+  import ExternalLink from '$lib/components/util/ExternalLink.svelte';
   import type { FormatGroup } from '$lib/constants';
   import { ColorSpace } from '$lib/stores';
   import { getSpaceFromFormatId } from '$lib/utils';
-
-  import ExternalLink from '../util/ExternalLink.svelte';
 
   interface Props {
     type: 'bg' | 'fg';

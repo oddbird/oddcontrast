@@ -3,11 +3,10 @@
   import { type Writable } from 'svelte/store';
 
   import CopyButton from '$lib/components/util/CopyButton.svelte';
+  import Icon from '$lib/components/util/Icon.svelte';
   import type { ColorFormatId } from '$lib/constants';
   import { gamut } from '$lib/stores';
   import { getSpaceFromFormatId } from '$lib/utils';
-
-  import Icon from '../util/Icon.svelte';
 
   interface Props {
     type: 'bg' | 'fg';
