@@ -55,14 +55,10 @@ body {
   --layout-pad-block: 0;
   --layout-pad-inline: 0; // allows warning to stretch to the edge
 
-  display: grid;
   grid-area: main;
-  grid-template: '... content ...' auto / var(--double-gutter) 1fr var(
-      --double-gutter
-    );
 
   > * {
-    grid-column: content;
+    padding-inline: var(--double-gutter);
   }
 }
 

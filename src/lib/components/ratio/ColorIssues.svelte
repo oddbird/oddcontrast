@@ -50,7 +50,7 @@
     border: unset;
     border-block-start: var(--border-width) solid var(--border-light);
     margin-block-end: var(--spacer);
-    margin-inline: unset;
+    margin-inline: var(--double-gutter);
   }
 
   .known-issues {
