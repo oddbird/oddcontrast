@@ -5,7 +5,11 @@
 
   import { type ColorFormatId, SLIDERS } from '$lib/constants';
   import { ColorSpace, gamut } from '$lib/stores';
-  import { getSpaceFromFormatId, sliderGradient } from '$lib/utils';
+  import {
+    alphaSliderGradient,
+    getSpaceFromFormatId,
+    sliderGradient,
+  } from '$lib/utils';
 
   interface Props {
     type: 'bg' | 'fg';
@@ -55,11 +59,8 @@
   );
 
   let alphaGradient = $derived(
-    sliderGradient({
+    alphaSliderGradient({
       color: $color,
-      channel: 'alpha',
-      range: [0, $color.alpha],
-      gamut: $gamut,
     }),
   );
 

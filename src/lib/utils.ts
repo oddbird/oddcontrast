@@ -19,6 +19,17 @@ import {
 export const getSpaceFromFormatId = (formatId: ColorFormatId) =>
   formatId === 'hex' ? 'srgb' : formatId;
 
+export const alphaSliderGradient = ({ color }: { color: PlainColorObject }) => {
+  const start = clone(color);
+  const end = clone(color);
+  start.alpha = 0;
+  end.alpha = 1;
+  const gradientSteps = steps(start, end, {
+    steps: 2,
+  });
+  return gradientSteps.map((c) => display(c)).join(', ');
+};
+
 export const sliderGradient = ({
   color,
   channel,
@@ -32,15 +43,11 @@ export const sliderGradient = ({
 }) => {
   const start = clone(color);
   const end = clone(color);
-  if (channel === 'alpha') {
-    start.alpha = 0;
-    end.alpha = 1;
-  } else {
-    set(start, channel, range[0]);
-    start.alpha = 1;
-    set(end, channel, range[1]);
-    end.alpha = 1;
-  }
+
+  set(start, channel, range[0]);
+  start.alpha = 1;
+  set(end, channel, range[1]);
+  end.alpha = 1;
 
   const gradientSteps = steps(start, end, {
     steps: 10,
@@ -48,15 +55,15 @@ export const sliderGradient = ({
     hue: 'raw',
     // Smaller values will take longer, larger will be less precise and
     // produce fuzzy edges. This magic number seems to balance that.
-    maxDeltaE: channel === 'alpha' || gamut === null ? undefined : 2,
+    maxDeltaE: gamut === null ? undefined : 2,
   });
+
+  if (gamut === null) {
+    return gradientSteps.map((c) => display(c)).join(', ');
+  }
   let wasInGamut = true;
   const inGamutSteps: string[] = [];
   const stepWidth = 100 / (gradientSteps.length - 1);
-
-  if (channel === 'alpha' || gamut === null) {
-    return gradientSteps.map((c) => display(c)).join(', ');
-  }
 
   // Create a linear gradient string, mapping gradientSteps to 0%-100% by
   // multiplying its index with `stepWidth`.
