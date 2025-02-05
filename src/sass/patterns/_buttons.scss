@@ -44,7 +44,7 @@ button {
   --btn-color: var(--action-light);
 
   &:focus-visible {
-    --outline-width: 0;
+    --outline-width: var(--focus-outline-width, 0);
 
     transform: scale(1.15);
   }
@@ -64,6 +64,8 @@ button {
 
   &:hover,
   &:focus {
+    --focus-outline-width: thin;
+
     animation: swap var(--fast) var(--out-back);
   }
 }
