@@ -10,7 +10,7 @@ import {
   REC_2020,
   sRGB,
 } from 'colorjs.io/fn';
-import { writable } from 'svelte/store';
+import { get, writable } from 'svelte/store';
 
 // eslint-disable-next-line import/no-unresolved
 import { browser, dev } from '$app/environment';
@@ -55,6 +55,12 @@ export const fg = writable<PlainColorObject>(INITIAL_FG);
 export const reset = () => {
   bg.set(INITIAL_BG);
   fg.set(INITIAL_FG);
+};
+
+export const switchColors = () => {
+  const temp = get(bg);
+  bg.set(get(fg));
+  fg.set(temp);
 };
 
 /* c8 ignore next 5 */

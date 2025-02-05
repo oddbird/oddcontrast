@@ -12,6 +12,7 @@
   import OddBird from '$lib/icons/OddBird.svelte';
   import Twitter from '$lib/icons/Twitter.svelte';
   import Warning from '$lib/icons/Warning.svelte';
+  import Switch from '$src/lib/icons/Switch.svelte';
 
   const icons: Record<string, Component> = {
     check: Check,
@@ -25,6 +26,7 @@
     oddbird: OddBird,
     linkedin: LinkedIn,
     mastodon: Mastodon,
+    switch: Switch,
   };
 
   interface Props {
