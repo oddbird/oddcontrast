@@ -92,9 +92,11 @@
   data-needs-changes={hasError}
 >
   <div class="swatch {type} {colorInGamut ? 'in-gamut' : 'out-of-gamut'}">
-    <div class="gamut-warning">
-      <span class="sr-only">Out of gamut</span><Icon name="warning" />
-    </div>
+    {#if !colorInGamut}
+      <div class="gamut-warning">
+        <span class="sr-only">Out of gamut</span><Icon name="warning" />
+      </div>
+    {/if}
   </div>
   <label for="{type}-color" data-label>
     {displayType} Color
@@ -141,6 +143,11 @@
     position: relative;
     &.out-of-gamut {
       outline: var(--warning) 3pt solid;
+    }
+
+    .gamut-warning {
+      z-index: 1;
+      position: absolute;
     }
 
     &.bg {
