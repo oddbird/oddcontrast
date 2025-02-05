@@ -27,7 +27,8 @@ button {
     var(--btn-padding-inline, var(--gutter));
   transition:
     color var(--fast),
-    background-color var(--fast) transform var(--fast);
+    background-color var(--fast),
+    transform var(--fast);
 
   &:hover,
   &:focus {
@@ -66,6 +67,10 @@ button {
   &:focus {
     --outline-width: thin;
 
-    animation: swap var(--fast) var(--out-back);
+    transform: var(--transform, rotate(180deg));
+
+    @media (prefers-reduced-motion: reduce) {
+      --transform: scale(1.1);
+    }
   }
 }
