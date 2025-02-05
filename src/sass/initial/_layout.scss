@@ -40,10 +40,13 @@ body {
   display: grid;
   gap: var(--shim) var(--double-gutter);
   grid-area: header;
-  grid-template: 'logo settings' auto / auto 1fr;
+  grid-template: 'logo' auto 'settings' auto / 1fr;
 
   @include config.above('sm-page-break') {
+    --justify-settings: safe end;
+
     gap: var(--double-gutter);
+    grid-template: 'logo settings' auto / auto 1fr;
   }
 }
 

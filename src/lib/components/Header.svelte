@@ -26,6 +26,6 @@
     gap: inherit;
     grid-area: settings;
     grid-template-columns: repeat(2, auto);
-    justify-content: safe end;
+    justify-content: var(--justify-settings);
   }
 </style>
