@@ -5,7 +5,7 @@
   import CopyButton from '$lib/components/util/CopyButton.svelte';
   import Icon from '$lib/components/util/Icon.svelte';
   import type { ColorFormatId } from '$lib/constants';
-  import { gamut } from '$lib/stores';
+  import { gamut, switchColors } from '$lib/stores';
   import { getSpaceFromFormatId } from '$lib/utils';
 
   interface Props {
@@ -13,6 +13,8 @@
     color: Writable<PlainColorObject>;
     format: ColorFormatId;
   }
+
+  const CUSTOM_MIMETYPE = 'text/odd';
 
   let { type, color, format }: Props = $props();
 
@@ -23,6 +25,7 @@
   let editing = $state(false);
   let inputValue = $state('');
   let hasError = $state(false);
+  let isDragging = false;
 
   // When not editing, sync input value with color (e.g. when sliders change)
   $effect(() => {
@@ -83,6 +86,32 @@
         break;
     }
   };
+
+  const onDragStart = (event: DragEvent) => {
+    isDragging = true;
+    if (!event.dataTransfer) return;
+    event.dataTransfer.clearData();
+    event.dataTransfer.setData(CUSTOM_MIMETYPE, type);
+  };
+
+  const onDrop = (event: DragEvent | undefined) => {
+    const droppedType = event?.dataTransfer?.getData(CUSTOM_MIMETYPE);
+    const dragIsFromOther =
+      type === 'fg' ? droppedType === 'bg' : droppedType === 'fg';
+    if (dragIsFromOther) {
+      switchColors();
+    }
+  };
+
+  const makeDropable = (event: DragEvent) => {
+    // DataTransfer values are not available on dragover, but because the types
+    // of items is available, we can use a custom mimetype to check if a swatch
+    // is the drag target.
+    if (!isDragging && event?.dataTransfer?.types.includes(CUSTOM_MIMETYPE)) {
+      // Cancelling the event signals that the dragged item can be dropped here.
+      event.preventDefault();
+    }
+  };
 </script>
 
 <div
@@ -91,7 +120,16 @@
   data-column="tool"
   data-needs-changes={hasError}
 >
-  <div class="swatch {type} {colorInGamut ? 'in-gamut' : 'out-of-gamut'}">
+  <div
+    role="complementary"
+    class="swatch {type} {colorInGamut ? 'in-gamut' : 'out-of-gamut'}"
+    draggable="true"
+    ondrop={onDrop}
+    ondragenter={makeDropable}
+    ondragover={makeDropable}
+    ondragstart={onDragStart}
+    ondragend={() => (isDragging = false)}
+  >
     {#if !colorInGamut}
       <div class="gamut-warning">
         <span class="sr-only">Out of gamut</span><Icon name="warning" />

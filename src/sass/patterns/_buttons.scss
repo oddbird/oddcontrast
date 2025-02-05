@@ -1,6 +1,8 @@
 /// # Button Pattern
 /// @group buttons
 
+@use '../config';
+
 button {
   font-family: inherit;
   font-size: inherit;
@@ -25,7 +27,8 @@ button {
     var(--btn-padding-inline, var(--gutter));
   transition:
     color var(--fast),
-    background-color var(--fast) transform var(--fast);
+    background-color var(--fast),
+    transform var(--fast);
 
   &:hover,
   &:focus {
@@ -45,5 +48,29 @@ button {
     --outline-width: 0;
 
     transform: scale(1.15);
+  }
+}
+
+[data-btn~='switch'] {
+  --icon-size: var(--icon-medium);
+
+  block-size: fit-content;
+  margin-block-end: var(--spacer);
+
+  @include config.below('sm-page-break') {
+    [data-icon] {
+      transform: rotate(90deg);
+    }
+  }
+
+  &:hover,
+  &:focus {
+    --outline-width: thin;
+
+    transform: var(--transform, rotate(180deg));
+
+    @media (prefers-reduced-motion: reduce) {
+      --transform: scale(1.1);
+    }
   }
 }
