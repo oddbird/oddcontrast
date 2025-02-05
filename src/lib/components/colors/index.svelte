@@ -4,6 +4,8 @@
   import Sliders from '$lib/components/colors/Sliders.svelte';
   import SupportWarning from '$lib/components/colors/SupportWarning.svelte';
   import { bg, fg, format } from '$lib/stores';
+
+  import SwitchButton from './SwitchButton.svelte';
 </script>
 
 <h2 class="sr-only">Check the contrast ratio between two colors</h2>
@@ -13,12 +15,14 @@
 <form data-form="contrast-checker" data-layout="color-form">
   <Header type="bg" color={bg} format={$format} />
   <Sliders type="bg" color={bg} format={$format} />
-
+  <div data-actions="swap-colors">
+    <SwitchButton />
+  </div>
   <Header type="fg" color={fg} format={$format} />
   <Sliders type="fg" color={fg} format={$format} />
 </form>
 
-<div data-layout="split">
+<div data-layout="color-formats">
   <Formats type="bg" color={$bg} format={$format} />
   <Formats type="fg" color={$fg} format={$format} />
 </div>
@@ -31,6 +35,11 @@
   }
 
   [data-layout] {
-    column-gap: var(--triple-gutter);
+    column-gap: var(--gutter);
+  }
+
+  [data-actions='swap-colors'] {
+    display: grid;
+    place-content: center;
   }
 </style>
