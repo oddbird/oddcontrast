@@ -19,9 +19,15 @@
   let spaceObject = $derived(ColorSpace.get(targetSpace));
 
   // Create a throttled value for each channel
-  const throttled = $derived(
-    SLIDERS[format].map(() => throttle(sliderGradient, 50)),
-  );
+  const throttled = $derived.by(() => {
+    // Throttling isn't really necessary when gamut is not displayed,
+    // and using `$gamut` here forces this `derived` to be recalculated
+    // when the gamut changes
+    if ($gamut === null) {
+      return SLIDERS[format].map(() => sliderGradient);
+    }
+    return SLIDERS[format].map(() => throttle(sliderGradient, 100));
+  });
 
   let sliders = $derived(
     SLIDERS[format].map((id, index) => {
