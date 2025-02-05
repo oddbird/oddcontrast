@@ -61,4 +61,9 @@ button {
       transform: rotate(90deg);
     }
   }
+
+  &:hover,
+  &:focus {
+    animation: swap var(--fast) var(--out-back);
+  }
 }

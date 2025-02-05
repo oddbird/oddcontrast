@@ -10,3 +10,13 @@
     transform: scale(1);
   }
 }
+
+@keyframes swap {
+  0% {
+    transform: roatate(0deg);
+  }
+
+  25% {
+    transform: rotate(180deg);
+  }
+}
