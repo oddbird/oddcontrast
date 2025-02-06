@@ -42,9 +42,10 @@
       <span class="result-ratio-number">{displayRatio}:1</span>
     </h3>
     {#if alphaWarning}
-      <div class="result-warning-info">
-        <p data-color-info="warning" class="result-warning">
-          <Icon name="warning" />{alphaWarning.message}
+      <div data-color-info="warning alpha">
+        <Icon name="warning" />
+        <p>
+          {alphaWarning.message}
           <a href="#{alphaWarning.anchor}">Learn more</a>
         </p>
       </div>
@@ -126,14 +127,23 @@
   }
 
   .contrast-info {
+    --contrast-info-columns: minmax(var(--ratio-width), 25%) 1fr;
     column-gap: var(--shim);
     display: grid;
     grid-area: contrastinfo;
     // fixed width column to prevent layout shift as the ratio number changes
     grid-template:
       'heading heading' min-content
-      'number warning' min-content / minmax(var(--ratio-width), 25%) 1fr;
+      'number number' min-content
+      'warning warning' / var(--contrast-info-columns);
     margin-block-end: var(--contrast-info-block-end, var(--gutter));
+    row-gap: var(--shim);
+
+    @include config.above('sm-column-break') {
+      grid-template:
+        'heading heading' min-content
+        'number warning' min-content / var(--contrast-info-columns);
+    }
 
     @include config.between('sm-page-break', 'lg-page-break') {
       --contrast-info-block-end: 0;
@@ -143,7 +153,7 @@
       grid-template:
         'heading heading' min-content
         'number warning' min-content
-        'intro intro' auto / minmax(var(--ratio-width), 25%) 1fr;
+        'intro intro' auto / var(--contrast-info-columns);
     }
 
     @include config.above('lg-page-break') {
@@ -153,7 +163,7 @@
       grid-template:
         'heading heading' auto
         'intro intro' auto
-        'number warning' min-content / minmax(var(--ratio-width), 25%) 1fr;
+        'number warning' min-content / var(--contrast-info-columns);
     }
   }
 
@@ -183,13 +193,7 @@
     line-height: 0.7; // weird number alignment
   }
 
-  .result-warning-info {
-    align-items: center;
-    display: flex;
-    grid-area: warning;
-  }
-
-  .result-warning {
+  [data-color-info~='alpha'] {
     --warning-bg: var(--bg);
     --warning-padding-block: var(--shim);
     --warning-padding-inline: var(--shim);
@@ -198,6 +202,7 @@
     border-radius: var(--border-radius);
     display: flex;
     gap: var(--half-shim);
+    grid-area: warning;
   }
 
   .result-ratio-number {
