@@ -83,9 +83,14 @@
     margin-block-start: var(--gutter);
     max-inline-size: 85ch;
 
-    li:has(h3:target) {
-      color: white;
-      background: var(--success);
+    :target {
+      color: var(--active);
+
+      &::after {
+        content: ' \25C6';
+        display: inline-block;
+        margin-inline-start: var(--shim);
+      }
     }
   }
 

@@ -31,4 +31,5 @@ dd {
 .list-item-heading {
   font-size: var(--small);
   font-weight: bold;
+  transition: color var(--fast);
 }
