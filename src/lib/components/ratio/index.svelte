@@ -129,9 +129,10 @@
     column-gap: var(--shim);
     display: grid;
     grid-area: contrastinfo;
+    // fixed width column to prevent layout shift as the ratio number changes
     grid-template:
       'heading heading' min-content
-      'number warning' min-content / auto 1fr;
+      'number warning' min-content / minmax(var(--ratio-width), 25%) 1fr;
     margin-block-end: var(--contrast-info-block-end, var(--gutter));
 
     @include config.between('sm-page-break', 'lg-page-break') {
@@ -142,15 +143,17 @@
       grid-template:
         'heading heading' min-content
         'number warning' min-content
-        'intro intro' auto / auto 1fr;
+        'intro intro' auto / minmax(var(--ratio-width), 25%) 1fr;
     }
 
     @include config.above('lg-page-break') {
+      --ratio-width: 10rem;
+
       gap: var(--shim);
       grid-template:
         'heading heading' auto
         'intro intro' auto
-        'number warning' min-content / 1fr auto;
+        'number warning' min-content / minmax(var(--ratio-width), 25%) 1fr;
     }
   }
 
@@ -176,11 +179,8 @@
     align-items: center;
     display: inline-flex;
     grid-area: number;
+    justify-content: flex-start;
     line-height: 0.7; // weird number alignment
-
-    @include config.between('sm-column-break', 'lg-page-break') {
-      justify-content: flex-end;
-    }
   }
 
   .result-warning-info {
