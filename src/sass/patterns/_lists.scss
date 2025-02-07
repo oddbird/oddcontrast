@@ -28,8 +28,22 @@ dd {
   margin-inline-start: var(--description-margin-inline, var(--gutter));
 }
 
-.list-item-heading {
+[data-list-item-heading] {
   font-size: var(--small);
   font-weight: bold;
-  transition: color var(--fast);
+  transition:
+    color var(--fast),
+    opacity var(--fast);
+}
+
+[data-list-item-heading~='target'] {
+  --icon-size: var(--small);
+
+  display: flex;
+  gap: var(--shim);
+
+  [data-icon] {
+    margin-block-start: var(--quarter-shim);
+    opacity: var(--target-icon-opacity, 0);
+  }
 }

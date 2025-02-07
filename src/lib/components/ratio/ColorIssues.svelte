@@ -1,5 +1,6 @@
 <script lang="ts">
   import ExternalLink from '$lib/components/util/ExternalLink.svelte';
+  import Icon from '$lib/components/util/Icon.svelte';
 </script>
 
 <hr />
@@ -7,7 +8,7 @@
   <h2 class="section-heading">Known Color Issues</h2>
   <ul class="issues-list">
     <li>
-      <h3 class="list-item-heading">Gamut Mapping Implementation</h3>
+      <h3 data-list-item-heading>Gamut Mapping Implementation</h3>
       <p>
         Browsers implemented gamut mapping using clipping, which is fast but
         provides inferior results compared to the algorithm defined in the <ExternalLink
@@ -18,7 +19,7 @@
       </p>
     </li>
     <li>
-      <h3 class="list-item-heading">Checking for Out of Gamut Colors</h3>
+      <h3 data-list-item-heading>Checking for Out of Gamut Colors</h3>
       <p>
         The new color features in CSS allow for a much wider range of colors,
         many of which cannot be shown on many (or any) screens. When selecting
@@ -43,8 +44,9 @@
       </p>
     </li>
     <li>
-      <h3 class="list-item-heading" id="background-alpha">
+      <h3 data-list-item-heading="target" id="background-alpha">
         Background Color Alpha Values
+        <Icon name="warning" />
       </h3>
       <p>
         WCAG 2 contrast does not consider alpha values. Because we don't know
@@ -54,8 +56,9 @@
       </p>
     </li>
     <li>
-      <h3 class="list-item-heading" id="foreground-alpha">
+      <h3 data-list-item-heading="target" id="foreground-alpha">
         Foreground Color Alpha Values
+        <Icon name="warning" />
       </h3>
       <p>
         WCAG 2 contrast does not consider alpha values, but we can approximate a
@@ -84,13 +87,9 @@
     max-inline-size: 85ch;
 
     :target {
-      color: var(--active);
+      --target-icon-opacity: 1;
 
-      &::after {
-        content: ' \25C6';
-        display: inline-block;
-        margin-inline-start: var(--shim);
-      }
+      color: var(--warning);
     }
   }
 
