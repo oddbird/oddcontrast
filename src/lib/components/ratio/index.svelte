@@ -154,6 +154,14 @@
         'heading heading' min-content
         'number warning' min-content
         'intro intro' auto / var(--contrast-info-columns);
+
+      @container results (inline-size < 750px) {
+        grid-template:
+          'heading heading' auto
+          'number number' auto
+          'warning warning' min-content
+          'intro intro' min-content / var(--contrast-info-columns);
+      }
     }
 
     @include config.above('lg-page-break') {
@@ -164,6 +172,14 @@
         'heading heading' auto
         'intro intro' auto
         'number warning' min-content / var(--contrast-info-columns);
+
+      @container results (inline-size < 400px) {
+        grid-template:
+          'heading heading' auto
+          'intro intro' auto
+          'number ...' min-content
+          'warning warning' min-content / var(--contrast-info-columns);
+      }
     }
   }
 
