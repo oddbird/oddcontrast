@@ -38,7 +38,6 @@
     <h2 data-heading="large"><strong>Current</strong> Ratio</h2>
 
     <h3 data-pass={pass} data-heading="large" class="result-ratio">
-      <span class="sr-only">The contrast ratio is</span>
       <span class="result-ratio-number">{displayRatio}:1</span>
     </h3>
     {#if alphaWarning}
@@ -116,6 +115,7 @@
 
     @include config.between('sm-page-break', 'lg-page-break') {
       --result-layout-gap: var(--gutter-plus);
+
       grid-template:
         'contrastinfo status' auto
         '... knownissues' auto / 1fr 1fr;
@@ -127,7 +127,9 @@
   }
 
   .contrast-info {
+    --ratio-width: 8.5rem;
     --contrast-info-columns: minmax(var(--ratio-width), 25%) 1fr;
+
     column-gap: var(--shim);
     display: grid;
     grid-area: contrastinfo;
@@ -205,7 +207,6 @@
     align-items: center;
     display: inline-flex;
     grid-area: number;
-    justify-content: flex-start;
     line-height: 0.7; // weird number alignment
   }
 
@@ -214,6 +215,7 @@
     --warning-padding-block: var(--shim);
     --warning-padding-inline: var(--shim);
     --warning-size: var(--small);
+
     border: var(--border-width) solid var(--border);
     border-radius: var(--border-radius);
     display: flex;
@@ -236,6 +238,7 @@
     text-align: center;
 
     @include config.between('sm-page-break', 'lg-page-break') {
+      align-content: start;
       grid-template-rows: min-content;
       padding-block-start: var(--shim-plus);
     }
