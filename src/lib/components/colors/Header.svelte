@@ -181,11 +181,15 @@
     position: relative;
     &.out-of-gamut {
       outline: var(--warning) 3pt solid;
+      outline-offset: 1pt;
     }
 
     .gamut-warning {
-      z-index: 1;
+      --icon-color: var(--warning);
+
+      padding: var(--shim) 0 0 var(--shim);
       position: absolute;
+      z-index: 1;
     }
 
     &.bg {
