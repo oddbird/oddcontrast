@@ -18,14 +18,9 @@ const config = {
   },
 
   kit: {
-    alias: {
-      $src: 'src',
-      $test: 'test',
-    },
+    alias: { $src: 'src', $test: 'test' },
     adapter: adapter(),
-    env: {
-      publicPrefix: '',
-    },
+    env: { publicPrefix: '' },
   },
 };
 
