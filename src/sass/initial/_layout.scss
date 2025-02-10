@@ -49,6 +49,7 @@ body {
 
 [data-layout~='results'] {
   grid-area: results;
+  container: results / inline-size;
 }
 
 [data-layout~='main'] {
