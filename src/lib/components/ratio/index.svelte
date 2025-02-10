@@ -239,7 +239,6 @@
 
     @include config.between('sm-page-break', 'lg-page-break') {
       align-content: start;
-      grid-template-rows: min-content;
       padding-block-start: var(--shim-plus);
     }
   }
