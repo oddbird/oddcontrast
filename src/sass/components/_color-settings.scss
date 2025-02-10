@@ -1,0 +1,23 @@
+@use '../config';
+
+[data-setting] {
+  align-items: center;
+  column-gap: var(--gutter);
+  display: grid;
+  grid-template:
+    'format-label' auto
+    'format-input' auto / 1fr;
+  justify-content: end;
+
+  @include config.above('sm-page-break') {
+    grid-template: 'format-label format-input' auto / 1fr auto;
+  }
+
+  label {
+    grid-area: format-label;
+  }
+
+  select {
+    grid-area: format-input;
+  }
+}

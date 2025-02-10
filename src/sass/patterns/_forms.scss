@@ -61,6 +61,7 @@ select {
 }
 
 input[type='range'] {
+  border: var(--border-width) solid var(--border);
   border-radius: var(--range-input);
   box-shadow: 1px 1px var(--border-width-md) 0 var(--border-light);
   height: var(--range-input);

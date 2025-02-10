@@ -1,10 +1,11 @@
 <script lang="ts">
-  import { type PlainColorObject, serialize, to } from 'colorjs.io/fn';
+  import { inGamut, type PlainColorObject, serialize, to } from 'colorjs.io/fn';
   import { type Writable } from 'svelte/store';
 
   import CopyButton from '$lib/components/util/CopyButton.svelte';
+  import Icon from '$lib/components/util/Icon.svelte';
   import type { ColorFormatId } from '$lib/constants';
-  import { switchColors } from '$lib/stores';
+  import { gamut, switchColors } from '$lib/stores';
   import { getSpaceFromFormatId } from '$lib/utils';
 
   interface Props {
@@ -20,6 +21,7 @@
   let targetSpace = $derived(getSpaceFromFormatId(format));
   let display = $derived(serialize($color, { inGamut: false, format }));
   let displayType = $derived(type === 'bg' ? 'Background' : 'Foreground');
+  let colorInGamut = $derived($gamut ? inGamut($color, $gamut) : true);
   let editing = $state(false);
   let inputValue = $state('');
   let hasError = $state(false);
@@ -120,14 +122,20 @@
 >
   <div
     role="complementary"
-    class="swatch {type}"
+    class="swatch {type} {colorInGamut ? 'in-gamut' : 'out-of-gamut'}"
     draggable="true"
     ondrop={onDrop}
     ondragenter={makeDropable}
     ondragover={makeDropable}
     ondragstart={onDragStart}
     ondragend={() => (isDragging = false)}
-  ></div>
+  >
+    {#if !colorInGamut}
+      <div class="gamut-warning">
+        <span class="sr-only">Out of gamut</span><Icon name="warning" />
+      </div>
+    {/if}
+  </div>
   <label for="{type}-color" data-label>
     {displayType} Color
   </label>
@@ -171,6 +179,18 @@
     grid-area: swatch;
     height: 100%;
     position: relative;
+    &.out-of-gamut {
+      outline: var(--warning) 3pt solid;
+      outline-offset: 1pt;
+    }
+
+    .gamut-warning {
+      --icon-color: var(--warning);
+
+      padding: var(--shim) 0 0 var(--shim);
+      position: absolute;
+      z-index: 1;
+    }
 
     &.bg {
       &:after {
