@@ -132,7 +132,7 @@
   >
     {#if !colorInGamut}
       <div class="gamut-warning">
-        <span class="sr-only">Out of gamut</span><Icon name="warning" />
+        <Icon name="warning" /> <span>Out of gamut</span>
       </div>
     {/if}
   </div>
@@ -185,9 +185,15 @@
     }
 
     .gamut-warning {
-      --icon-color: var(--warning);
-
-      padding: var(--shim) 0 0 var(--shim);
+      background: var(--warning);
+      border-radius: var(--border-radius);
+      color: var(--bg);
+      display: flex;
+      font-size: var(--small);
+      gap: var(--half-shim);
+      margin: var(--shim) 0 0 var(--shim);
+      outline: var(--border-width) solid var(--bg);
+      padding: var(--half-shim) var(--shim);
       position: absolute;
       z-index: 1;
     }
