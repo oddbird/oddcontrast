@@ -73,6 +73,7 @@ strong {
   font-size: var(--color-info-size, var(--warning-size));
   margin-bottom: var(--warning-margin-bottom);
   padding-block: var(--warning-padding-block);
+  padding-inline: var(--warning-padding-inline);
   text-align: var(--warning-align, left);
 
   main > & {

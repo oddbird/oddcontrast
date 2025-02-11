@@ -1,14 +1,36 @@
 <script lang="ts">
-  import { contrast } from 'colorjs.io/fn';
+  import { contrast, mix } from 'colorjs.io/fn';
 
   import Result from '$lib/components/ratio/Result.svelte';
   import ExternalLink from '$lib/components/util/ExternalLink.svelte';
+  import Icon from '$lib/components/util/Icon.svelte';
   import { RATIOS } from '$lib/constants';
   import { bg, fg } from '$lib/stores';
 
-  let ratio = $derived(contrast($bg, $fg, 'WCAG21'));
+  let fgPremultiplied = $derived.by(() => {
+    if ($fg.alpha === 1 || $bg.alpha !== 1) return $fg;
+    return mix($bg, $fg, $fg.alpha, {
+      space: 'srgb',
+      premultiplied: false,
+    });
+  });
+  let ratio = $derived(contrast($bg, fgPremultiplied, 'WCAG21'));
   let displayRatio = $derived(Math.round((ratio + Number.EPSILON) * 100) / 100);
   let pass = $derived(ratio >= RATIOS.AA.Normal);
+  let alphaWarning = $derived.by(() => {
+    if ($bg.alpha !== 1)
+      return {
+        message: 'Alpha is not considered when the background is not opaque.',
+        anchor: 'background-alpha',
+      };
+    if ($fg.alpha !== 1)
+      return {
+        message:
+          'This ratio is our best estimate given the specified foreground alpha value.',
+        anchor: 'foreground-alpha',
+      };
+    return null;
+  });
 </script>
 
 <aside data-layout="results">
@@ -16,9 +38,17 @@
     <h2 data-heading="large"><strong>Current</strong> Ratio</h2>
 
     <h3 data-pass={pass} data-heading="large" class="result-ratio">
-      <span class="sr-only">The contrast ratio is</span>
       <span class="result-ratio-number">{displayRatio}:1</span>
     </h3>
+    {#if alphaWarning}
+      <div data-color-info="warning alpha">
+        <Icon name="warning" />
+        <p>
+          {alphaWarning.message}
+          <a href="#{alphaWarning.anchor}">Learn more</a>
+        </p>
+      </div>
+    {/if}
 
     <p class="result-intro">
       In WCAG 2, contrast is a measure of the difference in perceived brightness
@@ -71,7 +101,9 @@
   @use 'config';
 
   [data-layout='results'] {
-    background-color: var(--bgcolor);
+    background: linear-gradient(90deg, var(--bgcolor), var(--bgcolor)),
+      url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><rect fill="%23e8e8e8" width="30" height="30"/><rect x="30" y="30" width="30" height="30" fill="%23e8e8e8"/></svg>');
+    background-size: 30px 30px;
     color: var(--fgcolor);
     display: grid;
     gap: var(--result-layout-gap, var(--shim));
@@ -83,6 +115,7 @@
 
     @include config.between('sm-page-break', 'lg-page-break') {
       --result-layout-gap: var(--gutter-plus);
+
       grid-template:
         'contrastinfo status' auto
         '... knownissues' auto / 1fr 1fr;
@@ -94,26 +127,61 @@
   }
 
   .contrast-info {
+    --ratio-width: 8.5rem;
+    --contrast-info-columns: minmax(var(--ratio-width), 25%) 1fr;
+
+    column-gap: var(--shim);
     display: grid;
     grid-area: contrastinfo;
+    // fixed width column to prevent layout shift as the ratio number changes
     grid-template:
-      'heading' min-content
-      'number' min-content / 100%;
+      'heading heading' min-content
+      'number number' min-content
+      'warning warning' / var(--contrast-info-columns);
+    margin-block-end: var(--contrast-info-block-end, var(--gutter));
+    row-gap: var(--shim);
 
-    @include config.between('sm-column-break', 'lg-page-break') {
+    @include config.above('sm-column-break') {
+      grid-template:
+        'heading heading' min-content
+        'number warning' min-content / var(--contrast-info-columns);
+    }
+
+    @include config.between('sm-page-break', 'lg-page-break') {
+      --contrast-info-block-end: 0;
+
       gap: var(--shim) var(--gutter);
       // fixed width column to prevent layout shift as the ratio number changes
       grid-template:
-        'heading number' min-content
-        'intro   intro' 1fr / auto var(--ratio-width);
+        'heading heading' min-content
+        'number warning' min-content
+        'intro intro' auto / var(--contrast-info-columns);
+
+      @container results (inline-size < 750px) {
+        grid-template:
+          'heading heading' auto
+          'number number' auto
+          'warning warning' min-content
+          'intro intro' min-content / var(--contrast-info-columns);
+      }
     }
 
     @include config.above('lg-page-break') {
+      --ratio-width: 10rem;
+
       gap: var(--shim);
       grid-template:
-        'heading' auto
-        'intro' auto
-        'number' auto / 100%;
+        'heading heading' auto
+        'intro intro' auto
+        'number warning' min-content / var(--contrast-info-columns);
+
+      @container results (inline-size < 400px) {
+        grid-template:
+          'heading heading' auto
+          'intro intro' auto
+          'number ...' min-content
+          'warning warning' min-content / var(--contrast-info-columns);
+      }
     }
   }
 
@@ -123,7 +191,7 @@
 
   .result-intro {
     grid-area: intro;
-    margin-bottom: var(--gutter);
+    margin-block: var(--gutter);
 
     @include config.below('sm-page-break') {
       display: none;
@@ -136,14 +204,23 @@
   }
 
   .result-ratio {
-    align-items: start;
+    align-items: center;
     display: inline-flex;
     grid-area: number;
     line-height: 0.7; // weird number alignment
+  }
 
-    @include config.between('sm-column-break', 'lg-page-break') {
-      justify-content: flex-end;
-    }
+  [data-color-info~='alpha'] {
+    --warning-bg: var(--bg);
+    --warning-padding-block: var(--shim);
+    --warning-padding-inline: var(--shim);
+    --warning-size: var(--small);
+
+    border: var(--border-width) solid var(--border);
+    border-radius: var(--border-radius);
+    display: flex;
+    gap: var(--half-shim);
+    grid-area: warning;
   }
 
   .result-ratio-number {
@@ -159,6 +236,11 @@
     grid-area: status;
     grid-template-columns: 1fr 1fr;
     text-align: center;
+
+    @include config.between('sm-page-break', 'lg-page-break') {
+      align-content: start;
+      padding-block-start: var(--shim-plus);
+    }
   }
 
   .contrast-defined {
