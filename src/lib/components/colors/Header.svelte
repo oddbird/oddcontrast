@@ -185,6 +185,8 @@
     }
 
     .gamut-warning {
+      @include config.z-index('bump');
+
       background: var(--warning);
       border-radius: var(--border-radius);
       color: var(--bg);
@@ -195,7 +197,6 @@
       outline: var(--border-width) solid var(--bg);
       padding: var(--half-shim) var(--shim);
       position: absolute;
-      z-index: 1;
     }
 
     &.bg {
