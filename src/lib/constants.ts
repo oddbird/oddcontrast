@@ -24,6 +24,16 @@ export const FORMATS: ColorFormatId[] = [
   'srgb',
 ];
 
+export type ColorGamutId = 'srgb' | 'p3' | 'rec2020' | null;
+
+export const GAMUTS: { name: string; format: ColorGamutId }[] = [
+  { name: 'None', format: null },
+  { name: 'sRGB', format: 'srgb' },
+  { name: 'P3', format: 'p3' },
+  { name: 'Rec2020', format: 'rec2020' },
+];
+export const GAMUT_IDS = GAMUTS.map((gamut) => gamut.format);
+
 export interface FormatGroup {
   name: string;
   formats: ColorFormatId[];

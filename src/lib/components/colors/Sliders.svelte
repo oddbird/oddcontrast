@@ -1,10 +1,15 @@
 <script lang="ts">
   import type { PlainColorObject } from 'colorjs.io/fn';
+  import throttle from 'lodash/throttle';
   import type { Writable } from 'svelte/store';
 
   import { type ColorFormatId, SLIDERS } from '$lib/constants';
-  import { ColorSpace } from '$lib/stores';
-  import { getSpaceFromFormatId, sliderGradient } from '$lib/utils';
+  import { ColorSpace, gamut } from '$lib/stores';
+  import {
+    alphaSliderGradient,
+    getSpaceFromFormatId,
+    sliderGradient,
+  } from '$lib/utils';
 
   interface Props {
     type: 'bg' | 'fg';
@@ -16,11 +21,28 @@
 
   let targetSpace = $derived(getSpaceFromFormatId(format));
   let spaceObject = $derived(ColorSpace.get(targetSpace));
+
+  // Create a throttled value for each channel
+  const throttled = $derived.by(() => {
+    // Throttling isn't really necessary when gamut is not displayed,
+    // and using `$gamut` here forces this `derived` to be recalculated
+    // when the gamut changes
+    if ($gamut === null) {
+      return SLIDERS[format].map(() => sliderGradient);
+    }
+    return SLIDERS[format].map(() => throttle(sliderGradient, 100));
+  });
+
   let sliders = $derived(
-    SLIDERS[format].map((id) => {
+    SLIDERS[format].map((id, index) => {
       const coord = spaceObject.coords[id];
       const range = coord?.range ?? coord?.refRange ?? [0, 1];
-      const gradient = sliderGradient($color, id, range);
+      const gradient = throttled[index]!({
+        color: $color,
+        channel: id,
+        range: range,
+        gamut: $gamut,
+      });
       return {
         id,
         name: coord?.name ?? '',
@@ -37,7 +59,9 @@
   );
 
   let alphaGradient = $derived(
-    sliderGradient($color, 'alpha', [0, $color.alpha]),
+    alphaSliderGradient({
+      color: $color,
+    }),
   );
 
   const handleInput = (
@@ -95,6 +119,7 @@
       style={`--stops: ${alphaGradient}`}
       value={$color.alpha}
       oninput={(e) => handleInput(e)}
+      data-channel="alpha"
     />
   </div>
 </div>
@@ -105,6 +130,12 @@
     display: block;
     appearance: none;
     background: linear-gradient(to right, var(--stops));
+
+    &[data-channel='alpha'] {
+      background:
+        linear-gradient(to right, var(--stops)),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><rect fill="%23e8e8e8" width="30" height="30"/><rect x="30" y="30" width="30" height="30" fill="%23e8e8e8"/></svg>');
+    }
   }
 
   [data-group~='sliders'] {

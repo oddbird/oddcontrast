@@ -14,7 +14,7 @@ import { get, writable } from 'svelte/store';
 
 // eslint-disable-next-line import/no-unresolved
 import { browser, dev } from '$app/environment';
-import type { ColorFormatId } from '$lib/constants';
+import type { ColorFormatId, ColorGamutId } from '$lib/constants';
 
 // Register supported color spaces
 ColorSpace.register(HSL);
@@ -32,6 +32,7 @@ export { ColorSpace };
 
 export const INITIAL_VALUES = {
   format: 'p3' as ColorFormatId,
+  gamut: null as ColorGamutId,
   bg_coord: [0.0967, 0.167, 0.4494] as [number, number, number],
   fg_coord: [0.951, 0.675, 0.7569] as [number, number, number],
   alpha: 1,
@@ -49,6 +50,7 @@ const INITIAL_FG = {
 };
 
 export const format = writable<ColorFormatId>(INITIAL_VALUES.format);
+export const gamut = writable<ColorGamutId>(INITIAL_VALUES.gamut);
 export const bg = writable<PlainColorObject>(INITIAL_BG);
 export const fg = writable<PlainColorObject>(INITIAL_FG);
 
