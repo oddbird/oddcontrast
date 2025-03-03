@@ -35,7 +35,7 @@
 
 <div data-content="formats" data-column="tool">
   <h2 class="small-only label">{displayType} Color</h2>
-  {#each otherFormats as formatGroup}
+  {#each otherFormats as formatGroup (formatGroup.name)}
     <FormatGroup {type} {color} {formatGroup} />
   {/each}
 </div>
