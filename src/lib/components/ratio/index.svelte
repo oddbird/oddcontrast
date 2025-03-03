@@ -7,14 +7,16 @@
   import { RATIOS } from '$lib/constants';
   import { bg, fg } from '$lib/stores';
 
-  let fgPremultiplied = $derived.by(() => {
-    if ($fg.alpha === 1 || $bg.alpha !== 1) return $fg;
-    return mix($bg, $fg, $fg.alpha, {
-      space: 'srgb',
-      premultiplied: false,
-    });
+  let ratio = $derived.by(() => {
+    let fgPremultiplied = $fg;
+    if ($fg.alpha !== 1 && $bg.alpha === 1) {
+      fgPremultiplied = mix($bg, $fg, $fg.alpha, {
+        space: 'srgb',
+        premultiplied: false,
+      });
+    }
+    return contrast($bg, fgPremultiplied, 'WCAG21');
   });
-  let ratio = $derived(contrast($bg, fgPremultiplied, 'WCAG21'));
   let displayRatio = $derived(Math.round((ratio + Number.EPSILON) * 100) / 100);
   let pass = $derived(ratio >= RATIOS.AA.Normal);
   let alphaWarning = $derived.by(() => {
