@@ -8,13 +8,13 @@
   import { bg, fg } from '$lib/stores';
 
   let fgPremultiplied = $derived.by(() => {
-    if ($fg.alpha === 1 || $bg.alpha !== 1) return $fg;
+    if ($fg.alpha === 1 || $bg.alpha !== 1) return null;
     return mix($bg, $fg, $fg.alpha, {
       space: 'srgb',
       premultiplied: false,
     });
   });
-  let ratio = $derived(contrast($bg, fgPremultiplied, 'WCAG21'));
+  let ratio = $derived(contrast($bg, fgPremultiplied ?? $fg, 'WCAG21'));
   let displayRatio = $derived(Math.round((ratio + Number.EPSILON) * 100) / 100);
   let pass = $derived(ratio >= RATIOS.AA.Normal);
   let alphaWarning = $derived.by(() => {
