@@ -14,7 +14,7 @@
     >.
   </span>
   <ul data-nav="social" data-list="inline">
-    {#each SOCIAL_LINKS as { name, icon, href }}
+    {#each SOCIAL_LINKS as { name, icon, href } (icon)}
       <li>
         <ExternalLink {href} showNewTabIcon={false} title={name}>
           <Icon name={icon} />
