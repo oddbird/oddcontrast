@@ -4,7 +4,7 @@
 
   import CopyButton from '$lib/components/util/CopyButton.svelte';
   import Icon from '$lib/components/util/Icon.svelte';
-  import type { ColorFormatId } from '$lib/constants';
+  import { type ColorFormatId, GAMUTS } from '$lib/constants';
   import { gamut, switchColors } from '$lib/stores';
   import { getSpaceFromFormatId } from '$lib/utils';
 
@@ -22,6 +22,9 @@
   let display = $derived(serialize($color, { inGamut: false, format }));
   let displayType = $derived(type === 'bg' ? 'Background' : 'Foreground');
   let colorInGamut = $derived($gamut ? inGamut($color, $gamut) : true);
+  let gamutName = $derived(
+    $gamut ? (GAMUTS.find((g) => g.format === $gamut)?.name ?? null) : null,
+  );
   let editing = $state(false);
   let inputValue = $state('');
   let hasError = $state(false);
@@ -132,7 +135,8 @@
   >
     {#if !colorInGamut}
       <div class="gamut-warning">
-        <Icon name="warning" /> <span>Out of gamut</span>
+        <Icon name="warning" />
+        <span>Out of {gamutName ? `${gamutName} ` : ''}gamut</span>
       </div>
     {/if}
   </div>
