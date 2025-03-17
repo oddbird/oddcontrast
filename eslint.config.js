@@ -58,6 +58,7 @@ export default [
       'import/resolver': {
         typescript: {
           project: ['tsconfig.json', 'test/tsconfig.json'],
+          noWarnOnMultipleProjects: true,
         },
       },
     },
