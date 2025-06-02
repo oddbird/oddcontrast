@@ -78,7 +78,8 @@
     "vitest": "^3.2.0"
   },
   "resolutions": {
-    "@types/node": "^22"
+    "@types/node": "^22",
+    "vite": "^6.3.5"
   },
   "packageManager": "yarn@4.9.1"
 }
