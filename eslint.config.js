@@ -1,11 +1,9 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable import/no-named-as-default-member */
 
 import js from '@eslint/js';
 import tsParser from '@typescript-eslint/parser';
 import vitest from '@vitest/eslint-plugin';
 import prettier from 'eslint-config-prettier';
-// @ts-expect-error no types
 import importPlugin from 'eslint-plugin-import';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import svelte from 'eslint-plugin-svelte';
