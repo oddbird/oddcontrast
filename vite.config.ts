@@ -10,7 +10,6 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        api: 'modern',
         loadPaths: [fileURLToPath(new URL('./src/sass/', import.meta.url))],
         importers: [new NodePackageImporter()],
       },
