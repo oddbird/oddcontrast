@@ -6348,7 +6348,7 @@ __metadata:
     svelte-eslint-parser: "npm:^1.2.0"
     typescript: "npm:^5.8.3"
     typescript-eslint: "npm:^8.34.1"
-    vite: "npm:^6.3.5"
+    vite: "npm:^7.0.0"
     vitest: "npm:^3.2.4"
   languageName: unknown
   linkType: soft
