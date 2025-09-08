@@ -26,6 +26,7 @@
 
   function colorsToHash() {
     const hashString = storeValuesToHash($bg, $fg, $format, $gamut);
+    // eslint-disable-next-line svelte/no-navigation-without-resolve
     replaceState(`#${hashString}`, {});
   }
 
