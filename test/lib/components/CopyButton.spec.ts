@@ -41,7 +41,7 @@ describe('Copy Button', () => {
 
     await fireEvent.click(button);
 
-    expect(spy).toHaveBeenCalledWith('Copy');
+    expect(spy).toHaveBeenCalledExactlyOnceWith('Copy');
   });
 
   it('swaps icons', async () => {
