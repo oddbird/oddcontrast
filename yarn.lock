@@ -1064,12 +1064,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sveltejs/adapter-auto@npm:^6.1.1":
-  version: 6.1.1
-  resolution: "@sveltejs/adapter-auto@npm:6.1.1"
+"@sveltejs/adapter-auto@npm:^7.0.0":
+  version: 7.0.0
+  resolution: "@sveltejs/adapter-auto@npm:7.0.0"
   peerDependencies:
     "@sveltejs/kit": ^2.0.0
-  checksum: 10/f7d33ecc27ccf5eb6a75637c7c1273637c2b47509a708e5fad5e9b41f923ea5e27e195f38eb19a5e041e4afd79d3a1507ae3ce4cbcb0b539a4ed9f902bd966a9
+  checksum: 10/4003f1bc66b1c83fb2939bed3493bc8d2b65d73deed993632e85f67730a0ff95f041e6144cec846a5d6342bd2cf5def7939092f039e1357b8d6f59fcc18a05b1
   languageName: node
   linkType: hard
 
@@ -6588,7 +6588,7 @@ __metadata:
   resolution: "oddcontrast@workspace:."
   dependencies:
     "@eslint/js": "npm:^9.37.0"
-    "@sveltejs/adapter-auto": "npm:^6.1.1"
+    "@sveltejs/adapter-auto": "npm:^7.0.0"
     "@sveltejs/kit": "npm:2.46.5"
     "@sveltejs/vite-plugin-svelte": "npm:^6.2.1"
     "@testing-library/jest-dom": "npm:^6.9.1"
