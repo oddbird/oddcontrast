@@ -65,7 +65,7 @@ export const switchColors = () => {
   fg.set(temp);
 };
 
-/* c8 ignore next 5 */
+/* v8 ignore next 5 -- @preserve */
 if (browser && dev) {
   bg.subscribe(($bg) => (window.bg = $bg));
   fg.subscribe(($fg) => (window.fg = $fg));

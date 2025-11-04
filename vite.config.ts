@@ -3,7 +3,7 @@ import { fileURLToPath, URL } from 'node:url';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { svelteTesting } from '@testing-library/svelte/vite';
 import { NodePackageImporter } from 'sass-embedded';
-import { coverageConfigDefaults, defineConfig } from 'vitest/config';
+import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   plugins: [sveltekit(), svelteTesting()],
@@ -31,9 +31,7 @@ export default defineConfig({
         'src/**/*.d.ts',
         'src/routes/styleguide/**/*',
         'src/routes/+layout.*',
-        ...coverageConfigDefaults.exclude,
       ],
-      all: true,
       skipFull: true,
       reportOnFailure: true,
     },

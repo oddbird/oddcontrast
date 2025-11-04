@@ -12,6 +12,7 @@
   let { href, showNewTabIcon = true, children, ...rest }: Props = $props();
 </script>
 
+<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
 <a {href} target="_blank" rel="noopener noreferrer" {...rest}
   >{@render children?.()}{#if showNewTabIcon}<span class="sr-only"
       >(opens in a new tab)</span
