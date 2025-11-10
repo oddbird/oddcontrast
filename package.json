@@ -48,8 +48,8 @@
     "@types/lodash": "^4.17.20",
     "@types/node": "^22",
     "@typescript-eslint/utils": "^8.46.3",
-    "@vitest/coverage-v8": "^4.0.6",
-    "@vitest/eslint-plugin": "^1.4.0",
+    "@vitest/coverage-v8": "^4.0.8",
+    "@vitest/eslint-plugin": "^1.4.2",
     "chokidar-cli": "^3.0.0",
     "eslint": "^9.39.1",
     "eslint-config-prettier": "^10.1.8",
@@ -69,16 +69,16 @@
     "sassdoc-theme-herman": "^6.0.2",
     "stylelint": "^16.25.0",
     "stylelint-config-standard-scss": "^16.0.0",
-    "svelte": "^5.43.3",
+    "svelte": "^5.43.5",
     "svelte-check": "^4.3.3",
     "svelte-eslint-parser": "^1.4.0",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.46.3",
-    "vite": "^7.1.12",
-    "vitest": "^4.0.6"
+    "vite": "^7.2.2",
+    "vitest": "^4.0.8"
   },
   "resolutions": {
     "@types/node": "^22"
   },
-  "packageManager": "yarn@4.10.3"
+  "packageManager": "yarn@4.11.0"
 }
