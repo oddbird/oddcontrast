@@ -48,7 +48,7 @@
     "@types/lodash": "^4.17.20",
     "@types/node": "^22",
     "@typescript-eslint/utils": "^8.46.4",
-    "@vitest/coverage-v8": "^4.0.9",
+    "@vitest/coverage-v8": "^4.0.10",
     "@vitest/eslint-plugin": "^1.4.3",
     "chokidar-cli": "^3.0.0",
     "eslint": "^9.39.1",
@@ -75,7 +75,7 @@
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.46.4",
     "vite": "^7.2.2",
-    "vitest": "^4.0.9"
+    "vitest": "^4.0.10"
   },
   "resolutions": {
     "@types/node": "^22"
