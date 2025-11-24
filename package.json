@@ -34,7 +34,7 @@
     "test:watch": "yarn test --watch"
   },
   "dependencies": {
-    "accoutrement": "^4.0.5",
+    "accoutrement": "^4.0.6",
     "colorjs.io": "^0.5.2"
   },
   "devDependencies": {
@@ -47,7 +47,7 @@
     "@types/eslint-config-prettier": "^6.11.3",
     "@types/lodash": "^4.17.21",
     "@types/node": "^22",
-    "@typescript-eslint/utils": "^8.47.0",
+    "@typescript-eslint/utils": "^8.48.0",
     "@vitest/coverage-v8": "^4.0.13",
     "@vitest/eslint-plugin": "^1.4.4",
     "chokidar-cli": "^3.0.0",
@@ -66,19 +66,19 @@
     "prettier-plugin-svelte": "^3.4.0",
     "sass-embedded": "^1.93.3",
     "sassdoc": "^2.7.4",
-    "sassdoc-theme-herman": "^6.0.2",
+    "sassdoc-theme-herman": "^7.0.0",
     "stylelint": "^16.26.0",
     "stylelint-config-standard-scss": "^16.0.0",
     "svelte": "^5.43.14",
     "svelte-check": "^4.3.4",
     "svelte-eslint-parser": "^1.4.0",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.47.0",
+    "typescript-eslint": "^8.48.0",
     "vite": "^7.2.4",
     "vitest": "^4.0.13"
   },
   "resolutions": {
     "@types/node": "^22"
   },
-  "packageManager": "yarn@4.11.0"
+  "packageManager": "yarn@4.12.0"
 }
