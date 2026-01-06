@@ -2733,6 +2733,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"colorjs.io@npm:^0.6.0":
+  version: 0.6.0
+  resolution: "colorjs.io@npm:0.6.0"
+  checksum: 10/83c3e1381f8dd292c234227402f53931f2da3e93ced92e76d550e5f6bae5fd351019dce46d25da20132ba67d5056de57605ba853f3f966627d784ba819986f1b
+  languageName: node
+  linkType: hard
+
 "commander@npm:1.0":
   version: 1.0.5
   resolution: "commander@npm:1.0.5"
@@ -6585,7 +6592,7 @@ __metadata:
     "@vitest/eslint-plugin": "npm:^1.6.3"
     accoutrement: "npm:^4.0.6"
     chokidar-cli: "npm:^3.0.0"
-    colorjs.io: "npm:^0.5.2"
+    colorjs.io: "npm:^0.6.0"
     eslint: "npm:^9.39.2"
     eslint-config-prettier: "npm:^10.1.8"
     eslint-import-resolver-typescript: "npm:^4.4.4"
