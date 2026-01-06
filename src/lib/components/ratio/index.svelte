@@ -10,7 +10,7 @@
   let ratio = $derived.by(() => {
     let fgPremultiplied = $fg;
     if ($fg.alpha !== 1 && $bg.alpha === 1) {
-      fgPremultiplied = mix($bg, $fg, $fg.alpha, {
+      fgPremultiplied = mix($bg, $fg, $fg.alpha ?? 0, {
         space: 'srgb',
         premultiplied: false,
       });
