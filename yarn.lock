@@ -1071,16 +1071,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sveltejs/kit@npm:2.49.3":
-  version: 2.49.3
-  resolution: "@sveltejs/kit@npm:2.49.3"
+"@sveltejs/kit@npm:2.49.5":
+  version: 2.49.5
+  resolution: "@sveltejs/kit@npm:2.49.5"
   dependencies:
     "@standard-schema/spec": "npm:^1.0.0"
     "@sveltejs/acorn-typescript": "npm:^1.0.5"
     "@types/cookie": "npm:^0.6.0"
     acorn: "npm:^8.14.1"
     cookie: "npm:^0.6.0"
-    devalue: "npm:^5.3.2"
+    devalue: "npm:^5.6.2"
     esm-env: "npm:^1.2.2"
     kleur: "npm:^4.1.5"
     magic-string: "npm:^0.30.5"
@@ -1101,7 +1101,7 @@ __metadata:
       optional: true
   bin:
     svelte-kit: svelte-kit.js
-  checksum: 10/bcc15adcbb40c8af3e6004257680f6c6fce4e1e82a0dcb243777940c832c8c81d45c1587368af1fc6c0fa2e57c86539ccb73cdda756d890570b4db83c4764a47
+  checksum: 10/592f47d7c66dc1a66bde6551813a02d653e9bcbcaa533130c9a010b053b83420857c0093a16c3f255ad80e80922d486c0fb42f96803f73f9bc83bc76f3d17a88
   languageName: node
   linkType: hard
 
@@ -3148,10 +3148,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"devalue@npm:^5.3.2, devalue@npm:^5.5.0":
+"devalue@npm:^5.5.0":
   version: 5.6.1
   resolution: "devalue@npm:5.6.1"
   checksum: 10/6da13a080514048a4fca231459c44222dd43b9c89cba0586c206592a8f7fa91a5e37952b11769daeaafbd2c4eb5df0b121234adb753a5dc737406312a314545f
+  languageName: node
+  linkType: hard
+
+"devalue@npm:^5.6.2":
+  version: 5.6.2
+  resolution: "devalue@npm:5.6.2"
+  checksum: 10/734b57d917e45b534007e3b5055c031e4e3fcf3c3a44e1b4177e998f30e077e4d280b59abe0cc0ca9055a18e90266e31f578129e83e105e63e9680998a3c2a8a
   languageName: node
   linkType: hard
 
@@ -6595,7 +6602,7 @@ __metadata:
   dependencies:
     "@eslint/js": "npm:^9.39.2"
     "@sveltejs/adapter-auto": "npm:^7.0.0"
-    "@sveltejs/kit": "npm:2.49.3"
+    "@sveltejs/kit": "npm:2.49.5"
     "@sveltejs/vite-plugin-svelte": "npm:^6.2.1"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/svelte": "npm:^5.3.0"
