@@ -1720,10 +1720,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"accoutrement@npm:^4.0.6":
-  version: 4.0.6
-  resolution: "accoutrement@npm:4.0.6"
-  checksum: 10/2bb990a6b26e8dfd4ff39b5e2d4c68e965102e3a0685b945052f8544a62ccd155355ae15054a23dc82ceb2bb7ebe2b02714d3f2269b445f4b50b25dee59ed4b9
+"accoutrement@npm:^4.0.7":
+  version: 4.0.7
+  resolution: "accoutrement@npm:4.0.7"
+  checksum: 10/11941bd3b0fb8ae6526aae05711b52e7b2459276b0ab3e3f5081963cc7d7d0b275430f674d088d482e23db3aff0e7c9a0605397fe3605da4588e1b3b2913d200
   languageName: node
   linkType: hard
 
@@ -6522,7 +6522,7 @@ __metadata:
     "@typescript-eslint/utils": "npm:^8.50.1"
     "@vitest/coverage-v8": "npm:^4.0.16"
     "@vitest/eslint-plugin": "npm:^1.6.5"
-    accoutrement: "npm:^4.0.6"
+    accoutrement: "npm:^4.0.7"
     chokidar-cli: "npm:^3.0.0"
     colorjs.io: "npm:^0.6.0"
     eslint: "npm:^9.39.2"
