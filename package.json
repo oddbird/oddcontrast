@@ -34,7 +34,7 @@
     "test:watch": "yarn test --watch"
   },
   "dependencies": {
-    "accoutrement": "^4.0.6",
+    "accoutrement": "^4.0.7",
     "colorjs.io": "^0.6.0"
   },
   "devDependencies": {
