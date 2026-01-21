@@ -183,6 +183,7 @@
     grid-area: swatch;
     height: 100%;
     position: relative;
+    forced-color-adjust: none;
     &.out-of-gamut {
       outline: var(--warning) 3pt solid;
       outline-offset: 1pt;

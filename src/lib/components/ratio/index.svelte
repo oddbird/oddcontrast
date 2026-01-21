@@ -190,11 +190,13 @@
 
   [data-heading] {
     grid-area: heading;
+    forced-color-adjust: none;
   }
 
   .result-intro {
     grid-area: intro;
     margin-block: var(--gutter);
+    forced-color-adjust: none;
 
     @include config.below('sm-page-break') {
       display: none;
