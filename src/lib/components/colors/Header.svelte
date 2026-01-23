@@ -178,12 +178,12 @@
   }
 
   .swatch {
+    block-size: 100%;
     border: var(--border-width) solid var(--border);
     border-radius: var(--border-radius);
-    grid-area: swatch;
-    height: 100%;
-    position: relative;
     forced-color-adjust: none;
+    grid-area: swatch;
+    position: relative;
     &.out-of-gamut {
       outline: var(--warning) 3pt solid;
       outline-offset: 1pt;
@@ -223,13 +223,13 @@
 
     &:before,
     &:after {
+      block-size: 100%;
+      block-start: 0;
       content: '';
       display: block;
-      height: 100%;
+      inline-size: var(--checkerboard-width, 100%);
+      inline-start: var(--checkerboard-start, 0);
       position: absolute;
-      top: 0;
-      left: var(--checkerboard-start, 0);
-      width: var(--checkerboard-width, 100%);
     }
 
     &:before {
@@ -257,6 +257,6 @@
   }
 
   [data-group] {
-    margin-bottom: var(--gutter-plus);
+    margin-block-end: var(--gutter-plus);
   }
 </style>

@@ -126,11 +126,11 @@
 
 <style lang="scss">
   input[type='range'] {
-    margin: 0;
-    display: block;
     appearance: none;
     background: linear-gradient(to right, var(--stops));
+    display: block;
     forced-color-adjust: none;
+    margin: 0;
 
     &[data-channel='alpha'] {
       background:
@@ -142,10 +142,10 @@
 
   [data-group~='sliders'] {
     --label-margin-block-end: var(--half-shim);
-    margin-bottom: var(--triple-gutter);
+    margin-block-end: var(--triple-gutter);
   }
 
   [data-field~='color-slider'] {
-    margin-bottom: var(--shim-plus);
+    margin-block-end: var(--shim-plus);
   }
 </style>
