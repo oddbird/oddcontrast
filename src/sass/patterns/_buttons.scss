@@ -41,8 +41,8 @@ button {
   --btn-bg-color: transparent;
   --btn-bg-color-active: transparent;
   --btn-border-width: 0;
-  --btn-color-active: var(--action);
   --btn-color: var(--action-light);
+  --btn-color-active: var(--action);
   --btn-padding-inline: var(--half-shim);
 
   &:focus-visible {
