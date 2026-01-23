@@ -38,11 +38,12 @@ button {
 }
 
 [data-btn~='icon'] {
+  --btn-bg-color: transparent;
   --btn-bg-color-active: transparent;
   --btn-border-width: 0;
-  --btn-padding-inline: var(--half-shim);
   --btn-color-active: var(--action);
   --btn-color: var(--action-light);
+  --btn-padding-inline: var(--half-shim);
 
   &:focus-visible {
     --outline-width: 0;
