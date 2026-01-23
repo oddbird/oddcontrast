@@ -42,4 +42,8 @@
   animation: grow-in var(--slow) var(--springy);
 
   --icon-color: var(--success);
+
+  @media (forced-colors: active) {
+    --icon-color: CanvasText;
+  }
 }
