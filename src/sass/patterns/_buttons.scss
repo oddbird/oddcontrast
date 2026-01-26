@@ -26,7 +26,7 @@ button {
   padding: var(--btn-padding-block, var(--half-shim))
     var(--btn-padding-inline, var(--gutter));
   transition:
-    color var(--btn-color-transition, var(--fast)),
+    color var(--fast),
     background-color var(--fast),
     transform var(--fast);
 
@@ -52,8 +52,8 @@ button {
   }
 
   @media (forced-colors: active) {
-    --btn-color-active: ActiveText;
-    --btn-color-transition: 0; // prevent flash of inaccessible color in FF-Windows High Contrast Mode
+    --btn-bg-color-active: Highlight;
+    --btn-color-active: HighlightText;
   }
 }
 
