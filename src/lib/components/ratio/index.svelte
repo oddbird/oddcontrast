@@ -109,6 +109,7 @@
     background-size: 30px 30px;
     color: var(--fgcolor);
     display: grid;
+    forced-color-adjust: none;
     gap: var(--result-layout-gap, var(--shim));
     grid-template:
       'contrastinfo' min-content
@@ -189,12 +190,10 @@
   }
 
   [data-heading] {
-    forced-color-adjust: none;
     grid-area: heading;
   }
 
   .result-intro {
-    forced-color-adjust: none;
     grid-area: intro;
     margin-block: var(--gutter);
 

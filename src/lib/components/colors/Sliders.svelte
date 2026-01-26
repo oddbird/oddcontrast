@@ -136,7 +136,6 @@
       background:
         linear-gradient(to right, var(--stops)),
         url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><rect fill="%23e8e8e8" width="30" height="30"/><rect x="30" y="30" width="30" height="30" fill="%23e8e8e8"/></svg>');
-      forced-color-adjust: none;
     }
   }
 
