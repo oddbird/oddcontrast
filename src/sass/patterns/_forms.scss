@@ -42,6 +42,14 @@ input {
 
 select {
   padding: var(--half-shim) var(--shim);
+
+  @media (forced-colors: active) {
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      border-color: AccentColor;
+    }
+  }
 }
 
 // ## Range Thumbs
