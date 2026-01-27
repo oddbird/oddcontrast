@@ -227,7 +227,6 @@
       content: '';
       display: block;
       inline-size: var(--checkerboard-width, 100%);
-      inset-block-start: 0;
       inset-inline-start: var(--checkerboard-start, 0);
       position: absolute;
     }
