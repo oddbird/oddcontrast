@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "accoutrement": "^4.0.7",
-    "colorjs.io": "^0.6.0"
+    "colorjs.io": "^0.6.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",
