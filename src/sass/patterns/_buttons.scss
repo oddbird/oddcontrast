@@ -38,16 +38,22 @@ button {
 }
 
 [data-btn~='icon'] {
+  --btn-bg-color: transparent;
   --btn-bg-color-active: transparent;
   --btn-border-width: 0;
-  --btn-padding-inline: var(--half-shim);
-  --btn-color-active: var(--action);
   --btn-color: var(--action-light);
+  --btn-color-active: var(--action);
+  --btn-padding-inline: var(--half-shim);
 
   &:focus-visible {
     --outline-width: 0;
 
     transform: scale(1.15);
+  }
+
+  @media (forced-colors: active) {
+    --btn-bg-color-active: Highlight;
+    --btn-color-active: HighlightText;
   }
 }
 

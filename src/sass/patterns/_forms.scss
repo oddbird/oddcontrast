@@ -33,10 +33,23 @@ input {
   }
 }
 
+@media (forced-colors: none) {
+  select {
+    border: 0;
+    box-shadow: 1px 1px var(--half-shim) var(--border-light);
+  }
+}
+
 select {
-  border: 0;
-  box-shadow: 1px 1px var(--half-shim) var(--border-light);
   padding: var(--half-shim) var(--shim);
+
+  @media (forced-colors: active) {
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      border-color: AccentColor;
+    }
+  }
 }
 
 // ## Range Thumbs

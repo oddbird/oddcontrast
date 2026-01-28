@@ -42,5 +42,9 @@ a {
     color: var(--link-focus, var(--active));
 
     --line-thickness: var(--border-width-lg);
+
+    @media (forced-colors: active) {
+      --link-focus: CanvasText;
+    }
   }
 }

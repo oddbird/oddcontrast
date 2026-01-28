@@ -109,6 +109,7 @@
     background-size: 30px 30px;
     color: var(--fgcolor);
     display: grid;
+    forced-color-adjust: none;
     gap: var(--result-layout-gap, var(--shim));
     grid-template:
       'contrastinfo' min-content

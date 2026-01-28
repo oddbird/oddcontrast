@@ -42,7 +42,7 @@
     font-weight: bold;
     gap: var(--shim-plus);
     justify-content: center;
-    margin-bottom: var(--results-margin-bottom, var(--half-shim));
+    margin-block-end: var(--results-margin-bottom, var(--half-shim));
     padding: var(--results-padding-block, 0) var(--results-padding-inline, 0);
 
     @include config.above('sm-page-break') {
