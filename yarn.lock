@@ -1108,9 +1108,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sveltejs/kit@npm:2.50.1":
-  version: 2.50.1
-  resolution: "@sveltejs/kit@npm:2.50.1"
+"@sveltejs/kit@npm:2.50.2":
+  version: 2.50.2
+  resolution: "@sveltejs/kit@npm:2.50.2"
   dependencies:
     "@standard-schema/spec": "npm:^1.0.0"
     "@sveltejs/acorn-typescript": "npm:^1.0.5"
@@ -1123,7 +1123,7 @@ __metadata:
     magic-string: "npm:^0.30.5"
     mrmime: "npm:^2.0.0"
     sade: "npm:^1.8.1"
-    set-cookie-parser: "npm:^2.6.0"
+    set-cookie-parser: "npm:^3.0.0"
     sirv: "npm:^3.0.0"
   peerDependencies:
     "@opentelemetry/api": ^1.0.0
@@ -1138,7 +1138,7 @@ __metadata:
       optional: true
   bin:
     svelte-kit: svelte-kit.js
-  checksum: 10/4563c9d868f0060ab948100dcb7cff90c8aac85c46bc8967b82436b2c817d05c10d611ffbc215e53c6875ddb3c69e035b8c6735dfd3bc953d459e03cf12ba2a1
+  checksum: 10/5e0984be8be5bb1e89c66279367ea92b90390d6750e953ff5862fd140505458f898dfef0475557978c4366eca167dfabf7a532e28c0550313af2146ee7e78b27
   languageName: node
   linkType: hard
 
@@ -1323,11 +1323,11 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:^22":
-  version: 22.19.7
-  resolution: "@types/node@npm:22.19.7"
+  version: 22.19.10
+  resolution: "@types/node@npm:22.19.10"
   dependencies:
     undici-types: "npm:~6.21.0"
-  checksum: 10/0a5c9cc3bdd2a2d8105735b136e280a2dec90136679adfe82faa7e4de375dcc6b4cebaa6b2de35cc6b37e5e135cdc9486373d574782a4ca22f5eeab299111aa6
+  checksum: 10/f5fddfd2dc5f15caa12cf1b1e9695453df4fd5fcf3dd9c743e5109fca681962e8e740421f479e75981dea9b6f680a4de241d429db643704802067c615920c002
   languageName: node
   linkType: hard
 
@@ -3809,12 +3809,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esrap@npm:^2.2.1":
-  version: 2.2.2
-  resolution: "esrap@npm:2.2.2"
+"esrap@npm:^2.2.2":
+  version: 2.2.3
+  resolution: "esrap@npm:2.2.3"
   dependencies:
     "@jridgewell/sourcemap-codec": "npm:^1.4.15"
-  checksum: 10/fc247d268239f65cfc860c9fa51fd5fc6cb2954a68354d057d029bed67c5e7e71a4e9060905338b82f7aea8bafc96ba0d3bd0c960144fa0ceb4216ffa87ec543
+  checksum: 10/a6cb7613ef6303daff29ee30e36e725f0b50d6ded4e64e1f80d0048228c85c708bd136cc97c8b358096c1c77cdd0f2651aab87dc70eab588bb8fc5217221a426
   languageName: node
   linkType: hard
 
@@ -3992,7 +3992,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"file-entry-cache@npm:^11.1.1":
+"file-entry-cache@npm:^11.1.2":
   version: 11.1.2
   resolution: "file-entry-cache@npm:11.1.2"
   dependencies:
@@ -6555,7 +6555,7 @@ __metadata:
   dependencies:
     "@eslint/js": "npm:^9.39.2"
     "@sveltejs/adapter-auto": "npm:^7.0.0"
-    "@sveltejs/kit": "npm:2.50.1"
+    "@sveltejs/kit": "npm:2.50.2"
     "@sveltejs/vite-plugin-svelte": "npm:^6.2.4"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/svelte": "npm:^5.3.1"
@@ -6584,10 +6584,10 @@ __metadata:
     sass-embedded: "npm:^1.97.3"
     sassdoc: "npm:^2.7.4"
     sassdoc-theme-herman: "npm:^7.0.1"
-    stylelint: "npm:^17.0.0"
+    stylelint: "npm:^17.1.0"
     stylelint-config-standard-scss: "npm:^17.0.0"
-    svelte: "npm:^5.48.3"
-    svelte-check: "npm:^4.3.5"
+    svelte: "npm:^5.49.1"
+    svelte-check: "npm:^4.3.6"
     svelte-eslint-parser: "npm:^1.4.1"
     typescript: "npm:^5.9.3"
     typescript-eslint: "npm:^8.54.0"
@@ -8081,10 +8081,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"set-cookie-parser@npm:^2.6.0":
-  version: 2.7.2
-  resolution: "set-cookie-parser@npm:2.7.2"
-  checksum: 10/4b6f5ec4e3fa1aef471d9207117704d217ba6bb6443400b41f5ea945c4a7f6fc08e405a122c1a32b4ebde41f06dea75e02c2af87cee9abb27f3e3fe911e5839b
+"set-cookie-parser@npm:^3.0.0":
+  version: 3.0.1
+  resolution: "set-cookie-parser@npm:3.0.1"
+  checksum: 10/3dc582014805932f112f6f39724b51c157fa6a29e71a41cb2a940da2b5523dab6953910f8ef22389801a5219e78dd9d13b54364953ab9a9644bc1abc2f8ebedc
   languageName: node
   linkType: hard
 
@@ -8665,9 +8665,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint@npm:^17.0.0":
-  version: 17.0.0
-  resolution: "stylelint@npm:17.0.0"
+"stylelint@npm:^17.1.0":
+  version: 17.1.1
+  resolution: "stylelint@npm:17.1.1"
   dependencies:
     "@csstools/css-parser-algorithms": "npm:^4.0.0"
     "@csstools/css-syntax-patches-for-csstree": "npm:^1.0.25"
@@ -8683,7 +8683,7 @@ __metadata:
     debug: "npm:^4.4.3"
     fast-glob: "npm:^3.3.3"
     fastest-levenshtein: "npm:^1.0.16"
-    file-entry-cache: "npm:^11.1.1"
+    file-entry-cache: "npm:^11.1.2"
     global-modules: "npm:^2.0.0"
     globby: "npm:^16.1.0"
     globjoin: "npm:^0.1.4"
@@ -8709,7 +8709,7 @@ __metadata:
     write-file-atomic: "npm:^7.0.0"
   bin:
     stylelint: bin/stylelint.mjs
-  checksum: 10/4a755a48930bfe7fdbd57996419dcf9b53d87b53a9c3e627553e3dab0ca2cb82c67b311c836328cc3ab188729bc3d15948e4b10b24dcbf3cb36f453812855e00
+  checksum: 10/f253a5af2c294b30043b7c17903cecdd596227d28d684bfc0b7f54634ffdee246b5743c7e61c9048c17e9ce0ae3bb7368876109f932073a343428fc86b0cba9a
   languageName: node
   linkType: hard
 
@@ -8764,9 +8764,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svelte-check@npm:^4.3.5":
-  version: 4.3.5
-  resolution: "svelte-check@npm:4.3.5"
+"svelte-check@npm:^4.3.6":
+  version: 4.3.6
+  resolution: "svelte-check@npm:4.3.6"
   dependencies:
     "@jridgewell/trace-mapping": "npm:^0.3.25"
     chokidar: "npm:^4.0.1"
@@ -8778,7 +8778,7 @@ __metadata:
     typescript: ">=5.0.0"
   bin:
     svelte-check: bin/svelte-check
-  checksum: 10/112473f941bf59bbebd7b371ebdaae4144c0f4bdbe6ac4569092cb4ab047dd978388412d1f017cc9c5f8c030e35fdfdd824f2537aab8ed2256d59d7e086f3246
+  checksum: 10/78f7404145fad97ba703bd2259e8280bfee1923fe1550af76e774b43b1bda72b579fb1f3263f811dfc962d5765220a0af932cf0d668d6e33b07e803d68c40fb3
   languageName: node
   linkType: hard
 
@@ -8801,9 +8801,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svelte@npm:^5.48.3":
-  version: 5.48.3
-  resolution: "svelte@npm:5.48.3"
+"svelte@npm:^5.49.1":
+  version: 5.50.1
+  resolution: "svelte@npm:5.50.1"
   dependencies:
     "@jridgewell/remapping": "npm:^2.3.4"
     "@jridgewell/sourcemap-codec": "npm:^1.5.0"
@@ -8815,12 +8815,12 @@ __metadata:
     clsx: "npm:^2.1.1"
     devalue: "npm:^5.6.2"
     esm-env: "npm:^1.2.1"
-    esrap: "npm:^2.2.1"
+    esrap: "npm:^2.2.2"
     is-reference: "npm:^3.0.3"
     locate-character: "npm:^3.0.0"
     magic-string: "npm:^0.30.11"
     zimmerframe: "npm:^1.1.2"
-  checksum: 10/c2a35e181c0661e15698a497e809634ee084a5cda49697456a41b37e6b61d81800888ce3f30d076f0c6e40c5cc343f1969364f37114fd2dd2b6ed504325f7c88
+  checksum: 10/f5273a61de47188c681039322e84c097bb47a1e94b805007a57eb33e0342eb11fc6899406a6027db3b6ef72d4f191733571af2329ee65fa02d3f5b562e78ea4c
   languageName: node
   linkType: hard
 
