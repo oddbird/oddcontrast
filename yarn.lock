@@ -1324,6 +1324,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/trusted-types@npm:^2.0.7":
+  version: 2.0.7
+  resolution: "@types/trusted-types@npm:2.0.7"
+  checksum: 10/8e4202766a65877efcf5d5a41b7dd458480b36195e580a3b1085ad21e948bc417d55d6f8af1fd2a7ad008015d4117d5fdfe432731157da3c68678487174e4ba3
+  languageName: node
+  linkType: hard
+
 "@typescript-eslint/eslint-plugin@npm:8.55.0":
   version: 8.55.0
   resolution: "@typescript-eslint/eslint-plugin@npm:8.55.0"
@@ -3081,6 +3088,13 @@ __metadata:
   version: 5.6.2
   resolution: "devalue@npm:5.6.2"
   checksum: 10/734b57d917e45b534007e3b5055c031e4e3fcf3c3a44e1b4177e998f30e077e4d280b59abe0cc0ca9055a18e90266e31f578129e83e105e63e9680998a3c2a8a
+  languageName: node
+  linkType: hard
+
+"devalue@npm:^5.6.3":
+  version: 5.6.3
+  resolution: "devalue@npm:5.6.3"
+  checksum: 10/fba14656bdbd3c23bd850906a504ca2dc94e3dc199c84e6e51c327a425b19d4f431dd7e2a4d9ee51ff49458ef6d10f59f781166bc2d9d8ce1182e863e58d9449
   languageName: node
   linkType: hard
 
@@ -6570,7 +6584,7 @@ __metadata:
     sassdoc-theme-herman: "npm:^7.0.1"
     stylelint: "npm:^17.2.0"
     stylelint-config-standard-scss: "npm:^17.0.0"
-    svelte: "npm:^5.50.1"
+    svelte: "npm:^5.51.5"
     svelte-check: "npm:^4.3.6"
     svelte-eslint-parser: "npm:^1.4.1"
     typescript: "npm:^5.9.3"
@@ -8786,26 +8800,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svelte@npm:^5.50.1":
-  version: 5.50.1
-  resolution: "svelte@npm:5.50.1"
+"svelte@npm:^5.51.5":
+  version: 5.53.0
+  resolution: "svelte@npm:5.53.0"
   dependencies:
     "@jridgewell/remapping": "npm:^2.3.4"
     "@jridgewell/sourcemap-codec": "npm:^1.5.0"
     "@sveltejs/acorn-typescript": "npm:^1.0.5"
     "@types/estree": "npm:^1.0.5"
+    "@types/trusted-types": "npm:^2.0.7"
     acorn: "npm:^8.12.1"
     aria-query: "npm:^5.3.1"
     axobject-query: "npm:^4.1.0"
     clsx: "npm:^2.1.1"
-    devalue: "npm:^5.6.2"
+    devalue: "npm:^5.6.3"
     esm-env: "npm:^1.2.1"
     esrap: "npm:^2.2.2"
     is-reference: "npm:^3.0.3"
     locate-character: "npm:^3.0.0"
     magic-string: "npm:^0.30.11"
     zimmerframe: "npm:^1.1.2"
-  checksum: 10/f5273a61de47188c681039322e84c097bb47a1e94b805007a57eb33e0342eb11fc6899406a6027db3b6ef72d4f191733571af2329ee65fa02d3f5b562e78ea4c
+  checksum: 10/4b928f85c6b15410929640e9a1dc825e3c0257a67cf51c9fcda65be92fe8f0cc1b4b4ec2f3ce4b76f5f3a153c4bf18791670967abe0bbf060f3ccdc4d5ea3572
   languageName: node
   linkType: hard
 
