@@ -1,4 +1,5 @@
 import { render } from '@testing-library/svelte';
+import { describe, expect, it } from 'vitest';
 
 import FormatGroup from '$lib/components/colors/FormatGroup.svelte';
 import { FORMAT_GROUPS } from '$src/lib/constants';

@@ -1,4 +1,5 @@
 import { render } from '@testing-library/svelte';
+import { describe, expect, it } from 'vitest';
 
 import Formats from '$lib/components/colors/Formats.svelte';
 import { HSL_WHITE } from '$test/fixtures';

@@ -1,4 +1,5 @@
 import { fireEvent, render, waitFor } from '@testing-library/svelte';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import CopyButton from '$lib/components/util/CopyButton.svelte';
 

@@ -1,5 +1,6 @@
 import { fireEvent, render } from '@testing-library/svelte';
 import { get, writable } from 'svelte/store';
+import { describe, expect, it } from 'vitest';
 
 import Sliders from '$lib/components/colors/Sliders.svelte';
 import { HSL_WHITE } from '$test/fixtures';
