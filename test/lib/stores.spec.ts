@@ -1,4 +1,5 @@
 import { get } from 'svelte/store';
+import { describe, expect, it } from 'vitest';
 
 import { bg, fg, INITIAL_VALUES, reset } from '$lib/stores';
 import { HSL_WHITE } from '$test/fixtures';

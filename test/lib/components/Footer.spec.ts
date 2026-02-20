@@ -1,5 +1,6 @@
 import { render } from '@testing-library/svelte';
 import MockDate from 'mockdate';
+import { afterEach, describe, expect, it } from 'vitest';
 
 import Footer from '$lib/components/Footer.svelte';
 

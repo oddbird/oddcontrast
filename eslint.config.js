@@ -90,11 +90,6 @@ export default [
   },
   {
     files: ['test/**/*.spec.{js,ts}'],
-    languageOptions: {
-      globals: {
-        ...vitest.environments?.env?.globals,
-      },
-    },
     plugins: {
       vitest,
     },

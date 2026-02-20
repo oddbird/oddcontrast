@@ -2,6 +2,7 @@
 import '$lib/stores';
 
 import { type PlainColorObject, serialize, to } from 'colorjs.io/fn';
+import { beforeEach, describe, expect, test, vi } from 'vitest';
 
 import type { ColorFormatId, ColorGamutId } from '$lib/constants';
 import {

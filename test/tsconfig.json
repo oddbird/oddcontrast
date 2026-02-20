@@ -1,11 +1,12 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "isolatedModules": false,
-    "types": ["vitest/globals"]
+    "isolatedModules": false
   },
   "include": [
+    "./**/*.js",
     "./**/*.ts",
+    "./**/*.svelte",
     "../eslint.config.js",
     "../svelte.config.js",
     "../vite.config.ts",

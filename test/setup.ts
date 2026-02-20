@@ -1,4 +1,6 @@
-import '@testing-library/jest-dom';
+import '@testing-library/jest-dom/vitest';
+
+import { beforeAll } from 'vitest';
 
 beforeAll(() => {
   window.CSS.supports = () => true;

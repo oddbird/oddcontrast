@@ -1,6 +1,7 @@
 import { fireEvent, render } from '@testing-library/svelte';
 import { HSL } from 'colorjs.io/fn';
 import { get, writable } from 'svelte/store';
+import { describe, expect, it, vi } from 'vitest';
 
 import Header from '$lib/components/colors/Header.svelte';
 import { HSL_WHITE, HSL_WHITE_SERIALIZED } from '$test/fixtures';

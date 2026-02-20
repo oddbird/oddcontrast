@@ -1,5 +1,6 @@
 import { fireEvent, render } from '@testing-library/svelte';
 import { get } from 'svelte/store';
+import { afterEach, describe, expect, it } from 'vitest';
 
 import Gamut from '$lib/components/GamutSelect.svelte';
 import { gamut, INITIAL_VALUES, reset } from '$lib/stores';
