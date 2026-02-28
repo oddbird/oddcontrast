@@ -69,7 +69,7 @@
     "sassdoc-theme-herman": "^7.0.1",
     "stylelint": "^17.3.0",
     "stylelint-config-standard-scss": "^17.0.0",
-    "svelte": "^5.53.0",
+    "svelte": "^5.53.5",
     "svelte-check": "^4.4.3",
     "svelte-eslint-parser": "^1.4.1",
     "typescript": "^5.9.3",
