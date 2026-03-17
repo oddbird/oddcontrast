@@ -12,7 +12,7 @@ import {
 } from 'colorjs.io/fn';
 import { get, writable } from 'svelte/store';
 
-// eslint-disable-next-line import/no-unresolved
+// eslint-disable-next-line import-x/no-unresolved
 import { browser, dev } from '$app/environment';
 import type { ColorFormatId, ColorGamutId } from '$lib/constants';
 

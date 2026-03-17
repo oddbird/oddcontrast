@@ -3,7 +3,7 @@
   import debounce from 'lodash/debounce';
   import { onMount } from 'svelte';
 
-  // eslint-disable-next-line import/no-unresolved
+  // eslint-disable-next-line import-x/no-unresolved
   import { replaceState } from '$app/navigation';
   import Colors from '$lib/components/colors/index.svelte';
   import Footer from '$lib/components/Footer.svelte';
