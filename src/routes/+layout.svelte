@@ -4,7 +4,7 @@
 
   import type { Snippet } from 'svelte';
 
-  // eslint-disable-next-line import/no-unresolved
+  // eslint-disable-next-line import-x/no-unresolved
   import { CONTEXT } from '$env/static/public';
 
   interface Props {
