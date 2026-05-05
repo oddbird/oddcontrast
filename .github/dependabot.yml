@@ -15,8 +15,6 @@ updates:
       interval: weekly
       time: '04:00'
       timezone: America/New_York
-    cooldown:
-      default-days: 7
     groups:
       prod-major:
         dependency-type: production
