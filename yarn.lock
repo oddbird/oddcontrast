@@ -868,6 +868,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sveltejs/load-config@npm:0.1.1":
+  version: 0.1.1
+  resolution: "@sveltejs/load-config@npm:0.1.1"
+  checksum: 10/c6504340604a06fa4bf47b9815d8ecde1dfc4b52bba0ef96c1de2e225d4ed408966c5071295ecdadb595227de2d877d2b345a36501458849019e918957cc0f06
+  languageName: node
+  linkType: hard
+
 "@sveltejs/vite-plugin-svelte@npm:^7.1.2":
   version: 7.1.2
   resolution: "@sveltejs/vite-plugin-svelte@npm:7.1.2"
@@ -1035,11 +1042,11 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:^22":
-  version: 22.19.19
-  resolution: "@types/node@npm:22.19.19"
+  version: 22.19.20
+  resolution: "@types/node@npm:22.19.20"
   dependencies:
     undici-types: "npm:~6.21.0"
-  checksum: 10/d404eb0bc391805537a172fcc607f7f9c142e20edc01a4203ec33e33a3c4e98fbe3a7ddb63725c399dd05947fac938722a6e05afe1c3d92017ac05c9a6b3ed8f
+  checksum: 10/85a4c97c4b2b918e9b5a3afc980d5b97f0198a4b2baf1f9d06f0b059999ecab5e4833e9600898c0762dd0905a7c58baaffa064a5bd7f53fcb894cd259d532586
   languageName: node
   linkType: hard
 
@@ -3352,7 +3359,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esrap@npm:^2.2.9":
+"esrap@npm:^2.2.11":
   version: 2.2.11
   resolution: "esrap@npm:2.2.11"
   dependencies:
@@ -6051,11 +6058,11 @@ __metadata:
     sass-embedded: "npm:^1.100.0"
     sassdoc: "npm:^2.7.4"
     sassdoc-theme-herman: "npm:^7.0.1"
-    stylelint: "npm:^17.12.0"
+    stylelint: "npm:^17.13.0"
     stylelint-config-standard-scss: "npm:^17.0.0"
-    svelte: "npm:^5.56.1"
-    svelte-check: "npm:^4.5.0"
-    svelte-eslint-parser: "npm:^1.7.1"
+    svelte: "npm:^5.56.3"
+    svelte-check: "npm:^4.6.0"
+    svelte-eslint-parser: "npm:^1.8.0"
     typescript: "npm:^6.0.3"
     typescript-eslint: "npm:^8.60.1"
     vite: "npm:^8.0.16"
@@ -6440,7 +6447,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.4.49, postcss@npm:^8.5.14, postcss@npm:^8.5.15":
+"postcss@npm:^8.4.49, postcss@npm:^8.5.15":
   version: 8.5.15
   resolution: "postcss@npm:8.5.15"
   dependencies:
@@ -8034,13 +8041,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint@npm:^17.12.0":
-  version: 17.12.0
-  resolution: "stylelint@npm:17.12.0"
+"stylelint@npm:^17.13.0":
+  version: 17.13.0
+  resolution: "stylelint@npm:17.13.0"
   dependencies:
-    "@csstools/css-calc": "npm:^3.2.0"
+    "@csstools/css-calc": "npm:^3.2.1"
     "@csstools/css-parser-algorithms": "npm:^4.0.0"
-    "@csstools/css-syntax-patches-for-csstree": "npm:^1.1.3"
+    "@csstools/css-syntax-patches-for-csstree": "npm:^1.1.4"
     "@csstools/css-tokenizer": "npm:^4.0.0"
     "@csstools/media-query-list-parser": "npm:^5.0.0"
     "@csstools/selector-resolve-nested": "npm:^4.0.0"
@@ -8064,7 +8071,7 @@ __metadata:
     micromatch: "npm:^4.0.8"
     normalize-path: "npm:^3.0.0"
     picocolors: "npm:^1.1.1"
-    postcss: "npm:^8.5.14"
+    postcss: "npm:^8.5.15"
     postcss-safe-parser: "npm:^7.0.1"
     postcss-selector-parser: "npm:^7.1.1"
     postcss-value-parser: "npm:^4.2.0"
@@ -8075,7 +8082,7 @@ __metadata:
     write-file-atomic: "npm:^7.0.1"
   bin:
     stylelint: bin/stylelint.mjs
-  checksum: 10/30b431ec9703b64d1b7487bb7db331cdbe87df94a54ac27d4664f851cba770639986aa1125cdd5adbda990da480c6c4e437f3dcc9f6e7f8b0bc07015592ad8e1
+  checksum: 10/abba5f2e96ae9ce7648019d4ceb88ed863e6b14bab640fa8a38159fade034282966352eedff417de929c7ee04e0b401a60a8d9c3fe8b5619594d9b37bd9aed9c
   languageName: node
   linkType: hard
 
@@ -8130,11 +8137,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svelte-check@npm:^4.5.0":
-  version: 4.5.0
-  resolution: "svelte-check@npm:4.5.0"
+"svelte-check@npm:^4.6.0":
+  version: 4.6.0
+  resolution: "svelte-check@npm:4.6.0"
   dependencies:
     "@jridgewell/trace-mapping": "npm:^0.3.25"
+    "@sveltejs/load-config": "npm:0.1.1"
     chokidar: "npm:^4.0.1"
     fdir: "npm:^6.2.0"
     picocolors: "npm:^1.0.0"
@@ -8144,11 +8152,11 @@ __metadata:
     typescript: ">=5.0.0"
   bin:
     svelte-check: bin/svelte-check
-  checksum: 10/defe0da0854a5d95254ffc3bed8fa613acf517b19445293007c186e63e96ab6f6d8cfe98bd61077255f647b933e19707f6802d96e646aa0ab64c99cdb85a4c36
+  checksum: 10/1e7d1d53ca70d681b928ff57b4a18f8f9110dc0b81d3ed24131ef1221a4c24d6291cc601b7e1ccec6938a871de907428f83ed7911cec457c345aab24a9a29663
   languageName: node
   linkType: hard
 
-"svelte-eslint-parser@npm:^1.7.0, svelte-eslint-parser@npm:^1.7.1":
+"svelte-eslint-parser@npm:^1.7.0":
   version: 1.7.1
   resolution: "svelte-eslint-parser@npm:1.7.1"
   dependencies:
@@ -8168,9 +8176,29 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svelte@npm:^5.56.1":
-  version: 5.56.1
-  resolution: "svelte@npm:5.56.1"
+"svelte-eslint-parser@npm:^1.8.0":
+  version: 1.8.0
+  resolution: "svelte-eslint-parser@npm:1.8.0"
+  dependencies:
+    eslint-scope: "npm:^8.2.0"
+    eslint-visitor-keys: "npm:^4.0.0"
+    espree: "npm:^10.0.0"
+    postcss: "npm:^8.4.49"
+    postcss-scss: "npm:^4.0.9"
+    postcss-selector-parser: "npm:^7.0.0"
+    semver: "npm:^7.7.2"
+  peerDependencies:
+    svelte: ^3.37.0 || ^4.0.0 || ^5.0.0
+  peerDependenciesMeta:
+    svelte:
+      optional: true
+  checksum: 10/8b4c58587fab2d35cf5ec5683ebcaee0fd7c10a324f9ecc3829bf226a2b48f89c34865ed86ca89362d5809486052ebeeec9b4bd8e313359bc01df9231bda9306
+  languageName: node
+  linkType: hard
+
+"svelte@npm:^5.56.3":
+  version: 5.56.3
+  resolution: "svelte@npm:5.56.3"
   dependencies:
     "@jridgewell/remapping": "npm:^2.3.4"
     "@jridgewell/sourcemap-codec": "npm:^1.5.0"
@@ -8183,12 +8211,12 @@ __metadata:
     clsx: "npm:^2.1.1"
     devalue: "npm:^5.8.1"
     esm-env: "npm:^1.2.1"
-    esrap: "npm:^2.2.9"
+    esrap: "npm:^2.2.11"
     is-reference: "npm:^3.0.3"
     locate-character: "npm:^3.0.0"
     magic-string: "npm:^0.30.11"
     zimmerframe: "npm:^1.1.2"
-  checksum: 10/96cf751661fec894aa96342bcc0c563905375d7eca558199f812aea751a6681a9bacd48a1882b0edaa2f09052c34569b33ff526e7a08075518fc80858654bd9c
+  checksum: 10/c411b28d653f857e46fcf99929c72332fdccd95a7bebf0ccd3277d661102fa616735175dd8d0ff26486c96a1fe5cebaa40a91ce165e576a6db8f201bc6822bb0
   languageName: node
   linkType: hard
 
