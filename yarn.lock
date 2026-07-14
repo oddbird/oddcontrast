@@ -2394,10 +2394,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"colorjs.io@npm:^0.6.0, colorjs.io@npm:^0.6.1":
+"colorjs.io@npm:^0.6.0":
   version: 0.6.1
   resolution: "colorjs.io@npm:0.6.1"
   checksum: 10/b4e122be9c8f7c663c348f63169c18bb16dc9b12d5e19cd3a895276d937b4eec43c10eed6fb6f86daced3034fda2aba33807729ea6f80c65a8e908a07750f90f
+  languageName: node
+  linkType: hard
+
+"colorjs.io@npm:^0.7.0":
+  version: 0.7.0
+  resolution: "colorjs.io@npm:0.7.0"
+  checksum: 10/ac990649d5755875ba1e46e6e59575d21a2d87230d660719245e06044ec8cb0fa97d5fd683476abb60a34ea833831008a687c4a94beeaab4802c083397b1b1cb
   languageName: node
   linkType: hard
 
@@ -6088,7 +6095,7 @@ __metadata:
     "@vitest/eslint-plugin": "npm:^1.6.21"
     accoutrement: "npm:^4.0.7"
     chokidar-cli: "npm:^3.0.0"
-    colorjs.io: "npm:^0.6.1"
+    colorjs.io: "npm:^0.7.0"
     eslint: "npm:^10.6.0"
     eslint-config-prettier: "npm:^10.1.8"
     eslint-import-resolver-typescript: "npm:^4.4.5"
