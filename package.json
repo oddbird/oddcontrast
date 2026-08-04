@@ -50,7 +50,7 @@
     "@types/node": "^24",
     "@typescript-eslint/utils": "^8.65.0",
     "@vitest/coverage-v8": "^4.1.10",
-    "@vitest/eslint-plugin": "^1.6.24",
+    "@vitest/eslint-plugin": "^1.6.26",
     "chokidar-cli": "^3.0.0",
     "eslint": "^10.8.0",
     "eslint-config-prettier": "^10.1.8",
@@ -71,7 +71,7 @@
     "stylelint": "^17.14.1",
     "stylelint-config-standard-scss": "^17.0.0",
     "svelte": "^5.56.8",
-    "svelte-check": "^4.7.3",
+    "svelte-check": "^4.7.4",
     "svelte-eslint-parser": "^1.8.0",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.65.0",
@@ -81,5 +81,5 @@
   "resolutions": {
     "@types/node": "^24"
   },
-  "packageManager": "yarn@4.17.1"
+  "packageManager": "yarn@4.18.0"
 }
