@@ -1,0 +1,23 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:best-practices", "group:all", "schedule:weekly"],
+  "timezone": "America/New_York",
+  "packageRules": [
+    {
+      "description": "Pin all direct dependencies",
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["dependencies", "devDependencies"],
+      "rangeStrategy": "pin"
+    },
+    {
+      "description": "Stay on @types/node 24 to match the Node 24 base image",
+      "matchPackageNames": ["@types/node"],
+      "allowedVersions": "<25"
+    },
+    {
+      "description": "Stay on TypeScript 6 until the 7.x rewrite is compatible",
+      "matchPackageNames": ["typescript"],
+      "allowedVersions": "<7"
+    }
+  ]
+}
