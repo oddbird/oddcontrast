@@ -1,10 +1,10 @@
 <script lang="ts">
   import { type PlainColorObject, serialize, to } from 'colorjs.io/fn';
 
-  import SupportWarning from '$lib/components/colors/SupportWarning.svelte';
-  import CopyButton from '$lib/components/util/CopyButton.svelte';
-  import type { ColorFormatId } from '$lib/constants';
-  import { getSpaceFromFormatId } from '$lib/utils';
+  import SupportWarning from '#lib/components/colors/SupportWarning.svelte';
+  import CopyButton from '#lib/components/util/CopyButton.svelte';
+  import type { ColorFormatId } from '#lib/constants.js';
+  import { getSpaceFromFormatId } from '#lib/utils.js';
 
   interface Props {
     type: 'bg' | 'fg';

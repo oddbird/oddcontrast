@@ -2,11 +2,11 @@
   import { inGamut, type PlainColorObject, serialize, to } from 'colorjs.io/fn';
   import { type Writable } from 'svelte/store';
 
-  import CopyButton from '$lib/components/util/CopyButton.svelte';
-  import Icon from '$lib/components/util/Icon.svelte';
-  import { type ColorFormatId, GAMUTS } from '$lib/constants';
-  import { gamut, switchColors } from '$lib/stores';
-  import { getSpaceFromFormatId } from '$lib/utils';
+  import CopyButton from '#lib/components/util/CopyButton.svelte';
+  import Icon from '#lib/components/util/Icon.svelte';
+  import { type ColorFormatId, GAMUTS } from '#lib/constants.js';
+  import { gamut, switchColors } from '#lib/stores.js';
+  import { getSpaceFromFormatId } from '#lib/utils.js';
 
   interface Props {
     type: 'bg' | 'fg';

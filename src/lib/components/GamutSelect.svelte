@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { GAMUTS } from '$lib/constants';
-  import { gamut } from '$lib/stores';
+  import { GAMUTS } from '#lib/constants.js';
+  import { gamut } from '#lib/stores.js';
 </script>
 
 <div data-setting="color-gamut">

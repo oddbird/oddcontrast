@@ -2,8 +2,8 @@ import { render } from '@testing-library/svelte';
 import { serialize, to } from 'colorjs.io/fn';
 import { describe, expect, it } from 'vitest';
 
-import Output from '$lib/components/colors/Output.svelte';
-import { HSL_WHITE, HSL_WHITE_SERIALIZED } from '$test/fixtures';
+import Output from '#lib/components/colors/Output.svelte';
+import { HSL_WHITE, HSL_WHITE_SERIALIZED } from '#test/fixtures.js';
 
 describe('Output', () => {
   it('renders color in selected format', () => {

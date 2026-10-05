@@ -14,7 +14,7 @@ import {
   type ColorGamutId,
   FORMATS,
   GAMUT_IDS,
-} from '$lib/constants';
+} from '#lib/constants.js';
 
 export const getSpaceFromFormatId = (formatId: ColorFormatId) =>
   formatId === 'hex' ? 'srgb' : formatId;

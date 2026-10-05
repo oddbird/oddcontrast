@@ -1,9 +1,9 @@
 import { render } from '@testing-library/svelte';
 import { describe, expect, it } from 'vitest';
 
-import FormatGroup from '$lib/components/colors/FormatGroup.svelte';
-import { FORMAT_GROUPS } from '$src/lib/constants';
-import { HSL_WHITE, OUT_OF_BOUNDED_GAMUTS } from '$test/fixtures';
+import FormatGroup from '#lib/components/colors/FormatGroup.svelte';
+import { FORMAT_GROUPS } from '#lib/constants.js';
+import { HSL_WHITE, OUT_OF_BOUNDED_GAMUTS } from '#test/fixtures.js';
 
 describe('FormatGroup', () => {
   it('renders selected group', () => {

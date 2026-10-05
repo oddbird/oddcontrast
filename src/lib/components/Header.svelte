@@ -1,7 +1,7 @@
 <script lang="ts">
-  import GamutSelect from '$lib/components/GamutSelect.svelte';
-  import SpaceSelect from '$lib/components/SpaceSelect.svelte';
-  import Icon from '$lib/components/util/Icon.svelte';
+  import GamutSelect from '#lib/components/GamutSelect.svelte';
+  import SpaceSelect from '#lib/components/SpaceSelect.svelte';
+  import Icon from '#lib/components/util/Icon.svelte';
 </script>
 
 <header data-layout="header">

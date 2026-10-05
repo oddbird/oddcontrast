@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Icon from '$lib/components/util/Icon.svelte';
+  import Icon from '#lib/components/util/Icon.svelte';
 
   interface Props {
     href: string | undefined;

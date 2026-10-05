@@ -2,8 +2,8 @@ import { render, waitFor } from '@testing-library/svelte';
 import { tick } from 'svelte';
 import { afterEach, describe, expect, it } from 'vitest';
 
-import Ratio from '$lib/components/ratio/index.svelte';
-import { fg, reset } from '$lib/stores';
+import Ratio from '#lib/components/ratio/index.svelte';
+import { fg, reset } from '#lib/stores.js';
 
 describe('Ratio', () => {
   afterEach(() => {

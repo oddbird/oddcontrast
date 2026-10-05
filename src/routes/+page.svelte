@@ -3,15 +3,15 @@
   import debounce from 'lodash/debounce';
   import { onMount } from 'svelte';
 
+  import Colors from '#lib/components/colors/index.svelte';
+  import Footer from '#lib/components/Footer.svelte';
+  import Header from '#lib/components/Header.svelte';
+  import ColorIssues from '#lib/components/ratio/ColorIssues.svelte';
+  import Ratio from '#lib/components/ratio/index.svelte';
+  import { bg, fg, format, gamut } from '#lib/stores.js';
+  import { hashToStoreValues, storeValuesToHash } from '#lib/utils.js';
   // eslint-disable-next-line import-x/no-unresolved
-  import { replaceState } from '$app/navigation';
-  import Colors from '$lib/components/colors/index.svelte';
-  import Footer from '$lib/components/Footer.svelte';
-  import Header from '$lib/components/Header.svelte';
-  import Ratio from '$lib/components/ratio/index.svelte';
-  import { bg, fg, format, gamut } from '$lib/stores';
-  import ColorIssues from '$src/lib/components/ratio/ColorIssues.svelte';
-  import { hashToStoreValues, storeValuesToHash } from '$src/lib/utils';
+  import { goto } from '$app/navigation';
 
   let bg_fallback = $derived(display($bg));
   let fg_fallback = $derived(display($fg));
@@ -26,8 +26,7 @@
 
   function colorsToHash() {
     const hashString = storeValuesToHash($bg, $fg, $format, $gamut);
-    // eslint-disable-next-line svelte/no-navigation-without-resolve
-    replaceState(`#${hashString}`, {});
+    void goto(`#${hashString}`, { shallow: true, replace: true });
   }
 
   const debouncedColorsToHash = debounce(colorsToHash, 100);

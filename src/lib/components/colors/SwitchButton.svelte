@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Icon from '$lib/components/util/Icon.svelte';
-  import { switchColors } from '$lib/stores';
+  import Icon from '#lib/components/util/Icon.svelte';
+  import { switchColors } from '#lib/stores.js';
 </script>
 
 <button type="button" onclick={switchColors} data-btn="icon switch">

@@ -1,12 +1,12 @@
 <script lang="ts">
   import type { PlainColorObject } from 'colorjs.io/fn';
 
-  import FormatGroup from '$lib/components/colors/FormatGroup.svelte';
+  import FormatGroup from '#lib/components/colors/FormatGroup.svelte';
   import {
     type ColorFormatId,
     FORMAT_GROUPS,
     type FormatGroup as FormatGroupType,
-  } from '$lib/constants';
+  } from '#lib/constants.js';
 
   interface Props {
     type: 'bg' | 'fg';
