@@ -1,9 +1,9 @@
 <script lang="ts">
   import { to } from 'colorjs.io/fn';
 
-  import { FORMATS } from '$lib/constants';
-  import { bg, ColorSpace, fg, format } from '$lib/stores';
-  import { getSpaceFromFormatId } from '$lib/utils';
+  import { FORMATS } from '#lib/constants.js';
+  import { bg, ColorSpace, fg, format } from '#lib/stores.js';
+  import { getSpaceFromFormatId } from '#lib/utils.js';
 
   let spaces: ColorSpace[] = FORMATS.map((s) => {
     if (s === 'hex') return { id: 'hex', name: 'Hex' } as ColorSpace;

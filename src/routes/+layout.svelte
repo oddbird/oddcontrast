@@ -1,11 +1,11 @@
 <script lang="ts">
   // Import global styles
-  import '$src/sass/app.scss';
+  import '#src/sass/app.scss';
 
   import type { Snippet } from 'svelte';
 
   // eslint-disable-next-line import-x/no-unresolved
-  import { CONTEXT } from '$env/static/public';
+  import { CONTEXT } from '$app/env/public';
 
   interface Props {
     children: Snippet;

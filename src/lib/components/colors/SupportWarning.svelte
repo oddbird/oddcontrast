@@ -1,10 +1,10 @@
 <script lang="ts">
   import { display } from 'colorjs.io/fn';
 
-  import ExternalLink from '$lib/components/util/ExternalLink.svelte';
-  import type { ColorFormatId } from '$lib/constants';
-  import { ColorSpace } from '$lib/stores';
-  import { getSpaceFromFormatId } from '$lib/utils';
+  import ExternalLink from '#lib/components/util/ExternalLink.svelte';
+  import type { ColorFormatId } from '#lib/constants.js';
+  import { ColorSpace } from '#lib/stores.js';
+  import { getSpaceFromFormatId } from '#lib/utils.js';
 
   interface Props {
     format: ColorFormatId;

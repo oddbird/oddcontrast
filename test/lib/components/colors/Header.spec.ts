@@ -3,8 +3,8 @@ import { HSL } from 'colorjs.io/fn';
 import { get, writable } from 'svelte/store';
 import { describe, expect, it, vi } from 'vitest';
 
-import Header from '$lib/components/colors/Header.svelte';
-import { HSL_WHITE, HSL_WHITE_SERIALIZED } from '$test/fixtures';
+import Header from '#lib/components/colors/Header.svelte';
+import { HSL_WHITE, HSL_WHITE_SERIALIZED } from '#test/fixtures.js';
 
 describe('Header', () => {
   it('updates color (but not space) on input', async () => {

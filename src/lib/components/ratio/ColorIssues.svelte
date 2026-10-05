@@ -1,6 +1,6 @@
 <script lang="ts">
-  import ExternalLink from '$lib/components/util/ExternalLink.svelte';
-  import Icon from '$lib/components/util/Icon.svelte';
+  import ExternalLink from '#lib/components/util/ExternalLink.svelte';
+  import Icon from '#lib/components/util/Icon.svelte';
 </script>
 
 <hr />

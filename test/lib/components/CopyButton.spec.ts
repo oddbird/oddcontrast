@@ -1,7 +1,7 @@
 import { fireEvent, render, waitFor } from '@testing-library/svelte';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
-import CopyButton from '$lib/components/util/CopyButton.svelte';
+import CopyButton from '#lib/components/util/CopyButton.svelte';
 
 function getFirstNonCommentChild(node: Node) {
   return [...node.childNodes].find((x) => x.nodeType !== Node.COMMENT_NODE);

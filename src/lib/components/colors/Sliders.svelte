@@ -3,13 +3,13 @@
   import throttle from 'lodash/throttle';
   import type { Writable } from 'svelte/store';
 
-  import { type ColorFormatId, SLIDERS } from '$lib/constants';
-  import { ColorSpace, gamut } from '$lib/stores';
+  import { type ColorFormatId, SLIDERS } from '#lib/constants.js';
+  import { ColorSpace, gamut } from '#lib/stores.js';
   import {
     alphaSliderGradient,
     getSpaceFromFormatId,
     sliderGradient,
-  } from '$lib/utils';
+  } from '#lib/utils.js';
 
   interface Props {
     type: 'bg' | 'fg';

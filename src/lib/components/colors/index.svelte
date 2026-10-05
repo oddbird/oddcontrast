@@ -1,9 +1,9 @@
 <script lang="ts">
-  import Formats from '$lib/components/colors/Formats.svelte';
-  import Header from '$lib/components/colors/Header.svelte';
-  import Sliders from '$lib/components/colors/Sliders.svelte';
-  import SupportWarning from '$lib/components/colors/SupportWarning.svelte';
-  import { bg, fg, format } from '$lib/stores';
+  import Formats from '#lib/components/colors/Formats.svelte';
+  import Header from '#lib/components/colors/Header.svelte';
+  import Sliders from '#lib/components/colors/Sliders.svelte';
+  import SupportWarning from '#lib/components/colors/SupportWarning.svelte';
+  import { bg, fg, format } from '#lib/stores.js';
 
   import SwitchButton from './SwitchButton.svelte';
 </script>

@@ -1,15 +1,15 @@
 // Color spaces setup happens in stores, imported here as side effect
-import '$lib/stores';
+import '#lib/stores.js';
 
 import { type PlainColorObject, serialize, to } from 'colorjs.io/fn';
 import { beforeEach, describe, expect, test, vi } from 'vitest';
 
-import type { ColorFormatId, ColorGamutId } from '$lib/constants';
+import type { ColorFormatId, ColorGamutId } from '#lib/constants.js';
 import {
   getSpaceFromFormatId,
   hashToStoreValues,
   storeValuesToHash,
-} from '$lib/utils';
+} from '#lib/utils.js';
 
 const cases = [
   [

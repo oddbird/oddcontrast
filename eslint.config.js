@@ -1,6 +1,7 @@
 /* eslint-disable import-x/no-named-as-default-member */
 
 import js from '@eslint/js';
+import { loadConfig } from '@sveltejs/load-config';
 import tsParser from '@typescript-eslint/parser';
 import vitest from '@vitest/eslint-plugin';
 import { defineConfig } from 'eslint/config';
@@ -12,7 +13,17 @@ import globals from 'globals';
 import svelteParser from 'svelte-eslint-parser';
 import tseslint from 'typescript-eslint';
 
-import svelteConfig from './svelte.config.js';
+const loadedConfig = await loadConfig('./', { traverse: false });
+if (!loadedConfig) {
+  throw new Error('No Svelte config found');
+}
+if ('error' in loadedConfig) {
+  throw new Error(
+    `Failed to load Svelte config from ${loadedConfig.configFilePath}`,
+    { cause: loadedConfig.error },
+  );
+}
+const svelteConfig = loadedConfig.config;
 
 export default defineConfig([
   {

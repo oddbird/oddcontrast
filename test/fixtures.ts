@@ -1,6 +1,6 @@
 import { type PlainColorObject, serialize } from 'colorjs.io/fn';
 
-import { ColorSpace } from '$lib/stores';
+import { ColorSpace } from '#lib/stores.js';
 
 export const HSL = ColorSpace.get('hsl');
 

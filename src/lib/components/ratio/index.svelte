@@ -1,11 +1,11 @@
 <script lang="ts">
   import { contrast, mix } from 'colorjs.io/fn';
 
-  import Result from '$lib/components/ratio/Result.svelte';
-  import ExternalLink from '$lib/components/util/ExternalLink.svelte';
-  import Icon from '$lib/components/util/Icon.svelte';
-  import { RATIOS } from '$lib/constants';
-  import { bg, fg } from '$lib/stores';
+  import Result from '#lib/components/ratio/Result.svelte';
+  import ExternalLink from '#lib/components/util/ExternalLink.svelte';
+  import Icon from '#lib/components/util/Icon.svelte';
+  import { RATIOS } from '#lib/constants.js';
+  import { bg, fg } from '#lib/stores.js';
 
   let ratio = $derived.by(() => {
     let fgPremultiplied = $fg;

@@ -1,17 +1,17 @@
 <script lang="ts">
   import type { Component } from 'svelte';
 
-  import Check from '$lib/icons/Check.svelte';
-  import Clipboard from '$lib/icons/Clipboard.svelte';
-  import Copy from '$lib/icons/Copy.svelte';
-  import GitHub from '$lib/icons/GitHub.svelte';
-  import LinkedIn from '$lib/icons/LinkedIn.svelte';
-  import Logo from '$lib/icons/Logo.svelte';
-  import Mastodon from '$lib/icons/Mastodon.svelte';
-  import NewTab from '$lib/icons/NewTab.svelte';
-  import OddBird from '$lib/icons/OddBird.svelte';
-  import Warning from '$lib/icons/Warning.svelte';
-  import Switch from '$src/lib/icons/Switch.svelte';
+  import Check from '#lib/icons/Check.svelte';
+  import Clipboard from '#lib/icons/Clipboard.svelte';
+  import Copy from '#lib/icons/Copy.svelte';
+  import GitHub from '#lib/icons/GitHub.svelte';
+  import LinkedIn from '#lib/icons/LinkedIn.svelte';
+  import Logo from '#lib/icons/Logo.svelte';
+  import Mastodon from '#lib/icons/Mastodon.svelte';
+  import NewTab from '#lib/icons/NewTab.svelte';
+  import OddBird from '#lib/icons/OddBird.svelte';
+  import Switch from '#lib/icons/Switch.svelte';
+  import Warning from '#lib/icons/Warning.svelte';
 
   const icons: Record<string, Component> = {
     check: Check,

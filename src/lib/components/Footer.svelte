@@ -1,7 +1,7 @@
 <script lang="ts">
-  import ExternalLink from '$lib/components/util/ExternalLink.svelte';
-  import Icon from '$lib/components/util/Icon.svelte';
-  import { SOCIAL_LINKS } from '$lib/constants';
+  import ExternalLink from '#lib/components/util/ExternalLink.svelte';
+  import Icon from '#lib/components/util/Icon.svelte';
+  import { SOCIAL_LINKS } from '#lib/constants.js';
 
   let start = 2022;
   let year = new Date().getFullYear();

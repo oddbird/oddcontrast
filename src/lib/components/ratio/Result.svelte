@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Icon from '$lib/components/util/Icon.svelte';
-  import { RATIOS } from '$lib/constants';
+  import Icon from '#lib/components/util/Icon.svelte';
+  import { RATIOS } from '#lib/constants.js';
 
   interface Props {
     level: 'AA' | 'AAA';

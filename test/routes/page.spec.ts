@@ -1,7 +1,7 @@
 import { render, type RenderResult } from '@testing-library/svelte';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import Page from '$src/routes/+page.svelte';
+import Page from '#src/routes/+page.svelte';
 
 interface TestContext {
   result: RenderResult<typeof Page>;

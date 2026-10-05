@@ -8,7 +8,6 @@
     "./**/*.ts",
     "./**/*.svelte",
     "../eslint.config.js",
-    "../svelte.config.js",
     "../vite.config.ts",
     "../vitest.config.ts",
     "../src/**/*.d.ts"

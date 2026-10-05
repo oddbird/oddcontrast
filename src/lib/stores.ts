@@ -12,9 +12,9 @@ import {
 } from 'colorjs.io/fn';
 import { get, writable } from 'svelte/store';
 
+import type { ColorFormatId, ColorGamutId } from '#lib/constants.js';
 // eslint-disable-next-line import-x/no-unresolved
-import { browser, dev } from '$app/environment';
-import type { ColorFormatId, ColorGamutId } from '$lib/constants';
+import { browser, dev } from '$app/env';
 
 // Register supported color spaces
 ColorSpace.register(HSL);
