@@ -12,6 +12,8 @@
   import { hashToStoreValues, storeValuesToHash } from '#lib/utils.js';
   // eslint-disable-next-line import-x/no-unresolved
   import { goto } from '$app/navigation';
+  // eslint-disable-next-line import-x/no-unresolved
+  import { resolve } from '$app/paths';
 
   let bg_fallback = $derived(display($bg));
   let fg_fallback = $derived(display($fg));
@@ -26,7 +28,7 @@
 
   function colorsToHash() {
     const hashString = storeValuesToHash($bg, $fg, $format, $gamut);
-    void goto(`#${hashString}`, { shallow: true, replace: true });
+    void goto(resolve(`/#${hashString}`), { shallow: true, replace: true });
   }
 
   const debouncedColorsToHash = debounce(colorsToHash, 100);
