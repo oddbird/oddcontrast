@@ -7,6 +7,7 @@ COPY ./package.json package.json
 COPY ./yarn.lock yarn.lock
 # Use local version of Yarn:
 COPY ./.yarnrc.yml .yarnrc.yml
+RUN npm install -g corepack
 RUN corepack enable
 RUN yarn install --immutable
 
