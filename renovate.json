@@ -10,9 +10,9 @@
       "rangeStrategy": "pin"
     },
     {
-      "description": "Stay on @types/node 24 to match the Node 24 base image",
+      "description": "Stay on @types/node 26 to match the Node 26 base image",
       "matchPackageNames": ["@types/node"],
-      "allowedVersions": "<25"
+      "allowedVersions": "<27"
     },
     {
       "description": "Stay on TypeScript 6 until the 7.x rewrite is compatible",
